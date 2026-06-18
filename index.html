@@ -1,7 +1,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TikSave - Downloader Video TikTok Tanpa Watermark & API Developer Gratis</title>
     <!-- Favicon di baris 8 -->
     <link rel="icon" type="image/png" href="https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png">
@@ -42,6 +42,9 @@
     </script>
 
     <style>
+        html {
+            overflow-x: hidden;
+        }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #030712;
@@ -675,7 +678,7 @@
                         <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest">3. Contoh Kode Integrasi (JavaScript Fetch)</h4>
                         <div class="relative shadow-xl rounded-xl overflow-hidden border border-white/5">
                             <pre class="bg-slate-950 p-4.5 text-[11px] font-mono text-indigo-300 overflow-x-auto">
-fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3Bvm/')
+fetch('https://albitiktok.vercep.app/?api=true&url=https://vt.tiktok.com/ZS9PW3Bvm/')
   .then(res => res.json())
   .then(data => {
     console.log("Judul Video:", data.data.title);
@@ -1413,7 +1416,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                             </span>
                             <i data-lucide="arrow-down-to-line" class="w-4 h-4"></i>
                         </button>
-                        <button onclick="downloadMusic(this)" class="col-span-1 sm:col-span-2 flex items-center justify-between px-6 py-4 rounded-xl bg-slate-950 border border-white/5 hover:bg-slate-900 text-slate-300 font-extrabold text-sm transition-all transform active:scale-[0.98] shadow-inner">
+                        <button onclick="downloadMusic(this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-slate-950 border border-white/5 hover:bg-slate-900 text-slate-300 font-extrabold text-sm transition-all transform active:scale-[0.98] shadow-inner">
                             <span class="flex items-center gap-2.5">
                                 <i data-lucide="music-4" class="w-5 h-5 text-pink-400"></i>
                                 <span class="text-left">
@@ -1591,4 +1594,4 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
         }
     </script>
 </body>
-                            </html>
+    </html>
