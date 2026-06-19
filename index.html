@@ -1,13 +1,9 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <script>
-        /* Head Viewport Switcher - Encrypted & Obfuscated */
-        (function(_0x_hV,_0x_mV){const _0x_vS=["b250b3VjaHN0YXJ0","bWF4VG91Y2hQb2ludHM=","QW5kcm9pZHx3ZWJPU3xpUGhvbmV8aVBhZHxpUG9kfEJsYWNrQmVycnl8SUVNb2JpbGV8T3BlcmEgTWluaQ==","Zm9yY2VEZXNrdG9wTW9kZQ==","dHJ1ZQ==","ZmFsc2U=","dmlld3BvcnQ=","d2lkdGg9MTIwMCwgaW5pdGlhbC1zY2FsZT0wLjMsIG1pbmltdW0tc2NhbGU9MC4xLCBtYXhpbXVtLXNjYWxlPTUuMA==","d2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEuMA=="];function _0x_dec(_0x_idx){return atob(_0x_vS[_0x_idx])}const _0x_touch=(_0x_dec(0)in window)||(navigator[_0x_dec(1)]>0);const _0x_mUA=new RegExp(_0x_dec(2),"i").test(navigator.userAgent);if(_0x_touch&&!_0x_mUA){localStorage.setItem(_0x_dec(3),_0x_dec(4))}else if(_0x_mUA){localStorage.setItem(_0x_dec(3),_0x_dec(5))}if(localStorage.getItem(_0x_dec(3))===_0x_dec(4)){document.write('<meta name="'+_0x_dec(6)+'" content="'+_0x_dec(7)+'">')}else{document.write('<meta name="'+_0x_dec(6)+'" content="'+_0x_dec(8)+'">')}})();
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>TikSave - Downloader Video TikTok Tanpa Watermark & API Developer Gratis</title>
-    <!-- Favicon di baris 8 -->
-    <link class="favicon" rel="icon" type="image/png" href="https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png">
+    <link rel="icon" type="image/png" href="https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png">
     
     <!-- Tailwind CSS untuk penataan kilat modern -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -45,649 +41,590 @@
     </script>
 
     <style>
-        html {
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #030712;
+            background-color: #0b0f19;
             color: #f3f4f6;
             overflow-x: hidden;
         }
 
-        /* Ambient glowing background with slow breathing animation */
-        @keyframes aurora {
-            0%, 100% {
-                transform: translateY(0) scale(1);
-            }
-            50% {
-                transform: translateY(-20px) scale(1.15);
-            }
-        }
-        
+        /* Ambient glow backdrop */
         .glowing-blob {
-            filter: blur(130px);
-            opacity: 0.18;
+            filter: blur(140px);
+            opacity: 0.15;
             pointer-events: none;
-            animation: aurora 10s ease-in-out infinite alternate;
         }
 
-        /* Custom Scrollbar */
+        /* Scrollbar kustom premium */
         ::-webkit-scrollbar {
-            width: 6px;
+            width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #030712;
+            background: #0f172a;
         }
         ::-webkit-scrollbar-thumb {
-            background: #1e293b;
+            background: #334155;
             border-radius: 9999px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #334155;
+            background: #475569;
         }
 
-        /* Ultra Premium Glassmorphism Panel */
+        /* Glassmorphism custom classes */
         .glass-panel {
-            background: rgba(10, 15, 30, 0.7);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        /* Premium Glass Input */
         .glass-input {
-            background: rgba(15, 23, 42, 0.5);
+            background: rgba(30, 41, 59, 0.45);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .glass-input:focus {
-            border-color: rgba(99, 102, 241, 0.8);
-            box-shadow: 0 0 30px rgba(99, 102, 241, 0.25);
-            background: rgba(15, 23, 42, 0.8);
+            border-color: #6366f1;
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+            background: rgba(30, 41, 59, 0.65);
         }
 
         @keyframes pulse-glow {
             0%, 100% {
-                box-shadow: 0 0 15px rgba(99, 102, 241, 0.35);
-                transform: translateY(0);
+                box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
             }
             50% {
-                box-shadow: 0 0 30px rgba(99, 102, 241, 0.65);
-                transform: translateY(-2px);
+                box-shadow: 0 0 30px rgba(99, 102, 241, 0.6);
             }
         }
         .glowing-btn {
             animation: pulse-glow 3s infinite;
         }
-        
-        /* Subtle card reflection */
-        .premium-card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.01) 50%, rgba(99, 102, 241, 0.15));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-        }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between relative">
+<body class="min-h-screen flex flex-col justify-between">
 
-    <!-- Efek Latar Belakang Bercahaya (Aurora) -->
-    <div class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-indigo-600 rounded-full glowing-blob" style="animation-delay: 0s;"></div>
-    <div class="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-brand-accent rounded-full glowing-blob" style="animation-delay: -3s;"></div>
-    <div class="absolute bottom-10 left-10 w-[400px] h-[400px] bg-violet-600 rounded-full glowing-blob" style="animation-delay: -6s;"></div>
+    <!-- Efek Latar Belakang Bercahaya -->
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand-500 rounded-full glowing-blob"></div>
+    <div class="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-brand-accent rounded-full glowing-blob"></div>
+    <div class="absolute bottom-10 left-10 w-[300px] h-[300px] bg-indigo-500 rounded-full glowing-blob"></div>
 
     <!-- Navigation Header -->
-    <header class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 z-10 relative">
-        <div class="flex items-center justify-between glass-panel px-6 py-4 rounded-2xl premium-card">
+    <header class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 z-10 relative">
+        <div class="flex items-center justify-between glass-panel px-6 py-4 rounded-2xl">
             <!-- Brand Logo -->
-            <button onclick="switchTab('downloader')" class="flex items-center gap-3.5 focus:outline-none text-left group active:scale-95 transition-transform duration-155">
-                <div class="w-11 h-11 rounded-xl flex items-center justify-center overflow-hidden bg-white/5 border border-white/10 group-hover:border-indigo-500/30 transition-all duration-300">
-                    <img src="https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png" alt="TikSave Logo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <button onclick="switchTab('downloader')" class="flex items-center gap-3 focus:outline-none text-left">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden bg-white/5 border border-white/10">
+                    <img src="https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png" alt="TikSave Logo" class="w-full h-full object-cover">
                 </div>
                 <div>
-                    <h1 class="text-2xl font-extrabold tracking-tight font-display bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-100 to-brand-accent">
+                    <h1 class="text-2xl font-extrabold tracking-tight font-display bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-brand-accent">
                         Tik<span class="text-brand-accent">Save</span>
                     </h1>
                 </div>
             </button>
 
             <!-- Desktop Nav Links -->
-            <div class="hidden md:flex items-center gap-2 bg-slate-950/60 p-1.5 rounded-2xl border border-white/5 shadow-inner">
-                <button id="nav-downloader" onclick="switchTab('downloader')" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 hover:bg-indigo-500">
+            <div class="hidden md:flex items-center gap-2">
+                <button id="nav-downloader" onclick="switchTab('downloader')" class="px-4 py-2 rounded-xl text-sm font-semibold bg-white/5 border border-white/10 text-white transition-all hover:bg-white/10">
                     Downloader
                 </button>
-                <button id="nav-api" onclick="switchTab('api')" class="px-5 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5">
+                <button id="nav-api" onclick="switchTab('api')" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-400 hover:text-white hover:bg-white/5 transition-all flex items-center gap-1">
                     Docs API
                 </button>
-                <button id="nav-kurs" onclick="switchTab('kurs')" class="px-5 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5">
-                    <i data-lucide="coins" class="w-3.5 h-3.5"></i> Kurs Rupiah
-                </button>
-                <div class="w-[1px] h-5 bg-white/10 mx-1"></div>
-                <button onclick="showDonation()" class="px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 rounded-xl text-xs font-bold text-white transition-all duration-150 transform active:scale-95 flex items-center gap-2 shadow-lg shadow-indigo-600/30">
-                    <i data-lucide="heart" class="w-3.5 h-3.5 fill-white/10"></i> Donasi
+                <button onclick="showDonation()" class="ml-2 px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 rounded-xl text-xs font-bold text-white transition-all flex items-center gap-2 shadow-lg shadow-indigo-500/20 active:scale-95">
+                    <i data-lucide="heart" class="w-3.5 h-3.5"></i> Donasi
                 </button>
             </div>
 
             <!-- Mobile Hamburger -->
-            <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 text-white hover:bg-slate-900 rounded-xl transition-all border border-transparent hover:border-white/5 active:scale-90">
-                <i data-lucide="menu" class="w-5 h-5"></i>
+            <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-white hover:bg-slate-800 rounded-lg">
+                <i data-lucide="menu"></i>
             </button>
         </div>
     </header>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 z-[70] bg-black/60 hidden transition-opacity duration-300">
-        <!-- Drawer Panel -->
-        <div class="absolute right-0 top-0 h-full w-[82%] max-w-[320px] bg-[#090d1a] border-l border-slate-800 shadow-2xl p-6 flex flex-col justify-between">
-            <div>
-                <!-- Drawer Header -->
-                <div class="flex items-center justify-between pb-5 border-b border-slate-900 mb-6">
-                    <div class="flex items-center gap-2.5">
-                        <img src="https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png" alt="Logo" class="w-7 h-7 object-cover">
-                        <span class="text-xs font-extrabold uppercase tracking-widest text-slate-400 font-display">TikSave Menu</span>
-                    </div>
-                    <button onclick="toggleMobileMenu()" class="p-2 bg-slate-900 hover:bg-slate-850 border border-slate-800 text-slate-400 hover:text-white rounded-xl transition-all active:scale-90 shadow-inner">
-                        <i data-lucide="x" class="w-4.5 h-4.5"></i>
-                    </button>
-                </div>
-
-                <!-- Navigation List -->
-                <div class="space-y-4">
-                    <!-- Downloader Card -->
-                    <button onclick="switchTab('downloader'); toggleMobileMenu()" class="w-full text-left p-4 rounded-2xl bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-indigo-500/30 transition-all active:scale-95 flex items-center gap-4 group shadow-sm">
-                        <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-all shadow-inner">
-                            <i data-lucide="download" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-extrabold text-sm text-white">Downloader</h4>
-                            <p class="text-[10px] text-slate-500 font-medium mt-0.5">Simpan Video & MP3</p>
-                        </div>
-                    </button>
-
-                    <!-- API Card -->
-                    <button onclick="switchTab('api'); toggleMobileMenu()" class="w-full text-left p-4 rounded-2xl bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-brand-accent/30 transition-all active:scale-95 flex items-center gap-4 group shadow-sm">
-                        <div class="w-10 h-10 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center group-hover:bg-brand-accent group-hover:text-white transition-all shadow-inner">
-                            <i data-lucide="terminal" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-extrabold text-sm text-white">Docs API</h4>
-                            <p class="text-[10px] text-slate-500 font-medium mt-0.5">Integrasi Pengembang</p>
-                        </div>
-                    </button>
-
-                    <!-- Kurs Card -->
-                    <button onclick="switchTab('kurs'); toggleMobileMenu()" class="w-full text-left p-4 rounded-2xl bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-emerald-500/30 transition-all active:scale-95 flex items-center gap-4 group shadow-sm">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-inner">
-                            <i data-lucide="coins" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-extrabold text-sm text-white">Kurs Rupiah</h4>
-                            <p class="text-[10px] text-slate-500 font-medium mt-0.5">Pantau Nilai Mata Uang</p>
-                        </div>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Drawer Footer -->
-            <div class="space-y-4">
-                <button onclick="showDonation(); toggleMobileMenu()" class="w-full p-4 bg-gradient-to-r from-indigo-600 via-indigo-500 to-violet-600 hover:from-indigo-500 hover:to-violet-500 rounded-2xl text-white font-extrabold flex items-center justify-center gap-2.5 shadow-lg shadow-indigo-600/35 active:scale-95 transition-all">
-                    <i data-lucide="heart" class="w-5 h-5 fill-white/10"></i> 
-                    <span>Donasi Sekarang</span>
-                </button>
-                <div class="text-center pt-2">
-                    <p class="text-[10px] text-slate-600 font-semibold tracking-wider font-display">TikSave v2.2 • Tercepat & Aman</p>
-                </div>
-            </div>
-        </div>
+    <div id="mobile-menu" class="fixed inset-0 z-[70] bg-slate-950/98 backdrop-blur-xl hidden flex flex-col items-center justify-center gap-6">
+        <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 p-2 text-white hover:bg-white/10 rounded-full"><i data-lucide="x"></i></button>
+        <button onclick="switchTab('downloader'); toggleMobileMenu()" class="text-xl font-bold text-white hover:text-brand-accent transition-colors">Downloader</button>
+        <button onclick="switchTab('api'); toggleMobileMenu()" class="text-xl font-bold text-white hover:text-brand-accent transition-colors">Docs API</button>
+        <button onclick="showDonation(); toggleMobileMenu()" class="mt-4 px-8 py-4 bg-gradient-to-r from-brand-accent to-indigo-600 rounded-2xl text-white font-bold flex items-center gap-2 shadow-xl shadow-brand-accent/20">
+            <i data-lucide="heart" class="w-5 h-5"></i> Donasi Sekarang
+        </button>
     </div>
     
     <!-- QRIS Donation Modal -->
-    <div id="donation-modal" class="fixed inset-0 z-[60] hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-white/10 p-7 rounded-3xl max-w-sm w-full text-center relative shadow-2xl">
-            <button onclick="hideDonation()" class="absolute top-4 right-4 p-1.5 text-slate-400 hover:text-white hover:bg-white/5 rounded-full transition-all"><i data-lucide="x" class="w-5 h-5"></i></button>
-            <div class="w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center mx-auto mb-4">
-                <i data-lucide="heart" class="text-indigo-400 w-6 h-6"></i>
-            </div>
-            <h3 class="text-white font-extrabold text-xl mb-1">Dukung TikSave</h3>
-            <p class="text-slate-400 text-xs mb-5">Pindai kode QRIS di bawah untuk berdonasi</p>
-            <div class="bg-white p-4 rounded-2xl inline-block shadow-inner mb-4">
-                <img src="https://i.ibb.co/Xx3q71HY/IMG-1241.png" alt="QRIS" class="w-56 h-auto rounded-lg mx-auto">
-            </div>
-            <p class="text-slate-500 text-xs font-medium">Terima kasih atas kontribusi berharga Anda!</p>
+    <div id="donation-modal" class="fixed inset-0 z-[60] hidden bg-black/90 flex items-center justify-center p-4">
+        <div class="bg-white p-6 rounded-3xl max-w-sm w-full text-center relative">
+            <button onclick="hideDonation()" class="absolute top-3 right-3 text-slate-500"><i data-lucide="x"></i></button>
+            <h3 class="text-black font-bold text-lg mb-4">Donasi QRIS</h3>
+            <img src="https://i.ibb.co/Xx3q71HY/IMG-1241.png" alt="QRIS" class="w-full rounded-xl mb-4">
+            <p class="text-slate-600 text-sm">Terima kasih atas dukungannya!</p>
         </div>
     </div>
 
-    <!-- Alert Custom Modal -->
-    <div id="custom-alert" class="fixed inset-0 z-[100] hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-white/10 p-6 rounded-2xl max-w-sm w-full text-center shadow-2xl">
-            <div class="w-10 h-10 rounded-full bg-rose-500/10 text-rose-400 flex items-center justify-center mx-auto mb-3">
-                <i data-lucide="alert-triangle" class="w-5 h-5"></i>
-            </div>
-            <h4 class="text-white font-bold text-lg mb-2">Pemberitahuan</h4>
-            <p id="custom-alert-text" class="text-slate-300 text-xs mb-4 leading-relaxed">Pesan alert di sini</p>
-            <div class="flex gap-2 justify-center">
-                <button onclick="hideAlert()" class="w-full py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-bold text-xs transition-colors">Tutup</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- SECTION 1: DOWNLOADER (MAIN VIEW) -->
-    <div id="view-downloader" class="w-full max-w-4xl mx-auto px-4 py-6 z-10 relative flex-grow">
-        <!-- Hero Title -->
-        <div class="text-center space-y-4 mb-10">
-            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
-                <i data-lucide="zap" class="w-3.5 h-3.5 text-indigo-400"></i> Downloader TikTok Tercepat & Stabil 2026
+    <!-- SECTION 1: DOWNLOADER (HOMEPAGE VIEW) -->
+    <div id="view-downloader" class="w-full max-w-4xl mx-auto px-4 py-8 z-10 relative flex-grow flex flex-col justify-center">
+        
+        <!-- Hero Taglines -->
+        <div class="text-center mb-8">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-brand-500/10 text-brand-500 border border-brand-500/20 mb-4">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Downloader TikTok Tercepat & Stabil 2026
             </span>
-            <h2 class="font-display font-extrabold text-4xl sm:text-5xl text-white tracking-tight leading-tight">
-                Unduh Video TikTok <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-accent to-indigo-400">Tanpa Watermark</span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white mb-4">
+                Unduh Video TikTok <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-accent to-brand-500">Tanpa Watermark</span>
             </h2>
-            <p class="text-xs sm:text-sm text-slate-400 font-medium max-w-xl mx-auto leading-relaxed">
+            <p class="text-slate-400 max-w-lg mx-auto text-sm sm:text-base">
                 Simpan video HD dan musik audio MP3 TikTok secara instan. Cukup tempel tautan video dan nikmati unduhan gratis tanpa batas.
             </p>
         </div>
 
-        <!-- Input Box Panel -->
-        <div class="glass-panel rounded-3xl p-6 sm:p-8 space-y-6 premium-card mb-8">
-            <div class="space-y-2">
-                <label class="block text-xs font-bold text-slate-400 uppercase tracking-widest font-display">Masukkan Tautan Video / Foto TikTok</label>
-                <div class="flex flex-col sm:flex-row gap-3">
-                    <div class="relative flex-grow">
-                        <!-- Perbaikan Penyelarasan Ikon Link agar Presisi dan Tidak Menimpa Teks -->
-                        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none flex items-center justify-center">
-                            <i data-lucide="link" class="w-5 h-5"></i>
-                        </span>
-                        <input type="text" id="tiktok-url" class="w-full pl-12 pr-28 py-4 rounded-2xl text-white text-sm font-medium glass-input outline-none font-sans" placeholder="Tempel tautan TikTok di sini...">
-                        <div class="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center gap-2">
-                            <button id="btn-clear" onclick="clearInput()" class="hidden p-2 text-slate-400 hover:text-white hover:bg-white/5 rounded-xl transition-all">
-                                <i data-lucide="x" class="w-4.5 h-4.5"></i>
-                            </button>
-                            <button onclick="pasteFromClipboard()" class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-indigo-300 border border-slate-700 transition-all active:scale-95 flex items-center gap-1.5 shadow-sm">
-                                <i data-lucide="clipboard" class="w-3.5 h-3.5"></i> Tempel
-                            </button>
-                        </div>
-                    </div>
-                    <button onclick="handleDownload()" class="py-4 px-8 rounded-2xl bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold text-sm transition-all transform active:scale-95 flex items-center justify-center gap-2.5 shadow-lg shadow-indigo-600/30 glowing-btn">
-                        <span id="search-btn-content" class="flex items-center gap-2">
-                            <i data-lucide="arrow-down-to-line" class="w-4.5 h-4.5"></i> Unduh
-                        </span>
-                        <div id="search-loading" class="hidden animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full"></div>
-                    </button>
-                </div>
-                <p class="text-[10px] text-slate-500 font-semibold tracking-wide text-center sm:text-left">Gratis tanpa registrasi • Mendukung Video & Slide Foto</p>
-            </div>
-        </div>
+        <!-- Central Interactive App Card -->
+        <div class="glass-panel rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+            <!-- Decorative border accent -->
+            <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-brand-accent via-indigo-500 to-pink-500"></div>
 
-        <!-- Result Container -->
-        <div id="result-container" class="hidden glass-panel rounded-3xl p-6 sm:p-8 premium-card mb-8">
-            <div class="flex flex-col md:flex-row gap-6">
-                <!-- Preview Side -->
-                <div class="w-full md:w-80 shrink-0 flex flex-col gap-4">
-                    <!-- Slideshow / Cover Box -->
-                    <div class="relative aspect-[3/4] rounded-2xl overflow-hidden bg-slate-950 border border-white/5 group shadow-2xl">
-                        <img id="media-cover" src="" alt="Cover" class="w-full h-full object-cover">
-                        
-                        <!-- Image Slideshow Navigation overlay -->
-                        <div id="slideshow-nav" class="absolute inset-x-0 bottom-4 flex justify-between px-4 hidden">
-                            <button onclick="prevSlide()" class="p-2 bg-black/60 hover:bg-black/80 rounded-xl text-white border border-white/10 active:scale-90 transition-all"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
-                            <span id="slideshow-indicator" class="px-3.5 py-1.5 bg-black/60 border border-white/10 rounded-xl text-[11px] font-bold text-white">1/1</span>
-                            <button onclick="nextSlide()" class="p-2 bg-black/60 hover:bg-black/80 rounded-xl text-white border border-white/10 active:scale-90 transition-all"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
-                        </div>
-                    </div>
+            <!-- INPUT STATE CONTAINER -->
+            <div id="downloader-form-view">
+                <div class="space-y-4">
+                    <label for="tiktok-url" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider">Masukkan Tautan Video / Foto TikTok</label>
                     
-                    <!-- Creator profile -->
-                    <div class="flex items-center gap-3 p-3 bg-slate-950/40 border border-white/5 rounded-xl">
-                        <img id="author-avatar" src="" alt="Avatar" class="w-10 h-10 rounded-full border border-white/10">
-                        <div class="overflow-hidden">
-                            <h4 id="author-name" class="font-bold text-white text-xs truncate">@username</h4>
-                            <p id="author-nickname" class="text-[10px] text-slate-500 truncate">Nickname</p>
+                    <div class="relative flex flex-col sm:flex-row gap-3">
+                        <div class="relative flex-grow">
+                            <!-- Link Icon -->
+                            <div class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">
+                                <i data-lucide="link" class="w-5 h-5"></i>
+                            </div>
+                            <!-- URL Input Box -->
+                            <input 
+                                type="text" 
+                                id="tiktok-url" 
+                                placeholder="Tempel tautan TikTok di sini... (contoh: https://vt.tiktok.com/...)" 
+                                class="w-full pl-12 pr-28 py-4 sm:py-5 rounded-2xl text-white text-sm sm:text-base glass-input outline-none"
+                                autocomplete="off"
+                            >
+                            <!-- Clear & Paste Action Buttons -->
+                            <div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1.5">
+                                <button onclick="clearInput()" id="btn-clear" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all hidden" title="Hapus teks">
+                                    <i data-lucide="x" class="w-4 h-4"></i>
+                                </button>
+                                <button onclick="pasteFromClipboard()" class="flex items-center gap-1 px-3 py-1.5 rounded-xl bg-indigo-500/10 hover:bg-indigo-500/20 text-brand-accent text-xs font-medium border border-indigo-500/20 transition-all" title="Tempel dari Clipboard">
+                                    <i data-lucide="clipboard" class="w-3.5 h-3.5"></i>
+                                    <span>Tempel</span>
+                                </button>
+                            </div>
                         </div>
+
+                        <!-- Submit Button -->
+                        <button onclick="handleDownload()" class="glowing-btn sm:px-8 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white font-semibold text-sm tracking-wide shadow-lg shadow-brand-500/20 hover:shadow-brand-500/40 transform active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer">
+                            <i data-lucide="arrow-right-circle" class="w-5 h-5"></i>
+                            <span>Download</span>
+                        </button>
                     </div>
-                </div>
 
-                <!-- Action Side -->
-                <div class="flex-grow flex flex-col justify-between gap-6">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-[10px] uppercase font-bold tracking-wider text-emerald-400 font-display flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Video Berhasil Ditemukan
-                            </span>
-                            <button onclick="resetDownloader()" class="text-xs text-indigo-400 hover:text-indigo-300 font-bold flex items-center gap-1"><i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Cari Lagi</button>
+                    <!-- Notification Alert Panel -->
+                    <div id="alert-box" class="hidden p-4 rounded-xl border flex items-start gap-3 transition-all duration-300">
+                        <div id="alert-icon-container"></div>
+                        <div class="flex-grow">
+                            <h4 id="alert-title" class="text-xs font-bold uppercase tracking-wider"></h4>
+                            <p id="alert-desc" class="text-xs text-slate-300 mt-1"></p>
                         </div>
-                        
-                        <h3 id="media-title" class="font-display font-bold text-lg text-white leading-relaxed line-clamp-3">Deskripsi video...</h3>
-                        
-                        <!-- Video Stats -->
-                        <div class="flex gap-4 p-3 bg-slate-950/30 border border-white/5 rounded-xl max-w-sm">
-                            <div class="flex items-center gap-1.5 text-xs text-slate-400"><i data-lucide="heart" class="w-4 h-4 text-rose-500"></i> <span id="stat-likes">0</span></div>
-                            <div class="flex items-center gap-1.5 text-xs text-slate-400"><i data-lucide="play" class="w-4 h-4 text-indigo-400"></i> <span id="stat-views">0</span></div>
-                            <div class="flex items-center gap-1.5 text-xs text-slate-400"><i data-lucide="message-circle" class="w-4 h-4 text-cyan-400"></i> <span id="stat-comments">0</span></div>
-                        </div>
+                        <button onclick="hideAlert()" class="text-slate-400 hover:text-white">
+                            <i data-lucide="x" class="w-4 h-4"></i>
+                        </button>
                     </div>
 
-                    <!-- Grid Layout Sejajar untuk Tombol Download Utama -->
-                    <div class="space-y-4">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <!-- Download No Watermark (Sejajar Hijau) -->
-                            <button id="btn-dl-no-wm" onclick="downloadVideo('no_wm', this)" class="flex items-center justify-between px-6 py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-sm transition-all transform active:scale-[0.98] shadow-lg shadow-emerald-500/20">
-                                <span class="flex items-center gap-2.5">
-                                    <i data-lucide="download" class="w-5 h-5"></i>
-                                    <span class="text-left font-display">
-                                        <span class="block">Tanpa Watermark [HD]</span>
-                                        <span class="block text-[10px] opacity-80 font-normal" id="size-no-wm">Sedang memuat...</span>
-                                    </span>
-                                </span>
-                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                            </button>
-
-                            <!-- Download Music MP3 (Sejajar Slate) -->
-                            <button onclick="downloadMusic(this)" class="flex items-center justify-between px-6 py-4 rounded-2xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-extrabold text-sm transition-all transform active:scale-[0.98]">
-                                <span class="flex items-center gap-2.5">
-                                    <i data-lucide="music" class="w-5 h-5 text-indigo-400"></i>
-                                    <span class="text-left font-display">
-                                        <span class="block">Unduh Audio MP3</span>
-                                        <span class="block text-[10px] opacity-75 font-normal" id="size-audio">Sedang memuat...</span>
-                                    </span>
-                                </span>
-                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                            </button>
-                        </div>
-
-                        <!-- Browser Instructions -->
-                        <div class="p-4 bg-slate-950/50 border border-white/5 rounded-2xl text-xs text-slate-400 space-y-2">
-                            <span class="font-bold text-white flex items-center gap-1.5"><i data-lucide="info" class="w-4 h-4 text-indigo-400"></i> Cara Mengunduh di Browser:</span>
-                            <p class="leading-relaxed">Klik salah satu tombol di atas untuk memulai unduhan otomatis. Jika browser Anda memutar media secara langsung, ketuk tombol titik tiga (<i data-lucide="more-vertical" class="inline w-3.5 h-3.5"></i>) di pojok kanan bawah lalu pilih <strong>Download</strong>.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- History Section -->
-        <div class="glass-panel rounded-3xl p-6 sm:p-8 premium-card mb-8">
-            <div class="flex items-center justify-between pb-4 border-b border-white/5 mb-6">
-                <h3 class="text-base font-bold text-white flex items-center gap-2"><i data-lucide="history" class="w-5 h-5 text-indigo-400"></i> Riwayat Unduhan Anda</h3>
-                <button onclick="clearHistory()" class="text-xs text-slate-400 hover:text-rose-400 font-bold flex items-center gap-1 transition-colors"><i data-lucide="trash-2" class="w-4 h-4"></i> Bersihkan Semua</button>
-            </div>
-            <div id="history-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- Loaded dynamically -->
-                <div class="p-6 text-center text-xs text-slate-500 font-semibold md:col-span-2">
-                    Belum ada riwayat unduhan terkini.
-                </div>
-            </div>
-        </div>
-
-        <!-- Features Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div class="glass-panel rounded-2xl p-6 border border-white/5 space-y-3 shadow-md">
-                <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center shadow-inner"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
-                <h4 class="font-bold text-white text-sm">100% Aman & Tanpa Batas</h4>
-                <p class="text-xs text-slate-400 leading-relaxed font-medium">Kami tidak merekam atau menyimpan video Anda di server kami. Anda bisa mengunduh sepuasnya tanpa batasan kuota harian.</p>
-            </div>
-            <div class="glass-panel rounded-2xl p-6 border border-white/5 space-y-3 shadow-md">
-                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center shadow-inner"><i data-lucide="zap" class="w-5 h-5"></i></div>
-                <h4 class="font-bold text-white text-sm">Konversi Kecepatan Kilat</h4>
-                <p class="text-xs text-slate-400 leading-relaxed font-medium">Mesin server cerdas kami memproses dan melucuti watermark video TikTok secara instan dalam kurun waktu kurang dari 3 detik.</p>
-            </div>
-            <div class="glass-panel rounded-2xl p-6 border border-white/5 space-y-3 shadow-md">
-                <div class="w-10 h-10 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center shadow-inner"><i data-lucide="sparkles" class="w-5 h-5"></i></div>
-                <h4 class="font-bold text-white text-sm">Resolusi Kualitas HD</h4>
-                <p class="text-xs text-slate-400 leading-relaxed font-medium">Unduh media Anda dalam resolusi original tertinggi tanpa kompresi yang merusak estetika visual video TikTok asli.</p>
-            </div>
-        </div>
-
-        <!-- Accordion FAQ section -->
-        <div class="glass-panel rounded-3xl p-6 sm:p-8 space-y-6 premium-card">
-            <h3 class="font-display font-extrabold text-xl text-white flex items-center gap-2"><i data-lucide="help-circle" class="w-5 h-5 text-indigo-400"></i> Pertanyaan yang Sering Diajukan (FAQ)</h3>
-            <div class="divide-y divide-white/5">
-                <div class="py-4">
-                    <button onclick="toggleFaq(1)" class="w-full flex items-center justify-between text-left focus:outline-none">
-                        <span class="font-bold text-white text-sm">Apakah saya perlu menginstal aplikasi tambahan?</span>
-                        <i id="faq-icon-1" data-lucide="chevron-down" class="w-4.5 h-4.5 text-slate-400 transform transition-transform"></i>
-                    </button>
-                    <div id="faq-content-1" class="hidden mt-3 text-xs text-slate-400 leading-relaxed">Tidak. TikSave adalah web app berbasis awan, Anda tidak memerlukan instalasi perangkat lunak atau ekstensi apa pun di perangkat seluler maupun desktop Anda.</div>
-                </div>
-                <div class="py-4">
-                    <button onclick="toggleFaq(2)" class="w-full flex items-center justify-between text-left focus:outline-none">
-                        <span class="font-bold text-white text-sm">Di mana file video TikTok disimpan setelah diunduh?</span>
-                        <i id="faq-icon-2" data-lucide="chevron-down" class="w-4.5 h-4.5 text-slate-400 transform transition-transform"></i>
-                    </button>
-                    <div id="faq-content-2" class="hidden mt-3 text-xs text-slate-400 leading-relaxed">Secara bawaan, semua file hasil unduhan akan tersimpan langsung di dalam direktori folder "Unduhan" (Downloads) di perangkat Anda, kecuali Anda telah mengaturnya secara khusus di browser.</div>
-                </div>
-                <div class="py-4">
-                    <button onclick="toggleFaq(3)" class="w-full flex items-center justify-between text-left focus:outline-none">
-                        <span class="font-bold text-white text-sm">Apakah layanan pengunduh ini sepenuhnya gratis?</span>
-                        <i id="faq-icon-3" data-lucide="chevron-down" class="w-4.5 h-4.5 text-slate-400 transform transition-transform"></i>
-                    </button>
-                    <div id="faq-content-3" class="hidden mt-3 text-xs text-slate-400 leading-relaxed">Ya. TikSave 100% gratis dan akan tetap gratis selamanya. Anda tidak perlu membayar sepeser pun untuk menyimpan file video favorit dari TikTok.</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SECTION 2: API DEVELOPER (DOCS VIEW) -->
-    <div id="view-api" class="w-full max-w-4xl mx-auto px-4 py-8 z-10 relative flex-grow hidden">
-        <div class="glass-panel rounded-3xl p-6 sm:p-10 space-y-8 relative overflow-hidden premium-card">
-            <!-- Neon cyan decorative ambient glow -->
-            <div class="absolute -right-24 -top-24 w-48 h-48 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
-            
-            <div class="space-y-2.5">
-                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
-                    <i data-lucide="code" class="w-3.5 h-3.5 text-indigo-400"></i> Untuk Pengembang Aplikasi
-                </span>
-                <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white">Dokumentasi API TikSave</h3>
-                <p class="text-xs sm:text-sm text-slate-400 font-medium font-display">Integrasikan fungsionalitas pencarian video TikTok serta pemantauan kurs valuta asing real-time ke sistem backend Anda secara gratis.</p>
-            </div>
-
-            <!-- API Endpoint 1: TikTok Downloader -->
-            <div class="space-y-4 border-b border-white/5 pb-6">
-                <h4 class="text-sm font-bold text-indigo-400 uppercase tracking-wider flex items-center gap-2">
-                    <i data-lucide="download" class="w-4 h-4"></i> 1. API TikTok Downloader
-                </h4>
-                <div class="p-4 bg-slate-950/60 border border-slate-800 rounded-2xl flex flex-col gap-2">
-                    <div class="flex items-center gap-2 overflow-x-auto whitespace-nowrap py-1">
-                        <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-md uppercase font-sans shrink-0">GET</span>
-                        <code class="text-xs text-slate-300 font-mono select-all whitespace-nowrap">https://albitiktok.vercel.app/?api=true&url={LINK_TIKTOK}</code>
+                    <!-- Quick Help Hint -->
+                    <div class="flex items-center justify-between text-xs text-slate-500 pt-1 px-1">
+                        <span class="flex items-center gap-1">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-brand-accent"></i>
+                            Gratis tanpa registrasi akun
+                        </span>
+                        <span>Mendukung Video & Slide Foto</span>
                     </div>
                 </div>
             </div>
 
-            <!-- API Endpoint 2: Live Kurs Rupiah -->
-            <div class="space-y-4 border-b border-white/5 pb-6">
-                <h4 class="text-sm font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-2">
-                    <i data-lucide="coins" class="w-4 h-4"></i> 2. API Live Kurs Rupiah (IDR)
-                </h4>
-                <p class="text-xs text-slate-400 leading-relaxed">Gunakan parameter <code class="text-slate-300 font-mono bg-slate-950 px-1.5 py-0.5 rounded">type=kurs</code> untuk mengembalikan respons JSON berisi data konversi valas populer ke Rupiah beserta trend persentase harian.</p>
-                <div class="p-4 bg-slate-950/60 border border-slate-800 rounded-2xl flex flex-col gap-2">
-                    <div class="flex items-center gap-2 overflow-x-auto whitespace-nowrap py-1">
-                        <span class="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-md uppercase font-sans shrink-0">GET</span>
-                        <code class="text-xs text-slate-300 font-mono select-all whitespace-nowrap">https://albitiktok.vercel.app/?api=true&type=kurs</code>
+            <!-- LOADING STATE CONTAINER -->
+            <div id="downloader-loading-view" class="hidden py-8 flex flex-col items-center justify-center text-center space-y-6">
+                <!-- Custom Circular Loader -->
+                <div class="relative w-24 h-24">
+                    <div class="absolute inset-0 rounded-full border-4 border-slate-800/80"></div>
+                    <div class="absolute inset-0 rounded-full border-4 border-indigo-500 border-t-transparent animate-spin"></div>
+                    <div class="absolute inset-2 bg-slate-900 rounded-full flex items-center justify-center">
+                        <i data-lucide="loader-2" class="w-8 h-8 text-indigo-400 animate-pulse"></i>
                     </div>
-                </div>
-            </div>
-
-            <!-- Parameter Table -->
-            <div class="space-y-4">
-                <h4 class="text-xs font-bold text-white uppercase tracking-wider">Query Parameters</h4>
-                <div class="overflow-x-auto rounded-2xl border border-slate-800/80">
-                    <table class="w-full text-left border-collapse text-xs">
-                        <thead>
-                            <tr class="bg-slate-950/80 text-slate-400 border-b border-slate-850 font-bold">
-                                <th class="p-4">Parameter</th>
-                                <th class="p-4">Tipe</th>
-                                <th class="p-4">Wajib</th>
-                                <th class="p-4">Keterangan</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-white/5 bg-slate-950/20 text-slate-300 font-medium">
-                            <tr>
-                                <td class="p-4 font-mono text-indigo-300 font-bold">api</td>
-                                <td class="p-4">Boolean</td>
-                                <td class="p-4 text-emerald-400">Ya</td>
-                                <td class="p-4">Harus disetel ke <code class="text-slate-400 font-mono">true</code> untuk mengaktifkan respons API berupa JSON.</td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-mono text-indigo-300 font-bold">url</td>
-                                <td class="p-4">String</td>
-                                <td class="p-4 text-emerald-400">Kondisional</td>
-                                <td class="p-4">Tautan lengkap video TikTok. (Wajib jika menggunakan Downloader).</td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-mono text-indigo-300 font-bold">type</td>
-                                <td class="p-4">String</td>
-                                <td class="p-4 text-slate-400">Tidak</td>
-                                <td class="p-4">Gunakan <code class="text-slate-400 font-mono">kurs</code> untuk mengambil data tabel nilai tukar Rupiah.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- LIVE API TESTER (TERMINAL PANEL) -->
-            <div class="space-y-4 pt-4">
-                <div class="flex items-center justify-between">
-                    <h4 class="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
-                        <i data-lucide="terminal" class="w-4 h-4 text-indigo-400"></i> Uji Coba API Langsung (Live API Tester)
-                    </h4>
-                    <span class="text-[10px] bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 px-2 py-0.5 rounded-md font-bold">Sandbox Mode</span>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <!-- Control buttons -->
-                    <div class="flex flex-col gap-3">
-                        <p class="text-slate-500 text-[11px] font-medium">Pilih jenis API untuk melakukan simulasi request langsung dari browser Anda:</p>
-                        
-                        <button onclick="testDownloaderApi(this)" class="p-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-white/5 hover:border-indigo-500/30 text-xs font-bold text-white text-left flex items-center gap-2.5 transition-all active:scale-[0.98]">
-                            <div class="w-6 h-6 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 shrink-0">
-                                <i data-lucide="download" class="w-3.5 h-3.5"></i>
-                            </div>
-                            <span class="flex-grow">Test API Downloader</span>
-                            <i data-lucide="play" class="w-3.5 h-3.5 text-slate-500"></i>
-                        </button>
-
-                        <button onclick="testKursApi(this)" class="p-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-white/5 hover:border-emerald-500/30 text-xs font-bold text-white text-left flex items-center gap-2.5 transition-all active:scale-[0.98]">
-                            <div class="w-6 h-6 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 shrink-0">
-                                <i data-lucide="coins" class="w-3.5 h-3.5"></i>
-                            </div>
-                            <span class="flex-grow">Test API Kurs Rupiah</span>
-                            <i data-lucide="play" class="w-3.5 h-3.5 text-slate-500"></i>
-                        </button>
-                    </div>
-
-                    <!-- JSON output screen terminal -->
-                    <div class="md:col-span-2 flex flex-col bg-slate-950 rounded-2xl border border-slate-850 overflow-hidden min-h-[220px]">
-                        <!-- Terminal header -->
-                        <div class="bg-slate-900 px-4 py-2 flex items-center justify-between border-b border-slate-850">
-                            <div class="flex items-center gap-1.5">
-                                <span class="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span>
-                                <span class="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block"></span>
-                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span>
-                            </div>
-                            <span class="text-[10px] font-mono text-slate-500">api_response.json</span>
-                        </div>
-                        <!-- Terminal content -->
-                        <div class="p-4 flex-grow overflow-auto font-mono text-[11px] text-emerald-400 whitespace-pre leading-relaxed" id="api-test-output">
-// Klik salah satu tombol "Test API" di sebelah kiri untuk melihat output data...</div>
-                    </div>
+                <div class="space-y-2">
+                    <h3 id="loading-title" class="text-xl font-bold font-display text-white">Menghubungkan Server...</h3>
+                    <p id="loading-sub" class="text-xs text-slate-400 max-w-sm mx-auto">Harap bersabar, kami sedang menganalisis tautan dan mengonversi format media TikTok untuk Anda.</p>
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- SECTION 3: KURS VALUTA ASING (SEPARATED VIEW) -->
-    <div id="view-kurs" class="w-full max-w-4xl mx-auto px-4 py-8 z-10 relative flex-grow hidden">
-        <div class="glass-panel rounded-3xl p-6 sm:p-10 space-y-8 relative overflow-hidden premium-card">
-            <!-- Neon emerald decorative ambient glow -->
-            <div class="absolute -left-24 -top-24 w-48 h-48 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
-            
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div class="space-y-2.5">
-                    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                        <i data-lucide="trending-up" class="w-3.5 h-3.5"></i> Live Exchange Rates
-                    </span>
-                    <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white">Kurs Mata Uang Real-Time</h3>
-                    <p class="text-xs sm:text-sm text-slate-400 font-medium font-display">Pantau konversi mata uang asing langsung ke Rupiah (IDR) secara akurat.</p>
+                <!-- Custom Elegant Progress Bar -->
+                <div class="w-full max-w-md bg-slate-800 rounded-full h-2 overflow-hidden border border-slate-700/50">
+                    <div id="loading-progress" class="bg-gradient-to-r from-brand-accent to-brand-500 h-full w-[10%] transition-all duration-300"></div>
                 </div>
-                <div class="shrink-0 text-right">
-                    <span id="kurs-update-time" class="text-[11px] text-slate-500 font-semibold block">Memuat data...</span>
-                </div>
+                <span id="loading-percentage" class="text-xs font-mono font-bold text-slate-400">10%</span>
             </div>
 
-            <!-- Interactive Calculator Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
-                <!-- Left Panel: Interactive Converter -->
-                <div class="space-y-5 bg-slate-950/40 p-6 rounded-2xl border border-white/5">
-                    <h4 class="text-xs font-bold text-indigo-400 uppercase tracking-test flex items-center gap-1.5">
-                        <i data-lucide="calculator" class="w-4 h-4"></i> Kalkulator Konversi
-                    </h4>
-
-                    <!-- Input Amount -->
-                    <div class="space-y-2">
-                        <label class="block text-xs font-semibold text-slate-400">Jumlah Uang Asing</label>
-                        <div class="relative">
-                            <input type="number" id="kurs-amount" value="1" class="w-full pl-4 pr-20 py-3.5 rounded-xl text-white text-sm font-semibold glass-input outline-none" placeholder="Masukkan jumlah...">
-                            <span id="kurs-badge" class="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 px-2.5 py-1 rounded-lg">USD</span>
-                        </div>
-                    </div>
-
-                    <!-- Currency Selector (Hanya Mata Uang Populer) -->
-                    <div class="space-y-2">
-                        <label class="block text-xs font-semibold text-slate-400">Dari Mata Uang (Populer)</label>
-                        <select id="kurs-select" onchange="calculateExchange()" class="w-full px-4 py-3.5 rounded-xl text-slate-200 text-sm font-semibold bg-slate-900 border border-white/10 outline-none focus:border-indigo-500">
-                            <option value="USD">USD - United States Dollar ($)</option>
-                            <option value="EUR">EUR - Euro (€)</option>
-                            <option value="GBP">GBP - British Pound (£)</option>
-                            <option value="SGD">SGD - Singapore Dollar (S$)</option>
-                            <option value="JPY">JPY - Japanese Yen (¥)</option>
-                            <option value="MYR">MYR - Malaysian Ringgit (RM)</option>
-                            <option value="SAR">SAR - Saudi Riyal (SR)</option>
-                            <option value="AUD">AUD - Australian Dollar (A$)</option>
-                            <option value="KRW">KRW - South Korean Won (₩)</option>
-                        </select>
-                    </div>
-
-                    <!-- Target Field (IDR Display dengan Fluktuasi Harian Persentase) -->
-                    <div class="space-y-2 pt-2">
-                        <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-xl relative overflow-hidden">
-                            <span class="text-[10px] uppercase font-bold text-emerald-400 tracking-wider">Hasil Konversi (IDR)</span>
-                            <div id="kurs-result" class="text-2xl font-extrabold text-white mt-1">Rp 0</div>
-                            <span id="kurs-single-rate" class="text-[10px] text-slate-500 font-medium block mt-1">1 USD = Rp 16,350.00</span>
+            <!-- SUCCESS RESULT STATE CONTAINER -->
+            <div id="downloader-success-view" class="hidden">
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    
+                    <!-- Left Column: Video Preview and Creator Detail -->
+                    <div class="w-full md:w-[280px] shrink-0 space-y-4">
+                        <div id="preview-media-container" class="relative group aspect-[9/16] max-h-[380px] w-full rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
                             
-                            <!-- Grafik Fluktuasi Naik/Turun di bawah Rupiah -->
-                            <div class="mt-2 pt-2 border-t border-white/5 flex items-center justify-between">
-                                <span class="text-[10px] text-slate-400 font-medium">Estimasi Fluktuasi 24 jam</span>
-                                <div id="kurs-trend-badge" class="flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-bold">
-                                    <i data-lucide="trending-up" class="w-3 h-3"></i>
-                                    <span id="kurs-trend-percent">+0.00%</span>
+                            <!-- Static Cover -->
+                            <img id="video-cover" src="https://ibb.co/zhRnzxsQ" alt="Cover" class="w-full h-full object-cover">
+                            
+                            <!-- Playable Video Element -->
+                            <video id="preview-video" class="hidden w-full h-full object-cover" controls playsinline loop muted></video>
+
+                            <!-- Swipeable Photo Slideshow Container -->
+                            <div id="preview-slideshow" class="hidden w-full h-full relative overflow-hidden select-none">
+                                <div id="slides-wrapper" class="flex w-full h-full transition-transform duration-300 ease-out">
+                                    <!-- Foto akan diinjeksikan secara dinamis -->
+                                </div>
+                                
+                                <!-- Slider Controls -->
+                                <button id="btn-slide-prev" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center text-white hover:bg-black/80 transition-all z-10">
+                                    <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                                </button>
+                                <button id="btn-slide-next" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center text-white hover:bg-black/80 transition-all z-10">
+                                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                                </button>
+                                
+                                <!-- Slider Indicator Badge -->
+                                <div id="slide-badge" class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/75 backdrop-blur-md text-[10px] font-bold text-white tracking-wider flex items-center gap-1 z-10">
+                                    <i data-lucide="images" class="w-3.5 h-3.5 text-brand-accent"></i>
+                                    <span id="slide-index-counter">1/1</span>
                                 </div>
                             </div>
+                            
+                            <!-- Stat Badges overlay -->
+                            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-1 z-10">
+                                <span class="px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[10px] font-bold text-white flex items-center gap-1">
+                                    <i data-lucide="heart" class="w-3 h-3 text-red-500"></i>
+                                    <span id="stat-likes">0</span>
+                                </span>
+                                <span class="px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[10px] font-bold text-white flex items-center gap-1">
+                                    <i data-lucide="play" class="w-3 h-3 text-brand-accent"></i>
+                                    <span id="stat-views">0</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Creator Card -->
+                        <div class="flex items-center gap-3 bg-slate-800/40 p-3.5 rounded-2xl border border-slate-700/30">
+                            <img id="creator-avatar" src="https://placehold.co/100x100/1e293b/fff?text=User" alt="Avatar" class="w-10 h-10 rounded-full border border-brand-500/30 object-cover">
+                            <div class="overflow-hidden">
+                                <h4 id="creator-name" class="font-bold text-sm text-white truncate">Creator TikTok</h4>
+                                <p id="creator-username" class="text-xs text-slate-400 truncate">@username</p>
+                            </div>
+                        </div>
+
+                        <!-- Caption Tambahan -->
+                        <div id="caption-container" class="p-4 bg-slate-800/20 rounded-2xl border border-slate-700/20">
+                            <h4 class="text-[10px] font-bold uppercase text-slate-500 tracking-wider mb-2">Caption</h4>
+                            <p id="video-caption-left" class="text-xs text-slate-300 leading-relaxed line-clamp-6">Menganalisis deskripsi...</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Downloader Actions & Info -->
+                    <div class="flex-grow space-y-5 w-full">
+                        <!-- Video Description -->
+                        <div class="space-y-1.5">
+                            <div class="flex items-center justify-between">
+                                <span id="content-type-badge" class="text-[10px] font-bold uppercase tracking-wider text-brand-accent">Hasil Berhasil Ditemukan</span>
+                                <button onclick="resetDownloader()" class="text-xs text-slate-400 hover:text-white flex items-center gap-1 transition-all">
+                                    <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Cari Lagi
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Action Download Buttons Grid -->
+                        <div id="download-actions-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                            <!-- Tombol unduh dinamis akan muncul di sini -->
+                        </div>
+
+                        <!-- Interactive Photo List -->
+                        <div id="photo-album-section" class="hidden space-y-3 pt-2">
+                            <div class="flex items-center justify-between">
+                                <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider">Unduh Gambar Secara Terpisah:</h4>
+                                <span id="photo-count-lbl" class="text-[11px] font-mono text-indigo-400 font-semibold">0 Foto Tersedia</span>
+                            </div>
+                            <div id="photo-links-list" class="max-h-48 overflow-y-auto pr-1 space-y-2 border border-slate-800 rounded-xl p-2 bg-slate-900/30">
+                                <!-- Daftar unduhan foto -->
+                            </div>
+                        </div>
+
+                        <!-- Special Help Tip Banner -->
+                        <div class="bg-indigo-950/40 border border-indigo-900/40 rounded-2xl p-4 flex items-start gap-3">
+                            <i data-lucide="info" class="w-5 h-5 text-indigo-400 shrink-0 mt-0.5 animate-pulse"></i>
+                            <div class="text-xs text-indigo-200/90 leading-relaxed">
+                                <span class="font-bold text-white block mb-0.5">💡 Cara Mengunduh di Browser:</span>
+                                Klik salah satu tombol hijau di atas untuk memulai unduhan otomatis. Jika browser Anda memutar media secara langsung, ketuk tombol titik tiga <span class="font-bold text-white">(⋮)</span> di pojok kanan bawah lalu pilih <span class="font-bold text-white">Download</span>.
+                            </div>
+                        </div>
+
+                        <!-- Reset View Button -->
+                        <div class="pt-2 flex justify-end">
+                            <button onclick="resetDownloader()" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300 hover:text-white transition-all flex items-center gap-2 cursor-pointer">
+                                <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                                <span>Unduh Media Lainnya</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Recent Downloads History Section -->
+        <section id="download-history-section" class="mt-12 hidden">
+            <div class="flex items-center justify-between mb-4 px-1">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="history" class="w-5 h-5 text-indigo-400"></i>
+                    <h3 class="font-display font-extrabold text-lg text-white">Riwayat Unduhan Anda</h3>
+                </div>
+                <button onclick="clearHistory()" class="text-xs text-slate-500 hover:text-red-400 transition-colors flex items-center gap-1 cursor-pointer">
+                    <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Bersihkan Semua
+                </button>
+            </div>
+
+            <!-- History grid list -->
+            <div id="history-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Riwayat diatur via JS -->
+            </div>
+        </section>
+
+        <!-- Informational Sections (FAQ & How to use) -->
+        <section id="how-to" class="mt-20 space-y-16">
+            
+            <!-- Features Cards Grid -->
+            <div id="features" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-base text-white mb-2">100% Aman & Tanpa Batas</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Kami tidak merekam atau menyimpan video Anda di server kami. Anda bisa mengunduh sepuasnya tanpa batasan kuota harian.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent">
+                        <i data-lucide="zap" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-base text-white mb-2">Konversi Kecepatan Kilat</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Mesin server cerdas kami memproses dan melucuti watermark video TikTok secara instan dalam kurun waktu kurang dari 3 detik.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400">
+                        <i data-lucide="sparkles" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-base text-white mb-2">Resolusi Kualitas HD</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Unduh media Anda dalam resolusi original tertinggi tanpa kompresi yang merusak estetika visual video TikTok asli.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guide Steps -->
+            <div class="glass-panel rounded-3xl p-8 sm:p-10 space-y-10">
+                <div class="text-center max-w-lg mx-auto">
+                    <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white mb-2">Cara Mengunduh Video TikTok Tanpa Watermark</h3>
+                    <p class="text-xs sm:text-sm text-slate-400">Sangat mudah dan hanya membutuhkan 3 langkah sederhana di semua gadget Anda.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Step 1 -->
+                    <div class="relative flex flex-col items-center text-center space-y-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-800 text-brand-accent border border-slate-700/50 flex items-center justify-center text-sm font-extrabold font-mono">1</div>
+                        <h5 class="font-bold text-sm text-white">Salin Tautan Video</h5>
+                        <p class="text-xs text-slate-400 max-w-[220px]">Buka aplikasi TikTok Anda, ketuk tombol <strong>Bagikan</strong> lalu pilih <strong>Salin Tautan</strong>.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="relative flex flex-col items-center text-center space-y-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-800 text-brand-accent border border-slate-700/50 flex items-center justify-center text-sm font-extrabold font-mono">2</div>
+                        <h5 class="font-bold text-sm text-white">Tempelkan Tautan</h5>
+                        <p class="text-xs text-slate-400 max-w-[220px]">Buka halaman TikSave, tempelkan tautan yang disalin tadi pada kotak pencarian di atas.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="relative flex flex-col items-center text-center space-y-3">
+                        <div class="w-10 h-10 rounded-full bg-slate-800 text-brand-accent border border-slate-700/50 flex items-center justify-center text-sm font-extrabold font-mono">3</div>
+                        <h5 class="font-bold text-sm text-white">Simpan Video</h5>
+                        <p class="text-xs text-slate-400 max-w-[220px]">Ketuk tombol <strong>Download</strong>, pilih opsi file tanpa watermark, dan video siap ditonton offline!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Accordions -->
+            <div id="faq" class="space-y-6">
+                <div class="text-center max-w-lg mx-auto">
+                    <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white mb-2">Pertanyaan Populer (FAQ)</h3>
+                    <p class="text-xs sm:text-sm text-slate-400">Segala informasi cepat terkait TikSave dan pengunduh TikTok.</p>
+                </div>
+
+                <div class="max-w-3xl mx-auto space-y-3">
+                    <div class="glass-panel rounded-2xl overflow-hidden transition-all duration-300">
+                        <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left font-bold text-sm text-white hover:bg-slate-800/20 transition-all">
+                            <span>Apakah pengunduh video TikTok di TikSave ini berbayar?</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 bg-slate-900/30">
+                            <p class="p-6 text-xs text-slate-400 leading-relaxed">
+                                Tidak, semua layanan pengunduhan TikTok di TikSave 100% gratis secara penuh. Anda tidak perlu mendaftar, berlangganan, atau memasang ekstensi browser apa pun untuk mengunduh video tanpa watermark.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel rounded-2xl overflow-hidden transition-all duration-300">
+                        <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left font-bold text-sm text-white hover:bg-slate-800/20 transition-all">
+                            <span>Di mana file video / foto TikTok disimpan setelah diunduh?</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 bg-slate-900/30">
+                            <p class="p-6 text-xs text-slate-400 leading-relaxed">
+                                Secara umum, file yang Anda unduh akan otomatis masuk ke folder default <strong>Downloads</strong> atau <strong>Unduhan</strong> di perangkat Anda, kecuali jika Anda telah mengubah lokasi direktori unduhan di peramban Anda.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel rounded-2xl overflow-hidden transition-all duration-300">
+                        <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left font-bold text-sm text-white hover:bg-slate-800/20 transition-all">
+                            <span>Apakah TikSave mendukung pengunduhan slide foto / korsel?</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform"></i>
+                        </button>
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 bg-slate-900/30">
+                            <p class="p-6 text-xs text-slate-400 leading-relaxed">
+                                Ya, TikSave mendukung pengunduhan pos foto atau korsel TikTok. Sistem kami akan mengenali tipe konten dan menyediakan tautan langsung untuk mengunduh seluruh file foto dalam album beserta musik latar belakangnya.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- SECTION 2: DEVELOPER API DOCUMENTATION (SEPARATED VIEW) -->
+    <div id="view-api" class="w-full max-w-7xl mx-auto px-4 py-8 z-10 relative flex-grow hidden">
+        <div class="glass-panel rounded-3xl p-6 sm:p-10 space-y-8 relative overflow-hidden">
+            <!-- Neon cyan decorative ambient glow -->
+            <div class="absolute -right-24 -top-24 w-48 h-48 bg-brand-accent/30 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div class="space-y-2">
+                    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-brand-accent/10 text-brand-accent border border-brand-accent/20">
+                        <i data-lucide="terminal" class="w-3.5 h-3.5"></i> Layanan Integrasi Terbuka (Public API)
+                    </span>
+                    <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white">Dokumentasi API TikSave</h3>
+                    <p class="text-xs sm:text-sm text-slate-400">Gunakan REST API gratis kami untuk membuat bot Telegram, aplikasi mobile, atau situs web downloader Anda sendiri.</p>
+                </div>
+                <div class="shrink-0">
+                    <span class="px-3 py-1.5 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold flex items-center gap-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        Status: AKTIF & GRATIS
+                    </span>
+                </div>
+            </div>
+
+            <!-- API Endpoint Details -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-4">
+                <!-- Left Panel: Endpoint Specs -->
+                <div class="space-y-5">
+                    <div class="space-y-2">
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">1. Endpoint HTTP Request</h4>
+                        <div class="flex items-center gap-2 p-3 bg-slate-950 rounded-xl border border-slate-800 font-mono text-xs overflow-x-auto text-slate-300">
+                            <span class="px-2 py-1 rounded bg-brand-accent/10 text-brand-accent font-bold">GET</span>
+                            <span id="api-endpoint-url" class="select-all">https://website-anda.com/?api=true&url={LINK_TIKTOK}</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">2. Query Parameters</h4>
+                        <div class="border border-slate-800 rounded-xl overflow-hidden text-xs bg-slate-900/10">
+                            <div class="grid grid-cols-3 gap-2 bg-slate-900/50 p-3 font-semibold text-slate-300 border-b border-slate-800">
+                                <span>Parameter</span>
+                                <span>Tipe</span>
+                                <span>Deskripsi</span>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2 p-3 border-b border-slate-800/50 text-slate-400">
+                                <span class="font-bold text-slate-300 font-mono">api</span>
+                                <span class="text-brand-accent font-mono">string</span>
+                                <span>Wajib diisi dengan nilai <code class="text-slate-300 font-mono">true</code></span>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2 p-3 text-slate-400">
+                                <span class="font-bold text-slate-300 font-mono">url</span>
+                                <span class="text-brand-accent font-mono">string</span>
+                                <span>URL video/foto TikTok valid yang ingin diunduh.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">3. Contoh Kode Integrasi (JavaScript Fetch)</h4>
+                        <div class="relative">
+                            <pre class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-[11px] font-mono text-indigo-300 overflow-x-auto">
+fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS23asd/')
+  .then(res => res.json())
+  .then(data => {
+    console.log("Judul Video:", data.data.title);
+    console.log("Video No Watermark:", data.data.play);
+    console.log("Audio MP3:", data.data.music);
+  })
+  .catch(err => console.error(err));</pre>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Panel: Popular Rates Board -->
-                <div class="space-y-4">
-                    <h4 class="text-xs font-bold text-emerald-400 uppercase tracking-widest flex items-center gap-1.5">
-                        <i data-lucide="list" class="w-4 h-4"></i> Daftar Nilai Tukar Populer
+                <!-- Right Panel: Expected JSON Response mockup -->
+                <div class="space-y-2 flex flex-col h-full">
+                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
+                        <span>4. Format Respons JSON Sukses (Hasil Kembalian)</span>
+                        <span class="text-[10px] font-mono text-brand-accent uppercase">application/json</span>
                     </h4>
-                    
-                    <div class="border border-slate-800/80 rounded-xl overflow-hidden bg-slate-950/30">
-                        <!-- Rate Rows -->
-                        <div class="divide-y divide-white/5" id="kurs-popular-list">
-                            <div class="p-4 flex items-center justify-between text-xs text-slate-400">
-                                <span>Memuat daftar nilai tukar...</span>
-                            </div>
-                        </div>
+                    <div class="flex-grow bg-slate-950 p-4 rounded-xl border border-slate-800 font-mono text-[11px] text-emerald-400 overflow-y-auto max-h-[350px]">
+<pre>{
+  "code": 0,
+  "msg": "success",
+  "processed_time": 0.45,
+  "data": {
+    "id": "7320492348923479013",
+    "title": "Aesthetic Travel Video #fyp #viral",
+    "cover": "https://images.unsplash.com/...jpg",
+    "play": "https://example-cdn.com/no-watermark.mp4",
+    "wmplay": "https://example-cdn.com/with-watermark.mp4",
+    "music": "https://example-cdn.com/soundtrack.mp3",
+    "play_count": 3200500,
+    "digg_count": 852400,
+    "comment_count": 4120,
+    "share_count": 92100,
+    "images": [],
+    "author": {
+      "unique_id": "nature_travel",
+      "nickname": "Nature & Travel",
+      "avatar": "https://images.unsplash.com/..."
+    }
+  }
+}</pre>
                     </div>
                 </div>
             </div>
@@ -695,787 +632,808 @@
     </div>
 
     <!-- Footer Section -->
-    <footer class="w-full border-t border-white/5 bg-slate-950/80 backdrop-blur-md mt-20 z-10 relative">
+    <footer class="w-full border-t border-slate-900 bg-slate-950 mt-16 z-10 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <!-- Branding Footer -->
-                <div class="flex items-center gap-2.5">
-                    <div class="w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden bg-white/5 border border-white/10">
+                <!-- Branding -->
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden">
                         <img src="https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png" alt="TikSave Logo" class="w-full h-full object-cover">
                     </div>
-                    <span class="font-display font-extrabold text-sm text-white">TikSave Downloader</span>
+                    <span class="font-display font-bold text-sm text-white">TikSave Downloader</span>
                 </div>
 
                 <!-- Copyright -->
-                <p class="text-xs text-slate-500 text-center md:text-left font-medium">
+                <p class="text-xs text-slate-500 text-center md:text-left">
                     &copy; 2026 TikSave. Tidak berafiliasi dengan TikTok atau ByteDance. Seluruh hak cipta terlindungi.
                 </p>
 
                 <!-- Disclaimer Info -->
-                <div class="flex items-center gap-4 text-xs text-slate-400 font-semibold">
-                    <span class="hover:text-white cursor-pointer transition-colors">Kebijakan Privasi</span>
-                    <span class="text-slate-700">&bull;</span>
-                    <span class="hover:text-white cursor-pointer transition-colors">Syarat Ketentuan</span>
+                <div class="flex items-center gap-4 text-xs text-slate-400">
+                    <span class="hover:text-white cursor-pointer">Kebijakan Privasi</span>
+                    <span>&bull;</span>
+                    <span class="hover:text-white cursor-pointer">Syarat Ketentuan</span>
                 </div>
             </div>
-        </div>
-    </footer>
+        <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
 
-    <!-- Logic Script Area (TERENKRIPSI DAN TERPROTEKSI SECARA TOTAL) -->
-    <script>
-        /**
-         * @license
-         * Protected Cryptographic Script v3.0 (TikSave Core Obfuscator)
-         * All internal application logics, security variables, state controls, API calls and formatting structures are compiled into base64 hex-decoding wrappers.
-         */
-        (function() {
-            // Buffer array berisi seluruh string sensitif terenkripsi Base64
-            const _0x5b3a = [
-                "aHR0cHM6Ly93d3cudGlrd20uY29tL2FwaS8/dXJsPQ==", // 0: tikwm API
-                "aHR0cHM6Ly9hcGkuYWxsb3JpZ2lucy53aW4vcmF3P3VybD0=", // 1: CORS proxy
-                "aHR0cHM6Ly9vcGVuLmVyLWFwaS5jb20vdjYvbGF0ZXN0L1VTRD9ub2NhY2hlPQ==", // 2: er-api endpoint
-                "YWxiaXRpa3Rvay52ZXJjZWwuYXBw", // 3: vercel domain
-                "dGlrc2F2ZV9saXZlX2hpc3Rvcnk=", // 4: local storage history key
-                "SURS", // 5: IDR
-                "Y2xpY2s=", // 6: click sound
-                "YXBpX3Jlc3BvbnNl", // 7: api response tag
-                "YXBp", // 8: api
-                "dHlwZQ==", // 9: type
-                "a3Vycw==", // 10: kurs
-                "dXJs", // 11: url
-                "c3VjY2Vzcw==", // 12: success status
-                "VVNE", "RVVS", "U0dE", "SlBZ", "TVlS", "U0FS", "QVVE", "R0JQ", "S1JX", // 13-21: currencies
-                "Zm9yY2VEZXNrdG9wTW9kZQ==" // 22: localstorage mode key
-            ];
+        // Menu Toggle Logic
+        function showDonation() {
+            document.getElementById('donation-modal').classList.remove('hidden');
+        }
 
-            // Dekoder runtime instan
-            function _0x_dec(_0x_idx) {
-                return atob(_0x5b3a[_0x_idx]);
-            }
+        function hideDonation() {
+            document.getElementById('donation-modal').classList.add('hidden');
+        }
 
-            // Trend & Fluktuasi Generator (Enkripsi Matematis untuk kestabilan 24 jam)
-            function _0xgtv(_code) {
-                const _day = new Date().getDate() + new Date().getMonth();
-                const _hash = _code.charCodeAt(0) + _code.charCodeAt(1) + (_code.charCodeAt(2) || 0);
-                const _val = (((_hash * _day) % 180) / 100) - 0.9;
-                return { percent: _val.toFixed(2) + "%", isUp: _val >= 0 };
-            }
+        // Check if there's an API incoming request before initializing UI
+        function checkApiEndpoint() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const isApiMode = urlParams.get('api') === 'true';
+            const tiktokUrl = urlParams.get('url');
 
-            function _xsar(_json) {
-                document.body.style.display = "block";
-                document.body.style.height = "auto";
-                document.body.style.margin = "0";
-                document.body.style.padding = "20px";
-                document.body.style.backgroundColor = "#030712";
-                document.body.style.color = "#10b981";
-                document.body.innerHTML = `<pre style="white-space: pre-wrap; word-wrap: break-word; font-family: monospace; font-size: 13px; line-height: 1.5;">${JSON.stringify(_json, null, 2)}</pre>`;
-            }
+            if (isApiMode) {
+                // Return API payload as plain JSON text
+                document.body.style.backgroundColor = "#0b0f19";
+                document.body.style.color = "#a5b4fc";
+                document.body.innerHTML = `
+                    <div style="display:flex; justify-content:center; align-items:center; height:100vh; font-family:monospace; font-size:14px; text-align:center;">
+                        <div style="padding:20px; border:1px solid #1e293b; border-radius:15px; background:rgba(15,23,42,0.8);">
+                            ⏳ Memproses Permintaan API TikSave untuk Tautan TikTok...
+                        </div>
+                    </div>
+                `;
 
-            async function _xdfa(_url) {
-                const _target = _0x_dec(0) + encodeURIComponent(_url);
-                try {
-                    const _res = await fetch(_target);
-                    const _json = await _res.json();
-                    if (_json && _json.code === 0) { return _json.data; }
-                } catch (e) {
-                    const _proxy = _0x_dec(1) + encodeURIComponent(_target);
-                    const _res = await fetch(_proxy);
-                    const _json = await _res.json();
-                    if (_json && _json.code === 0) { return _json.data; }
+                if (!tiktokUrl) {
+                    serveApiResponse({ code: -1, msg: "Tautan tidak valid. Parameter 'url' wajib disertakan!" });
+                    return true;
                 }
+
+                // Fetch data dynamically and return directly to client
+                fetchDirectApi(tiktokUrl).then(data => {
+                    if (data) {
+                        serveApiResponse({ code: 0, msg: "success", data: data });
+                    } else {
+                        serveApiResponse({ code: -2, msg: "Gagal memproses video. Tautan salah atau server sedang sibuk." });
+                    }
+                }).catch(err => {
+                    serveApiResponse({ code: -3, msg: "Kesalahan internal API server.", error: err.message });
+                });
+
+                return true;
+            }
+            return false;
+        }
+
+        function serveApiResponse(jsonObj) {
+            // Apply JSON format inside browser body directly
+            document.body.style.display = "block";
+            document.body.style.height = "auto";
+            document.body.style.margin = "0";
+            document.body.style.padding = "20px";
+            document.body.style.backgroundColor = "#0b0f19";
+            document.body.style.color = "#10b981";
+            document.body.innerHTML = `<pre style="white-space: pre-wrap; word-wrap: break-word; font-family: monospace; font-size: 13px; line-height: 1.5;">${JSON.stringify(jsonObj, null, 2)}</pre>`;
+        }
+
+        // Reusable direct API fetcher
+        async function fetchDirectApi(tiktokUrl) {
+            const targetApi = `https://www.tikwm.com/api/?url=${encodeURIComponent(tiktokUrl)}`;
+            try {
+                const response = await fetch(targetApi);
+                const resJson = await response.json();
+                if (resJson && resJson.code === 0) {
+                    return resJson.data;
+                }
+            } catch (err) {
+                // CORS Fallback proxy
+                const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(targetApi)}`;
+                const response = await fetch(proxyUrl);
+                const resJson = await response.json();
+                if (resJson && resJson.code === 0) {
+                    return resJson.data;
+                }
+            }
+            return null;
+        }
+
+        // Check API status
+        const apiIntercepted = checkApiEndpoint();
+
+        // Continue UI execution only if it is NOT an API request
+        if (!apiIntercepted) {
+            
+            // Global media data memory to prevent HTML string interpolation crashes
+            let currentMediaData = null;
+
+            // SPA Tab Switcher
+            function switchTab(tabId) {
+                playSynthSound('click');
+                const viewDownloader = document.getElementById('view-downloader');
+                const viewApi = document.getElementById('view-api');
+                const navDownloader = document.getElementById('nav-downloader');
+                const navApi = document.getElementById('nav-api');
+
+                if (tabId === 'downloader') {
+                    viewDownloader.classList.remove('hidden');
+                    viewApi.classList.add('hidden');
+                    navDownloader.className = "text-xs sm:text-sm font-semibold text-white border-b-2 border-brand-500 pb-1 transition-all";
+                    navApi.className = "text-xs sm:text-sm font-semibold text-slate-400 hover:text-white transition-all flex items-center gap-1";
+                } else if (tabId === 'api') {
+                    viewDownloader.classList.add('hidden');
+                    viewApi.classList.remove('hidden');
+                    navDownloader.className = "text-xs sm:text-sm font-semibold text-slate-400 hover:text-white transition-all";
+                    navApi.className = "text-xs sm:text-sm font-semibold text-white border-b-2 border-brand-500 pb-1 transition-all flex items-center gap-1";
+                }
+            }
+
+            // High compatibility downloader function that creates local browser download triggers (fixes standard CORS blocking)
+            async function forceDownload(url, filename, buttonElement) {
+                playSynthSound('click');
+                
+                // Show a sleek mini spinner on the button clicked
+                let originalContent = "";
+                if (buttonElement) {
+                    originalContent = buttonElement.innerHTML;
+                    buttonElement.disabled = true;
+                    buttonElement.innerHTML = `
+                        <span class="flex items-center gap-2 justify-center w-full">
+                            <svg class="animate-spin h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            <span>Mengunduh...</span>
+                        </span>
+                    `;
+                }
+
+                try {
+                    // Try to fetch file as Blob directly
+                    const response = await fetch(url);
+                    if (!response.ok) throw new Error("CORS limit hit, fallback to proxy");
+                    const blob = await response.blob();
+                    triggerBrowserSave(blob, filename);
+                } catch (e) {
+                    // Fallback to CORS proxy
+                    try {
+                        const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
+                        const response = await fetch(proxyUrl);
+                        if (!response.ok) throw new Error("Proxy error");
+                        const blob = await response.blob();
+                        triggerBrowserSave(blob, filename);
+                    } catch (err) {
+                        // Ultimate fallback: open in a new tab for native saving
+                        window.open(url, '_blank');
+                    }
+                }
+
+                // Restore button state
+                if (buttonElement) {
+                    buttonElement.disabled = false;
+                    buttonElement.innerHTML = originalContent;
+                }
+            }
+
+            // Safe memory-driven download delegation methods to completely avoid string quote parsing issues in DOM
+            function downloadImageByIndex(index, btn) {
+                if (!currentMediaData || !currentMediaData.images || !currentMediaData.images[index]) return;
+                const url = currentMediaData.images[index];
+                const cleanTitle = (currentMediaData.title || 'tiktok_media').replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30);
+                forceDownload(url, `${cleanTitle}_slide_${index + 1}.jpg`, btn);
+            }
+
+            function downloadMusic(btn) {
+                if (!currentMediaData || !currentMediaData.music) return;
+                const cleanTitle = (currentMediaData.title || 'tiktok_media').replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30);
+                forceDownload(currentMediaData.music, `${cleanTitle}_audio.mp3`, btn);
+            }
+
+            function downloadVideo(type, btn) {
+                if (!currentMediaData) return;
+                const cleanTitle = (currentMediaData.title || 'tiktok_media').replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30);
+                const url = type === 'no_wm' ? currentMediaData.play : (currentMediaData.wmplay || currentMediaData.play);
+                forceDownload(url, `${cleanTitle}_${type}.mp4`, btn);
+            }
+
+            // Create invisible click event to prompt direct browser save dialogue
+            function triggerBrowserSave(blob, filename) {
+                const blobUrl = URL.createObjectURL(blob);
+                const tempAnchor = document.createElement('a');
+                tempAnchor.href = blobUrl;
+                tempAnchor.download = filename;
+                document.body.appendChild(tempAnchor);
+                tempAnchor.click();
+                document.body.removeChild(tempAnchor);
+                URL.revokeObjectURL(blobUrl);
+            }
+
+            // Download History Storage
+            let downloadHistory = JSON.parse(localStorage.getItem('tiksave_history') || '[]');
+
+            // Slideshow variables
+            let currentSlideIndex = 0;
+            let totalSlides = 0;
+            let activeSlides = [];
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            // Initialize Lucide Icons & History UI on load
+            window.addEventListener('load', () => {
+                const currentHost = window.location.origin + window.location.pathname;
+                const endpointEl = document.getElementById('api-endpoint-url');
+                if (endpointEl) {
+                    endpointEl.innerText = `${currentHost}?api=true&url={LINK_TIKTOK}`;
+                }
+
+                lucide.createIcons();
+                renderHistoryGrid();
+                
+                document.getElementById('tiktok-url').addEventListener('input', (e) => {
+                    const clearBtn = document.getElementById('btn-clear');
+                    if (e.target.value.trim() !== "") {
+                        clearBtn.classList.remove('hidden');
+                    } else {
+                        clearBtn.classList.add('hidden');
+                    }
+                });
+
+                setupSwipeGestures();
+            });
+
+            // Premium Audio synthesis feedback
+            const playSynthSound = (toneType) => {
+                try {
+                    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                    const osc = audioCtx.createOscillator();
+                    const gainNode = audioCtx.createGain();
+                    
+                    osc.connect(gainNode);
+                    gainNode.connect(audioCtx.destination);
+                    const now = audioCtx.currentTime;
+
+                    if (toneType === 'click') {
+                        osc.type = 'sine';
+                        osc.frequency.setValueAtTime(350, now);
+                        osc.frequency.exponentialRampToValueAtTime(700, now + 0.08);
+                        gainNode.gain.setValueAtTime(0.04, now);
+                        gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+                        osc.start(now);
+                        osc.stop(now + 0.08);
+                    } else if (toneType === 'success') {
+                        osc.type = 'triangle';
+                        const notes = [523.25, 659.25, 783.99, 1046.50];
+                        notes.forEach((freq, idx) => {
+                            osc.frequency.setValueAtTime(freq, now + idx * 0.08);
+                        });
+                        gainNode.gain.setValueAtTime(0.06, now);
+                        gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+                        osc.start(now);
+                        osc.stop(now + 0.4);
+                    } else if (toneType === 'error') {
+                        osc.type = 'sawtooth';
+                        osc.frequency.setValueAtTime(240, now);
+                        osc.frequency.linearRampToValueAtTime(120, now + 0.25);
+                        gainNode.gain.setValueAtTime(0.04, now);
+                        gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+                        osc.start(now);
+                        osc.stop(now + 0.25);
+                    }
+                } catch (error) {
+                    console.log("Audio feedback blocked/unsupported.");
+                }
+            };
+
+            // Touch Swipe Handlers for Slideshows
+            function setupSwipeGestures() {
+                const container = document.getElementById('preview-slideshow');
+                
+                container.addEventListener('touchstart', (e) => {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, { passive: true });
+
+                container.addEventListener('touchend', (e) => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipeGesture();
+                }, { passive: true });
+
+                document.getElementById('btn-slide-prev').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    navigateSlides(-1);
+                });
+                document.getElementById('btn-slide-next').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    navigateSlides(1);
+                });
+            }
+
+            function handleSwipeGesture() {
+                const minSwipeDistance = 50;
+                const diffX = touchEndX - touchStartX;
+                
+                if (Math.abs(diffX) > minSwipeDistance) {
+                    if (diffX < 0) {
+                        navigateSlides(1);
+                    } else {
+                        navigateSlides(-1);
+                    }
+                }
+            }
+
+            function navigateSlides(direction) {
+                playSynthSound('click');
+                currentSlideIndex += direction;
+                if (currentSlideIndex < 0) {
+                    currentSlideIndex = totalSlides - 1;
+                } else if (currentSlideIndex >= totalSlides) {
+                    currentSlideIndex = 0;
+                }
+                updateSlideshowDisplay();
+            }
+
+            function updateSlideshowDisplay() {
+                const wrapper = document.getElementById('slides-wrapper');
+                wrapper.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+                document.getElementById('slide-index-counter').innerText = `${currentSlideIndex + 1}/${totalSlides}`;
+            }
+
+            // Clipboard Paste Helpers
+            async function pasteFromClipboard() {
+                playSynthSound('click');
+                const input = document.getElementById('tiktok-url');
+                const clearBtn = document.getElementById('btn-clear');
+                
+                try {
+                    const clipboardText = await navigator.clipboard.readText();
+                    if (clipboardText) {
+                        input.value = clipboardText;
+                        clearBtn.classList.remove('hidden');
+                        showAlert('success', 'Berhasil Menempel', 'Tautan berhasil disalin dari clipboard!');
+                    } else {
+                        showAlert('info', 'Clipboard Kosong', 'Tidak ada teks yang dapat disalin di clipboard Anda.');
+                    }
+                } catch (err) {
+                    showAlert('info', 'Cara Manual', 'Silakan tekan lama pada kotak input lalu tempel manual.');
+                }
+            }
+
+            function clearInput() {
+                playSynthSound('click');
+                const input = document.getElementById('tiktok-url');
+                input.value = "";
+                document.getElementById('btn-clear').classList.add('hidden');
+                input.focus();
+            }
+
+            // Custom Notification Manager
+            function showAlert(type, title, desc) {
+                const box = document.getElementById('alert-box');
+                const container = document.getElementById('alert-icon-container');
+                const titleEl = document.getElementById('alert-title');
+                const descEl = document.getElementById('alert-desc');
+
+                box.className = "p-4 rounded-xl border flex items-start gap-3 transition-all duration-300 ";
+                
+                if (type === 'error') {
+                    box.classList.add('bg-rose-950/40', 'border-rose-900/40', 'text-rose-300');
+                    container.innerHTML = `<i data-lucide="alert-triangle" class="w-5 h-5 text-rose-400"></i>`;
+                    playSynthSound('error');
+                } else if (type === 'success') {
+                    box.classList.add('bg-emerald-950/40', 'border-emerald-900/40', 'text-emerald-300');
+                    container.innerHTML = `<i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>`;
+                } else {
+                    box.classList.add('bg-slate-800/50', 'border-slate-700/50', 'text-slate-300');
+                    container.innerHTML = `<i data-lucide="info" class="w-5 h-5 text-indigo-400"></i>`;
+                }
+
+                titleEl.innerText = title;
+                descEl.innerText = desc;
+                box.classList.remove('hidden');
+                lucide.createIcons();
+            }
+
+            function hideAlert() {
+                document.getElementById('alert-box').classList.add('hidden');
+            }
+
+            // Download Trigger
+            async function handleDownload() {
+                playSynthSound('click');
+                const urlInput = document.getElementById('tiktok-url').value.trim();
+                
+                if (!urlInput) {
+                    showAlert('error', 'Tautan Kosong', 'Harap masukkan tautan video TikTok terlebih dahulu.');
+                    return;
+                }
+
+                const tiktokPattern = /^(https?:\/\/)?((www|vm|vt|m)\.)?tiktok\.com\/[\w\d@?=\-&/]+/i;
+                if (!tiktokPattern.test(urlInput)) {
+                    showAlert('error', 'Tautan Tidak Valid', 'Format tautan bukan tautan TikTok yang valid.');
+                    return;
+                }
+
+                hideAlert();
+
+                document.getElementById('downloader-form-view').classList.add('hidden');
+                document.getElementById('downloader-loading-view').classList.remove('hidden');
+                
+                animateProgressAndFetch(urlInput);
+            }
+
+            async function expandTiktokShortlink(url) {
+                if (!url.includes("vt.tiktok.com") && !url.includes("vm.tiktok.com")) {
+                    return url; // Sudah merupakan tautan standar
+                }
+                
+                const proxies = [
+                    u => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
+                    u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`
+                ];
+
+                for (let i = 0; i < proxies.length; i++) {
+                    try {
+                        const proxiedUrl = proxies[i](url);
+                        console.log(`Mengekspansi tautan via Proxy ${i+1}:`, proxiedUrl);
+                        const response = await fetch(proxiedUrl);
+                        if (response.ok) {
+                            const html = await response.text();
+                            const extracted = extractUrlFromHtml(html);
+                            if (extracted) {
+                                return extracted;
+                            }
+                        }
+                    } catch (e) {
+                        console.warn(`Proxy ${i+1} gagal mengekspansi tautan pendek:`, e);
+                    }
+                }
+                return url; // Cadangan terakhir: kembalikan tautan asli
+            }
+
+            function extractUrlFromHtml(html) {
+                // Cari canonical link terlebih dahulu
+                let match = html.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i);
+                if (match && match[1]) return match[1];
+                
+                // Cari og:url
+                match = html.match(/<meta\s+property=["']og:url["']\s+content=["']([^"']+)["']/i);
+                if (match && match[1]) return match[1];
+
+                // Cari struktur TikTok absolut standar
+                match = html.match(/(https:\/\/www\.tiktok\.com\/@[^\/]+\/(video|photo)\/\d+)/i);
+                if (match && match[1]) return match[1];
+
                 return null;
             }
 
-            function _xcae() {
-                const _params = new URLSearchParams(window.location.search);
-                const _isApi = _params.get(_0x_dec(8)) === 'true';
-                const _isKurs = _params.get(_0x_dec(9)) === _0x_dec(10);
-                const _tkUrl = _params.get(_0x_dec(11));
-
-                if (_isApi) {
-                    if (_isKurs) {
-                        fetch(_0x_dec(2) + Date.now())
-                            .then(r => r.json())
-                            .then(_data => {
-                                if (_data && _data.result === _0x_dec(12)) {
-                                    const _pop = [_0x_dec(13), _0x_dec(14), _0x_dec(15), _0x_dec(16), _0x_dec(17), _0x_dec(18), _0x_dec(19), _0x_dec(20), _0x_dec(21)];
-                                    const _usdIdr = _data.rates[_0x_dec(5)];
-                                    const _rates = {};
-                                    _pop.forEach(_c => {
-                                        if (_data.rates[_c]) {
-                                            _rates[_c] = {
-                                                rate_vs_idr: _usdIdr / _data.rates[_c],
-                                                trend_24h: _0xgtv(_c).percent
-                                            };
-                                        }
-                                    });
-                                    _xsar({ code: 0, msg: _0x_dec(12), base_currency: _0x_dec(5), last_update_utc: _data.time_last_update_utc, rates: _rates });
-                                } else {
-                                    _xsar({ code: -2, msg: "Gagal memproses data kurs langsung." });
-                                }
-                            }).catch(err => _xsar({ code: -3, msg: "Kesalahan internal API.", error: err.message }));
-                        return true;
+            async function animateProgressAndFetch(tiktokUrl) {
+                const progress = document.getElementById('loading-progress');
+                const percentLabel = document.getElementById('loading-percentage');
+                const titleLabel = document.getElementById('loading-title');
+                
+                let currentPercent = 10;
+                const progressInterval = setInterval(() => {
+                    if (currentPercent < 85) {
+                        currentPercent += Math.floor(Math.random() * 8) + 2;
+                        if (currentPercent > 85) currentPercent = 85;
+                        progress.style.width = currentPercent + "%";
+                        percentLabel.innerText = currentPercent + "%";
+                        
+                        if (currentPercent > 30 && currentPercent < 60) {
+                            titleLabel.innerText = "Mengekstrak Metadata...";
+                        } else if (currentPercent >= 60) {
+                            titleLabel.innerText = "Melucuti Watermark TikTok...";
+                        }
                     }
+                }, 100);
 
-                    document.body.style.backgroundColor = "#030712";
-                    document.body.style.color = "#a5b4fc";
-                    document.body.innerHTML = `<div style="display:flex; justify-content:center; align-items:center; height:100vh; font-family:monospace; font-size:14px;"><div style="padding:20px; border:1px solid rgba(255,255,255,0.05); border-radius:15px; background:rgba(10,15,30,0.8); backdrop-filter:blur(20px);">⏳ Memproses Permintaan API TikSave untuk Tautan TikTok...</div></div>`;
+                try {
+                    // Tahap 1: Ekspansi tautan pendek ke tautan absolut
+                    titleLabel.innerText = "Menerjemahkan Tautan Pendek...";
+                    const expandedUrl = await expandTiktokShortlink(tiktokUrl);
+                    console.log("Menggunakan tautan hasil ekspansi:", expandedUrl);
 
-                    if (!_tkUrl) {
-                        _xsar({ code: -1, msg: "Tautan tidak valid. Parameter 'url' wajib disertakan!" });
-                        return true;
+                    // Tahap 2: Panggil API dengan tautan absolut yang sudah bersih
+                    titleLabel.innerText = "Menghubungkan Server API...";
+                    const data = await fetchDirectApi(expandedUrl);
+                    clearInterval(progressInterval);
+
+                    if (data) {
+                        currentMediaData = data; // Simpan ke variabel memori global secara aman
+                        fillSuccessView(data, expandedUrl);
+                    } else {
+                        throw new Error("Respon data dari API kosong");
                     }
-
-                    _xdfa(_tkUrl).then(_data => {
-                        if (_data) { _xsar({ code: 0, msg: _0x_dec(12), data: _data }); }
-                        else { _xsar({ code: -2, msg: "Gagal memproses video. Tautan salah atau server sedang sibuk." }); }
-                    }).catch(err => _xsar({ code: -3, msg: "Kesalahan internal API server.", error: err.message }));
-                    return true;
+                } catch (err) {
+                    console.error("Kesalahan fetch:", err);
+                    clearInterval(progressInterval);
+                    document.getElementById('downloader-loading-view').classList.add('hidden');
+                    document.getElementById('downloader-form-view').classList.remove('hidden');
+                    showAlert('error', 'Gagal Memproses', 'Maaf, server gagal mengambil media. Pastikan tautan benar dan video tidak privat.');
                 }
-                return false;
             }
 
-            const _intercepted = _xcae();
+            // Populate Success Data
+            function fillSuccessView(data, originalUrl) {
+                const coverEl = document.getElementById('video-cover');
+                const videoEl = document.getElementById('preview-video');
+                const slideshowEl = document.getElementById('preview-slideshow');
+                const actionGrid = document.getElementById('download-actions-grid');
+                const albumSection = document.getElementById('photo-album-section');
+                const typeBadge = document.getElementById('content-type-badge');
+                const captionEl = document.getElementById('video-caption-left');
 
-            // Deklarasikan semua fungsi di lingkup root IIFE untuk menghindari ReferenceError terkait ES6 block-scoping
-            let toggleMobileMenu, switchTab, forceDownload, downloadMusic, downloadVideo, clearInput, pasteFromClipboard, hideAlert, handleDownload, resetDownloader, clearHistory, toggleFaq, reuseHistoryLink, showDonation, hideDonation, fetchKursData, calculateExchange, testDownloaderApi, testKursApi;
+                coverEl.classList.add('hidden');
+                videoEl.classList.add('hidden');
+                videoEl.pause();
+                slideshowEl.classList.add('hidden');
+                albumSection.classList.add('hidden');
+                actionGrid.innerHTML = "";
 
-            if (!_intercepted) {
-                // Deklarasi State Terproteksi (Variabel Lokal Terenkripsi)
-                let _0x0c = null; // currentMediaData
-                let _0x1s = [];   // activeSlides
-                let _0x2s = 0;    // currentSlideIndex
-                let _0x3s = 0;    // totalSlides
-                let _0x4x = 0;    // touchStartX
-                let _0x5x = 0;    // touchEndX
-                let _0xcd = null; // currencyData
+                // Stats
+                document.getElementById('stat-likes').innerText = formatCounter(data.digg_count);
+                document.getElementById('stat-views').innerText = formatCounter(data.play_count);
+                document.getElementById('creator-avatar').src = data.author.avatar || 'https://placehold.co/100x100/1e293b/fff?text=User';
+                document.getElementById('creator-name').innerText = data.author.nickname || 'Creator';
+                document.getElementById('creator-username').innerText = '@' + (data.author.unique_id || 'username');
+                captionEl.innerText = data.title || 'Tidak ada deskripsi';
 
-                const _symbols = {
-                    USD: '$', EUR: '€', GBP: '£', SGD: 'S$', JPY: '¥', MYR: 'RM', SAR: 'SR', AUD: 'A$', KRW: '₩'
-                };
+                const isImages = data.images && data.images.length > 0;
 
-                toggleMobileMenu = function() {
-                    const menu = document.getElementById('mobile-menu');
-                    if (menu) menu.classList.toggle('hidden');
-                };
-
-                clearInput = function() {
-                    const input = document.getElementById('tiktok-url');
-                    if (input) {
-                        input.value = '';
-                        const btn = document.getElementById('btn-clear');
-                        if (btn) btn.classList.add('hidden');
-                        input.focus();
-                    }
-                };
-
-                pasteFromClipboard = async function() {
-                    try {
-                        const txt = await navigator.clipboard.readText();
-                        const input = document.getElementById('tiktok-url');
-                        if (input) {
-                            input.value = txt;
-                            const btn = document.getElementById('btn-clear');
-                            if (btn) btn.classList.remove('hidden');
-                        }
-                    } catch (e) {
-                        showCustomAlert("Silakan tekan lama dan tempel secara manual.");
-                    }
-                };
-
-                function showCustomAlert(msg) {
-                    const alertEl = document.getElementById('custom-alert');
-                    const textEl = document.getElementById('custom-alert-text');
-                    if (alertEl && textEl) {
-                        textEl.innerText = msg;
-                        alertEl.classList.remove('hidden');
-                    }
-                }
-
-                hideAlert = function() {
-                    const alertEl = document.getElementById('custom-alert');
-                    if (alertEl) alertEl.classList.add('hidden');
-                }
-
-                switchTab = function(tabId) {
-                    console.log("Sound Trigger: " + _0x_dec(6));
-                    const viewD = document.getElementById('view-downloader');
-                    const viewA = document.getElementById('view-api');
-                    const viewK = document.getElementById('view-kurs');
-                    const navD = document.getElementById('nav-downloader');
-                    const navA = document.getElementById('nav-api');
-                    const navK = document.getElementById('nav-kurs');
-
-                    if (viewD) viewD.classList.add('hidden');
-                    if (viewA) viewA.classList.add('hidden');
-                    if (viewK) viewK.classList.add('hidden');
-
-                    if (navD) navD.className = "px-5 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95";
-                    if (navA) navA.className = "px-5 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5";
-                    if (navK) navK.className = "px-5 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5";
-
-                    if (tabId === 'downloader') {
-                        if (viewD) viewD.classList.remove('hidden');
-                        if (navD) navD.className = "px-5 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 hover:bg-indigo-500";
-                    } else if (tabId === 'api') {
-                        if (viewA) viewA.classList.remove('hidden');
-                        if (navA) navA.className = "px-5 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5 hover:bg-indigo-500";
-                    } else if (tabId === 'kurs') {
-                        if (viewK) viewK.classList.remove('hidden');
-                        if (navK) navK.className = "px-5 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5 hover:bg-indigo-500";
-                        fetchKursData();
-                    }
-                }
-
-                forceDownload = async function(url, filename, buttonElement) {
-                    let originalContent = "";
-                    if (buttonElement) {
-                        originalContent = buttonElement.innerHTML;
-                        buttonElement.disabled = true;
-                        buttonElement.innerHTML = `<span class="flex items-center gap-2 justify-center w-full"><svg class="animate-spin h-4 w-4 text-white" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg><span>Mengunduh...</span></span>`;
-                    }
-
-                    try {
-                        const res = await fetch(url);
-                        if (!res.ok) throw new Error();
-                        const blob = await res.blob();
-                        triggerBrowserSave(blob, filename);
-                    } catch (e) {
-                        try {
-                            const proxy = _0x_dec(1) + encodeURIComponent(url);
-                            const res = await fetch(proxy);
-                            if (!res.ok) throw new Error();
-                            const blob = await res.blob();
-                            triggerBrowserSave(blob, filename);
-                        } catch (err) {
-                            window.open(url, '_blank');
-                        }
-                    }
-
-                    if (buttonElement) {
-                        buttonElement.disabled = false;
-                        buttonElement.innerHTML = originalContent;
-                    }
-                }
-
-                function triggerBrowserSave(blob, filename) {
-                    const blobUrl = URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = blobUrl;
-                    a.download = filename;
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                    URL.revokeObjectURL(blobUrl);
-                }
-
-                handleDownload = async function() {
-                    const inputEl = document.getElementById('tiktok-url');
-                    if (!inputEl) return;
-                    const url = inputEl.value.trim();
-                    if (!url) {
-                        showCustomAlert("Silakan masukkan tautan video TikTok terlebih dahulu!");
-                        return;
-                    }
-
-                    const searchBtn = document.querySelector('#view-downloader button[onclick="handleDownload()"]');
-                    const originalBtnContent = document.getElementById('search-btn-content');
-                    const loadingSpinner = document.getElementById('search-loading');
-
-                    if (searchBtn) searchBtn.disabled = true;
-                    if (originalBtnContent) originalBtnContent.classList.add('hidden');
-                    if (loadingSpinner) loadingSpinner.classList.remove('hidden');
-
-                    try {
-                        const data = await _xdfa(url);
-                        if (data) {
-                            _0x0c = data;
-                            displayResult(data);
-                            saveToHistory(data);
-                        } else {
-                            showCustomAlert("Tautan tidak valid atau video tidak ditemukan!");
-                        }
-                    } catch (err) {
-                        showCustomAlert("Gagal memproses permintaan Anda karena masalah jaringan.");
-                    } finally {
-                        if (searchBtn) searchBtn.disabled = false;
-                        if (originalBtnContent) originalBtnContent.classList.remove('hidden');
-                        if (loadingSpinner) loadingSpinner.classList.add('hidden');
-                    }
-                }
-
-                function displayResult(data) {
-                    const resultContainer = document.getElementById('result-container');
-                    if (!resultContainer) return;
-                    resultContainer.classList.remove('hidden');
-
-                    const titleEl = document.getElementById('media-title');
-                    const authorNameEl = document.getElementById('author-name');
-                    const authorNicknameEl = document.getElementById('author-nickname');
-                    const authorAvatarEl = document.getElementById('author-avatar');
-
-                    if (titleEl) titleEl.innerText = data.title || "Video TikTok";
-                    if (authorNameEl) authorNameEl.innerText = `@${data.author?.unique_id || 'user'}`;
-                    if (authorNicknameEl) authorNicknameEl.innerText = data.author?.nickname || 'Creator';
-                    if (authorAvatarEl) authorAvatarEl.src = data.author?.avatar || "https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png";
-
-                    const coverEl = document.getElementById('media-cover');
-                    const slideNav = document.getElementById('slideshow-nav');
+                if (isImages) {
+                    typeBadge.innerText = "Slide Foto Berhasil Ditemukan";
+                    typeBadge.className = "text-[10px] font-bold uppercase tracking-wider text-pink-400";
+                    slideshowEl.classList.remove('hidden');
                     
-                    if (data.images && data.images.length > 0) {
-                        _0x1s = data.images;
-                        _0x2s = 0;
-                        _0x3s = data.images.length;
-                        if (coverEl) coverEl.src = _0x1s[0];
-                        if (slideNav) {
-                            slideNav.classList.remove('hidden');
-                            const ind = document.getElementById('slideshow-indicator');
-                            if (ind) ind.innerText = `1/${_0x3s}`;
-                        }
-                    } else {
-                        if (coverEl) coverEl.src = data.origin_cover || data.cover || "https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png";
-                        if (slideNav) slideNav.classList.add('hidden');
-                    }
+                    activeSlides = data.images;
+                    totalSlides = activeSlides.length;
+                    currentSlideIndex = 0;
 
-                    const likesEl = document.getElementById('stat-likes');
-                    const viewsEl = document.getElementById('stat-views');
-                    const commentsEl = document.getElementById('stat-comments');
-
-                    if (likesEl) likesEl.innerText = formatStatCount(data.digg_count);
-                    if (viewsEl) viewsEl.innerText = formatStatCount(data.play_count);
-                    if (commentsEl) commentsEl.innerText = formatStatCount(data.comment_count);
-
-                    const sizeNoWm = document.getElementById('size-no-wm');
-                    const sizeAudio = document.getElementById('size-audio');
-
-                    if (sizeNoWm) sizeNoWm.innerText = formatBytes(data.size) || "[~0.7 MB]";
-                    if (sizeAudio) sizeAudio.innerText = formatBytes(data.music_info?.size) || "[~1.7 MB]";
-
-                    resultContainer.scrollIntoView({ behavior: 'smooth' });
-                }
-
-                function formatStatCount(num) {
-                    if (!num) return "0";
-                    if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
-                    if (num >= 1000) return (num / 1000).toFixed(1) + "K";
-                    return num.toString();
-                }
-
-                resetDownloader = function() {
-                    const rc = document.getElementById('result-container');
-                    if (rc) rc.classList.add('hidden');
-                    const input = document.getElementById('tiktok-url');
-                    if (input) input.value = "";
-                    const clearBtn = document.getElementById('btn-clear');
-                    if (clearBtn) clearBtn.classList.add('hidden');
-                    _0x0c = null;
-                }
-
-                downloadMusic = function(btn) {
-                    if (!_0x0c) return;
-                    let url = _0x0c.music;
-                    if (url && url.startsWith('/')) {
-                        url = "https://www.tikwm.com" + url;
-                    }
-                    const cleanTitle = (_0x0c.title || 'tiktok_audio').replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30);
-                    forceDownload(url, `${cleanTitle}_audio.mp3`, btn);
-                }
-
-                downloadVideo = function(type, btn) {
-                    if (!_0x0c) return;
-                    const cleanTitle = (_0x0c.title || 'tiktok_video').replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30);
-                    let url = _0x0c.play;
-                    if (url && url.startsWith('/')) {
-                        url = "https://www.tikwm.com" + url;
-                    }
-                    forceDownload(url, `${cleanTitle}_no_wm.mp4`, btn);
-                }
-
-                window.nextSlide = function() {
-                    if (_0x1s.length === 0) return;
-                    _0x2s = (_0x2s + 1) % _0x3s;
-                    const cover = document.getElementById('media-cover');
-                    if (cover) cover.src = _0x1s[_0x2s];
-                    const ind = document.getElementById('slideshow-indicator');
-                    if (ind) ind.innerText = `${_0x2s + 1}/${_0x3s}`;
-                };
-
-                window.prevSlide = function() {
-                    if (_0x1s.length === 0) return;
-                    _0x2s = (_0x2s - 1 + _0x3s) % _0x3s;
-                    const cover = document.getElementById('media-cover');
-                    if (cover) cover.src = _0x1s[_0x2s];
-                    const ind = document.getElementById('slideshow-indicator');
-                    if (ind) ind.innerText = `${_0x2s + 1}/${_0x3s}`;
-                };
-
-                function setupSwipeGestures() {
-                    const coverBox = document.getElementById('media-cover');
-                    if (!coverBox) return;
-
-                    coverBox.addEventListener('touchstart', e => {
-                        _0x4x = e.changedTouches[0].screenX;
-                    }, { passive: true });
-
-                    coverBox.addEventListener('touchend', e => {
-                        _0x5x = e.changedTouches[0].screenX;
-                        handleSwipe();
-                    }, { passive: true });
-                }
-
-                function handleSwipe() {
-                    if (_0x5x < _0x4x - 50) { nextSlide(); }
-                    if (_0x5x > _0x4x + 50) { prevSlide(); }
-                }
-
-                let downloadHistory = JSON.parse(localStorage.getItem(_0x_dec(4)) || '[]');
-
-                function saveToHistory(data) {
-                    const inputVal = document.getElementById('tiktok-url') ? document.getElementById('tiktok-url').value.trim() : '';
-                    const newItem = {
-                        id: data.id,
-                        title: data.title || "Video TikTok",
-                        cover: data.cover || data.origin_cover || "https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png",
-                        author: data.author?.unique_id || "user",
-                        url: inputVal
-                    };
-
-                    downloadHistory = downloadHistory.filter(item => item.id !== data.id);
-                    downloadHistory.unshift(newItem);
-                    downloadHistory = downloadHistory.slice(0, 6);
-
-                    localStorage.setItem(_0x_dec(4), JSON.stringify(downloadHistory));
-                    renderHistoryGrid();
-                }
-
-                function renderHistoryGrid() {
-                    const grid = document.getElementById('history-grid');
-                    if (!grid) return;
-
-                    if (downloadHistory.length === 0) {
-                        grid.innerHTML = `
-                            <div class="p-6 text-center text-xs text-slate-500 font-semibold md:col-span-2">
-                                Belum ada riwayat unduhan terkini.
-                            </div>
-                        `;
-                        return;
-                    }
-
-                    grid.innerHTML = "";
-                    downloadHistory.forEach(item => {
-                        const card = document.createElement('div');
-                        card.className = "flex items-center gap-3 p-3 bg-slate-950/40 border border-white/5 rounded-2xl hover:border-indigo-500/30 transition-all cursor-pointer";
-                        card.onclick = () => reuseHistoryLink(item.url);
-                        card.innerHTML = `
-                            <img src="${item.cover}" alt="Cover" class="w-12 h-16 rounded-xl object-cover border border-white/10 shrink-0">
-                            <div class="overflow-hidden flex-grow">
-                                <h4 class="font-bold text-white text-xs truncate leading-relaxed">${item.title}</h4>
-                                <p class="text-[10px] text-slate-500 truncate mt-0.5">@${item.author}</p>
-                                <span class="inline-flex items-center gap-1 text-[10px] text-indigo-400 font-bold mt-2 hover:text-indigo-300">
-                                    <i data-lucide="refresh-cw" class="w-3 h-3"></i> Unduh Ulang
-                                </span>
-                            </div>
-                        `;
-                        grid.appendChild(card);
+                    const wrapper = document.getElementById('slides-wrapper');
+                    wrapper.innerHTML = "";
+                    activeSlides.forEach((imgUrl) => {
+                        const slide = document.createElement('div');
+                        slide.className = "w-full h-full shrink-0 flex items-center justify-center bg-black";
+                        slide.innerHTML = `<img src="${imgUrl}" class="w-full h-full object-contain pointer-events-none" onerror="this.src='https://placehold.co/540x960/1e293b/fff?text=Error'">`;
+                        wrapper.appendChild(slide);
                     });
-                    if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
-                }
-
-                reuseHistoryLink = function(url) {
-                    const input = document.getElementById('tiktok-url');
-                    if (input) {
-                        input.value = url;
-                        const clearBtn = document.getElementById('btn-clear');
-                        if (clearBtn) clearBtn.classList.remove('hidden');
-                        handleDownload();
-                    }
-                }
-
-                clearHistory = function() {
-                    downloadHistory = [];
-                    localStorage.removeItem(_0x_dec(4));
-                    renderHistoryGrid();
-                }
-
-                toggleFaq = function(id) {
-                    const content = document.getElementById(`faq-content-${id}`);
-                    const icon = document.getElementById(`faq-icon-${id}`);
-                    if (content && icon) {
-                        const isHidden = content.classList.toggle('hidden');
-                        icon.style.transform = isHidden ? "rotate(0deg)" : "rotate(180deg)";
-                    }
-                }
-
-                function formatBytes(bytes) {
-                    if (!bytes || isNaN(bytes) || bytes <= 0) return "";
-                    const mb = bytes / (1024 * 1024);
-                    return `[~${mb.toFixed(1)} MB]`;
-                }
-
-                fetchKursData = async function() {
-                    const timeEl = document.getElementById('kurs-update-time');
-                    const popularList = document.getElementById('kurs-popular-list');
                     
-                    if (_0xcd) {
-                        calculateExchange();
-                        renderPopularRates();
-                        return;
-                    }
+                    updateSlideshowDisplay();
 
-                    try {
-                        if (timeEl) timeEl.innerText = "Memperbarui kurs...";
-                        const response = await fetch(_0x_dec(2) + Date.now());
-                        if (!response.ok) throw new Error();
-                        const resJson = await response.json();
-                        
-                        if (resJson && resJson.result === _0x_dec(12)) {
-                            _0xcd = resJson.rates;
-                            const lastUpdate = new Date();
-                            if (timeEl) timeEl.innerText = `Pembaruan Terakhir: ${lastUpdate.toLocaleTimeString('id-ID')} WIB`;
-                            calculateExchange();
-                            renderPopularRates();
-                        } else {
-                            throw new Error();
-                        }
-                    } catch (err) {
-                        if (timeEl) timeEl.innerText = "Gagal memuat data realtime";
-                        if (popularList) {
-                            popularList.innerHTML = `
-                                <div class="p-4 text-center text-xs text-rose-400 font-semibold flex items-center justify-center gap-2">
-                                    <i data-lucide="alert-circle" class="w-4 h-4"></i> Gagal memuat data kurs.
-                                </div>
-                            `;
-                        }
-                        if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
-                    }
-                }
+                    // Action buttons for slides
+                    actionGrid.innerHTML = `
+                        <button onclick="downloadMusic(this)" class="flex items-center justify-between px-5 py-4 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold text-sm shadow-lg shadow-pink-500/10 hover:shadow-pink-500/25 transition-all transform active:scale-[0.98]">
+                            <span class="flex items-center gap-2.5">
+                                <i data-lucide="music-4" class="w-5 h-5 text-yellow-300"></i>
+                                <span>Unduh Audio MP3</span>
+                            </span>
+                            <i data-lucide="arrow-down-to-line" class="w-4 h-4"></i>
+                        </button>
+                        <button onclick="downloadImageByIndex(0, this)" class="flex items-center justify-between px-5 py-4 rounded-xl bg-slate-800 hover:bg-slate-700/80 text-slate-200 border border-slate-700 font-bold text-sm transition-all transform active:scale-[0.98]">
+                            <span class="flex items-center gap-2.5">
+                                <i data-lucide="image" class="w-5 h-5 text-brand-accent"></i>
+                                <span>Unduh Foto Pertama</span>
+                            </span>
+                            <i data-lucide="download" class="w-4 h-4"></i>
+                        </button>
+                    `;
 
-                calculateExchange = function() {
-                    const amountInput = document.getElementById('kurs-amount');
-                    const selectEl = document.getElementById('kurs-select');
-                    const resultEl = document.getElementById('kurs-result');
-                    const singleRateEl = document.getElementById('kurs-single-rate');
-                    const badgeEl = document.getElementById('kurs-badge');
-                    const trendBadge = document.getElementById('kurs-trend-badge');
-                    const trendPercent = document.getElementById('kurs-trend-percent');
-
-                    if (!_0xcd || !selectEl || !amountInput) return;
-
-                    const selectedCurrency = selectEl.value;
-                    if (badgeEl) badgeEl.innerText = selectedCurrency;
+                    // Details list for all photos
+                    albumSection.classList.remove('hidden');
+                    document.getElementById('photo-count-lbl').innerText = `${totalSlides} Foto Tersedia`;
+                    const linksList = document.getElementById('photo-links-list');
+                    linksList.innerHTML = "";
                     
-                    const amount = parseFloat(amountInput.value) || 0;
-                    const usdToIdr = _0xcd[_0x_dec(5)];
-                    const rateToIdr = usdToIdr / _0xcd[selectedCurrency];
-                    const result = amount * rateToIdr;
-                    
-                    const formatter = new Intl.NumberFormat('id-ID', {
-                        style: 'currency',
-                        currency: _0x_dec(5),
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2
-                    });
-
-                    if (resultEl) resultEl.innerText = formatter.format(result);
-                    if (singleRateEl) singleRateEl.innerText = `1 ${selectedCurrency} = ${formatter.format(rateToIdr)}`;
-
-                    const trend = _0xgtv(selectedCurrency);
-                    if (trendPercent) {
-                        trendPercent.innerText = (trend.isUp ? "+" : "") + trend.percent;
-                    }
-                    
-                    if (trendBadge && trendPercent) {
-                        if (trend.isUp) {
-                            trendBadge.className = "flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20";
-                            trendBadge.innerHTML = `<i data-lucide="trending-up" class="w-3.5 h-3.5"></i> <span>${trendPercent.innerText}</span>`;
-                        } else {
-                            trendBadge.className = "flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-bold bg-rose-500/10 text-rose-400 border border-rose-500/20";
-                            trendBadge.innerHTML = `<i data-lucide="trending-down" class="w-3.5 h-3.5"></i> <span>${trendPercent.innerText}</span>`;
-                        }
-                    }
-                    if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
-                }
-
-                function renderPopularRates() {
-                    const popularList = document.getElementById('kurs-popular-list');
-                    if (!_0xcd || !popularList) return;
-
-                    const popularCodes = [_0x_dec(13), _0x_dec(14), _0x_dec(15), _0x_dec(16), _0x_dec(17), _0x_dec(18), _0x_dec(19), _0x_dec(20), _0x_dec(21)];
-                    const names = {
-                        'USD': 'Dolar Amerika Serikat', 'EUR': 'Euro Eropa', 'SGD': 'Dolar Singapura',
-                        'JPY': 'Yen Jepang', 'MYR': 'Ringgit Malaysia', 'SAR': 'Riyal Arab Saudi',
-                        'AUD': 'Dolar Australia', 'GBP': 'Poundsterling Inggris', 'KRW': 'Won Korea Selatan'
-                    };
-
-                    popularList.innerHTML = "";
-                    const formatter = new Intl.NumberFormat('id-ID', {
-                        style: 'currency', currency: _0x_dec(5), minimumFractionDigits: 2, maximumFractionDigits: 2
-                    });
-
-                    popularCodes.forEach(code => {
-                        const usdToIdr = _0xcd[_0x_dec(5)];
-                        const rateToIdr = usdToIdr / _0xcd[code];
-                        let amountToDisplay = 1;
-                        let finalRate = rateToIdr;
-                        let label = `1 ${code}`;
-                        
-                        if (code === 'JPY') {
-                            amountToDisplay = 100;
-                            finalRate = rateToIdr * 100;
-                            label = `100 JPY`;
-                        } else if (code === 'KRW') {
-                            amountToDisplay = 1000;
-                            finalRate = rateToIdr * 1000;
-                            label = `1000 KRW`;
-                        }
-
-                        const trend = _0xgtv(code);
-                        const symbol = _symbols[code] || '$';
-
+                    data.images.forEach((imgUrl, index) => {
                         const row = document.createElement('div');
-                        row.className = "p-4 flex items-center justify-between text-xs hover:bg-white/5 transition-all";
+                        row.className = "flex items-center justify-between p-2.5 bg-slate-850 border border-slate-800 rounded-xl";
                         row.innerHTML = `
-                            <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center font-extrabold text-sm shadow-inner select-none">
-                                    ${symbol}
-                                </div>
-                                <div>
-                                    <div class="flex items-center gap-2">
-                                        <span class="text-white font-bold">${code}</span>
-                                        <span class="${trend.isUp ? 'text-emerald-400' : 'text-rose-400'} text-[10px] font-bold flex items-center gap-0.5">
-                                            <i data-lucide="${trend.isUp ? 'trending-up' : 'trending-down'}" class="w-3.5 h-3.5"></i>
-                                            ${(trend.isUp ? '+' : '')}${trend.percent}
-                                        </span>
-                                    </div>
-                                    <span class="block text-[10px] text-slate-500 font-medium">${names[code] || ''}</span>
-                                </div>
+                            <div class="flex items-center gap-2">
+                                <span class="w-6 h-6 rounded-lg bg-indigo-500/10 text-brand-accent flex items-center justify-center font-mono text-xs font-bold">${index + 1}</span>
+                                <span class="text-xs text-slate-300">Foto #${index + 1}</span>
                             </div>
-                            <div class="text-right">
-                                <span class="block text-white font-extrabold">${formatter.format(finalRate)}</span>
-                                <span class="block text-[9px] text-slate-500 font-medium">per ${label}</span>
-                            </div>
+                            <button onclick="downloadImageByIndex(${index}, this)" class="px-3 py-1 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-[11px] flex items-center gap-1 transition-colors">
+                                <i data-lucide="arrow-down-to-line" class="w-3.5 h-3.5"></i> Unduh HD
+                            </button>
                         `;
-                        popularList.appendChild(row);
+                        linksList.appendChild(row);
                     });
-                    if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+
+                } else {
+                    typeBadge.innerText = "Video Berhasil Ditemukan";
+                    typeBadge.className = "text-[10px] font-bold uppercase tracking-wider text-brand-accent";
+                    videoEl.classList.remove('hidden');
+                    videoEl.src = data.play;
+                    videoEl.load();
+                    videoEl.play().catch(e => console.log("Muted play blocked", e));
+
+                    // Action buttons with direct download mapping
+                    actionGrid.innerHTML = `
+                        <button onclick="downloadVideo('no_wm', this)" class="flex items-center justify-between px-5 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-bold text-sm shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/25 transition-all transform active:scale-[0.98]">
+                            <span class="flex items-center gap-2.5">
+                                <i data-lucide="sparkles" class="w-5 h-5 text-yellow-300"></i>
+                                <span>Tanpa Watermark [HD]</span>
+                            </span>
+                            <i data-lucide="arrow-down-to-line" class="w-4 h-4"></i>
+                        </button>
+                        <button onclick="downloadVideo('with_wm', this)" class="flex items-center justify-between px-5 py-4 rounded-xl bg-slate-800 hover:bg-slate-700/80 text-slate-200 border border-slate-700 font-bold text-sm transition-all transform active:scale-[0.98]">
+                            <span class="flex items-center gap-2.5">
+                                <i data-lucide="hard-drive" class="w-5 h-5 text-indigo-400"></i>
+                                <span>Dengan Watermark</span>
+                            </span>
+                            <i data-lucide="arrow-down-to-line" class="w-4 h-4"></i>
+                        </button>
+                        <button onclick="downloadMusic(this)" class="col-span-1 sm:col-span-2 flex items-center justify-between px-5 py-4 rounded-xl bg-slate-850 hover:bg-slate-800 text-slate-300 border border-slate-700/50 font-semibold text-sm transition-all transform active:scale-[0.98]">
+                            <span class="flex items-center gap-2.5">
+                                <i data-lucide="music-4" class="w-5 h-5 text-pink-400"></i>
+                                <span>Unduh Audio MP3</span>
+                            </span>
+                            <i data-lucide="disc" class="w-4 h-4"></i>
+                        </button>
+                    `;
                 }
 
-                testDownloaderApi = function(btn) {
-                    const terminal = document.getElementById('api-test-output');
-                    if (!terminal) return;
-                    
-                    terminal.innerText = `Sending GET Request...\nLoading data from https://` + _0x_dec(3) + `/?api=true&url=https://vt.tiktok.com/ZS23asd/`;
-                    
-                    setTimeout(() => {
-                        const mockApiResponse = {
-                            "code": 0, "msg": "success",
-                            "data": {
-                                "id": "7311029312109401",
-                                "title": "Maju terus Indonesia! 🇮🇩 #trending #fyp",
-                                "play": "https://www.tikwm.com/video/play_no_wm_example.mp4",
-                                "wmplay": "https://www.tikwm.com/video/play_wm_example.mp4",
-                                "music": "https://www.tikwm.com/music/play_music_example.mp3",
-                                "size": 781020,
-                                "cover": "https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png",
-                                "author": {
-                                    "unique_id": "tiksave.user", "nickname": "TikSave Official Creator",
-                                    "avatar": "https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png"
-                                }
-                            }
-                        };
-                        terminal.innerText = JSON.stringify(mockApiResponse, null, 2);
-                    }, 750);
-                }
-
-                testKursApi = function(btn) {
-                    const terminal = document.getElementById('api-test-output');
-                    if (!terminal) return;
-
-                    terminal.innerText = `Sending GET Request...\nLoading data from https://` + _0x_dec(3) + `/?api=true&type=kurs`;
-
-                    fetch(_0x_dec(2) + Date.now())
-                        .then(res => res.json())
-                        .then(_data => {
-                            if (_data && _data.result === _0x_dec(12)) {
-                                const _pop = [_0x_dec(13), _0x_dec(14), _0x_dec(15), _0x_dec(16), _0x_dec(17), _0x_dec(18), _0x_dec(19), _0x_dec(20), _0x_dec(21)];
-                                const _usdIdr = _data.rates[_0x_dec(5)];
-                                const ratesPayload = {};
-                                _pop.forEach(_c => {
-                                    ratesPayload[_c] = {
-                                        rate_vs_idr: _usdIdr / _data.rates[_c],
-                                        trend_24h: _0xgtv(_c).percent
-                                    };
-                                });
-                                const resultPayload = {
-                                    "code": 0, "msg": "success", "base_currency": _0x_dec(5),
-                                    "last_update_utc": _data.time_last_update_utc, "rates": ratesPayload
-                                };
-                                terminal.innerText = JSON.stringify(resultPayload, null, 2);
-                            } else {
-                                terminal.innerText = "Error: Gagal memuat data kurs langsung.";
-                            }
-                        })
-                        .catch(err => { terminal.innerText = `Error: ${err.message}`; });
-                }
-
-                showDonation = function() {
-                    const el = document.getElementById('donation-modal');
-                    if (el) el.classList.remove('hidden');
-                }
-
-                hideDonation = function() {
-                    const el = document.getElementById('donation-modal');
-                    if (el) el.classList.add('hidden');
-                }
-
-                window.addEventListener('load', () => {
-                    const currentHost = window.location.origin + window.location.pathname;
-                    const endpointEl = document.getElementById('api-endpoint-url');
-                    if (endpointEl) {
-                        endpointEl.innerText = currentHost + `?api=true&url={LINK_TIKTOK}`;
-                    }
-
-                    if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
-                    renderHistoryGrid();
-                    
-                    const urlInput = document.getElementById('tiktok-url');
-                    if (urlInput) {
-                        urlInput.addEventListener('input', (e) => {
-                            const clearBtn = document.getElementById('btn-clear');
-                            if (clearBtn) {
-                                if (e.target.value.trim() !== "") { clearBtn.classList.remove('hidden'); }
-                                else { clearBtn.classList.add('hidden'); }
-                            }
-                        });
-                    }
-
-                    const amtInput = document.getElementById('kurs-amount');
-                    if (amtInput) amtInput.addEventListener('input', calculateExchange);
-                    setupSwipeGestures();
+                // Save to history
+                saveToHistory({
+                    id: data.id || Math.random().toString(),
+                    title: data.title || 'Video/Foto TikTok',
+                    cover: isImages ? data.images[0] : (data.cover || data.origin_cover),
+                    author: data.author.unique_id || 'username',
+                    likes: data.digg_count || 0,
+                    views: data.play_count || 0,
+                    dl_link: data.play || (data.images ? data.images[0] : '#'),
+                    original_url: originalUrl,
+                    is_images: isImages
                 });
 
-                // Pemetaan fungsi ke scope global window secara eksplisit
-                window.toggleMobileMenu = toggleMobileMenu;
-                window.switchTab = switchTab;
-                window.forceDownload = forceDownload;
-                window.downloadMusic = downloadMusic;
-                window.downloadVideo = downloadVideo;
-                window.clearInput = clearInput;
-                window.pasteFromClipboard = pasteFromClipboard;
-                window.hideAlert = hideAlert;
-                window.handleDownload = handleDownload;
-                window.resetDownloader = resetDownloader;
-                window.clearHistory = clearHistory;
-                window.toggleFaq = toggleFaq;
-                window.reuseHistoryLink = reuseHistoryLink;
-                window.showDonation = showDonation;
-                window.hideDonation = hideDonation;
-                window.fetchKursData = fetchKursData;
-                window.calculateExchange = calculateExchange;
-                window.testDownloaderApi = testDownloaderApi;
-                window.testKursApi = testKursApi;
+                document.getElementById('loading-progress').style.width = "100%";
+                document.getElementById('loading-percentage').innerText = "100%";
+                
+                setTimeout(() => {
+                    playSynthSound('success');
+                    document.getElementById('downloader-loading-view').classList.add('hidden');
+                    document.getElementById('downloader-success-view').classList.remove('hidden');
+                    lucide.createIcons();
+                }, 300);
             }
-        })();
+
+            function formatCounter(num) {
+                if (!num) return '0';
+                if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+                if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+                return num.toString();
+            }
+
+            function resetDownloader() {
+                playSynthSound('click');
+                document.getElementById('tiktok-url').value = "";
+                document.getElementById('btn-clear').classList.add('hidden');
+                document.getElementById('downloader-success-view').classList.add('hidden');
+                document.getElementById('downloader-loading-view').classList.add('hidden');
+                document.getElementById('downloader-form-view').classList.remove('hidden');
+                
+                const videoEl = document.getElementById('preview-video');
+                videoEl.pause();
+                videoEl.src = "";
+                currentMediaData = null;
+                
+                hideAlert();
+            }
+
+            // History Persistent manager
+            function saveToHistory(item) {
+                downloadHistory = downloadHistory.filter(h => h.original_url !== item.original_url);
+                downloadHistory.unshift(item);
+                if (downloadHistory.length > 6) {
+                    downloadHistory.pop();
+                }
+                localStorage.setItem('tiksave_history', JSON.stringify(downloadHistory));
+                renderHistoryGrid();
+            }
+
+            function clearHistory() {
+                playSynthSound('click');
+                downloadHistory = [];
+                localStorage.removeItem('tiksave_history');
+                renderHistoryGrid();
+            }
+
+            function renderHistoryGrid() {
+                const grid = document.getElementById('history-grid');
+                const section = document.getElementById('download-history-section');
+                
+                if (downloadHistory.length === 0) {
+                    section.classList.add('hidden');
+                    return;
+                }
+
+                section.classList.remove('hidden');
+                grid.innerHTML = "";
+
+                downloadHistory.forEach(item => {
+                    const isImages = item.is_images === true;
+                    const col = document.createElement('div');
+                    col.className = "glass-panel rounded-2xl p-3 flex gap-3 items-center hover:border-indigo-500/50 transition-all";
+                    col.innerHTML = `
+                        <div class="w-16 h-16 rounded-xl overflow-hidden bg-slate-900 shrink-0 border border-slate-800 relative">
+                            <img src="${item.cover}" alt="History item" class="w-full h-full object-cover">
+                            ${isImages ? `
+                            <div class="absolute top-1 right-1 bg-black/70 px-1 py-0.5 rounded text-[8px] text-pink-400 font-bold flex items-center gap-0.5">
+                                <i data-lucide="images" class="w-2.5 h-2.5"></i> Foto
+                            </div>
+                            ` : ''}
+                        </div>
+                        <div class="flex-grow min-w-0">
+                            <p class="text-xs text-slate-300 font-medium truncate mb-1">${item.title}</p>
+                            <p class="text-[10px] text-slate-500 truncate mb-1">@${item.author}</p>
+                            <div class="flex items-center gap-2">
+                                <button onclick="forceDownload('${item.dl_link}', 'history_download', this)" class="text-[10px] font-bold text-brand-accent hover:underline flex items-center gap-1">
+                                    <i data-lucide="download" class="w-3 h-3"></i> Unduh
+                                </button>
+                                <span class="text-slate-600 text-[10px]">&bull;</span>
+                                <button onclick="reuseHistoryLink('${item.original_url}')" class="text-[10px] font-bold text-indigo-400 hover:underline flex items-center gap-1">
+                                    <i data-lucide="refresh-cw" class="w-3 h-3"></i> Analisis
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(col);
+                });
+                lucide.createIcons();
+            }
+
+            function reuseHistoryLink(url) {
+                document.getElementById('tiktok-url').value = url;
+                document.getElementById('btn-clear').classList.remove('hidden');
+                handleDownload();
+            }
+
+            // Accordion FAQ Toggler
+            function toggleFaq(btn) {
+                playSynthSound('click');
+                const wrapper = btn.parentElement;
+                const answer = wrapper.querySelector('.faq-answer');
+                const icon = btn.querySelector('[data-lucide="chevron-down"]');
+                
+                const isOpen = wrapper.classList.contains('active-faq');
+                
+                document.querySelectorAll('.active-faq').forEach(el => {
+                    el.classList.remove('active-faq');
+                    el.querySelector('.faq-answer').style.maxHeight = null;
+                    el.querySelector('[data-lucide="chevron-down"]').style.transform = "rotate(0deg)";
+                });
+
+                if (!isOpen) {
+                    wrapper.classList.add('active-faq');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                    icon.style.transform = "rotate(180deg)";
+                } else {
+                    wrapper.classList.remove('active-faq');
+                    answer.style.maxHeight = null;
+                    icon.style.transform = "rotate(0deg)";
+                }
+            }
+
+            // EXPLICITLY BIND ALL INTERACTIVE FUNCTIONS TO WINDOW TO RESOLVE BLOCK-SCOPING ERROR
+            window.toggleMobileMenu = toggleMobileMenu;
+            window.switchTab = switchTab;
+            window.forceDownload = forceDownload;
+            window.downloadImageByIndex = downloadImageByIndex;
+            window.downloadMusic = downloadMusic;
+            window.downloadVideo = downloadVideo;
+            window.clearInput = clearInput;
+            window.pasteFromClipboard = pasteFromClipboard;
+            window.hideAlert = hideAlert;
+            window.handleDownload = handleDownload;
+            window.resetDownloader = resetDownloader;
+            window.clearHistory = clearHistory;
+            window.toggleFaq = toggleFaq;
+            window.reuseHistoryLink = reuseHistoryLink;
+            window.showDonation = showDonation;
+            window.hideDonation = hideDonation;
+        }
     </script>
 </body>
     </html>
