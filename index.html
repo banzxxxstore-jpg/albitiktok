@@ -1,8 +1,10 @@
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TikSave - Downloader Video TikTok Tanpa Watermark & API Developer Gratis</title>
+    <!-- Favicon di baris 8 -->
     <link rel="icon" type="image/png" href="https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png">
     
     <!-- Tailwind CSS untuk penataan kilat modern -->
@@ -41,127 +43,212 @@
     </script>
 
     <style>
+        html {
+            overflow-x: hidden;
+        }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0b0f19;
+            background-color: #030712;
             color: #f3f4f6;
             overflow-x: hidden;
         }
 
-        /* Ambient glow backdrop */
+        /* Ambient glowing background with slow breathing animation */
+        @keyframes aurora {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-20px) scale(1.15);
+            }
+        }
+        
         .glowing-blob {
-            filter: blur(140px);
-            opacity: 0.15;
+            filter: blur(130px);
+            opacity: 0.18;
             pointer-events: none;
+            animation: aurora 10s ease-in-out infinite alternate;
         }
 
-        /* Scrollbar kustom premium */
+        /* Custom Scrollbar */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
         ::-webkit-scrollbar-track {
-            background: #0f172a;
+            background: #030712;
         }
         ::-webkit-scrollbar-thumb {
-            background: #334155;
+            background: #1e293b;
             border-radius: 9999px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #475569;
+            background: #334155;
         }
 
-        /* Glassmorphism custom classes */
+        /* Ultra Premium Glassmorphism Panel */
         .glass-panel {
-            background: rgba(15, 23, 42, 0.65);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(10, 15, 30, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
+        /* Premium Glass Input */
         .glass-input {
-            background: rgba(30, 41, 59, 0.45);
+            background: rgba(15, 23, 42, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .glass-input:focus {
-            border-color: #6366f1;
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
-            background: rgba(30, 41, 59, 0.65);
+            border-color: rgba(99, 102, 241, 0.8);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.25);
+            background: rgba(15, 23, 42, 0.8);
         }
 
         @keyframes pulse-glow {
             0%, 100% {
-                box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+                box-shadow: 0 0 15px rgba(99, 102, 241, 0.35);
+                transform: translateY(0);
             }
             50% {
-                box-shadow: 0 0 30px rgba(99, 102, 241, 0.6);
+                box-shadow: 0 0 30px rgba(99, 102, 241, 0.65);
+                transform: translateY(-2px);
             }
         }
         .glowing-btn {
             animation: pulse-glow 3s infinite;
         }
+        
+        /* Subtle card reflection */
+        .premium-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.01) 50%, rgba(99, 102, 241, 0.15));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between">
+<body class="min-h-screen flex flex-col justify-between relative">
 
-    <!-- Efek Latar Belakang Bercahaya -->
-    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand-500 rounded-full glowing-blob"></div>
-    <div class="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-brand-accent rounded-full glowing-blob"></div>
-    <div class="absolute bottom-10 left-10 w-[300px] h-[300px] bg-indigo-500 rounded-full glowing-blob"></div>
+    <!-- Efek Latar Belakang Bercahaya (Aurora) -->
+    <div class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-indigo-600 rounded-full glowing-blob" style="animation-delay: 0s;"></div>
+    <div class="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-brand-accent rounded-full glowing-blob" style="animation-delay: -3s;"></div>
+    <div class="absolute bottom-10 left-10 w-[400px] h-[400px] bg-violet-600 rounded-full glowing-blob" style="animation-delay: -6s;"></div>
 
     <!-- Navigation Header -->
-    <header class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 z-10 relative">
-        <div class="flex items-center justify-between glass-panel px-6 py-4 rounded-2xl">
-            <!-- Brand Logo -->
-            <button onclick="switchTab('downloader')" class="flex items-center gap-3 focus:outline-none text-left">
-                <div class="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden bg-white/5 border border-white/10">
-                    <img src="https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png" alt="TikSave Logo" class="w-full h-full object-cover">
+    <header class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 z-10 relative">
+        <div class="flex items-center justify-between glass-panel px-6 py-4 rounded-2xl premium-card">
+            <!-- Brand Logo (Header di baris 132) -->
+            <button onclick="switchTab('downloader')" class="flex items-center gap-3.5 focus:outline-none text-left group active:scale-95 transition-transform duration-155">
+                <div class="w-11 h-11 rounded-xl flex items-center justify-center overflow-hidden bg-white/5 border border-white/10 group-hover:border-indigo-500/30 transition-all duration-300">
+                    <img src="https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png" alt="TikSave Logo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                 </div>
                 <div>
-                    <h1 class="text-2xl font-extrabold tracking-tight font-display bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-200 to-brand-accent">
+                    <h1 class="text-2xl font-extrabold tracking-tight font-display bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-100 to-brand-accent">
                         Tik<span class="text-brand-accent">Save</span>
                     </h1>
                 </div>
             </button>
 
-            <!-- Desktop Nav Links -->
-            <div class="hidden md:flex items-center gap-2">
-                <button id="nav-downloader" onclick="switchTab('downloader')" class="px-4 py-2 rounded-xl text-sm font-semibold bg-white/5 border border-white/10 text-white transition-all hover:bg-white/10">
+            <!-- Desktop Nav Links (Solid Modern Segmented Design - Non-Glass Active State) -->
+            <div class="hidden md:flex items-center gap-2 bg-slate-950/60 p-1.5 rounded-2xl border border-white/5 shadow-inner">
+                <button id="nav-downloader" onclick="switchTab('downloader')" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 hover:bg-indigo-500">
                     Downloader
                 </button>
-                <button id="nav-api" onclick="switchTab('api')" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-400 hover:text-white hover:bg-white/5 transition-all flex items-center gap-1">
+                <button id="nav-api" onclick="switchTab('api')" class="px-5 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5">
                     Docs API
                 </button>
-                <button onclick="showDonation()" class="ml-2 px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 rounded-xl text-xs font-bold text-white transition-all flex items-center gap-2 shadow-lg shadow-indigo-500/20 active:scale-95">
-                    <i data-lucide="heart" class="w-3.5 h-3.5"></i> Donasi
+                <div class="w-[1px] h-5 bg-white/10 mx-1"></div>
+                <button onclick="showDonation()" class="px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 rounded-xl text-xs font-bold text-white transition-all duration-150 transform active:scale-95 flex items-center gap-2 shadow-lg shadow-indigo-600/30">
+                    <i data-lucide="heart" class="w-3.5 h-3.5 fill-white/10"></i> Donasi
                 </button>
             </div>
 
             <!-- Mobile Hamburger -->
-            <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-white hover:bg-slate-800 rounded-lg">
-                <i data-lucide="menu"></i>
+            <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 text-white hover:bg-slate-900 rounded-xl transition-all border border-transparent hover:border-white/5 active:scale-90">
+                <i data-lucide="menu" class="w-5 h-5"></i>
             </button>
         </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 z-[70] bg-slate-950/98 backdrop-blur-xl hidden flex flex-col items-center justify-center gap-6">
-        <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 p-2 text-white hover:bg-white/10 rounded-full"><i data-lucide="x"></i></button>
-        <button onclick="switchTab('downloader'); toggleMobileMenu()" class="text-xl font-bold text-white hover:text-brand-accent transition-colors">Downloader</button>
-        <button onclick="switchTab('api'); toggleMobileMenu()" class="text-xl font-bold text-white hover:text-brand-accent transition-colors">Docs API</button>
-        <button onclick="showDonation(); toggleMobileMenu()" class="mt-4 px-8 py-4 bg-gradient-to-r from-brand-accent to-indigo-600 rounded-2xl text-white font-bold flex items-center gap-2 shadow-xl shadow-brand-accent/20">
-            <i data-lucide="heart" class="w-5 h-5"></i> Donasi Sekarang
-        </button>
+    <!-- Mobile Menu Overlay (Solid Dark Premium Slide-In Style - Anti-Glassmorphism) -->
+    <div id="mobile-menu" class="fixed inset-0 z-[70] bg-black/60 hidden transition-opacity duration-300">
+        <!-- Drawer Panel -->
+        <div class="absolute right-0 top-0 h-full w-[82%] max-w-[320px] bg-[#090d1a] border-l border-slate-800 shadow-2xl p-6 flex flex-col justify-between">
+            <div>
+                <!-- Drawer Header (Mobile Menu di baris 173) -->
+                <div class="flex items-center justify-between pb-5 border-b border-slate-900 mb-6">
+                    <div class="flex items-center gap-2.5">
+                        <img src="https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png" alt="Logo" class="w-7 h-7 object-cover">
+                        <span class="text-xs font-extrabold uppercase tracking-widest text-slate-400 font-display">TikSave Menu</span>
+                    </div>
+                    <button onclick="toggleMobileMenu()" class="p-2 bg-slate-900 hover:bg-slate-850 border border-slate-800 text-slate-400 hover:text-white rounded-xl transition-all active:scale-90 shadow-inner">
+                        <i data-lucide="x" class="w-4.5 h-4.5"></i>
+                    </button>
+                </div>
+
+                <!-- Navigation List -->
+                <div class="space-y-4">
+                    <!-- Downloader Card -->
+                    <button onclick="switchTab('downloader'); toggleMobileMenu()" class="w-full text-left p-4 rounded-2xl bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-indigo-500/30 transition-all active:scale-95 flex items-center gap-4 group shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-all shadow-inner">
+                            <i data-lucide="download" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-sm text-white">Downloader</h4>
+                            <p class="text-[10px] text-slate-500 font-medium mt-0.5">Simpan Video & MP3</p>
+                        </div>
+                    </button>
+
+                    <!-- API Card -->
+                    <button onclick="switchTab('api'); toggleMobileMenu()" class="w-full text-left p-4 rounded-2xl bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-brand-accent/30 transition-all active:scale-95 flex items-center gap-4 group shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center group-hover:bg-brand-accent group-hover:text-white transition-all shadow-inner">
+                            <i data-lucide="terminal" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-sm text-white">Docs API</h4>
+                            <p class="text-[10px] text-slate-500 font-medium mt-0.5">Integrasi Pengembang</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Drawer Footer containing Donation option -->
+            <div class="space-y-4">
+                <button onclick="showDonation(); toggleMobileMenu()" class="w-full p-4 bg-gradient-to-r from-indigo-600 via-indigo-500 to-violet-600 hover:from-indigo-500 hover:to-violet-500 rounded-2xl text-white font-extrabold flex items-center justify-center gap-2.5 shadow-lg shadow-indigo-600/35 active:scale-95 transition-all">
+                    <i data-lucide="heart" class="w-5 h-5 fill-white/10"></i> 
+                    <span>Donasi Sekarang</span>
+                </button>
+                
+                <div class="text-center pt-2">
+                    <p class="text-[10px] text-slate-600 font-semibold tracking-wider font-display">TikSave v2.2 • Tercepat & Aman</p>
+                </div>
+            </div>
+        </div>
     </div>
     
     <!-- QRIS Donation Modal -->
-    <div id="donation-modal" class="fixed inset-0 z-[60] hidden bg-black/90 flex items-center justify-center p-4">
-        <div class="bg-white p-6 rounded-3xl max-w-sm w-full text-center relative">
-            <button onclick="hideDonation()" class="absolute top-3 right-3 text-slate-500"><i data-lucide="x"></i></button>
-            <h3 class="text-black font-bold text-lg mb-4">Donasi QRIS</h3>
-            <img src="https://i.ibb.co/Xx3q71HY/IMG-1241.png" alt="QRIS" class="w-full rounded-xl mb-4">
-            <p class="text-slate-600 text-sm">Terima kasih atas dukungannya!</p>
+    <div id="donation-modal" class="fixed inset-0 z-[60] hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-white/10 p-7 rounded-3xl max-w-sm w-full text-center relative shadow-2xl">
+            <button onclick="hideDonation()" class="absolute top-4 right-4 p-1.5 text-slate-400 hover:text-white hover:bg-white/5 rounded-full transition-all"><i data-lucide="x" class="w-5 h-5"></i></button>
+            <div class="w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="heart" class="text-indigo-400 w-6 h-6"></i>
+            </div>
+            <h3 class="text-white font-extrabold text-xl mb-1">Dukung TikSave</h3>
+            <p class="text-slate-400 text-xs mb-5">Pindai kode QRIS di bawah untuk berdonasi</p>
+            <div class="bg-white p-4 rounded-2xl inline-block shadow-inner mb-4">
+                <img src="https://i.ibb.co/Xx3q71HY/IMG-1241.png" alt="QRIS" class="w-56 h-auto rounded-lg mx-auto">
+            </div>
+            <p class="text-slate-500 text-xs font-medium">Terima kasih atas kontribusi berharga Anda!</p>
         </div>
     </div>
 
@@ -169,48 +256,48 @@
     <div id="view-downloader" class="w-full max-w-4xl mx-auto px-4 py-8 z-10 relative flex-grow flex flex-col justify-center">
         
         <!-- Hero Taglines -->
-        <div class="text-center mb-8">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-brand-500/10 text-brand-500 border border-brand-500/20 mb-4">
-                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Downloader TikTok Tercepat & Stabil 2026
+        <div class="text-center mb-10">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 mb-5 shadow-inner">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-indigo-400"></i> Downloader TikTok Tercepat & Stabil 2026
             </span>
-            <h2 class="text-3xl sm:text-5xl font-extrabold font-display tracking-tight text-white mb-4">
-                Unduh Video TikTok <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-accent to-brand-500">Tanpa Watermark</span>
+            <h2 class="text-4xl sm:text-6xl font-extrabold font-display tracking-tight text-white mb-5 leading-tight">
+                Unduh Video TikTok <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-accent via-indigo-300 to-indigo-500">Tanpa Watermark</span>
             </h2>
-            <p class="text-slate-400 max-w-lg mx-auto text-sm sm:text-base">
+            <p class="text-slate-400 max-w-lg mx-auto text-sm sm:text-base leading-relaxed">
                 Simpan video HD dan musik audio MP3 TikTok secara instan. Cukup tempel tautan video dan nikmati unduhan gratis tanpa batas.
             </p>
         </div>
 
         <!-- Central Interactive App Card -->
-        <div class="glass-panel rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
-            <!-- Decorative border accent -->
-            <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-brand-accent via-indigo-500 to-pink-500"></div>
+        <div class="glass-panel rounded-3xl p-6 sm:p-9 shadow-2xl relative overflow-hidden premium-card">
+            <!-- Decorative line accent -->
+            <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-brand-accent via-indigo-500 to-violet-500"></div>
 
             <!-- INPUT STATE CONTAINER -->
             <div id="downloader-form-view">
-                <div class="space-y-4">
-                    <label for="tiktok-url" class="block text-xs font-semibold text-slate-400 uppercase tracking-wider">Masukkan Tautan Video / Foto TikTok</label>
+                <div class="space-y-5">
+                    <label for="tiktok-url" class="block text-xs font-bold text-slate-400 uppercase tracking-widest">Masukkan Tautan Video / Foto TikTok</label>
                     
-                    <div class="relative flex flex-col sm:flex-row gap-3">
+                    <div class="relative flex flex-col sm:flex-row gap-4">
                         <div class="relative flex-grow">
                             <!-- Link Icon -->
-                            <div class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">
+                            <div class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
                                 <i data-lucide="link" class="w-5 h-5"></i>
                             </div>
-                            <!-- URL Input Box -->
+                            <!-- URL Input Box (Paddings and alignments perfectly calibrated) -->
                             <input 
                                 type="text" 
                                 id="tiktok-url" 
-                                placeholder="Tempel tautan TikTok di sini... (contoh: https://vt.tiktok.com/...)" 
-                                class="w-full pl-12 pr-28 py-4 sm:py-5 rounded-2xl text-white text-sm sm:text-base glass-input outline-none"
+                                placeholder="Tempel tautan TikTok di sini..." 
+                                class="w-full pl-11 pr-28 py-4 sm:py-5 rounded-2xl text-white text-sm sm:text-base glass-input outline-none font-medium placeholder:text-slate-500"
                                 autocomplete="off"
                             >
                             <!-- Clear & Paste Action Buttons -->
                             <div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1.5">
-                                <button onclick="clearInput()" id="btn-clear" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-700/50 transition-all hidden" title="Hapus teks">
+                                <button onclick="clearInput()" id="btn-clear" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all hidden active:scale-90" title="Hapus teks">
                                     <i data-lucide="x" class="w-4 h-4"></i>
                                 </button>
-                                <button onclick="pasteFromClipboard()" class="flex items-center gap-1 px-3 py-1.5 rounded-xl bg-indigo-500/10 hover:bg-indigo-500/20 text-brand-accent text-xs font-medium border border-indigo-500/20 transition-all" title="Tempel dari Clipboard">
+                                <button onclick="pasteFromClipboard()" class="flex items-center gap-1 px-3 py-2 rounded-xl bg-indigo-500/10 hover:bg-indigo-500/20 text-brand-accent text-xs font-bold border border-indigo-500/20 transition-all shrink-0 active:scale-95" title="Tempel dari Clipboard">
                                     <i data-lucide="clipboard" class="w-3.5 h-3.5"></i>
                                     <span>Tempel</span>
                                 </button>
@@ -218,7 +305,7 @@
                         </div>
 
                         <!-- Submit Button -->
-                        <button onclick="handleDownload()" class="glowing-btn sm:px-8 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white font-semibold text-sm tracking-wide shadow-lg shadow-brand-500/20 hover:shadow-brand-500/40 transform active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer">
+                        <button onclick="handleDownload()" class="glowing-btn px-8 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-bold text-sm tracking-wide shadow-lg shadow-indigo-600/30 transform active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0">
                             <i data-lucide="arrow-right-circle" class="w-5 h-5"></i>
                             <span>Download</span>
                         </button>
@@ -237,8 +324,8 @@
                     </div>
 
                     <!-- Quick Help Hint -->
-                    <div class="flex items-center justify-between text-xs text-slate-500 pt-1 px-1">
-                        <span class="flex items-center gap-1">
+                    <div class="flex items-center justify-between text-xs text-slate-500 pt-1 px-1 font-medium">
+                        <span class="flex items-center gap-1.5">
                             <i data-lucide="check-circle" class="w-3.5 h-3.5 text-brand-accent"></i>
                             Gratis tanpa registrasi akun
                         </span>
@@ -253,19 +340,19 @@
                 <div class="relative w-24 h-24">
                     <div class="absolute inset-0 rounded-full border-4 border-slate-800/80"></div>
                     <div class="absolute inset-0 rounded-full border-4 border-indigo-500 border-t-transparent animate-spin"></div>
-                    <div class="absolute inset-2 bg-slate-900 rounded-full flex items-center justify-center">
-                        <i data-lucide="loader-2" class="w-8 h-8 text-indigo-400 animate-pulse"></i>
+                    <div class="absolute inset-2 bg-slate-950 rounded-full flex items-center justify-center">
+                        <i data-lucide="loader-2" class="w-8 h-8 text-indigo-400 animate-pulse animate-spin"></i>
                     </div>
                 </div>
                 
                 <div class="space-y-2">
                     <h3 id="loading-title" class="text-xl font-bold font-display text-white">Menghubungkan Server...</h3>
-                    <p id="loading-sub" class="text-xs text-slate-400 max-w-sm mx-auto">Harap bersabar, kami sedang menganalisis tautan dan mengonversi format media TikTok untuk Anda.</p>
+                    <p id="loading-sub" class="text-xs text-slate-400 max-w-sm mx-auto leading-relaxed">Harap bersabar, kami sedang menganalisis tautan dan mengonversi format media TikTok untuk Anda.</p>
                 </div>
 
                 <!-- Custom Elegant Progress Bar -->
-                <div class="w-full max-w-md bg-slate-800 rounded-full h-2 overflow-hidden border border-slate-700/50">
-                    <div id="loading-progress" class="bg-gradient-to-r from-brand-accent to-brand-500 h-full w-[10%] transition-all duration-300"></div>
+                <div class="w-full max-w-md bg-slate-800 rounded-full h-2.5 overflow-hidden border border-slate-700/50">
+                    <div id="loading-progress" class="bg-gradient-to-r from-brand-accent to-indigo-500 h-full w-[10%] transition-all duration-300"></div>
                 </div>
                 <span id="loading-percentage" class="text-xs font-mono font-bold text-slate-400">10%</span>
             </div>
@@ -276,7 +363,7 @@
                     
                     <!-- Left Column: Video Preview and Creator Detail -->
                     <div class="w-full md:w-[280px] shrink-0 space-y-4">
-                        <div id="preview-media-container" class="relative group aspect-[9/16] max-h-[380px] w-full rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center">
+                        <div id="preview-media-container" class="relative group aspect-[9/16] max-h-[380px] w-full rounded-2xl overflow-hidden bg-black border border-slate-800 shadow-2xl flex items-center justify-center">
                             
                             <!-- Static Cover -->
                             <img id="video-cover" src="https://ibb.co/zhRnzxsQ" alt="Cover" class="w-full h-full object-cover">
@@ -291,15 +378,15 @@
                                 </div>
                                 
                                 <!-- Slider Controls -->
-                                <button id="btn-slide-prev" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center text-white hover:bg-black/80 transition-all z-10">
+                                <button id="btn-slide-prev" class="absolute left-2.5 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/70 backdrop-blur-md flex items-center justify-center text-white hover:bg-black/90 transition-all z-10 border border-white/5 shadow-lg active:scale-90">
                                     <i data-lucide="chevron-left" class="w-5 h-5"></i>
                                 </button>
-                                <button id="btn-slide-next" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center text-white hover:bg-black/80 transition-all z-10">
+                                <button id="btn-slide-next" class="absolute right-2.5 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/70 backdrop-blur-md flex items-center justify-center text-white hover:bg-black/90 transition-all z-10 border border-white/5 shadow-lg active:scale-90">
                                     <i data-lucide="chevron-right" class="w-5 h-5"></i>
                                 </button>
                                 
                                 <!-- Slider Indicator Badge -->
-                                <div id="slide-badge" class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/75 backdrop-blur-md text-[10px] font-bold text-white tracking-wider flex items-center gap-1 z-10">
+                                <div id="slide-badge" class="absolute top-3 left-3 px-3 py-1.5 rounded-xl bg-black/75 backdrop-blur-md text-[10px] font-bold text-white tracking-wider flex items-center gap-1.5 z-10 border border-white/5">
                                     <i data-lucide="images" class="w-3.5 h-3.5 text-brand-accent"></i>
                                     <span id="slide-index-counter">1/1</span>
                                 </div>
@@ -307,30 +394,30 @@
                             
                             <!-- Stat Badges overlay -->
                             <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-1 z-10">
-                                <span class="px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[10px] font-bold text-white flex items-center gap-1">
-                                    <i data-lucide="heart" class="w-3 h-3 text-red-500"></i>
+                                <span class="px-2.5 py-1.5 rounded-xl bg-black/70 backdrop-blur-md text-[10px] font-bold text-white flex items-center gap-1.5 border border-white/5">
+                                    <i data-lucide="heart" class="w-3.5 h-3.5 text-red-500 fill-red-500"></i>
                                     <span id="stat-likes">0</span>
                                 </span>
-                                <span class="px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-[10px] font-bold text-white flex items-center gap-1">
-                                    <i data-lucide="play" class="w-3 h-3 text-brand-accent"></i>
+                                <span class="px-2.5 py-1.5 rounded-xl bg-black/70 backdrop-blur-md text-[10px] font-bold text-white flex items-center gap-1.5 border border-white/5">
+                                    <i data-lucide="play" class="w-3.5 h-3.5 text-brand-accent fill-brand-accent/20"></i>
                                     <span id="stat-views">0</span>
                                 </span>
                             </div>
                         </div>
 
                         <!-- Creator Card -->
-                        <div class="flex items-center gap-3 bg-slate-800/40 p-3.5 rounded-2xl border border-slate-700/30">
-                            <img id="creator-avatar" src="https://placehold.co/100x100/1e293b/fff?text=User" alt="Avatar" class="w-10 h-10 rounded-full border border-brand-500/30 object-cover">
+                        <div class="flex items-center gap-3.5 bg-slate-900/50 p-4 rounded-2xl border border-white/5 shadow-inner">
+                            <img id="creator-avatar" src="https://placehold.co/100x100/1e293b/fff?text=User" alt="Avatar" class="w-11 h-11 rounded-full border border-brand-500/30 object-cover shadow-md">
                             <div class="overflow-hidden">
-                                <h4 id="creator-name" class="font-bold text-sm text-white truncate">Creator TikTok</h4>
-                                <p id="creator-username" class="text-xs text-slate-400 truncate">@username</p>
+                                <h4 id="creator-name" class="font-extrabold text-sm text-white truncate">Creator TikTok</h4>
+                                <p id="creator-username" class="text-xs text-slate-400 font-medium truncate">@username</p>
                             </div>
                         </div>
 
                         <!-- Caption Tambahan -->
-                        <div id="caption-container" class="p-4 bg-slate-800/20 rounded-2xl border border-slate-700/20">
-                            <h4 class="text-[10px] font-bold uppercase text-slate-500 tracking-wider mb-2">Caption</h4>
-                            <p id="video-caption-left" class="text-xs text-slate-300 leading-relaxed line-clamp-6">Menganalisis deskripsi...</p>
+                        <div id="caption-container" class="p-4 bg-slate-900/30 rounded-2xl border border-white/5">
+                            <h4 class="text-[10px] font-extrabold uppercase text-indigo-400 tracking-widest mb-2">Caption</h4>
+                            <p id="video-caption-left" class="text-xs text-slate-300 leading-relaxed line-clamp-6 font-medium">Menganalisis deskripsi...</p>
                         </div>
                     </div>
 
@@ -339,8 +426,8 @@
                         <!-- Video Description -->
                         <div class="space-y-1.5">
                             <div class="flex items-center justify-between">
-                                <span id="content-type-badge" class="text-[10px] font-bold uppercase tracking-wider text-brand-accent">Hasil Berhasil Ditemukan</span>
-                                <button onclick="resetDownloader()" class="text-xs text-slate-400 hover:text-white flex items-center gap-1 transition-all">
+                                <span id="content-type-badge" class="text-[11px] font-extrabold uppercase tracking-wider text-brand-accent">Hasil Berhasil Ditemukan</span>
+                                <button onclick="resetDownloader()" class="text-xs text-slate-400 hover:text-white flex items-center gap-1.5 transition-all font-semibold active:scale-95">
                                     <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Cari Lagi
                                 </button>
                             </div>
@@ -354,26 +441,26 @@
                         <!-- Interactive Photo List -->
                         <div id="photo-album-section" class="hidden space-y-3 pt-2">
                             <div class="flex items-center justify-between">
-                                <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider">Unduh Gambar Secara Terpisah:</h4>
+                                <h4 class="text-xs font-bold uppercase text-slate-400 tracking-widest">Unduh Gambar Secara Terpisah:</h4>
                                 <span id="photo-count-lbl" class="text-[11px] font-mono text-indigo-400 font-semibold">0 Foto Tersedia</span>
                             </div>
-                            <div id="photo-links-list" class="max-h-48 overflow-y-auto pr-1 space-y-2 border border-slate-800 rounded-xl p-2 bg-slate-900/30">
+                            <div id="photo-links-list" class="max-h-52 overflow-y-auto pr-1 space-y-2 border border-slate-800 rounded-2xl p-3 bg-slate-950/40">
                                 <!-- Daftar unduhan foto -->
                             </div>
                         </div>
 
                         <!-- Special Help Tip Banner -->
-                        <div class="bg-indigo-950/40 border border-indigo-900/40 rounded-2xl p-4 flex items-start gap-3">
+                        <div class="bg-indigo-950/20 border border-indigo-500/15 rounded-2xl p-4.5 flex items-start gap-3.5 shadow-sm">
                             <i data-lucide="info" class="w-5 h-5 text-indigo-400 shrink-0 mt-0.5 animate-pulse"></i>
-                            <div class="text-xs text-indigo-200/90 leading-relaxed">
-                                <span class="font-bold text-white block mb-0.5">💡 Cara Mengunduh di Browser:</span>
+                            <div class="text-xs text-indigo-200/90 leading-relaxed font-medium">
+                                <span class="font-extrabold text-white block mb-0.5">💡 Cara Mengunduh di Browser:</span>
                                 Klik salah satu tombol hijau di atas untuk memulai unduhan otomatis. Jika browser Anda memutar media secara langsung, ketuk tombol titik tiga <span class="font-bold text-white">(⋮)</span> di pojok kanan bawah lalu pilih <span class="font-bold text-white">Download</span>.
                             </div>
                         </div>
 
                         <!-- Reset View Button -->
                         <div class="pt-2 flex justify-end">
-                            <button onclick="resetDownloader()" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300 hover:text-white transition-all flex items-center gap-2 cursor-pointer">
+                            <button onclick="resetDownloader()" class="px-6 py-3.5 rounded-xl bg-slate-900 border border-white/5 hover:bg-slate-800 text-xs font-bold text-slate-300 hover:text-white transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-md active:scale-95">
                                 <i data-lucide="refresh-cw" class="w-4 h-4"></i>
                                 <span>Unduh Media Lainnya</span>
                             </button>
@@ -386,13 +473,13 @@
         </div>
 
         <!-- Recent Downloads History Section -->
-        <section id="download-history-section" class="mt-12 hidden">
-            <div class="flex items-center justify-between mb-4 px-1">
+        <section id="download-history-section" class="mt-14 hidden">
+            <div class="flex items-center justify-between mb-5 px-1">
                 <div class="flex items-center gap-2">
                     <i data-lucide="history" class="w-5 h-5 text-indigo-400"></i>
                     <h3 class="font-display font-extrabold text-lg text-white">Riwayat Unduhan Anda</h3>
                 </div>
-                <button onclick="clearHistory()" class="text-xs text-slate-500 hover:text-red-400 transition-colors flex items-center gap-1 cursor-pointer">
+                <button onclick="clearHistory()" class="text-xs text-slate-500 hover:text-red-400 transition-colors flex items-center gap-1 cursor-pointer font-semibold">
                     <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Bersihkan Semua
                 </button>
             </div>
@@ -404,42 +491,42 @@
         </section>
 
         <!-- Informational Sections (FAQ & How to use) -->
-        <section id="how-to" class="mt-20 space-y-16">
+        <section id="how-to" class="mt-24 space-y-20">
             
             <!-- Features Cards Grid -->
             <div id="features" class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div class="glass-panel p-6 rounded-2xl flex flex-col items-start gap-4">
+                <div class="glass-panel p-7 rounded-2xl flex flex-col items-start gap-4 premium-card relative">
                     <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
                         <i data-lucide="shield-check" class="w-6 h-6"></i>
                     </div>
                     <div>
-                        <h4 class="font-display font-bold text-base text-white mb-2">100% Aman & Tanpa Batas</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">
+                        <h4 class="font-display font-extrabold text-base text-white mb-2">100% Aman & Tanpa Batas</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed font-medium">
                             Kami tidak merekam atau menyimpan video Anda di server kami. Anda bisa mengunduh sepuasnya tanpa batasan kuota harian.
                         </p>
                     </div>
                 </div>
                 <!-- Card 2 -->
-                <div class="glass-panel p-6 rounded-2xl flex flex-col items-start gap-4">
+                <div class="glass-panel p-7 rounded-2xl flex flex-col items-start gap-4 premium-card relative">
                     <div class="w-12 h-12 rounded-xl bg-brand-accent/10 border border-brand-accent/20 flex items-center justify-center text-brand-accent">
                         <i data-lucide="zap" class="w-6 h-6"></i>
                     </div>
                     <div>
-                        <h4 class="font-display font-bold text-base text-white mb-2">Konversi Kecepatan Kilat</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">
+                        <h4 class="font-display font-extrabold text-base text-white mb-2">Konversi Kecepatan Kilat</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed font-medium">
                             Mesin server cerdas kami memproses dan melucuti watermark video TikTok secara instan dalam kurun waktu kurang dari 3 detik.
                         </p>
                     </div>
                 </div>
                 <!-- Card 3 -->
-                <div class="glass-panel p-6 rounded-2xl flex flex-col items-start gap-4">
+                <div class="glass-panel p-7 rounded-2xl flex flex-col items-start gap-4 premium-card relative">
                     <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400">
                         <i data-lucide="sparkles" class="w-6 h-6"></i>
                     </div>
                     <div>
-                        <h4 class="font-display font-bold text-base text-white mb-2">Resolusi Kualitas HD</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">
+                        <h4 class="font-display font-extrabold text-base text-white mb-2">Resolusi Kualitas HD</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed font-medium">
                             Unduh media Anda dalam resolusi original tertinggi tanpa kompresi yang merusak estetika visual video TikTok asli.
                         </p>
                     </div>
@@ -447,73 +534,82 @@
             </div>
 
             <!-- Guide Steps -->
-            <div class="glass-panel rounded-3xl p-8 sm:p-10 space-y-10">
+            <div class="glass-panel rounded-3xl p-8 sm:p-12 space-y-12 premium-card relative">
                 <div class="text-center max-w-lg mx-auto">
                     <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white mb-2">Cara Mengunduh Video TikTok Tanpa Watermark</h3>
-                    <p class="text-xs sm:text-sm text-slate-400">Sangat mudah dan hanya membutuhkan 3 langkah sederhana di semua gadget Anda.</p>
+                    <p class="text-xs sm:text-sm text-slate-400 font-medium font-display">Sangat mudah dan hanya membutuhkan 3 langkah sederhana di semua gadget Anda.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                     <!-- Step 1 -->
-                    <div class="relative flex flex-col items-center text-center space-y-3">
-                        <div class="w-10 h-10 rounded-full bg-slate-800 text-brand-accent border border-slate-700/50 flex items-center justify-center text-sm font-extrabold font-mono">1</div>
-                        <h5 class="font-bold text-sm text-white">Salin Tautan Video</h5>
-                        <p class="text-xs text-slate-400 max-w-[220px]">Buka aplikasi TikTok Anda, ketuk tombol <strong>Bagikan</strong> lalu pilih <strong>Salin Tautan</strong>.</p>
+                    <div class="relative flex flex-col items-center text-center space-y-4">
+                        <div class="w-11 h-11 rounded-full bg-slate-900 text-brand-accent border border-slate-700/50 flex items-center justify-center text-sm font-extrabold font-mono shadow-md">1</div>
+                        <h5 class="font-extrabold text-sm text-white">Salin Tautan Video</h5>
+                        <p class="text-xs text-slate-400 max-w-[220px] leading-relaxed font-medium">Buka aplikasi TikTok Anda, ketuk tombol <strong>Bagikan</strong> lalu pilih <strong>Salin Tautan</strong>.</p>
                     </div>
                     <!-- Step 2 -->
-                    <div class="relative flex flex-col items-center text-center space-y-3">
-                        <div class="w-10 h-10 rounded-full bg-slate-800 text-brand-accent border border-slate-700/50 flex items-center justify-center text-sm font-extrabold font-mono">2</div>
-                        <h5 class="font-bold text-sm text-white">Tempelkan Tautan</h5>
-                        <p class="text-xs text-slate-400 max-w-[220px]">Buka halaman TikSave, tempelkan tautan yang disalin tadi pada kotak pencarian di atas.</p>
+                    <div class="relative flex flex-col items-center text-center space-y-4">
+                        <div class="w-11 h-11 rounded-full bg-slate-900 text-brand-accent border border-slate-700/50 flex items-center justify-center text-sm font-extrabold font-mono shadow-md">2</div>
+                        <h5 class="font-extrabold text-sm text-white">Tempelkan Tautan</h5>
+                        <p class="text-xs text-slate-400 max-w-[220px] leading-relaxed font-medium">Buka halaman TikSave, tempelkan tautan yang disalin tadi pada kotak pencarian di atas.</p>
                     </div>
                     <!-- Step 3 -->
-                    <div class="relative flex flex-col items-center text-center space-y-3">
-                        <div class="w-10 h-10 rounded-full bg-slate-800 text-brand-accent border border-slate-700/50 flex items-center justify-center text-sm font-extrabold font-mono">3</div>
-                        <h5 class="font-bold text-sm text-white">Simpan Video</h5>
-                        <p class="text-xs text-slate-400 max-w-[220px]">Ketuk tombol <strong>Download</strong>, pilih opsi file tanpa watermark, dan video siap ditonton offline!</p>
+                    <div class="relative flex flex-col items-center text-center space-y-4">
+                        <div class="w-11 h-11 rounded-full bg-slate-900 text-brand-accent border border-slate-700/50 flex items-center justify-center text-sm font-extrabold font-mono shadow-md">3</div>
+                        <h5 class="font-extrabold text-sm text-white">Simpan Video</h5>
+                        <p class="text-xs text-slate-400 max-w-[220px] leading-relaxed font-medium">Ketuk tombol <strong>Download</strong>, pilih opsi file tanpa watermark, dan video siap ditonton offline!</p>
                     </div>
                 </div>
             </div>
 
-            <!-- FAQ Accordions -->
-            <div id="faq" class="space-y-6">
+            <!-- FAQ Accordions (Tidied Up, Organized, Premium Left Indigo Border Indicator) -->
+            <div id="faq" class="space-y-8">
                 <div class="text-center max-w-lg mx-auto">
                     <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white mb-2">Pertanyaan Populer (FAQ)</h3>
-                    <p class="text-xs sm:text-sm text-slate-400">Segala informasi cepat terkait TikSave dan pengunduh TikTok.</p>
+                    <p class="text-xs sm:text-sm text-slate-400 font-medium font-display">Segala informasi cepat terkait TikSave dan pengunduh TikTok.</p>
                 </div>
 
-                <div class="max-w-3xl mx-auto space-y-3">
-                    <div class="glass-panel rounded-2xl overflow-hidden transition-all duration-300">
-                        <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left font-bold text-sm text-white hover:bg-slate-800/20 transition-all">
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="bg-slate-900/50 border border-white/5 rounded-2xl overflow-hidden transition-all duration-300 shadow-md">
+                        <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left font-extrabold text-sm sm:text-base text-white hover:bg-slate-800/40 transition-all active:scale-[0.99] duration-150">
                             <span>Apakah pengunduh video TikTok di TikSave ini berbayar?</span>
-                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform"></i>
+                            <div class="w-7 h-7 rounded-full bg-indigo-500/10 flex items-center justify-center shrink-0">
+                                <i data-lucide="chevron-down" class="w-4 h-4 text-indigo-400 transition-transform duration-350"></i>
+                            </div>
                         </button>
-                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 bg-slate-900/30">
-                            <p class="p-6 text-xs text-slate-400 leading-relaxed">
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-350 bg-slate-950/20 border-l-4 border-indigo-600">
+                            <p class="p-6 text-xs sm:text-sm text-slate-400 leading-relaxed font-medium">
                                 Tidak, semua layanan pengunduhan TikTok di TikSave 100% gratis secara penuh. Anda tidak perlu mendaftar, berlangganan, atau memasang ekstensi browser apa pun untuk mengunduh video tanpa watermark.
                             </p>
                         </div>
                     </div>
 
-                    <div class="glass-panel rounded-2xl overflow-hidden transition-all duration-300">
-                        <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left font-bold text-sm text-white hover:bg-slate-800/20 transition-all">
+                    <!-- FAQ 2 -->
+                    <div class="bg-slate-900/50 border border-white/5 rounded-2xl overflow-hidden transition-all duration-300 shadow-md">
+                        <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left font-extrabold text-sm sm:text-base text-white hover:bg-slate-800/40 transition-all active:scale-[0.99] duration-150">
                             <span>Di mana file video / foto TikTok disimpan setelah diunduh?</span>
-                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform"></i>
+                            <div class="w-7 h-7 rounded-full bg-indigo-500/10 flex items-center justify-center shrink-0">
+                                <i data-lucide="chevron-down" class="w-4 h-4 text-indigo-400 transition-transform duration-350"></i>
+                            </div>
                         </button>
-                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 bg-slate-900/30">
-                            <p class="p-6 text-xs text-slate-400 leading-relaxed">
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-350 bg-slate-950/20 border-l-4 border-indigo-600">
+                            <p class="p-6 text-xs sm:text-sm text-slate-400 leading-relaxed font-medium">
                                 Secara umum, file yang Anda unduh akan otomatis masuk ke folder default <strong>Downloads</strong> atau <strong>Unduhan</strong> di perangkat Anda, kecuali jika Anda telah mengubah lokasi direktori unduhan di peramban Anda.
                             </p>
                         </div>
                     </div>
 
-                    <div class="glass-panel rounded-2xl overflow-hidden transition-all duration-300">
-                        <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left font-bold text-sm text-white hover:bg-slate-800/20 transition-all">
+                    <!-- FAQ 3 -->
+                    <div class="bg-slate-900/50 border border-white/5 rounded-2xl overflow-hidden transition-all duration-300 shadow-md">
+                        <button onclick="toggleFaq(this)" class="w-full px-6 py-5 flex items-center justify-between text-left font-extrabold text-sm sm:text-base text-white hover:bg-slate-800/40 transition-all active:scale-[0.99] duration-150">
                             <span>Apakah TikSave mendukung pengunduhan slide foto / korsel?</span>
-                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform"></i>
+                            <div class="w-7 h-7 rounded-full bg-indigo-500/10 flex items-center justify-center shrink-0">
+                                <i data-lucide="chevron-down" class="w-4 h-4 text-indigo-400 transition-transform duration-350"></i>
+                            </div>
                         </button>
-                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 bg-slate-900/30">
-                            <p class="p-6 text-xs text-slate-400 leading-relaxed">
+                        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-350 bg-slate-950/20 border-l-4 border-indigo-600">
+                            <p class="p-6 text-xs sm:text-sm text-slate-400 leading-relaxed font-medium">
                                 Ya, TikSave mendukung pengunduhan pos foto atau korsel TikTok. Sistem kami akan mengenali tipe konten dan menyediakan tautan langsung untuk mengunduh seluruh file foto dalam album beserta musik latar belakangnya.
                             </p>
                         </div>
@@ -526,20 +622,20 @@
 
     <!-- SECTION 2: DEVELOPER API DOCUMENTATION (SEPARATED VIEW) -->
     <div id="view-api" class="w-full max-w-7xl mx-auto px-4 py-8 z-10 relative flex-grow hidden">
-        <div class="glass-panel rounded-3xl p-6 sm:p-10 space-y-8 relative overflow-hidden">
+        <div class="glass-panel rounded-3xl p-6 sm:p-10 space-y-8 relative overflow-hidden premium-card">
             <!-- Neon cyan decorative ambient glow -->
             <div class="absolute -right-24 -top-24 w-48 h-48 bg-brand-accent/30 rounded-full blur-3xl pointer-events-none"></div>
             
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div class="space-y-2">
-                    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-brand-accent/10 text-brand-accent border border-brand-accent/20">
+                <div class="space-y-2.5">
+                    <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-accent/10 text-brand-accent border border-brand-accent/20">
                         <i data-lucide="terminal" class="w-3.5 h-3.5"></i> Layanan Integrasi Terbuka (Public API)
                     </span>
                     <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white">Dokumentasi API TikSave</h3>
-                    <p class="text-xs sm:text-sm text-slate-400">Gunakan REST API gratis kami untuk membuat bot Telegram, aplikasi mobile, atau situs web downloader Anda sendiri.</p>
+                    <p class="text-xs sm:text-sm text-slate-400 font-medium">Gunakan REST API gratis kami untuk membuat bot Telegram, aplikasi mobile, atau situs web downloader Anda sendiri.</p>
                 </div>
                 <div class="shrink-0">
-                    <span class="px-3 py-1.5 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold flex items-center gap-1.5">
+                    <span class="px-3.5 py-2 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold flex items-center gap-2 shadow-inner">
                         <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
                         Status: AKTIF & GRATIS
                     </span>
@@ -551,27 +647,27 @@
                 <!-- Left Panel: Endpoint Specs -->
                 <div class="space-y-5">
                     <div class="space-y-2">
-                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">1. Endpoint HTTP Request</h4>
-                        <div class="flex items-center gap-2 p-3 bg-slate-950 rounded-xl border border-slate-800 font-mono text-xs overflow-x-auto text-slate-300">
-                            <span class="px-2 py-1 rounded bg-brand-accent/10 text-brand-accent font-bold">GET</span>
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest">1. Endpoint HTTP Request</h4>
+                        <div class="flex items-center gap-2 p-3.5 bg-slate-950 rounded-xl border border-white/5 font-mono text-xs overflow-x-auto text-indigo-200 shadow-inner">
+                            <span class="px-2 py-1 rounded bg-brand-accent/10 text-brand-accent font-extrabold text-[10px]">GET</span>
                             <span id="api-endpoint-url" class="select-all">https://website-anda.com/?api=true&url={LINK_TIKTOK}</span>
                         </div>
                     </div>
 
                     <div class="space-y-2">
-                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">2. Query Parameters</h4>
-                        <div class="border border-slate-800 rounded-xl overflow-hidden text-xs bg-slate-900/10">
-                            <div class="grid grid-cols-3 gap-2 bg-slate-900/50 p-3 font-semibold text-slate-300 border-b border-slate-800">
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest">2. Query Parameters</h4>
+                        <div class="border border-slate-800/80 rounded-xl overflow-hidden text-xs bg-slate-900/10 shadow-lg">
+                            <div class="grid grid-cols-3 gap-2 bg-slate-900/40 p-3.5 font-extrabold text-slate-300 border-b border-white/5">
                                 <span>Parameter</span>
                                 <span>Tipe</span>
                                 <span>Deskripsi</span>
                             </div>
-                            <div class="grid grid-cols-3 gap-2 p-3 border-b border-slate-800/50 text-slate-400">
+                            <div class="grid grid-cols-3 gap-2 p-3.5 border-b border-white/5 text-slate-400 font-medium">
                                 <span class="font-bold text-slate-300 font-mono">api</span>
                                 <span class="text-brand-accent font-mono">string</span>
-                                <span>Wajib diisi dengan nilai <code class="text-slate-300 font-mono">true</code></span>
+                                <span>Wajib diisi dengan nilai <code class="text-slate-300 font-mono bg-slate-900 px-1 py-0.5 rounded">true</code></span>
                             </div>
-                            <div class="grid grid-cols-3 gap-2 p-3 text-slate-400">
+                            <div class="grid grid-cols-3 gap-2 p-3.5 text-slate-400 font-medium">
                                 <span class="font-bold text-slate-300 font-mono">url</span>
                                 <span class="text-brand-accent font-mono">string</span>
                                 <span>URL video/foto TikTok valid yang ingin diunduh.</span>
@@ -580,10 +676,10 @@
                     </div>
 
                     <div class="space-y-2">
-                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">3. Contoh Kode Integrasi (JavaScript Fetch)</h4>
-                        <div class="relative">
-                            <pre class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-[11px] font-mono text-indigo-300 overflow-x-auto">
-fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS23asd/')
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest">3. Contoh Kode Integrasi (JavaScript Fetch)</h4>
+                        <div class="relative shadow-xl rounded-xl overflow-hidden border border-white/5">
+                            <pre class="bg-slate-950 p-4.5 text-[11px] font-mono text-indigo-300 overflow-x-auto">
+fetch('https://website-anda.com/?api=true&url=https://vt.tiktok.com/ZS23asd/')
   .then(res => res.json())
   .then(data => {
     console.log("Judul Video:", data.data.title);
@@ -597,11 +693,11 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS23asd
 
                 <!-- Right Panel: Expected JSON Response mockup -->
                 <div class="space-y-2 flex flex-col h-full">
-                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
-                        <span>4. Format Respons JSON Sukses (Hasil Kembalian)</span>
-                        <span class="text-[10px] font-mono text-brand-accent uppercase">application/json</span>
+                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center justify-between">
+                        <span>4. Format Respons JSON Sukses</span>
+                        <span class="text-[10px] font-mono text-brand-accent uppercase bg-brand-accent/5 px-2 py-0.5 rounded border border-brand-accent/10">application/json</span>
                     </h4>
-                    <div class="flex-grow bg-slate-950 p-4 rounded-xl border border-slate-800 font-mono text-[11px] text-emerald-400 overflow-y-auto max-h-[350px]">
+                    <div class="flex-grow bg-slate-950 p-4.5 rounded-xl border border-white/5 font-mono text-[11px] text-emerald-400 overflow-y-auto max-h-[350px] shadow-inner">
 <pre>{
   "code": 0,
   "msg": "success",
@@ -632,30 +728,33 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS23asd
     </div>
 
     <!-- Footer Section -->
-    <footer class="w-full border-t border-slate-900 bg-slate-950 mt-16 z-10 relative">
+    <footer class="w-full border-t border-white/5 bg-slate-950/80 backdrop-blur-md mt-20 z-10 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <!-- Branding -->
-                <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden">
+                <!-- Branding Footer (Footer di baris 722) -->
+                <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden bg-white/5 border border-white/10">
                         <img src="https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png" alt="TikSave Logo" class="w-full h-full object-cover">
                     </div>
-                    <span class="font-display font-bold text-sm text-white">TikSave Downloader</span>
+                    <span class="font-display font-extrabold text-sm text-white">TikSave Downloader</span>
                 </div>
 
                 <!-- Copyright -->
-                <p class="text-xs text-slate-500 text-center md:text-left">
+                <p class="text-xs text-slate-500 text-center md:text-left font-medium">
                     &copy; 2026 TikSave. Tidak berafiliasi dengan TikTok atau ByteDance. Seluruh hak cipta terlindungi.
                 </p>
 
                 <!-- Disclaimer Info -->
-                <div class="flex items-center gap-4 text-xs text-slate-400">
-                    <span class="hover:text-white cursor-pointer">Kebijakan Privasi</span>
-                    <span>&bull;</span>
-                    <span class="hover:text-white cursor-pointer">Syarat Ketentuan</span>
+                <div class="flex items-center gap-4 text-xs text-slate-400 font-semibold">
+                    <span class="hover:text-white cursor-pointer transition-colors">Kebijakan Privasi</span>
+                    <span class="text-slate-700">&bull;</span>
+                    <span class="hover:text-white cursor-pointer transition-colors">Syarat Ketentuan</span>
                 </div>
             </div>
-        <script>
+        </div>
+    </footer>
+
+    <script>
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
@@ -678,11 +777,11 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS23asd
 
             if (isApiMode) {
                 // Return API payload as plain JSON text
-                document.body.style.backgroundColor = "#0b0f19";
+                document.body.style.backgroundColor = "#030712";
                 document.body.style.color = "#a5b4fc";
                 document.body.innerHTML = `
                     <div style="display:flex; justify-content:center; align-items:center; height:100vh; font-family:monospace; font-size:14px; text-align:center;">
-                        <div style="padding:20px; border:1px solid #1e293b; border-radius:15px; background:rgba(15,23,42,0.8);">
+                        <div style="padding:20px; border:1px solid rgba(255,255,255,0.05); border-radius:15px; background:rgba(10,15,30,0.8); backdrop-filter: blur(20px);">
                             ⏳ Memproses Permintaan API TikSave untuk Tautan TikTok...
                         </div>
                     </div>
@@ -715,12 +814,12 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS23asd
             document.body.style.height = "auto";
             document.body.style.margin = "0";
             document.body.style.padding = "20px";
-            document.body.style.backgroundColor = "#0b0f19";
+            document.body.style.backgroundColor = "#030712";
             document.body.style.color = "#10b981";
             document.body.innerHTML = `<pre style="white-space: pre-wrap; word-wrap: break-word; font-family: monospace; font-size: 13px; line-height: 1.5;">${JSON.stringify(jsonObj, null, 2)}</pre>`;
         }
 
-        // Reusable direct API fetcher
+        // Reusable direct API fetcher (Using User's Original API - TikWM)
         async function fetchDirectApi(tiktokUrl) {
             const targetApi = `https://www.tikwm.com/api/?url=${encodeURIComponent(tiktokUrl)}`;
             try {
@@ -750,7 +849,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS23asd
             // Global media data memory to prevent HTML string interpolation crashes
             let currentMediaData = null;
 
-            // SPA Tab Switcher
+            // SPA Tab Switcher (Polished logic to match Segmented Design - Non-Glass Active State with scale click animation)
             function switchTab(tabId) {
                 playSynthSound('click');
                 const viewDownloader = document.getElementById('view-downloader');
@@ -761,13 +860,13 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS23asd
                 if (tabId === 'downloader') {
                     viewDownloader.classList.remove('hidden');
                     viewApi.classList.add('hidden');
-                    navDownloader.className = "text-xs sm:text-sm font-semibold text-white border-b-2 border-brand-500 pb-1 transition-all";
-                    navApi.className = "text-xs sm:text-sm font-semibold text-slate-400 hover:text-white transition-all flex items-center gap-1";
+                    navDownloader.className = "px-5 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 hover:bg-indigo-500";
+                    navApi.className = "px-5 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5";
                 } else if (tabId === 'api') {
                     viewDownloader.classList.add('hidden');
                     viewApi.classList.remove('hidden');
-                    navDownloader.className = "text-xs sm:text-sm font-semibold text-slate-400 hover:text-white transition-all";
-                    navApi.className = "text-xs sm:text-sm font-semibold text-white border-b-2 border-brand-500 pb-1 transition-all flex items-center gap-1";
+                    navDownloader.className = "px-5 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95";
+                    navApi.className = "px-5 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5 hover:bg-indigo-500";
                 }
             }
 
@@ -821,22 +920,64 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS23asd
             // Safe memory-driven download delegation methods to completely avoid string quote parsing issues in DOM
             function downloadImageByIndex(index, btn) {
                 if (!currentMediaData || !currentMediaData.images || !currentMediaData.images[index]) return;
-                const url = currentMediaData.images[index];
+                let url = currentMediaData.images[index];
+                if (url && url.startsWith('/')) {
+                    url = "https://www.tikwm.com" + url;
+                }
                 const cleanTitle = (currentMediaData.title || 'tiktok_media').replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30);
                 forceDownload(url, `${cleanTitle}_slide_${index + 1}.jpg`, btn);
             }
 
+            // MP3 Download Action Mapping
             function downloadMusic(btn) {
                 if (!currentMediaData || !currentMediaData.music) return;
+                let url = currentMediaData.music;
+                if (url && url.startsWith('/')) {
+                    url = "https://www.tikwm.com" + url;
+                }
                 const cleanTitle = (currentMediaData.title || 'tiktok_media').replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30);
-                forceDownload(currentMediaData.music, `${cleanTitle}_audio.mp3`, btn);
+                forceDownload(url, `${cleanTitle}_audio.mp3`, btn);
             }
 
+            // Video Download Action Mapping (Watermark Fix + Path Resolution)
             function downloadVideo(type, btn) {
                 if (!currentMediaData) return;
                 const cleanTitle = (currentMediaData.title || 'tiktok_media').replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30);
-                const url = type === 'no_wm' ? currentMediaData.play : (currentMediaData.wmplay || currentMediaData.play);
+                let url = type === 'no_wm' ? currentMediaData.play : (currentMediaData.wmplay || currentMediaData.play);
+                
+                // FIX: Jika url relatif (dimulai dengan /), tambahkan host tikwm
+                if (url && url.startsWith('/')) {
+                    url = "https://www.tikwm.com" + url;
+                }
+                
+                // FIX: Gunakan forceDownload untuk semua tipe
                 forceDownload(url, `${cleanTitle}_${type}.mp4`, btn);
+            }
+
+            // Helper to format bytes to legible string
+            function formatBytes(bytes) {
+                if (!bytes || isNaN(bytes) || bytes <= 0) return "";
+                const mb = bytes / (1024 * 1024);
+                return `[~${mb.toFixed(1)} MB]`;
+            }
+
+            // Async exact file size fetcher as a smart fallback/override
+            async function fetchExactSize(url, elementId) {
+                if (!url) return;
+                if (url.startsWith('/')) {
+                    url = "https://www.tikwm.com" + url;
+                }
+                try {
+                    const response = await fetch(url, { method: 'HEAD' });
+                    const bytes = response.headers.get('content-length');
+                    if (bytes) {
+                        const mb = parseInt(bytes) / (1024 * 1024);
+                        const el = document.getElementById(elementId);
+                        if (el) el.innerText = `[${mb.toFixed(1)} MB]`;
+                    }
+                } catch (e) {
+                    // Quietly ignore CORS issues as the static size metadata is already active
+                }
             }
 
             // Create invisible click event to prompt direct browser save dialogue
@@ -930,6 +1071,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS23asd
             // Touch Swipe Handlers for Slideshows
             function setupSwipeGestures() {
                 const container = document.getElementById('preview-slideshow');
+                if (!container) return;
                 
                 container.addEventListener('touchstart', (e) => {
                     touchStartX = e.changedTouches[0].screenX;
@@ -1035,6 +1177,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS23asd
                 lucide.createIcons();
             }
 
+            // Hide Alert Panel
             function hideAlert() {
                 document.getElementById('alert-box').classList.add('hidden');
             }
@@ -1184,7 +1327,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS23asd
 
                 if (isImages) {
                     typeBadge.innerText = "Slide Foto Berhasil Ditemukan";
-                    typeBadge.className = "text-[10px] font-bold uppercase tracking-wider text-pink-400";
+                    typeBadge.className = "text-[11px] font-extrabold uppercase tracking-widest text-pink-400";
                     slideshowEl.classList.remove('hidden');
                     
                     activeSlides = data.images;
@@ -1202,16 +1345,21 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS23asd
                     
                     updateSlideshowDisplay();
 
+                    const audioSizeStr = data.duration ? formatBytes(data.duration * 16000) : ""; // Estimate music size
+
                     // Action buttons for slides
                     actionGrid.innerHTML = `
-                        <button onclick="downloadMusic(this)" class="flex items-center justify-between px-5 py-4 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold text-sm shadow-lg shadow-pink-500/10 hover:shadow-pink-500/25 transition-all transform active:scale-[0.98]">
+                        <button onclick="downloadMusic(this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-extrabold text-sm shadow-lg shadow-pink-500/10 hover:shadow-pink-500/25 transition-all transform active:scale-[0.98]">
                             <span class="flex items-center gap-2.5">
                                 <i data-lucide="music-4" class="w-5 h-5 text-yellow-300"></i>
-                                <span>Unduh Audio MP3</span>
+                                <span class="text-left">
+                                    <span class="block">Unduh Audio MP3</span>
+                                    <span class="block text-[10px] opacity-75 font-normal" id="size-music">${audioSizeStr || 'Menghitung...'}</span>
+                                </span>
                             </span>
                             <i data-lucide="arrow-down-to-line" class="w-4 h-4"></i>
                         </button>
-                        <button onclick="downloadImageByIndex(0, this)" class="flex items-center justify-between px-5 py-4 rounded-xl bg-slate-800 hover:bg-slate-700/80 text-slate-200 border border-slate-700 font-bold text-sm transition-all transform active:scale-[0.98]">
+                        <button onclick="downloadImageByIndex(0, this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-extrabold text-sm transition-all transform active:scale-[0.98]">
                             <span class="flex items-center gap-2.5">
                                 <i data-lucide="image" class="w-5 h-5 text-brand-accent"></i>
                                 <span>Unduh Foto Pertama</span>
@@ -1228,51 +1376,62 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS23asd
                     
                     data.images.forEach((imgUrl, index) => {
                         const row = document.createElement('div');
-                        row.className = "flex items-center justify-between p-2.5 bg-slate-850 border border-slate-800 rounded-xl";
+                        row.className = "flex items-center justify-between p-3.5 bg-slate-950/60 border border-white/5 rounded-xl";
                         row.innerHTML = `
                             <div class="flex items-center gap-2">
-                                <span class="w-6 h-6 rounded-lg bg-indigo-500/10 text-brand-accent flex items-center justify-center font-mono text-xs font-bold">${index + 1}</span>
-                                <span class="text-xs text-slate-300">Foto #${index + 1}</span>
+                                <span class="w-6 h-6 rounded-lg bg-indigo-500/15 text-indigo-400 flex items-center justify-center font-mono text-[10px] font-bold border border-indigo-550/10">${index + 1}</span>
+                                <span class="text-xs text-slate-300 font-semibold">Foto #${index + 1}</span>
                             </div>
-                            <button onclick="downloadImageByIndex(${index}, this)" class="px-3 py-1 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-[11px] flex items-center gap-1 transition-colors">
+                            <button onclick="downloadImageByIndex(${index}, this)" class="px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-[11px] flex items-center gap-1 transition-all shadow-sm active:scale-95">
                                 <i data-lucide="arrow-down-to-line" class="w-3.5 h-3.5"></i> Unduh HD
                             </button>
                         `;
                         linksList.appendChild(row);
                     });
 
+                    // Fetch Exact Size for audio
+                    fetchExactSize(data.music, 'size-music');
+
                 } else {
                     typeBadge.innerText = "Video Berhasil Ditemukan";
-                    typeBadge.className = "text-[10px] font-bold uppercase tracking-wider text-brand-accent";
+                    typeBadge.className = "text-[11px] font-extrabold uppercase tracking-widest text-brand-accent";
                     videoEl.classList.remove('hidden');
                     videoEl.src = data.play;
                     videoEl.load();
                     videoEl.play().catch(e => console.log("Muted play blocked", e));
 
+                    // Format Metadata file sizes
+                    const noWmSizeStr = formatBytes(data.size);
+                    const wmSizeStr = formatBytes(data.wm_size);
+                    const musicSizeStr = data.duration ? formatBytes(data.duration * 16000) : "";
+
                     // Action buttons with direct download mapping
                     actionGrid.innerHTML = `
-                        <button onclick="downloadVideo('no_wm', this)" class="flex items-center justify-between px-5 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-bold text-sm shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/25 transition-all transform active:scale-[0.98]">
+                        <button onclick="downloadVideo('no_wm', this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-extrabold text-sm shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/25 transition-all transform active:scale-[0.98]">
                             <span class="flex items-center gap-2.5">
                                 <i data-lucide="sparkles" class="w-5 h-5 text-yellow-300"></i>
-                                <span>Tanpa Watermark [HD]</span>
+                                <span class="text-left">
+                                    <span class="block">Tanpa Watermark [HD]</span>
+                                    <span class="block text-[10px] opacity-75 font-normal" id="size-no-wm">${noWmSizeStr || 'Menghitung...'}</span>
+                                </span>
                             </span>
                             <i data-lucide="arrow-down-to-line" class="w-4 h-4"></i>
                         </button>
-                        <button onclick="downloadVideo('with_wm', this)" class="flex items-center justify-between px-5 py-4 rounded-xl bg-slate-800 hover:bg-slate-700/80 text-slate-200 border border-slate-700 font-bold text-sm transition-all transform active:scale-[0.98]">
-                            <span class="flex items-center gap-2.5">
-                                <i data-lucide="hard-drive" class="w-5 h-5 text-indigo-400"></i>
-                                <span>Dengan Watermark</span>
-                            </span>
-                            <i data-lucide="arrow-down-to-line" class="w-4 h-4"></i>
-                        </button>
-                        <button onclick="downloadMusic(this)" class="col-span-1 sm:col-span-2 flex items-center justify-between px-5 py-4 rounded-xl bg-slate-850 hover:bg-slate-800 text-slate-300 border border-slate-700/50 font-semibold text-sm transition-all transform active:scale-[0.98]">
+                        <button onclick="downloadMusic(this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-slate-950 border border-white/5 hover:bg-slate-900 text-slate-300 font-extrabold text-sm transition-all transform active:scale-[0.98] shadow-inner">
                             <span class="flex items-center gap-2.5">
                                 <i data-lucide="music-4" class="w-5 h-5 text-pink-400"></i>
-                                <span>Unduh Audio MP3</span>
+                                <span class="text-left">
+                                    <span class="block">Unduh Audio MP3</span>
+                                    <span class="block text-[10px] opacity-75 font-normal" id="size-music">${musicSizeStr || 'Menghitung...'}</span>
+                                </span>
                             </span>
                             <i data-lucide="disc" class="w-4 h-4"></i>
                         </button>
                     `;
+
+                    // Fetch exact file sizes from headers asynchronously
+                    fetchExactSize(data.play, 'size-no-wm');
+                    fetchExactSize(data.music, 'size-music');
                 }
 
                 // Save to history
@@ -1355,26 +1514,26 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS23asd
                 downloadHistory.forEach(item => {
                     const isImages = item.is_images === true;
                     const col = document.createElement('div');
-                    col.className = "glass-panel rounded-2xl p-3 flex gap-3 items-center hover:border-indigo-500/50 transition-all";
+                    col.className = "glass-panel rounded-2xl p-3.5 flex gap-3.5 items-center hover:border-indigo-500/30 transition-all duration-300 premium-card relative";
                     col.innerHTML = `
-                        <div class="w-16 h-16 rounded-xl overflow-hidden bg-slate-900 shrink-0 border border-slate-800 relative">
+                        <div class="w-16 h-16 rounded-xl overflow-hidden bg-slate-900 shrink-0 border border-white/5 relative shadow-md">
                             <img src="${item.cover}" alt="History item" class="w-full h-full object-cover">
                             ${isImages ? `
-                            <div class="absolute top-1 right-1 bg-black/70 px-1 py-0.5 rounded text-[8px] text-pink-400 font-bold flex items-center gap-0.5">
+                            <div class="absolute top-1 right-1 bg-black/80 px-1.5 py-0.5 rounded-lg text-[8px] text-pink-400 font-extrabold flex items-center gap-0.5 border border-white/5">
                                 <i data-lucide="images" class="w-2.5 h-2.5"></i> Foto
                             </div>
                             ` : ''}
                         </div>
                         <div class="flex-grow min-w-0">
-                            <p class="text-xs text-slate-300 font-medium truncate mb-1">${item.title}</p>
-                            <p class="text-[10px] text-slate-500 truncate mb-1">@${item.author}</p>
+                            <p class="text-xs text-slate-200 font-bold truncate mb-0.5">${item.title}</p>
+                            <p class="text-[10px] text-slate-500 font-semibold truncate mb-2">@${item.author}</p>
                             <div class="flex items-center gap-2">
                                 <button onclick="forceDownload('${item.dl_link}', 'history_download', this)" class="text-[10px] font-bold text-brand-accent hover:underline flex items-center gap-1">
-                                    <i data-lucide="download" class="w-3 h-3"></i> Unduh
+                                    <i data-lucide="download" class="w-3.5 h-3.5"></i> Unduh
                                 </button>
-                                <span class="text-slate-600 text-[10px]">&bull;</span>
+                                <span class="text-slate-700 text-[10px]">&bull;</span>
                                 <button onclick="reuseHistoryLink('${item.original_url}')" class="text-[10px] font-bold text-indigo-400 hover:underline flex items-center gap-1">
-                                    <i data-lucide="refresh-cw" class="w-3 h-3"></i> Analisis
+                                    <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Analisis
                                 </button>
                             </div>
                         </div>
