@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TikSave - Downloader Video TikTok Tanpa Watermark & API Developer Gratis</title>
-    <!-- Favicon di baris 8 -->
+    <title>TikSave - Downloader Video TikTok, YouTube, Instagram & Facebook Tanpa Watermark</title>
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png">
     
     <!-- Tailwind CSS untuk penataan kilat modern -->
@@ -147,7 +147,7 @@
     <!-- Navigation Header -->
     <header class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 z-10 relative">
         <div class="flex items-center justify-between glass-panel px-6 py-4 rounded-2xl premium-card">
-            <!-- Brand Logo (Header di baris 132) -->
+            <!-- Brand Logo -->
             <button onclick="switchTab('downloader')" class="flex items-center gap-3.5 focus:outline-none text-left group active:scale-95 transition-transform duration-155">
                 <div class="w-11 h-11 rounded-xl flex items-center justify-center overflow-hidden bg-white/5 border border-white/10 group-hover:border-indigo-500/30 transition-all duration-300">
                     <img src="https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png" alt="TikSave Logo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
@@ -159,33 +159,42 @@
                 </div>
             </button>
 
-            <!-- Desktop Nav Links (Solid Modern Segmented Design - Non-Glass Active State) -->
-            <div class="hidden md:flex items-center gap-2 bg-slate-950/60 p-1.5 rounded-2xl border border-white/5 shadow-inner">
-                <button id="nav-downloader" onclick="switchTab('downloader')" class="px-5 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 hover:bg-indigo-500">
-                    Downloader
+            <!-- Desktop Nav Links -->
+            <div class="hidden lg:flex items-center gap-1.5 bg-slate-950/60 p-1.5 rounded-2xl border border-white/5 shadow-inner">
+                <button id="nav-downloader" onclick="switchTab('downloader')" class="px-4 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 hover:bg-indigo-500 flex items-center gap-1.5">
+                    <i data-lucide="music-2" class="w-3.5 h-3.5"></i> TikTok
                 </button>
-                <button id="nav-api" onclick="switchTab('api')" class="px-5 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5">
-                    Docs API
+                <button id="nav-youtube" onclick="switchTab('youtube')" class="px-4 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5">
+                    <i data-lucide="youtube" class="w-3.5 h-3.5 text-red-500"></i> YouTube
+                </button>
+                <button id="nav-instagram" onclick="switchTab('instagram')" class="px-4 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5">
+                    <i data-lucide="instagram" class="w-3.5 h-3.5 text-pink-500"></i> Instagram
+                </button>
+                <button id="nav-facebook" onclick="switchTab('facebook')" class="px-4 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5">
+                    <i data-lucide="facebook" class="w-3.5 h-3.5 text-blue-500"></i> Facebook
+                </button>
+                <button id="nav-api" onclick="switchTab('api')" class="px-4 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5">
+                    <i data-lucide="terminal" class="w-3.5 h-3.5"></i> Docs API
                 </button>
                 <div class="w-[1px] h-5 bg-white/10 mx-1"></div>
-                <button onclick="showDonation()" class="px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 rounded-xl text-xs font-bold text-white transition-all duration-150 transform active:scale-95 flex items-center gap-2 shadow-lg shadow-indigo-600/30">
+                <button onclick="showDonation()" class="px-4 py-2.5 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 rounded-xl text-xs font-bold text-white transition-all duration-150 transform active:scale-95 flex items-center gap-2 shadow-lg shadow-indigo-600/30">
                     <i data-lucide="heart" class="w-3.5 h-3.5 fill-white/10"></i> Donasi
                 </button>
             </div>
 
             <!-- Mobile Hamburger -->
-            <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 text-white hover:bg-slate-900 rounded-xl transition-all border border-transparent hover:border-white/5 active:scale-90">
+            <button onclick="toggleMobileMenu()" class="lg:hidden p-2.5 text-white hover:bg-slate-900 rounded-xl transition-all border border-transparent hover:border-white/5 active:scale-90">
                 <i data-lucide="menu" class="w-5 h-5"></i>
             </button>
         </div>
     </header>
 
-    <!-- Mobile Menu Overlay (Solid Dark Premium Slide-In Style - Anti-Glassmorphism) -->
+    <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="fixed inset-0 z-[70] bg-black/60 hidden transition-opacity duration-300">
         <!-- Drawer Panel -->
-        <div class="absolute right-0 top-0 h-full w-[82%] max-w-[320px] bg-[#090d1a] border-l border-slate-800 shadow-2xl p-6 flex flex-col justify-between">
+        <div class="absolute right-0 top-0 h-full w-[82%] max-w-[320px] bg-[#090d1a] border-l border-slate-800 shadow-2xl p-6 flex flex-col justify-between overflow-y-auto">
             <div>
-                <!-- Drawer Header (Mobile Menu di baris 173) -->
+                <!-- Drawer Header -->
                 <div class="flex items-center justify-between pb-5 border-b border-slate-900 mb-6">
                     <div class="flex items-center gap-2.5">
                         <img src="https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png" alt="Logo" class="w-7 h-7 object-cover">
@@ -197,22 +206,72 @@
                 </div>
 
                 <!-- Navigation List -->
+                <!-- MEMPERBAIKI DAN MENYEMPURNAKAN LOGO IKON PADA NAVIGASI MOBILE (INLINE SVG PREMIUM) -->
                 <div class="space-y-4">
-                    <!-- Downloader Card -->
+                    <!-- Downloader TikTok Card -->
                     <button onclick="switchTab('downloader'); toggleMobileMenu()" class="w-full text-left p-4 rounded-2xl bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-indigo-500/30 transition-all active:scale-95 flex items-center gap-4 group shadow-sm">
                         <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-all shadow-inner">
-                            <i data-lucide="download" class="w-5 h-5"></i>
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 18V5l12-2v13"></path>
+                                <circle cx="6" cy="18" r="3"></circle>
+                                <circle cx="18" cy="16" r="3"></circle>
+                            </svg>
                         </div>
                         <div>
-                            <h4 class="font-extrabold text-sm text-white">Downloader</h4>
+                            <h4 class="font-extrabold text-sm text-white">TikTok Downloader</h4>
                             <p class="text-[10px] text-slate-500 font-medium mt-0.5">Simpan Video & MP3</p>
+                        </div>
+                    </button>
+
+                    <!-- YouTube Downloader Card -->
+                    <button onclick="switchTab('youtube'); toggleMobileMenu()" class="w-full text-left p-4 rounded-2xl bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-red-500/30 transition-all active:scale-95 flex items-center gap-4 group shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center group-hover:bg-red-650 group-hover:text-white transition-all shadow-inner">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-sm text-white">YouTube Downloader</h4>
+                            <p class="text-[10px] text-slate-500 font-medium mt-0.5">Simpan Video & MP3 YT</p>
+                        </div>
+                    </button>
+
+                    <!-- Instagram Downloader Card -->
+                    <button onclick="switchTab('instagram'); toggleMobileMenu()" class="w-full text-left p-4 rounded-2xl bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-pink-500/30 transition-all active:scale-95 flex items-center gap-4 group shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center group-hover:bg-pink-650 group-hover:text-white transition-all shadow-inner">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-sm text-white">Instagram Downloader</h4>
+                            <p class="text-[10px] text-slate-500 font-medium mt-0.5">Simpan Video & Foto IG</p>
+                        </div>
+                    </button>
+
+                    <!-- Facebook Downloader Card -->
+                    <button onclick="switchTab('facebook'); toggleMobileMenu()" class="w-full text-left p-4 rounded-2xl bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-blue-500/30 transition-all active:scale-95 flex items-center gap-4 group shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all shadow-inner">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-4h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-sm text-white">Facebook Downloader</h4>
+                            <p class="text-[10px] text-slate-500 font-medium mt-0.5">Simpan Video & Reels FB</p>
                         </div>
                     </button>
 
                     <!-- API Card -->
                     <button onclick="switchTab('api'); toggleMobileMenu()" class="w-full text-left p-4 rounded-2xl bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-brand-accent/30 transition-all active:scale-95 flex items-center gap-4 group shadow-sm">
                         <div class="w-10 h-10 rounded-xl bg-brand-accent/10 text-brand-accent flex items-center justify-center group-hover:bg-brand-accent group-hover:text-white transition-all shadow-inner">
-                            <i data-lucide="terminal" class="w-5 h-5"></i>
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="4 17 10 11 4 5"></polyline>
+                                <line x1="12" y1="19" x2="20" y2="19"></line>
+                            </svg>
                         </div>
                         <div>
                             <h4 class="font-extrabold text-sm text-white">Docs API</h4>
@@ -223,7 +282,7 @@
             </div>
 
             <!-- Drawer Footer containing Donation option -->
-            <div class="space-y-4">
+            <div class="space-y-4 mt-6">
                 <button onclick="showDonation(); toggleMobileMenu()" class="w-full p-4 bg-gradient-to-r from-indigo-600 via-indigo-500 to-violet-600 hover:from-indigo-500 hover:to-violet-500 rounded-2xl text-white font-extrabold flex items-center justify-center gap-2.5 shadow-lg shadow-indigo-600/35 active:scale-95 transition-all">
                     <i data-lucide="heart" class="w-5 h-5 fill-white/10"></i> 
                     <span>Donasi Sekarang</span>
@@ -252,7 +311,7 @@
         </div>
     </div>
 
-    <!-- SECTION 1: DOWNLOADER (HOMEPAGE VIEW) -->
+    <!-- SECTION 1: DOWNLOADER TIKTOK (HOMEPAGE VIEW) -->
     <div id="view-downloader" class="w-full max-w-4xl mx-auto px-4 py-8 z-10 relative flex-grow flex flex-col justify-center">
         
         <!-- Hero Taglines -->
@@ -284,7 +343,7 @@
                             <div class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
                                 <i data-lucide="link" class="w-5 h-5"></i>
                             </div>
-                            <!-- URL Input Box (Paddings and alignments perfectly calibrated) -->
+                            <!-- URL Input Box -->
                             <input 
                                 type="text" 
                                 id="tiktok-url" 
@@ -366,7 +425,7 @@
                         <div id="preview-media-container" class="relative group aspect-[9/16] max-h-[380px] w-full rounded-2xl overflow-hidden bg-black border border-slate-800 shadow-2xl flex items-center justify-center">
                             
                             <!-- Static Cover -->
-                            <img id="video-cover" src="https://ibb.co/zhRnzxsQ" alt="Cover" class="w-full h-full object-cover">
+                            <img id="video-cover" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500" alt="Cover" class="w-full h-full object-cover">
                             
                             <!-- Playable Video Element -->
                             <video id="preview-video" class="hidden w-full h-full object-cover" controls playsinline loop muted></video>
@@ -471,26 +530,574 @@
             </div>
 
         </div>
+    </div>
 
-        <!-- Recent Downloads History Section -->
-        <section id="download-history-section" class="mt-14 hidden">
-            <div class="flex items-center justify-between mb-5 px-1">
-                <div class="flex items-center gap-2">
-                    <i data-lucide="history" class="w-5 h-5 text-indigo-400"></i>
-                    <h3 class="font-display font-extrabold text-lg text-white">Riwayat Unduhan Anda</h3>
+    <!-- SECTION 1B: DOWNLOADER YOUTUBE (YOUTUBE SPECIFIC VIEW) -->
+    <div id="view-youtube" class="w-full max-w-4xl mx-auto px-4 py-8 z-10 relative flex-grow hidden flex-col justify-center">
+        
+        <!-- Hero Taglines -->
+        <div class="text-center mb-10">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-red-500/10 text-red-300 border border-red-500/20 mb-5 shadow-inner">
+                <i data-lucide="youtube" class="w-3.5 h-3.5 text-red-400"></i> Downloader YouTube Super Cepat & Gratis
+            </span>
+            <h2 class="text-4xl sm:text-6xl font-extrabold font-display tracking-tight text-white mb-5 leading-tight">
+                Unduh Video & Audio <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-orange-300 to-red-500">YouTube Gratis</span>
+            </h2>
+            <p class="text-slate-400 max-w-lg mx-auto text-sm sm:text-base leading-relaxed">
+                Simpan video YouTube dalam format MP4 atau ekstrak trek audio berkualitas tinggi langsung ke dalam file MP3 secara instan.
+            </p>
+        </div>
+
+        <!-- Central Interactive App Card -->
+        <div class="glass-panel rounded-3xl p-6 sm:p-9 shadow-2xl relative overflow-hidden premium-card">
+            <!-- Decorative red line accent -->
+            <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-red-500 via-orange-400 to-red-600"></div>
+
+            <!-- INPUT STATE CONTAINER -->
+            <div id="youtube-downloader-form-view">
+                <div class="space-y-5">
+                    <label for="youtube-url" class="block text-xs font-bold text-slate-400 uppercase tracking-widest">Masukkan Tautan Video YouTube</label>
+                    
+                    <div class="relative flex flex-col sm:flex-row gap-4">
+                        <div class="relative flex-grow">
+                            <!-- Link Icon -->
+                            <div class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                                <i data-lucide="link" class="w-5 h-5"></i>
+                            </div>
+                            <!-- URL YouTube Input Box -->
+                            <input 
+                                type="text" 
+                                id="youtube-url" 
+                                placeholder="Tempel tautan YouTube atau share link disini..." 
+                                class="w-full pl-11 pr-28 py-4 sm:py-5 rounded-2xl text-white text-sm sm:text-base glass-input outline-none font-medium placeholder:text-slate-500"
+                                autocomplete="off"
+                            >
+                            <!-- Clear & Paste Action Buttons -->
+                            <div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1.5">
+                                <button onclick="clearYoutubeInput()" id="youtube-btn-clear" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all hidden active:scale-90" title="Hapus teks">
+                                    <i data-lucide="x" class="w-4 h-4"></i>
+                                </button>
+                                <button onclick="pasteYoutubeFromClipboard()" class="flex items-center gap-1 px-3 py-2 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-400 text-xs font-bold border border-red-500/20 transition-all shrink-0 active:scale-95" title="Tempel dari Clipboard">
+                                    <i data-lucide="clipboard" class="w-3.5 h-3.5"></i>
+                                    <span>Tempel</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button onclick="handleYoutubeDownload()" class="glowing-btn px-8 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-450 text-white font-bold text-sm tracking-wide shadow-lg shadow-red-600/30 transform active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0">
+                            <i data-lucide="arrow-right-circle" class="w-5 h-5"></i>
+                            <span>Download</span>
+                        </button>
+                    </div>
+
+                    <!-- YouTube Notification Alert Panel -->
+                    <div id="youtube-alert-box" class="hidden p-4 rounded-xl border flex items-start gap-3 transition-all duration-300">
+                        <div id="youtube-alert-icon-container"></div>
+                        <div class="flex-grow">
+                            <h4 id="youtube-alert-title" class="text-xs font-bold uppercase tracking-wider"></h4>
+                            <p id="youtube-alert-desc" class="text-xs text-slate-300 mt-1"></p>
+                        </div>
+                        <button onclick="hideYoutubeAlert()" class="text-slate-400 hover:text-white">
+                            <i data-lucide="x" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <!-- Quick Help Hint -->
+                    <div class="flex items-center justify-between text-xs text-slate-500 pt-1 px-1 font-medium">
+                        <span class="flex items-center gap-1.5">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-red-500"></i>
+                            Gratis tanpa mendaftar akun
+                        </span>
+                        <span>Mendukung Video & Shorts YouTube</span>
+                    </div>
                 </div>
-                <button onclick="clearHistory()" class="text-xs text-slate-500 hover:text-red-400 transition-colors flex items-center gap-1 cursor-pointer font-semibold">
-                    <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Bersihkan Semua
-                </button>
             </div>
 
-            <!-- History grid list -->
-            <div id="history-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <!-- Riwayat diatur via JS -->
-            </div>
-        </section>
+            <!-- LOADING STATE CONTAINER -->
+            <div id="youtube-downloader-loading-view" class="hidden py-8 flex flex-col items-center justify-center text-center space-y-6">
+                <!-- Custom Circular Loader -->
+                <div class="relative w-24 h-24">
+                    <div class="absolute inset-0 rounded-full border-4 border-slate-800/80"></div>
+                    <div class="absolute inset-0 rounded-full border-4 border-red-500 border-t-transparent animate-spin"></div>
+                    <div class="absolute inset-2 bg-slate-950 rounded-full flex items-center justify-center">
+                        <i data-lucide="loader-2" class="w-8 h-8 text-red-400 animate-pulse animate-spin"></i>
+                    </div>
+                </div>
+                
+                <div class="space-y-2">
+                    <h3 id="youtube-loading-title" class="text-xl font-bold font-display text-white">Menghubungkan Server...</h3>
+                    <p id="youtube-loading-sub" class="text-xs text-slate-400 max-w-sm mx-auto leading-relaxed">Harap bersabar, kami sedang menganalisis tautan YouTube dan menyiapkan file unduhan Anda.</p>
+                </div>
 
-        <!-- Informational Sections (FAQ & How to use) -->
+                <!-- Custom Elegant Progress Bar -->
+                <div class="w-full max-w-md bg-slate-800 rounded-full h-2.5 overflow-hidden border border-slate-700/50">
+                    <div id="youtube-loading-progress" class="bg-gradient-to-r from-red-400 to-red-600 h-full w-[10%] transition-all duration-300"></div>
+                </div>
+                <span id="youtube-loading-percentage" class="text-xs font-mono font-bold text-slate-400">10%</span>
+            </div>
+
+            <!-- SUCCESS RESULT STATE CONTAINER -->
+            <div id="youtube-downloader-success-view" class="hidden">
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    
+                    <!-- Left Column: Video Preview and Creator Detail -->
+                    <div class="w-full md:w-[280px] shrink-0 space-y-4">
+                        <div id="yt-preview-media-container" class="relative group aspect-video max-h-[380px] w-full rounded-2xl overflow-hidden bg-black border border-slate-800 shadow-2xl flex items-center justify-center">
+                            
+                            <!-- Static Cover Thumbnail -->
+                            <img id="yt-video-cover" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500" alt="Cover" class="w-full h-full object-cover">
+                            
+                            <!-- Playable Video Element (FIX YT PLAYABLE) -->
+                            <video id="yt-preview-video" class="hidden w-full h-full object-cover" controls playsinline loop></video>
+
+                            <!-- Stat Badges overlay -->
+                            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-1 z-10">
+                                <span class="px-2.5 py-1.5 rounded-xl bg-black/70 backdrop-blur-md text-[10px] font-bold text-white flex items-center gap-1.5 border border-white/5">
+                                    <i data-lucide="eye" class="w-3.5 h-3.5 text-red-500 fill-red-500/20"></i>
+                                    <span id="yt-stat-views">0</span> Views
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Creator Card -->
+                        <div class="flex items-center gap-3.5 bg-slate-900/50 p-4 rounded-2xl border border-white/5 shadow-inner">
+                            <div class="w-11 h-11 rounded-full border border-red-500/30 bg-slate-800 flex items-center justify-center text-red-500 shadow-md shrink-0">
+                                <i data-lucide="youtube" class="w-6 h-6"></i>
+                            </div>
+                            <div class="overflow-hidden">
+                                <h4 id="yt-creator-name" class="font-extrabold text-sm text-white truncate">YouTube Video</h4>
+                                <p id="yt-creator-username" class="text-xs text-slate-400 font-medium truncate">Unduhan Siap</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Downloader Actions & Info -->
+                    <div class="flex-grow space-y-5 w-full">
+                        <!-- Video Description -->
+                        <div class="space-y-1.5">
+                            <div class="flex items-center justify-between">
+                                <span id="yt-content-type-badge" class="text-[11px] font-extrabold uppercase tracking-wider text-red-400">Video Berhasil Ditemukan</span>
+                                <button onclick="resetYoutubeDownloader()" class="text-xs text-slate-400 hover:text-white flex items-center gap-1.5 transition-all font-semibold active:scale-95">
+                                    <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Cari Lagi
+                                </button>
+                            </div>
+                            <h3 id="yt-video-title" class="text-lg font-bold text-white leading-snug">Judul Video YouTube</h3>
+                        </div>
+
+                        <!-- Action Download Buttons Grid -->
+                        <div id="yt-download-actions-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                            <!-- Tombol unduh dinamis akan muncul di sini -->
+                        </div>
+
+                        <!-- Special Help Tip Banner -->
+                        <div class="bg-red-950/20 border border-red-500/15 rounded-2xl p-4.5 flex items-start gap-3.5 shadow-sm">
+                            <i data-lucide="info" class="w-5 h-5 text-red-400 shrink-0 mt-0.5 animate-pulse"></i>
+                            <div class="text-xs text-red-200/90 leading-relaxed font-medium">
+                                <span class="font-extrabold text-white block mb-0.5">💡 Cara Mengunduh:</span>
+                                Klik salah satu tombol di atas untuk mengunduh media dari YouTube. Jika browser Anda langsung memutar media, ketuk tombol titik tiga <span class="font-bold text-white">(⋮)</span> lalu pilih <span class="font-bold text-white">Download</span>.
+                            </div>
+                        </div>
+
+                        <!-- Reset View Button -->
+                        <div class="pt-2 flex justify-end">
+                            <button onclick="resetYoutubeDownloader()" class="px-6 py-3.5 rounded-xl bg-slate-900 border border-white/5 hover:bg-slate-800 text-xs font-bold text-slate-300 hover:text-white transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-md active:scale-95">
+                                <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                                <span>Unduh Media Lainnya</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SECTION 1C: DOWNLOADER INSTAGRAM (INSTAGRAM SPECIFIC VIEW) -->
+    <div id="view-instagram" class="w-full max-w-4xl mx-auto px-4 py-8 z-10 relative flex-grow hidden flex-col justify-center">
+        
+        <!-- Hero Taglines -->
+        <div class="text-center mb-10">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-pink-500/10 text-pink-300 border border-pink-500/20 mb-5 shadow-inner">
+                <i data-lucide="instagram" class="w-3.5 h-3.5 text-pink-400"></i> Downloader Instagram Tercepat & HD 2026
+            </span>
+            <h2 class="text-4xl sm:text-6xl font-extrabold font-display tracking-tight text-white mb-5 leading-tight">
+                Unduh Reels & Foto <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-300 to-indigo-500">Instagram Gratis</span>
+            </h2>
+            <p class="text-slate-400 max-w-lg mx-auto text-sm sm:text-base leading-relaxed">
+                Salin tautan Reels, Postingan, atau IGTV dan simpan konten media dengan kualitas aslinya secara instan dan tanpa watermark iklan.
+            </p>
+        </div>
+
+        <!-- Central Interactive App Card -->
+        <div class="glass-panel rounded-3xl p-6 sm:p-9 shadow-2xl relative overflow-hidden premium-card">
+            <!-- Decorative pink line accent -->
+            <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-550"></div>
+
+            <!-- INPUT STATE CONTAINER -->
+            <div id="instagram-downloader-form-view">
+                <div class="space-y-5">
+                    <label for="instagram-url" class="block text-xs font-bold text-slate-400 uppercase tracking-widest">Masukkan Tautan Instagram (Reels / Foto / Post)</label>
+                    
+                    <div class="relative flex flex-col sm:flex-row gap-4">
+                        <div class="relative flex-grow">
+                            <!-- Link Icon -->
+                            <div class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                                <i data-lucide="link" class="w-5 h-5"></i>
+                            </div>
+                            <!-- URL Instagram Input Box -->
+                            <input 
+                                type="text" 
+                                id="instagram-url" 
+                                placeholder="Tempel tautan Instagram di sini..." 
+                                class="w-full pl-11 pr-28 py-4 sm:py-5 rounded-2xl text-white text-sm sm:text-base glass-input outline-none font-medium placeholder:text-slate-500"
+                                autocomplete="off"
+                            >
+                            <!-- Clear & Paste Action Buttons -->
+                            <div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1.5">
+                                <button onclick="clearInstagramInput()" id="instagram-btn-clear" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all hidden active:scale-90" title="Hapus teks">
+                                    <i data-lucide="x" class="w-4 h-4"></i>
+                                </button>
+                                <button onclick="pasteInstagramFromClipboard()" class="flex items-center gap-1 px-3 py-2 rounded-xl bg-pink-500/10 hover:bg-pink-500/20 text-pink-400 text-xs font-bold border border-pink-500/20 transition-all shrink-0 active:scale-95" title="Tempel dari Clipboard">
+                                    <i data-lucide="clipboard" class="w-3.5 h-3.5"></i>
+                                    <span>Tempel</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button onclick="handleInstagramDownload()" class="glowing-btn px-8 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-pink-600 to-indigo-600 hover:from-pink-500 hover:to-indigo-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-pink-600/30 transform active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0">
+                            <i data-lucide="arrow-right-circle" class="w-5 h-5"></i>
+                            <span>Download</span>
+                        </button>
+                    </div>
+
+                    <!-- Instagram Notification Alert Panel -->
+                    <div id="instagram-alert-box" class="hidden p-4 rounded-xl border flex items-start gap-3 transition-all duration-300">
+                        <div id="instagram-alert-icon-container"></div>
+                        <div class="flex-grow">
+                            <h4 id="instagram-alert-title" class="text-xs font-bold uppercase tracking-wider"></h4>
+                            <p id="instagram-alert-desc" class="text-xs text-slate-300 mt-1"></p>
+                        </div>
+                        <button onclick="hideInstagramAlert()" class="text-slate-400 hover:text-white">
+                            <i data-lucide="x" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <!-- Quick Help Hint -->
+                    <div class="flex items-center justify-between text-xs text-slate-500 pt-1 px-1 font-medium">
+                        <span class="flex items-center gap-1.5">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-pink-500"></i>
+                            Gratis tanpa login akun Instagram Anda
+                        </span>
+                        <span>Mendukung Video & Slide Galeri</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LOADING STATE CONTAINER -->
+            <div id="instagram-downloader-loading-view" class="hidden py-8 flex flex-col items-center justify-center text-center space-y-6">
+                <!-- Custom Circular Loader -->
+                <div class="relative w-24 h-24">
+                    <div class="absolute inset-0 rounded-full border-4 border-slate-800/80"></div>
+                    <div class="absolute inset-0 rounded-full border-4 border-pink-550 border-t-transparent animate-spin"></div>
+                    <div class="absolute inset-2 bg-slate-950 rounded-full flex items-center justify-center">
+                        <i data-lucide="loader-2" class="w-8 h-8 text-pink-400 animate-pulse animate-spin"></i>
+                    </div>
+                </div>
+                
+                <div class="space-y-2">
+                    <h3 id="instagram-loading-title" class="text-xl font-bold font-display text-white">Menghubungkan Server...</h3>
+                    <p id="instagram-loading-sub" class="text-xs text-slate-400 max-w-sm mx-auto leading-relaxed">Harap bersabar, kami sedang menganalisis tautan Instagram dan mengekstrak file media Anda.</p>
+                </div>
+
+                <!-- Custom Elegant Progress Bar -->
+                <div class="w-full max-w-md bg-slate-800 rounded-full h-2.5 overflow-hidden border border-slate-700/50">
+                    <div id="instagram-loading-progress" class="bg-gradient-to-r from-pink-450 to-indigo-500 h-full w-[10%] transition-all duration-300"></div>
+                </div>
+                <span id="instagram-loading-percentage" class="text-xs font-mono font-bold text-slate-400">10%</span>
+            </div>
+
+            <!-- SUCCESS RESULT STATE CONTAINER -->
+            <div id="instagram-downloader-success-view" class="hidden">
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    
+                    <!-- Left Column: Video Preview and Creator Detail -->
+                    <div class="w-full md:w-[280px] shrink-0 space-y-4">
+                        <div id="ig-preview-media-container" class="relative group aspect-[9/16] max-h-[380px] w-full rounded-2xl overflow-hidden bg-black border border-slate-800 shadow-2xl flex items-center justify-center">
+                            
+                            <!-- Static Cover Thumbnail -->
+                            <img id="ig-video-cover" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500" alt="Cover" class="w-full h-full object-cover">
+                            
+                            <!-- Playable Video Element -->
+                            <video id="ig-preview-video" class="hidden w-full h-full object-cover" controls playsinline loop></video>
+
+                            <!-- Stat Badges overlay -->
+                            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-1 z-10">
+                                <span class="px-2.5 py-1.5 rounded-xl bg-black/70 backdrop-blur-md text-[10px] font-bold text-white flex items-center gap-1.5 border border-white/5">
+                                    <i data-lucide="heart" class="w-3.5 h-3.5 text-pink-500 fill-pink-500"></i>
+                                    <span id="ig-stat-likes">0</span> Likes
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Creator Card -->
+                        <div class="flex items-center gap-3.5 bg-slate-900/50 p-4 rounded-2xl border border-white/5 shadow-inner">
+                            <div class="w-11 h-11 rounded-full border border-pink-500/30 bg-slate-800 flex items-center justify-center text-pink-550 shadow-md shrink-0">
+                                <i data-lucide="instagram" class="w-6 h-6 text-pink-500"></i>
+                            </div>
+                            <div class="overflow-hidden">
+                                <h4 id="ig-creator-name" class="font-extrabold text-sm text-white truncate">Instagram User</h4>
+                                <p id="ig-creator-username" class="text-xs text-slate-400 font-medium truncate">@instagram_user</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Downloader Actions & Info -->
+                    <div class="flex-grow space-y-5 w-full">
+                        <!-- Video Description -->
+                        <div class="space-y-1.5">
+                            <div class="flex items-center justify-between">
+                                <span id="ig-content-type-badge" class="text-[11px] font-extrabold uppercase tracking-wider text-pink-400">Media Berhasil Ditemukan</span>
+                                <button onclick="resetInstagramDownloader()" class="text-xs text-slate-400 hover:text-white flex items-center gap-1.5 transition-all font-semibold active:scale-95">
+                                    <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Cari Lagi
+                                </button>
+                            </div>
+                            <h3 id="ig-video-title" class="text-lg font-bold text-white leading-snug">Deskripsi Postingan Instagram</h3>
+                        </div>
+
+                        <!-- Action Download Buttons Grid -->
+                        <div id="ig-download-actions-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                            <!-- Tombol unduh dinamis akan muncul di sini -->
+                        </div>
+
+                        <!-- Special Help Tip Banner -->
+                        <div class="bg-pink-950/20 border border-pink-500/15 rounded-2xl p-4.5 flex items-start gap-3.5 shadow-sm">
+                            <i data-lucide="info" class="w-5 h-5 text-pink-400 shrink-0 mt-0.5 animate-pulse"></i>
+                            <div class="text-xs text-pink-200/90 leading-relaxed font-medium">
+                                <span class="font-extrabold text-white block mb-0.5">💡 Cara Mengunduh:</span>
+                                Klik tombol merah muda di atas untuk memulai pengunduhan otomatis. Jika browser Anda memutar media secara langsung, ketuk tombol titik tiga <span class="font-bold text-white">(⋮)</span> lalu pilih <span class="font-bold text-white">Download</span>.
+                            </div>
+                        </div>
+
+                        <!-- Reset View Button -->
+                        <div class="pt-2 flex justify-end">
+                            <button onclick="resetInstagramDownloader()" class="px-6 py-3.5 rounded-xl bg-slate-900 border border-white/5 hover:bg-slate-800 text-xs font-bold text-slate-300 hover:text-white transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-md active:scale-95">
+                                <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                                <span>Unduh Media Lainnya</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SECTION 1D: DOWNLOADER FACEBOOK (FACEBOOK SPECIFIC VIEW) -->
+    <div id="view-facebook" class="w-full max-w-4xl mx-auto px-4 py-8 z-10 relative flex-grow hidden flex-col justify-center">
+        
+        <!-- Hero Taglines -->
+        <div class="text-center mb-10">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-300 border border-blue-500/20 mb-5 shadow-inner">
+                <i data-lucide="facebook" class="w-3.5 h-3.5 text-blue-450"></i> Downloader Facebook Cerdas & Stabil 2026
+            </span>
+            <h2 class="text-4xl sm:text-6xl font-extrabold font-display tracking-tight text-white mb-5 leading-tight">
+                Unduh Video & Reels <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-450 via-teal-300 to-indigo-500">Facebook HD</span>
+            </h2>
+            <p class="text-slate-400 max-w-lg mx-auto text-sm sm:text-base leading-relaxed">
+                Unduh video, tayangan langsung, atau Reels dari Facebook dengan resolusi tinggi (HD/SD) secara langsung tanpa batasan.
+            </p>
+        </div>
+
+        <!-- Central Interactive App Card -->
+        <div class="glass-panel rounded-3xl p-6 sm:p-9 shadow-2xl relative overflow-hidden premium-card">
+            <!-- Decorative Facebook blue line accent -->
+            <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-600 via-blue-400 to-indigo-550"></div>
+
+            <!-- INPUT STATE CONTAINER -->
+            <div id="facebook-downloader-form-view">
+                <div class="space-y-5">
+                    <label for="facebook-url" class="block text-xs font-bold text-slate-400 uppercase tracking-widest">Masukkan Tautan Video Facebook</label>
+                    
+                    <div class="relative flex flex-col sm:flex-row gap-4">
+                        <div class="relative flex-grow">
+                            <!-- Link Icon -->
+                            <div class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                                <i data-lucide="link" class="w-5 h-5"></i>
+                            </div>
+                            <!-- URL Facebook Input Box -->
+                            <input 
+                                type="text" 
+                                id="facebook-url" 
+                                placeholder="Tempel tautan video Facebook di sini..." 
+                                class="w-full pl-11 pr-28 py-4 sm:py-5 rounded-2xl text-white text-sm sm:text-base glass-input outline-none font-medium placeholder:text-slate-500"
+                                autocomplete="off"
+                            >
+                            <!-- Clear & Paste Action Buttons -->
+                            <div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1.5">
+                                <button onclick="clearFacebookInput()" id="facebook-btn-clear" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all hidden active:scale-90" title="Hapus teks">
+                                    <i data-lucide="x" class="w-4 h-4"></i>
+                                </button>
+                                <button onclick="pasteFacebookFromClipboard()" class="flex items-center gap-1 px-3 py-2 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 text-xs font-bold border border-blue-500/20 transition-all shrink-0 active:scale-95" title="Tempel dari Clipboard">
+                                    <i data-lucide="clipboard" class="w-3.5 h-3.5"></i>
+                                    <span>Tempel</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button onclick="handleFacebookDownload()" class="glowing-btn px-8 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-650 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-blue-600/30 transform active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0">
+                            <i data-lucide="arrow-right-circle" class="w-5 h-5"></i>
+                            <span>Download</span>
+                        </button>
+                    </div>
+
+                    <!-- Facebook Notification Alert Panel -->
+                    <div id="facebook-alert-box" class="hidden p-4 rounded-xl border flex items-start gap-3 transition-all duration-300">
+                        <div id="facebook-alert-icon-container"></div>
+                        <div class="flex-grow">
+                            <h4 id="facebook-alert-title" class="text-xs font-bold uppercase tracking-wider"></h4>
+                            <p id="facebook-alert-desc" class="text-xs text-slate-300 mt-1"></p>
+                        </div>
+                        <button onclick="hideFacebookAlert()" class="text-slate-400 hover:text-white">
+                            <i data-lucide="x" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <!-- Quick Help Hint -->
+                    <div class="flex items-center justify-between text-xs text-slate-500 pt-1 px-1 font-medium">
+                        <span class="flex items-center gap-1.5">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-blue-500"></i>
+                            Gratis tanpa login akun Facebook Anda
+                        </span>
+                        <span>Mendukung Video & Reels FB</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LOADING STATE CONTAINER -->
+            <div id="facebook-downloader-loading-view" class="hidden py-8 flex flex-col items-center justify-center text-center space-y-6">
+                <!-- Custom Circular Loader -->
+                <div class="relative w-24 h-24">
+                    <div class="absolute inset-0 rounded-full border-4 border-slate-800/80"></div>
+                    <div class="absolute inset-0 rounded-full border-4 border-blue-500 border-t-transparent animate-spin"></div>
+                    <div class="absolute inset-2 bg-slate-950 rounded-full flex items-center justify-center">
+                        <i data-lucide="loader-2" class="w-8 h-8 text-blue-400 animate-pulse animate-spin"></i>
+                    </div>
+                </div>
+                
+                <div class="space-y-2">
+                    <h3 id="facebook-loading-title" class="text-xl font-bold font-display text-white">Menghubungkan Server...</h3>
+                    <p id="facebook-loading-sub" class="text-xs text-slate-400 max-w-sm mx-auto leading-relaxed">Harap bersabar, kami sedang menganalisis tautan Facebook dan mengekstrak file video Anda.</p>
+                </div>
+
+                <!-- Custom Elegant Progress Bar -->
+                <div class="w-full max-w-md bg-slate-800 rounded-full h-2.5 overflow-hidden border border-slate-700/50">
+                    <div id="facebook-loading-progress" class="bg-gradient-to-r from-blue-450 to-indigo-500 h-full w-[10%] transition-all duration-300"></div>
+                </div>
+                <span id="facebook-loading-percentage" class="text-xs font-mono font-bold text-slate-400">10%</span>
+            </div>
+
+            <!-- SUCCESS RESULT STATE CONTAINER -->
+            <div id="facebook-downloader-success-view" class="hidden">
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    
+                    <!-- Left Column: Video Preview and Creator Detail -->
+                    <div class="w-full md:w-[280px] shrink-0 space-y-4">
+                        <div id="fb-preview-media-container" class="relative group aspect-video max-h-[380px] w-full rounded-2xl overflow-hidden bg-black border border-slate-800 shadow-2xl flex items-center justify-center">
+                            
+                            <!-- Static Cover Thumbnail -->
+                            <img id="fb-video-cover" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500" alt="Cover" class="w-full h-full object-cover">
+                            
+                            <!-- Playable Video Element (PLAYABLE FB VIDEO) -->
+                            <video id="fb-preview-video" class="hidden w-full h-full object-cover" controls playsinline loop></video>
+
+                            <!-- Stat Badges overlay -->
+                            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-1 z-10">
+                                <span class="px-2.5 py-1.5 rounded-xl bg-black/70 backdrop-blur-md text-[10px] font-bold text-white flex items-center gap-1.5 border border-white/5">
+                                    <i data-lucide="clock" class="w-3.5 h-3.5 text-blue-450"></i> Durasi: <span id="fb-stat-duration">0:00</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Creator Card -->
+                        <div class="flex items-center gap-3.5 bg-slate-900/50 p-4 rounded-2xl border border-white/5 shadow-inner">
+                            <div class="w-11 h-11 rounded-full border border-blue-500/30 bg-slate-800 flex items-center justify-center text-blue-500 shadow-md shrink-0">
+                                <i data-lucide="facebook" class="w-6 h-6 text-blue-500"></i>
+                            </div>
+                            <div class="overflow-hidden">
+                                <h4 id="fb-creator-name" class="font-extrabold text-sm text-white truncate">Facebook User</h4>
+                                <p id="fb-creator-username" class="text-xs text-slate-400 font-medium truncate">@facebook_video</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Downloader Actions & Info -->
+                    <div class="flex-grow space-y-5 w-full">
+                        <!-- Video Description -->
+                        <div class="space-y-1.5">
+                            <div class="flex items-center justify-between">
+                                <span id="fb-content-type-badge" class="text-[11px] font-extrabold uppercase tracking-wider text-blue-400">Media Berhasil Ditemukan</span>
+                                <button onclick="resetFacebookDownloader()" class="text-xs text-slate-400 hover:text-white flex items-center gap-1.5 transition-all font-semibold active:scale-[0.99] duration-150">
+                                    <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Cari Lagi
+                                </button>
+                            </div>
+                            <h3 id="fb-video-title" class="text-lg font-bold text-white leading-snug">Judul Video Facebook</h3>
+                        </div>
+
+                        <!-- Action Download Buttons Grid -->
+                        <div id="fb-download-actions-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                            <!-- Tombol unduh dinamis akan muncul di sini -->
+                        </div>
+
+                        <!-- Special Help Tip Banner -->
+                        <div class="bg-blue-950/20 border border-blue-500/15 rounded-2xl p-4.5 flex items-start gap-3.5 shadow-sm">
+                            <i data-lucide="info" class="w-5 h-5 text-blue-450 shrink-0 mt-0.5 animate-pulse"></i>
+                            <div class="text-xs text-blue-200/90 leading-relaxed font-medium">
+                                <span class="font-extrabold text-white block mb-0.5">💡 Cara Mengunduh:</span>
+                                Klik tombol biru di atas untuk memulai pengunduhan otomatis. Jika browser Anda langsung memutar media, ketuk tombol titik tiga <span class="font-bold text-white">(⋮)</span> lalu pilih <span class="font-bold text-white">Download</span>.
+                            </div>
+                        </div>
+
+                        <!-- Reset View Button -->
+                        <div class="pt-2 flex justify-end">
+                            <button onclick="resetFacebookDownloader()" class="px-6 py-3.5 rounded-xl bg-slate-900 border border-white/5 hover:bg-slate-800 text-xs font-bold text-slate-300 hover:text-white transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-md active:scale-95">
+                                <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                                <span>Unduh Video Lainnya</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Recent Downloads History Section -->
+    <section id="download-history-section" class="w-full max-w-4xl mx-auto px-4 mt-14 hidden z-10 relative">
+        <div class="flex items-center justify-between mb-5 px-1">
+            <div class="flex items-center gap-2">
+                <i data-lucide="history" class="w-5 h-5 text-indigo-400"></i>
+                <h3 class="font-display font-extrabold text-lg text-white">Riwayat Unduhan Anda</h3>
+            </div>
+            <button onclick="clearHistory()" class="text-xs text-slate-500 hover:text-red-400 transition-colors flex items-center gap-1 cursor-pointer font-semibold">
+                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Bersihkan Semua
+            </button>
+        </div>
+
+        <!-- History grid list -->
+        <div id="history-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Riwayat diatur via JS -->
+        </div>
+    </section>
+
+    <!-- Informational Sections (FAQ & How to use) -->
+    <!-- MENAMBAHKAN ID "info-sections-container" AGAR BISA DISEMBUNYIKAN SECARA DINAMIS -->
+    <div id="info-sections-container" class="w-full max-w-4xl mx-auto px-4 z-10 relative">
         <section id="how-to" class="mt-24 space-y-20">
             
             <!-- Features Cards Grid -->
@@ -515,7 +1122,7 @@
                     <div>
                         <h4 class="font-display font-extrabold text-base text-white mb-2">Konversi Kecepatan Kilat</h4>
                         <p class="text-xs text-slate-400 leading-relaxed font-medium">
-                            Mesin server cerdas kami memproses dan melucuti watermark video TikTok secara instan dalam kurun waktu kurang dari 3 detik.
+                            Mesin server cerdas kami memproses dan melucuti media video TikTok, YouTube, Instagram dan Facebook secara instan dalam kurun waktu super cepat.
                         </p>
                     </div>
                 </div>
@@ -533,36 +1140,7 @@
                 </div>
             </div>
 
-            <!-- Guide Steps -->
-            <div class="glass-panel rounded-3xl p-8 sm:p-12 space-y-12 premium-card relative">
-                <div class="text-center max-w-lg mx-auto">
-                    <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white mb-2">Cara Mengunduh Video TikTok Tanpa Watermark</h3>
-                    <p class="text-xs sm:text-sm text-slate-400 font-medium font-display">Sangat mudah dan hanya membutuhkan 3 langkah sederhana di semua gadget Anda.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    <!-- Step 1 -->
-                    <div class="relative flex flex-col items-center text-center space-y-4">
-                        <div class="w-11 h-11 rounded-full bg-slate-900 text-brand-accent border border-slate-700/50 flex items-center justify-center text-sm font-extrabold font-mono shadow-md">1</div>
-                        <h5 class="font-extrabold text-sm text-white">Salin Tautan Video</h5>
-                        <p class="text-xs text-slate-400 max-w-[220px] leading-relaxed font-medium">Buka aplikasi TikTok Anda, ketuk tombol <strong>Bagikan</strong> lalu pilih <strong>Salin Tautan</strong>.</p>
-                    </div>
-                    <!-- Step 2 -->
-                    <div class="relative flex flex-col items-center text-center space-y-4">
-                        <div class="w-11 h-11 rounded-full bg-slate-900 text-brand-accent border border-slate-700/50 flex items-center justify-center text-sm font-extrabold font-mono shadow-md">2</div>
-                        <h5 class="font-extrabold text-sm text-white">Tempelkan Tautan</h5>
-                        <p class="text-xs text-slate-400 max-w-[220px] leading-relaxed font-medium">Buka halaman TikSave, tempelkan tautan yang disalin tadi pada kotak pencarian di atas.</p>
-                    </div>
-                    <!-- Step 3 -->
-                    <div class="relative flex flex-col items-center text-center space-y-4">
-                        <div class="w-11 h-11 rounded-full bg-slate-900 text-brand-accent border border-slate-700/50 flex items-center justify-center text-sm font-extrabold font-mono shadow-md">3</div>
-                        <h5 class="font-extrabold text-sm text-white">Simpan Video</h5>
-                        <p class="text-xs text-slate-400 max-w-[220px] leading-relaxed font-medium">Ketuk tombol <strong>Download</strong>, pilih opsi file tanpa watermark, dan video siap ditonton offline!</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- FAQ Accordions (Tidied Up, Organized, Premium Left Indigo Border Indicator) -->
+            <!-- FAQ Accordions -->
             <div id="faq" class="space-y-8">
                 <div class="text-center max-w-lg mx-auto">
                     <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white mb-2">Pertanyaan Populer (FAQ)</h3>
@@ -580,7 +1158,7 @@
                         </button>
                         <div class="faq-answer max-h-0 overflow-hidden transition-all duration-350 bg-slate-950/20 border-l-4 border-indigo-600">
                             <p class="p-6 text-xs sm:text-sm text-slate-400 leading-relaxed font-medium">
-                                Tidak, semua layanan pengunduhan TikTok di TikSave 100% gratis secara penuh. Anda tidak perlu mendaftar, berlangganan, atau memasang ekstensi browser apa pun untuk mengunduh video tanpa watermark.
+                                Tidak, semua layanan pengunduhan di TikSave 100% gratis secara penuh. Anda tidak perlu mendaftar, berlangganan, atau memasang ekstensi browser apa pun untuk mengunduh video tanpa watermark.
                             </p>
                         </div>
                     </div>
@@ -620,7 +1198,7 @@
         </section>
     </div>
 
-    <!-- SECTION 2: DEVELOPER API DOCUMENTATION (SEPARATED VIEW) -->
+    <!-- SECTION 2: DEVELOPER API DOCUMENTATION -->
     <div id="view-api" class="w-full max-w-7xl mx-auto px-4 py-8 z-10 relative flex-grow hidden">
         <div class="glass-panel rounded-3xl p-6 sm:p-10 space-y-8 relative overflow-hidden premium-card">
             <!-- Neon cyan decorative ambient glow -->
@@ -705,7 +1283,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
   "data": {
     "id": "7320492348923479013",
     "title": "Aesthetic Travel Video #fyp #viral",
-    "cover": "https://images.unsplash.com/...jpg",
+    "cover": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500",
     "play": "https://example-cdn.com/no-watermark.mp4",
     "wmplay": "https://example-cdn.com/with-watermark.mp4",
     "music": "https://example-cdn.com/soundtrack.mp3",
@@ -717,7 +1295,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
     "author": {
       "unique_id": "nature_travel",
       "nickname": "Nature & Travel",
-      "avatar": "https://images.unsplash.com/..."
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100"
     }
   }
 }</pre>
@@ -731,7 +1309,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
     <footer class="w-full border-t border-white/5 bg-slate-950/80 backdrop-blur-md mt-20 z-10 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <!-- Branding Footer (Footer di baris 722) -->
+                <!-- Branding Footer -->
                 <div class="flex items-center gap-2.5">
                     <div class="w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden bg-white/5 border border-white/10">
                         <img src="https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png" alt="TikSave Logo" class="w-full h-full object-cover">
@@ -741,7 +1319,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
 
                 <!-- Copyright -->
                 <p class="text-xs text-slate-500 text-center md:text-left font-medium">
-                    &copy; 2026 TikSave. Tidak berafiliasi dengan TikTok atau ByteDance. Seluruh hak cipta terlindungi.
+                    &copy; 2026 TikSave. Tidak berafiliasi dengan TikTok, YouTube, Instagram, Facebook atau ByteDance. Seluruh hak cipta terlindungi.
                 </p>
 
                 <!-- Disclaimer Info -->
@@ -767,6 +1345,62 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
 
         function hideDonation() {
             document.getElementById('donation-modal').classList.add('hidden');
+        }
+
+        // Helper untuk format counter angka
+        function formatCounter(num) {
+            if (!num || isNaN(num)) return "0";
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(1) + "M";
+            }
+            if (num >= 1000) {
+                return (num / 1000).toFixed(1) + "K";
+            }
+            return num.toString();
+        }
+
+        // Fungsi Reset untuk TikTok
+        function resetDownloader() {
+            playSynthSound('click');
+            document.getElementById('tiktok-url').value = "";
+            document.getElementById('btn-clear').classList.add('hidden');
+            document.getElementById('downloader-form-view').classList.remove('hidden');
+            document.getElementById('downloader-success-view').classList.add('hidden');
+            document.getElementById('downloader-loading-view').classList.add('hidden');
+            currentMediaData = null;
+        }
+
+        // Fungsi Reset untuk YouTube
+        function resetYoutubeDownloader() {
+            playSynthSound('click');
+            document.getElementById('youtube-url').value = "";
+            document.getElementById('youtube-btn-clear').classList.add('hidden');
+            document.getElementById('youtube-downloader-form-view').classList.remove('hidden');
+            document.getElementById('youtube-downloader-success-view').classList.add('hidden');
+            document.getElementById('youtube-downloader-loading-view').classList.add('hidden');
+            currentYoutubeMediaData = null;
+        }
+
+        // Fungsi Reset untuk Instagram
+        function resetInstagramDownloader() {
+            playSynthSound('click');
+            document.getElementById('instagram-url').value = "";
+            document.getElementById('instagram-btn-clear').classList.add('hidden');
+            document.getElementById('instagram-downloader-form-view').classList.remove('hidden');
+            document.getElementById('instagram-downloader-success-view').classList.add('hidden');
+            document.getElementById('instagram-downloader-loading-view').classList.add('hidden');
+            currentInstagramMediaData = null;
+        }
+
+        // Fungsi Reset untuk Facebook
+        function resetFacebookDownloader() {
+            playSynthSound('click');
+            document.getElementById('facebook-url').value = "";
+            document.getElementById('facebook-btn-clear').classList.add('hidden');
+            document.getElementById('facebook-downloader-form-view').classList.remove('hidden');
+            document.getElementById('facebook-downloader-success-view').classList.add('hidden');
+            document.getElementById('facebook-downloader-loading-view').classList.add('hidden');
+            currentFacebookMediaData = null;
         }
 
         // Check if there's an API incoming request before initializing UI
@@ -830,11 +1464,15 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }
             } catch (err) {
                 // CORS Fallback proxy
-                const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(targetApi)}`;
-                const response = await fetch(proxyUrl);
-                const resJson = await response.json();
-                if (resJson && resJson.code === 0) {
-                    return resJson.data;
+                try {
+                    const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(targetApi)}`;
+                    const response = await fetch(proxyUrl);
+                    const resJson = await response.json();
+                    if (resJson && resJson.code === 0) {
+                        return resJson.data;
+                    }
+                } catch (e) {
+                    console.error("Fetch API Gagal", e);
                 }
             }
             return null;
@@ -848,29 +1486,71 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             
             // Global media data memory to prevent HTML string interpolation crashes
             let currentMediaData = null;
+            let currentYoutubeMediaData = null; // Memory for Youtube downloader API response
+            let currentInstagramMediaData = null; // Memory for Instagram downloader API response
+            let currentFacebookMediaData = null; // Memory for Facebook downloader API response
 
-            // SPA Tab Switcher (Polished logic to match Segmented Design - Non-Glass Active State with scale click animation)
+            // SPA Tab Switcher
             function switchTab(tabId) {
                 playSynthSound('click');
                 const viewDownloader = document.getElementById('view-downloader');
+                const viewYoutube = document.getElementById('view-youtube');
+                const viewInstagram = document.getElementById('view-instagram');
+                const viewFacebook = document.getElementById('view-facebook');
                 const viewApi = document.getElementById('view-api');
+                const infoContainer = document.getElementById('info-sections-container'); // MENDAPATKAN DOM INFO/FAQ
+                
                 const navDownloader = document.getElementById('nav-downloader');
+                const navYoutube = document.getElementById('nav-youtube');
+                const navInstagram = document.getElementById('nav-instagram');
+                const navFacebook = document.getElementById('nav-facebook');
                 const navApi = document.getElementById('nav-api');
+
+                // Hide all sections
+                viewDownloader.classList.add('hidden');
+                viewYoutube.classList.add('hidden');
+                viewInstagram.classList.add('hidden');
+                viewFacebook.classList.add('hidden');
+                viewApi.classList.add('hidden');
+                
+                // SEMBUNYIKAN INFO/FAQ SECARA DEFAULT
+                if (infoContainer) {
+                    infoContainer.classList.add('hidden');
+                }
+
+                // Setup non-active styling
+                navDownloader.className = "px-4 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5";
+                navYoutube.className = "px-4 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5";
+                navInstagram.className = "px-4 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5";
+                navFacebook.className = "px-4 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5";
+                navApi.className = "px-4 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5";
 
                 if (tabId === 'downloader') {
                     viewDownloader.classList.remove('hidden');
-                    viewApi.classList.add('hidden');
-                    navDownloader.className = "px-5 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 hover:bg-indigo-500";
-                    navApi.className = "px-5 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5";
+                    if (infoContainer) infoContainer.classList.remove('hidden'); // TAMPILKAN DI TIKTOK DOWNLOADER
+                    navDownloader.className = "px-4 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5 hover:bg-indigo-500";
+                } else if (tabId === 'youtube') {
+                    viewYoutube.classList.remove('hidden');
+                    if (infoContainer) infoContainer.classList.remove('hidden'); // TAMPILKAN DI YOUTUBE DOWNLOADER
+                    navYoutube.className = "px-4 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5 hover:bg-indigo-500";
+                } else if (tabId === 'instagram') {
+                    viewInstagram.classList.remove('hidden');
+                    if (infoContainer) infoContainer.classList.remove('hidden'); // TAMPILKAN DI INSTAGRAM DOWNLOADER
+                    navInstagram.className = "px-4 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5 hover:bg-indigo-500";
+                } else if (tabId === 'facebook') {
+                    viewFacebook.classList.remove('hidden');
+                    if (infoContainer) infoContainer.classList.remove('hidden'); // TAMPILKAN DI FACEBOOK DOWNLOADER
+                    navFacebook.className = "px-4 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5 hover:bg-indigo-500";
                 } else if (tabId === 'api') {
-                    viewDownloader.classList.add('hidden');
                     viewApi.classList.remove('hidden');
-                    navDownloader.className = "px-5 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95";
-                    navApi.className = "px-5 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5 hover:bg-indigo-500";
+                    // TETAP TERSEMBUNYI (TIDAK DIPANGGIL) UNTUK DOCS API
+                    navApi.className = "px-4 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5 hover:bg-indigo-500";
                 }
+                
+                lucide.createIcons();
             }
 
-            // High compatibility downloader function that creates local browser download triggers (fixes standard CORS blocking)
+            // High compatibility downloader function that creates local browser download triggers
             async function forceDownload(url, filename, buttonElement) {
                 playSynthSound('click');
                 
@@ -917,7 +1597,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }
             }
 
-            // Safe memory-driven download delegation methods to completely avoid string quote parsing issues in DOM
+            // Safe memory-driven download delegation methods
             function downloadImageByIndex(index, btn) {
                 if (!currentMediaData || !currentMediaData.images || !currentMediaData.images[index]) return;
                 let url = currentMediaData.images[index];
@@ -939,19 +1619,46 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 forceDownload(url, `${cleanTitle}_audio.mp3`, btn);
             }
 
-            // Video Download Action Mapping (Watermark Fix + Path Resolution)
+            // Video Download Action Mapping
             function downloadVideo(type, btn) {
                 if (!currentMediaData) return;
                 const cleanTitle = (currentMediaData.title || 'tiktok_media').replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30);
                 let url = type === 'no_wm' ? currentMediaData.play : (currentMediaData.wmplay || currentMediaData.play);
                 
-                // FIX: Jika url relatif (dimulai dengan /), tambahkan host tikwm
                 if (url && url.startsWith('/')) {
                     url = "https://www.tikwm.com" + url;
                 }
                 
-                // FIX: Gunakan forceDownload untuk semua tipe
                 forceDownload(url, `${cleanTitle}_${type}.mp4`, btn);
+            }
+
+            // YouTube Video and MP3 Download Action Mapping
+            function downloadYoutubeMedia(type, btn) {
+                if (!currentYoutubeMediaData || !currentYoutubeMediaData.result) return;
+                const meta = currentYoutubeMediaData.result.metadata;
+                const cleanTitle = (meta.title || 'youtube_media').replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30);
+                
+                let url = type === 'video' ? currentYoutubeMediaData.result.video : currentYoutubeMediaData.result.audio;
+                const ext = type === 'video' ? 'mp4' : 'mp3';
+                
+                forceDownload(url, `${cleanTitle}.${ext}`, btn);
+            }
+
+            // Instagram Download Action Mapping
+            function downloadInstagramMedia(url, ext, name, btn) {
+                if (!currentInstagramMediaData || !currentInstagramMediaData.data) return;
+                const meta = currentInstagramMediaData.data.meta;
+                const cleanTitle = (meta.title || 'instagram_media').replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30);
+                forceDownload(url, `${cleanTitle}_${name}.${ext}`, btn);
+            }
+
+            // Facebook Download Action Mapping
+            function downloadFacebookMedia(url, quality, btn) {
+                if (!currentFacebookMediaData || !currentFacebookMediaData.data) return;
+                const meta = currentFacebookMediaData.data;
+                const cleanTitle = (meta.title || 'facebook_video').replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30);
+                const cleanQuality = quality.replace(/\s+/g, '_');
+                forceDownload(url, `${cleanTitle}_${cleanQuality}.mp4`, btn);
             }
 
             // Helper to format bytes to legible string
@@ -976,7 +1683,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                         if (el) el.innerText = `[${mb.toFixed(1)} MB]`;
                     }
                 } catch (e) {
-                    // Quietly ignore CORS issues as the static size metadata is already active
+                    // Quietly ignore CORS issues
                 }
             }
 
@@ -1015,6 +1722,33 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 
                 document.getElementById('tiktok-url').addEventListener('input', (e) => {
                     const clearBtn = document.getElementById('btn-clear');
+                    if (e.target.value.trim() !== "") {
+                        clearBtn.classList.remove('hidden');
+                    } else {
+                        clearBtn.classList.add('hidden');
+                    }
+                });
+
+                document.getElementById('youtube-url').addEventListener('input', (e) => {
+                    const clearBtn = document.getElementById('youtube-btn-clear');
+                    if (e.target.value.trim() !== "") {
+                        clearBtn.classList.remove('hidden');
+                    } else {
+                        clearBtn.classList.add('hidden');
+                    }
+                });
+
+                document.getElementById('instagram-url').addEventListener('input', (e) => {
+                    const clearBtn = document.getElementById('instagram-btn-clear');
+                    if (e.target.value.trim() !== "") {
+                        clearBtn.classList.remove('hidden');
+                    } else {
+                        clearBtn.classList.add('hidden');
+                    }
+                });
+
+                document.getElementById('facebook-url').addEventListener('input', (e) => {
+                    const clearBtn = document.getElementById('facebook-btn-clear');
                     if (e.target.value.trim() !== "") {
                         clearBtn.classList.remove('hidden');
                     } else {
@@ -1142,11 +1876,95 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }
             }
 
+            // YouTube Clipboard Paste
+            async function pasteYoutubeFromClipboard() {
+                playSynthSound('click');
+                const input = document.getElementById('youtube-url');
+                const clearBtn = document.getElementById('youtube-btn-clear');
+                
+                try {
+                    const clipboardText = await navigator.clipboard.readText();
+                    if (clipboardText) {
+                        input.value = clipboardText;
+                        clearBtn.classList.remove('hidden');
+                        showYoutubeAlert('success', 'Berhasil Menempel', 'Tautan YouTube berhasil disalin dari clipboard!');
+                    } else {
+                        showYoutubeAlert('info', 'Clipboard Kosong', 'Tidak ada teks yang dapat disalin di clipboard Anda.');
+                    }
+                } catch (err) {
+                    showYoutubeAlert('info', 'Cara Manual', 'Silakan tekan lama pada kotak input lalu tempel manual.');
+                }
+            }
+
+            // Instagram Clipboard Paste
+            async function pasteInstagramFromClipboard() {
+                playSynthSound('click');
+                const input = document.getElementById('instagram-url');
+                const clearBtn = document.getElementById('instagram-btn-clear');
+                
+                try {
+                    const clipboardText = await navigator.clipboard.readText();
+                    if (clipboardText) {
+                        input.value = clipboardText;
+                        clearBtn.classList.remove('hidden');
+                        showInstagramAlert('success', 'Berhasil Menempel', 'Tautan Instagram berhasil disalin dari clipboard!');
+                    } else {
+                        showInstagramAlert('info', 'Clipboard Kosong', 'Tidak ada teks yang dapat disalin di clipboard Anda.');
+                    }
+                } catch (err) {
+                    showInstagramAlert('info', 'Cara Manual', 'Silakan tekan lama pada kotak input lalu tempel manual.');
+                }
+            }
+
+            // Facebook Clipboard Paste
+            async function pasteFacebookFromClipboard() {
+                playSynthSound('click');
+                const input = document.getElementById('facebook-url');
+                const clearBtn = document.getElementById('facebook-btn-clear');
+                
+                try {
+                    const clipboardText = await navigator.clipboard.readText();
+                    if (clipboardText) {
+                        input.value = clipboardText;
+                        clearBtn.classList.remove('hidden');
+                        showFacebookAlert('success', 'Berhasil Menempel', 'Tautan Facebook berhasil disalin dari clipboard!');
+                    } else {
+                        showFacebookAlert('info', 'Clipboard Kosong', 'Tidak ada teks yang dapat disalin di clipboard Anda.');
+                    }
+                } catch (err) {
+                    showFacebookAlert('info', 'Cara Manual', 'Silakan tekan lama pada kotak input lalu tempel manual.');
+                }
+            }
+
             function clearInput() {
                 playSynthSound('click');
                 const input = document.getElementById('tiktok-url');
                 input.value = "";
                 document.getElementById('btn-clear').classList.add('hidden');
+                input.focus();
+            }
+
+            function clearYoutubeInput() {
+                playSynthSound('click');
+                const input = document.getElementById('youtube-url');
+                input.value = "";
+                document.getElementById('youtube-btn-clear').classList.add('hidden');
+                input.focus();
+            }
+
+            function clearInstagramInput() {
+                playSynthSound('click');
+                const input = document.getElementById('instagram-url');
+                input.value = "";
+                document.getElementById('instagram-btn-clear').classList.add('hidden');
+                input.focus();
+            }
+
+            function clearFacebookInput() {
+                playSynthSound('click');
+                const input = document.getElementById('facebook-url');
+                input.value = "";
+                document.getElementById('facebook-btn-clear').classList.add('hidden');
                 input.focus();
             }
 
@@ -1177,9 +1995,102 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 lucide.createIcons();
             }
 
+            // Custom YouTube Notification Manager
+            function showYoutubeAlert(type, title, desc) {
+                const box = document.getElementById('youtube-alert-box');
+                const container = document.getElementById('youtube-alert-icon-container');
+                const titleEl = document.getElementById('youtube-alert-title');
+                const descEl = document.getElementById('youtube-alert-desc');
+
+                box.className = "p-4 rounded-xl border flex items-start gap-3 transition-all duration-300 ";
+                
+                if (type === 'error') {
+                    box.classList.add('bg-rose-950/40', 'border-rose-900/40', 'text-rose-300');
+                    container.innerHTML = `<i data-lucide="alert-triangle" class="w-5 h-5 text-rose-400"></i>`;
+                    playSynthSound('error');
+                } else if (type === 'success') {
+                    box.classList.add('bg-emerald-950/40', 'border-emerald-900/40', 'text-emerald-300');
+                    container.innerHTML = `<i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>`;
+                } else {
+                    box.classList.add('bg-slate-800/50', 'border-slate-700/50', 'text-slate-300');
+                    container.innerHTML = `<i data-lucide="info" class="w-5 h-5 text-red-400"></i>`;
+                }
+
+                titleEl.innerText = title;
+                descEl.innerText = desc;
+                box.classList.remove('hidden');
+                lucide.createIcons();
+            }
+
+            // Custom Instagram Notification Manager
+            function showInstagramAlert(type, title, desc) {
+                const box = document.getElementById('instagram-alert-box');
+                const container = document.getElementById('instagram-alert-icon-container');
+                const titleEl = document.getElementById('instagram-alert-title');
+                const descEl = document.getElementById('instagram-alert-desc');
+
+                box.className = "p-4 rounded-xl border flex items-start gap-3 transition-all duration-300 ";
+                
+                if (type === 'error') {
+                    box.classList.add('bg-rose-950/40', 'border-rose-900/40', 'text-rose-300');
+                    container.innerHTML = `<i data-lucide="alert-triangle" class="w-5 h-5 text-rose-400"></i>`;
+                    playSynthSound('error');
+                } else if (type === 'success') {
+                    box.classList.add('bg-emerald-950/40', 'border-emerald-900/40', 'text-emerald-300');
+                    container.innerHTML = `<i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>`;
+                } else {
+                    box.classList.add('bg-slate-800/50', 'border-slate-700/50', 'text-slate-300');
+                    container.innerHTML = `<i data-lucide="info" class="w-5 h-5 text-pink-400"></i>`;
+                }
+
+                titleEl.innerText = title;
+                descEl.innerText = desc;
+                box.classList.remove('hidden');
+                lucide.createIcons();
+            }
+
+            // Custom Facebook Notification Manager
+            function showFacebookAlert(type, title, desc) {
+                const box = document.getElementById('facebook-alert-box');
+                const container = document.getElementById('facebook-alert-icon-container');
+                const titleEl = document.getElementById('facebook-alert-title');
+                const descEl = document.getElementById('facebook-alert-desc');
+
+                box.className = "p-4 rounded-xl border flex items-start gap-3 transition-all duration-300 ";
+                
+                if (type === 'error') {
+                    box.classList.add('bg-rose-950/40', 'border-rose-900/40', 'text-rose-300');
+                    container.innerHTML = `<i data-lucide="alert-triangle" class="w-5 h-5 text-rose-400"></i>`;
+                    playSynthSound('error');
+                } else if (type === 'success') {
+                    box.classList.add('bg-emerald-950/40', 'border-emerald-900/40', 'text-emerald-300');
+                    container.innerHTML = `<i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>`;
+                } else {
+                    box.classList.add('bg-slate-800/50', 'border-slate-700/50', 'text-slate-300');
+                    container.innerHTML = `<i data-lucide="info" class="w-5 h-5 text-blue-400"></i>`;
+                }
+
+                titleEl.innerText = title;
+                descEl.innerText = desc;
+                box.classList.remove('hidden');
+                lucide.createIcons();
+            }
+
             // Hide Alert Panel
             function hideAlert() {
                 document.getElementById('alert-box').classList.add('hidden');
+            }
+
+            function hideYoutubeAlert() {
+                document.getElementById('youtube-alert-box').classList.add('hidden');
+            }
+
+            function hideInstagramAlert() {
+                document.getElementById('instagram-alert-box').classList.add('hidden');
+            }
+
+            function hideFacebookAlert() {
+                document.getElementById('facebook-alert-box').classList.add('hidden');
             }
 
             // Download Trigger
@@ -1204,6 +2115,78 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 document.getElementById('downloader-loading-view').classList.remove('hidden');
                 
                 animateProgressAndFetch(urlInput);
+            }
+
+            // YouTube Download Trigger
+            async function handleYoutubeDownload() {
+                playSynthSound('click');
+                const urlInput = document.getElementById('youtube-url').value.trim();
+                
+                if (!urlInput) {
+                    showYoutubeAlert('error', 'Tautan Kosong', 'Harap masukkan tautan video YouTube terlebih dahulu.');
+                    return;
+                }
+
+                const youtubePattern = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+/i;
+                if (!youtubePattern.test(urlInput)) {
+                    showYoutubeAlert('error', 'Tautan Tidak Valid', 'Format tautan bukan tautan YouTube yang valid.');
+                    return;
+                }
+
+                hideYoutubeAlert();
+
+                document.getElementById('youtube-downloader-form-view').classList.add('hidden');
+                document.getElementById('youtube-downloader-loading-view').classList.remove('hidden');
+                
+                animateYoutubeProgressAndFetch(urlInput);
+            }
+
+            // Instagram Download Trigger
+            async function handleInstagramDownload() {
+                playSynthSound('click');
+                const urlInput = document.getElementById('instagram-url').value.trim();
+                
+                if (!urlInput) {
+                    showInstagramAlert('error', 'Tautan Kosong', 'Harap masukkan tautan video/foto Instagram terlebih dahulu.');
+                    return;
+                }
+
+                const instagramPattern = /^(https?:\/\/)?(www\.)?instagram\.com\/.+/i;
+                if (!instagramPattern.test(urlInput)) {
+                    showInstagramAlert('error', 'Tautan Tidak Valid', 'Format tautan bukan tautan Instagram yang valid.');
+                    return;
+                }
+
+                hideInstagramAlert();
+
+                document.getElementById('instagram-downloader-form-view').classList.add('hidden');
+                document.getElementById('instagram-downloader-loading-view').classList.remove('hidden');
+                
+                animateInstagramProgressAndFetch(urlInput);
+            }
+
+            // Facebook Download Trigger
+            async function handleFacebookDownload() {
+                playSynthSound('click');
+                const urlInput = document.getElementById('facebook-url').value.trim();
+
+                if (!urlInput) {
+                    showFacebookAlert('error', 'Tautan Kosong', 'Harap masukkan tautan video Facebook terlebih dahulu.');
+                    return;
+                }
+
+                const facebookPattern = /^(https?:\/\/)?(www\.)?(facebook\.com|fb\.watch|fb\.gg)\/.+/i;
+                if (!facebookPattern.test(urlInput)) {
+                    showFacebookAlert('error', 'Tautan Tidak Valid', 'Format tautan bukan tautan Facebook yang valid.');
+                    return;
+                }
+
+                hideFacebookAlert();
+
+                document.getElementById('facebook-downloader-form-view').classList.add('hidden');
+                document.getElementById('facebook-downloader-loading-view').classList.remove('hidden');
+
+                animateFacebookProgressAndFetch(urlInput);
             }
 
             async function expandTiktokShortlink(url) {
@@ -1298,7 +2281,202 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }
             }
 
-            // Populate Success Data
+            // YouTube API fetcher and animator
+            async function animateYoutubeProgressAndFetch(youtubeUrl) {
+                const progress = document.getElementById('youtube-loading-progress');
+                const percentLabel = document.getElementById('youtube-loading-percentage');
+                const titleLabel = document.getElementById('youtube-loading-title');
+                
+                let currentPercent = 10;
+                const progressInterval = setInterval(() => {
+                    if (currentPercent < 85) {
+                        currentPercent += Math.floor(Math.random() * 8) + 2;
+                        if (currentPercent > 85) currentPercent = 85;
+                        progress.style.width = currentPercent + "%";
+                        percentLabel.innerText = currentPercent + "%";
+                        
+                        if (currentPercent > 35 && currentPercent < 65) {
+                            titleLabel.innerText = "Mengekstrak Audio & Video...";
+                        } else if (currentPercent >= 65) {
+                            titleLabel.innerText = "Menyusun Format Pengunduhan...";
+                        }
+                    }
+                }, 100);
+
+                try {
+                    titleLabel.innerText = "Sebentar Lagi...";
+                    
+                    const targetApi = `https://api.synoxcloud.xyz/download/youtube?url=${encodeURIComponent(youtubeUrl)}`;
+                    let data = null;
+
+                    try {
+                        const response = await fetch(targetApi);
+                        const resJson = await response.json();
+                        if (resJson && resJson.status === true) {
+                            data = resJson;
+                        }
+                    } catch (err) {
+                        // AllOrigins proxy fallback
+                        const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(targetApi)}`;
+                        const response = await fetch(proxyUrl);
+                        const resJson = await response.json();
+                        if (resJson && resJson.status === true) {
+                            data = resJson;
+                        }
+                    }
+
+                    clearInterval(progressInterval);
+
+                    if (data) {
+                        currentYoutubeMediaData = data;
+                        fillYoutubeSuccessView(data, youtubeUrl);
+                    } else {
+                        throw new Error("Respon data YouTube API kosong");
+                    }
+                } catch (err) {
+                    console.error("Kesalahan fetch YouTube:", err);
+                    clearInterval(progressInterval);
+                    document.getElementById('youtube-downloader-loading-view').classList.add('hidden');
+                    document.getElementById('youtube-downloader-form-view').classList.remove('hidden');
+                    showYoutubeAlert('error', 'Gagal Memproses', 'Maaf, server gagal mengambil media YouTube. Pastikan tautan benar dan video tidak dibatasi.');
+                }
+            }
+
+            // Instagram API fetcher and animator
+            async function animateInstagramProgressAndFetch(instagramUrl) {
+                const progress = document.getElementById('instagram-loading-progress');
+                const percentLabel = document.getElementById('instagram-loading-percentage');
+                const titleLabel = document.getElementById('instagram-loading-title');
+                
+                let currentPercent = 10;
+                const progressInterval = setInterval(() => {
+                    if (currentPercent < 85) {
+                        currentPercent += Math.floor(Math.random() * 8) + 2;
+                        if (currentPercent > 85) currentPercent = 85;
+                        progress.style.width = currentPercent + "%";
+                        percentLabel.innerText = currentPercent + "%";
+                        
+                        if (currentPercent > 35 && currentPercent < 65) {
+                            titleLabel.innerText = "Mengekstrak Link Instagram...";
+                        } else if (currentPercent >= 65) {
+                            titleLabel.innerText = "Menganalisis Format Output...";
+                        }
+                    }
+                }, 100);
+
+                try {
+                    titleLabel.innerText = "Sebentar Lagi...";
+                    
+                    const targetApi = "https://api.siputzx.my.id/api/d/igram";
+                    let data = null;
+
+                    try {
+                        const response = await fetch(targetApi, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({ url: instagramUrl })
+                        });
+                        const resJson = await response.json();
+                        if (resJson && resJson.status === true) {
+                            data = resJson;
+                        }
+                    } catch (err) {
+                        // AllOrigins proxy fallback for POST request
+                        const proxyUrl = "https://api.allorigins.win/raw?url=" + encodeURIComponent(targetApi);
+                        const response = await fetch(proxyUrl, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({ url: instagramUrl })
+                        });
+                        const resJson = await response.json();
+                        if (resJson && resJson.status === true) {
+                            data = resJson;
+                        }
+                    }
+
+                    clearInterval(progressInterval);
+
+                    if (data) {
+                        currentInstagramMediaData = data;
+                        fillInstagramSuccessView(data, instagramUrl);
+                    } else {
+                        throw new Error("Respon data Instagram API kosong atau status false");
+                    }
+                } catch (err) {
+                    console.error("Kesalahan fetch Instagram:", err);
+                    clearInterval(progressInterval);
+                    document.getElementById('instagram-downloader-loading-view').classList.add('hidden');
+                    document.getElementById('instagram-downloader-form-view').classList.remove('hidden');
+                    showInstagramAlert('error', 'Gagal Memproses', 'Maaf, server gagal mengambil media Instagram. Pastikan tautan benar dan postingan bersifat publik.');
+                }
+            }
+
+            // Facebook API fetcher and animator
+            async function animateFacebookProgressAndFetch(facebookUrl) {
+                const progress = document.getElementById('facebook-loading-progress');
+                const percentLabel = document.getElementById('facebook-loading-percentage');
+                const titleLabel = document.getElementById('facebook-loading-title');
+
+                let currentPercent = 10;
+                const progressInterval = setInterval(() => {
+                    if (currentPercent < 85) {
+                        currentPercent += Math.floor(Math.random() * 8) + 2;
+                        if (currentPercent > 85) currentPercent = 85;
+                        progress.style.width = currentPercent + "%";
+                        percentLabel.innerText = currentPercent + "%";
+
+                        if (currentPercent > 35 && currentPercent < 65) {
+                            titleLabel.innerText = "Mengekstrak Video Facebook...";
+                        } else if (currentPercent >= 65) {
+                            titleLabel.innerText = "Membuka Link Unduhan...";
+                        }
+                    }
+                }, 100);
+
+                try {
+                    titleLabel.innerText = "Sebentar Lagi..";
+                    
+                    const targetApi = `https://api.siputzx.my.id/api/d/facebook?url=${encodeURIComponent(facebookUrl)}`;
+                    let data = null;
+
+                    try {
+                        const response = await fetch(targetApi);
+                        const resJson = await response.json();
+                        if (resJson && resJson.status === true) {
+                            data = resJson;
+                        }
+                    } catch (err) {
+                        // AllOrigins proxy fallback
+                        const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(targetApi)}`;
+                        const response = await fetch(proxyUrl);
+                        const resJson = await response.json();
+                        if (resJson && resJson.status === true) {
+                            data = resJson;
+                        }
+                    }
+
+                    clearInterval(progressInterval);
+
+                    if (data) {
+                        currentFacebookMediaData = data;
+                        fillFacebookSuccessView(data, facebookUrl);
+                    } else {
+                        throw new Error("Respon data Facebook API kosong atau status false");
+                    }
+                } catch (err) {
+                    console.error("Kesalahan fetch Facebook:", err);
+                    clearInterval(progressInterval);
+                    document.getElementById('facebook-downloader-loading-view').classList.add('hidden');
+                    document.getElementById('facebook-downloader-form-view').classList.remove('hidden');
+                    showFacebookAlert('error', 'Gagal Memproses', 'Maaf, server gagal mengambil video Facebook. Pastikan tautan benar dan video bersifat publik.');
+                }
+            }
+
+            // Populate TikTok Success Data
             function fillSuccessView(data, originalUrl) {
                 const coverEl = document.getElementById('video-cover');
                 const videoEl = document.getElementById('preview-video');
@@ -1402,7 +2580,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
 
                     // Format Metadata file sizes
                     const noWmSizeStr = formatBytes(data.size);
-                    const wmSizeStr = formatBytes(data.wm_size);
                     const musicSizeStr = data.duration ? formatBytes(data.duration * 16000) : "";
 
                     // Action buttons with direct download mapping
@@ -1444,7 +2621,10 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     views: data.play_count || 0,
                     dl_link: data.play || (data.images ? data.images[0] : '#'),
                     original_url: originalUrl,
-                    is_images: isImages
+                    is_images: isImages,
+                    is_youtube: false,
+                    is_instagram: false,
+                    is_facebook: false
                 });
 
                 document.getElementById('loading-progress').style.width = "100%";
@@ -1458,27 +2638,270 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }, 300);
             }
 
-            function formatCounter(num) {
-                if (!num) return '0';
-                if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
-                if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
-                return num.toString();
+            // Populate YouTube Success Data (PLAYABLE VIDEO ENHANCED)
+            function fillYoutubeSuccessView(data, originalUrl) {
+                const coverEl = document.getElementById('yt-video-cover');
+                const ytVideoEl = document.getElementById('yt-preview-video');
+                const actionGrid = document.getElementById('yt-download-actions-grid');
+                const titleEl = document.getElementById('yt-video-title');
+                const viewsEl = document.getElementById('yt-stat-views');
+                const creatorName = document.getElementById('yt-creator-name');
+                const creatorUsername = document.getElementById('yt-creator-username');
+
+                const meta = data.result.metadata;
+
+                // Make Video Playable inside browser
+                coverEl.classList.add('hidden');
+                ytVideoEl.classList.remove('hidden');
+                ytVideoEl.pause();
+                ytVideoEl.src = data.result.video;
+                ytVideoEl.load();
+                ytVideoEl.play().catch(e => console.log("Muted YT preview play blocked", e));
+
+                titleEl.innerText = meta.title || 'Video YouTube';
+                viewsEl.innerText = formatCounter(meta.views);
+                creatorName.innerText = meta.author || 'YouTube Channel';
+                creatorUsername.innerText = 'TikSave YT';
+
+                // Action buttons for YouTube
+                actionGrid.innerHTML = `
+                    <button onclick="downloadYoutubeMedia('video', this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-extrabold text-sm shadow-lg shadow-red-500/10 hover:shadow-red-500/25 transition-all transform active:scale-[0.98]">
+                        <span class="flex items-center gap-2.5">
+                            <i data-lucide="video" class="w-5 h-5 text-white"></i>
+                            <span class="text-left">
+                                <span class="block">Unduh Video [MP4]</span>
+                                <span class="block text-[10px] opacity-75 font-normal" id="yt-size-video">Kualitas HD</span>
+                            </span>
+                        </span>
+                        <i data-lucide="arrow-down-to-line" class="w-4 h-4"></i>
+                    </button>
+                    <button onclick="downloadYoutubeMedia('audio', this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-slate-950 border border-white/5 hover:bg-slate-900 text-slate-300 font-extrabold text-sm transition-all transform active:scale-[0.98] shadow-inner">
+                        <span class="flex items-center gap-2.5">
+                            <i data-lucide="music" class="w-5 h-5 text-red-500 animate-pulse"></i>
+                            <span class="text-left">
+                                <span class="block">Unduh Audio [MP3]</span>
+                                <span class="block text-[10px] opacity-75 font-normal" id="yt-size-audio">Audio Jernih</span>
+                            </span>
+                        </span>
+                        <i data-lucide="disc" class="w-4 h-4"></i>
+                    </button>
+                `;
+
+                // Fetch exact sizes
+                fetchExactSize(data.result.video, 'yt-size-video');
+                fetchExactSize(data.result.audio, 'yt-size-audio');
+
+                // Save to history
+                saveToHistory({
+                    id: Math.random().toString(),
+                    title: meta.title || 'Video YouTube',
+                    cover: meta.thumbnail || 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500',
+                    author: meta.author || 'YouTube',
+                    likes: 0,
+                    views: meta.views || 0,
+                    dl_link: data.result.video,
+                    original_url: originalUrl,
+                    is_images: false,
+                    is_youtube: true,
+                    is_instagram: false,
+                    is_facebook: false
+                });
+
+                document.getElementById('youtube-loading-progress').style.width = "100%";
+                document.getElementById('youtube-loading-percentage').innerText = "100%";
+                
+                setTimeout(() => {
+                    playSynthSound('success');
+                    document.getElementById('youtube-downloader-loading-view').classList.add('hidden');
+                    document.getElementById('youtube-downloader-success-view').classList.remove('hidden');
+                    lucide.createIcons();
+                }, 300);
             }
 
-            function resetDownloader() {
-                playSynthSound('click');
-                document.getElementById('tiktok-url').value = "";
-                document.getElementById('btn-clear').classList.add('hidden');
-                document.getElementById('downloader-success-view').classList.add('hidden');
-                document.getElementById('downloader-loading-view').classList.add('hidden');
-                document.getElementById('downloader-form-view').classList.remove('hidden');
-                
-                const videoEl = document.getElementById('preview-video');
+            // Populate Instagram Success Data
+            function fillInstagramSuccessView(response, originalUrl) {
+                const coverEl = document.getElementById('ig-video-cover');
+                const videoEl = document.getElementById('ig-preview-video');
+                const actionGrid = document.getElementById('ig-download-actions-grid');
+                const titleEl = document.getElementById('ig-video-title');
+                const likesEl = document.getElementById('ig-stat-likes');
+                const creatorName = document.getElementById('ig-creator-name');
+                const creatorUsername = document.getElementById('ig-creator-username');
+
+                const mediaData = response.data;
+                const meta = mediaData.meta;
+
+                coverEl.classList.add('hidden');
+                videoEl.classList.add('hidden');
                 videoEl.pause();
                 videoEl.src = "";
-                currentMediaData = null;
+
+                const mainMedia = mediaData.url && mediaData.url[0];
                 
-                hideAlert();
+                if (mainMedia) {
+                    if (mainMedia.type === 'mp4') {
+                        videoEl.classList.remove('hidden');
+                        videoEl.src = mainMedia.url;
+                        videoEl.load();
+                        videoEl.play().catch(e => console.log("Instagram play blocked", e));
+                    } else {
+                        coverEl.classList.remove('hidden');
+                        coverEl.src = mediaData.thumb || 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500';
+                    }
+                } else {
+                    coverEl.classList.remove('hidden');
+                    coverEl.src = mediaData.thumb || 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500';
+                }
+
+                titleEl.innerText = meta.title || 'Instagram Post';
+                likesEl.innerText = formatCounter(meta.like_count);
+                creatorName.innerText = meta.username || 'Instagram User';
+                creatorUsername.innerText = '@' + (meta.username || 'instagram_user');
+
+                actionGrid.innerHTML = "";
+                if (mediaData.url && mediaData.url.length > 0) {
+                    mediaData.url.forEach((item, idx) => {
+                        const nameLabel = item.name || item.type.toUpperCase();
+                        const subLabel = item.subname || `${item.quality || ''}p`;
+                        
+                        actionGrid.innerHTML += `
+                            <button onclick="downloadInstagramMedia('${item.url}', '${item.ext}', '${item.name}', this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white font-extrabold text-sm shadow-lg shadow-pink-500/10 hover:shadow-pink-500/25 transition-all transform active:scale-[0.98]">
+                                <span class="flex items-center gap-2.5">
+                                    <i data-lucide="download-cloud" class="w-5 h-5 text-white"></i>
+                                    <span class="text-left">
+                                        <span class="block">Unduh ${nameLabel} [${subLabel}]</span>
+                                        <span class="block text-[10px] opacity-75 font-normal" id="ig-size-${idx}">Ready</span>
+                                    </span>
+                                </span>
+                                <i data-lucide="arrow-down-to-line" class="w-4 h-4"></i>
+                            </button>
+                        `;
+                        fetchExactSize(item.url, `ig-size-${idx}`);
+                    });
+                } else {
+                    actionGrid.innerHTML = `
+                        <button onclick="forceDownload('${mediaData.thumb}', 'instagram_image.jpg', this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-pink-600 hover:bg-pink-500 text-white font-extrabold text-sm shadow-md transition-all transform active:scale-95">
+                            <span class="flex items-center gap-2.5">
+                                <i data-lucide="image" class="w-5 h-5"></i>
+                                <span>Unduh Foto (Fallback)</span>
+                            </span>
+                            <i data-lucide="download" class="w-4 h-4"></i>
+                        </button>
+                    `;
+                }
+
+                saveToHistory({
+                    id: meta.shortcode || Math.random().toString(),
+                    title: meta.title || 'Instagram Post',
+                    cover: mediaData.thumb || 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500',
+                    author: meta.username || 'instagram_user',
+                    likes: meta.like_count || 0,
+                    views: meta.comment_count || 0,
+                    dl_link: mainMedia ? mainMedia.url : '#',
+                    original_url: originalUrl,
+                    is_images: false,
+                    is_youtube: false,
+                    is_instagram: true,
+                    is_facebook: false
+                });
+
+                document.getElementById('instagram-loading-progress').style.width = "100%";
+                document.getElementById('instagram-loading-percentage').innerText = "100%";
+                
+                setTimeout(() => {
+                    playSynthSound('success');
+                    document.getElementById('instagram-downloader-loading-view').classList.add('hidden');
+                    document.getElementById('instagram-downloader-success-view').classList.remove('hidden');
+                    lucide.createIcons();
+                }, 300);
+            }
+
+            // Populate Facebook Success Data (PLAYABLE VIDEO ENHANCED)
+            function fillFacebookSuccessView(response, originalUrl) {
+                const coverEl = document.getElementById('fb-video-cover');
+                const videoEl = document.getElementById('fb-preview-video');
+                const actionGrid = document.getElementById('fb-download-actions-grid');
+                const titleEl = document.getElementById('fb-video-title');
+                const durationEl = document.getElementById('fb-stat-duration');
+                const creatorName = document.getElementById('fb-creator-name');
+                const creatorUsername = document.getElementById('fb-creator-username');
+
+                const fbData = response.data;
+
+                // Make Video Playable inside browser
+                coverEl.classList.add('hidden');
+                videoEl.classList.remove('hidden');
+                videoEl.pause();
+                videoEl.src = "";
+
+                // Use first download URL to populate video preview element
+                const mainMedia = fbData.downloads && fbData.downloads[0];
+                if (mainMedia && mainMedia.url) {
+                    videoEl.src = mainMedia.url;
+                    videoEl.load();
+                    videoEl.play().catch(e => console.log("Muted FB preview play blocked", e));
+                } else {
+                    coverEl.classList.remove('hidden');
+                    videoEl.classList.add('hidden');
+                    coverEl.src = fbData.thumbnail || 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500';
+                }
+
+                // Metadata Details
+                titleEl.innerText = fbData.title || 'Facebook Video';
+                durationEl.innerText = fbData.duration || 'N/A';
+                creatorName.innerText = 'Facebook User';
+                creatorUsername.innerText = '@fb_video';
+
+                // Build download buttons grid dynamically
+                actionGrid.innerHTML = "";
+                if (fbData.downloads && fbData.downloads.length > 0) {
+                    fbData.downloads.forEach((item, idx) => {
+                        const quality = item.quality || 'Standard';
+                        actionGrid.innerHTML += `
+                            <button onclick="downloadFacebookMedia('${item.url}', '${quality}', this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-650 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold text-sm shadow-lg shadow-blue-500/10 hover:shadow-blue-500/25 transition-all transform active:scale-[0.98]">
+                                <span class="flex items-center gap-2.5">
+                                    <i data-lucide="video" class="w-5 h-5 text-white"></i>
+                                    <span class="text-left">
+                                        <span class="block">Unduh Video (${quality})</span>
+                                        <span class="block text-[10px] opacity-75 font-normal" id="fb-size-${idx}">Ready</span>
+                                    </span>
+                                </span>
+                                <i data-lucide="arrow-down-to-line" class="w-4 h-4"></i>
+                            </button>
+                        `;
+                        fetchExactSize(item.url, `fb-size-${idx}`);
+                    });
+                } else {
+                    actionGrid.innerHTML = `
+                        <p class="text-xs text-slate-500 py-3 col-span-2 text-center">Video ini tidak memiliki link unduhan langsung yang valid.</p>
+                    `;
+                }
+
+                // Save to History database
+                saveToHistory({
+                    id: Math.random().toString(),
+                    title: fbData.title || 'Facebook Video',
+                    cover: fbData.thumbnail || 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500',
+                    author: 'Facebook',
+                    likes: 0,
+                    views: 0,
+                    dl_link: mainMedia ? mainMedia.url : '#',
+                    original_url: originalUrl,
+                    is_images: false,
+                    is_youtube: false,
+                    is_instagram: false,
+                    is_facebook: true
+                });
+
+                document.getElementById('facebook-loading-progress').style.width = "100%";
+                document.getElementById('facebook-loading-percentage').innerText = "100%";
+
+                setTimeout(() => {
+                    playSynthSound('success');
+                    document.getElementById('facebook-downloader-loading-view').classList.add('hidden');
+                    document.getElementById('facebook-downloader-success-view').classList.remove('hidden');
+                    lucide.createIcons();
+                }, 300);
             }
 
             // History Persistent manager
@@ -1492,6 +2915,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 renderHistoryGrid();
             }
 
+            // Clear all histories
             function clearHistory() {
                 playSynthSound('click');
                 downloadHistory = [];
@@ -1499,6 +2923,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 renderHistoryGrid();
             }
 
+            // Render Riwayat Grid
             function renderHistoryGrid() {
                 const grid = document.getElementById('history-grid');
                 const section = document.getElementById('download-history-section');
@@ -1513,6 +2938,9 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
 
                 downloadHistory.forEach(item => {
                     const isImages = item.is_images === true;
+                    const isYoutube = item.is_youtube === true;
+                    const isInstagram = item.is_instagram === true;
+                    const isFacebook = item.is_facebook === true;
                     const col = document.createElement('div');
                     col.className = "glass-panel rounded-2xl p-3.5 flex gap-3.5 items-center hover:border-indigo-500/30 transition-all duration-300 premium-card relative";
                     col.innerHTML = `
@@ -1521,6 +2949,21 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                             ${isImages ? `
                             <div class="absolute top-1 right-1 bg-black/80 px-1.5 py-0.5 rounded-lg text-[8px] text-pink-400 font-extrabold flex items-center gap-0.5 border border-white/5">
                                 <i data-lucide="images" class="w-2.5 h-2.5"></i> Foto
+                            </div>
+                            ` : ''}
+                            ${isYoutube ? `
+                            <div class="absolute top-1 right-1 bg-red-650/90 px-1.5 py-0.5 rounded-lg text-[8px] text-white font-extrabold flex items-center gap-0.5 border border-white/5">
+                                <i data-lucide="youtube" class="w-2.5 h-2.5 text-white"></i> YT
+                            </div>
+                            ` : ''}
+                            ${isInstagram ? `
+                            <div class="absolute top-1 right-1 bg-gradient-to-tr from-pink-500 to-purple-600 px-1.5 py-0.5 rounded-lg text-[8px] text-white font-extrabold flex items-center gap-0.5 border border-white/5">
+                                <i data-lucide="instagram" class="w-2.5 h-2.5 text-white"></i> IG
+                            </div>
+                            ` : ''}
+                            ${isFacebook ? `
+                            <div class="absolute top-1 right-1 bg-blue-600/90 px-1.5 py-0.5 rounded-lg text-[8px] text-white font-extrabold flex items-center gap-0.5 border border-white/5">
+                                <i data-lucide="facebook" class="w-2.5 h-2.5 text-white"></i> FB
                             </div>
                             ` : ''}
                         </div>
@@ -1544,9 +2987,31 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             }
 
             function reuseHistoryLink(url) {
-                document.getElementById('tiktok-url').value = url;
-                document.getElementById('btn-clear').classList.remove('hidden');
-                handleDownload();
+                const youtubePattern = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+/i;
+                const instagramPattern = /^(https?:\/\/)?(www\.)?instagram\.com\/.+/i;
+                const facebookPattern = /^(https?:\/\/)?(www\.)?(facebook\.com|fb\.watch|fb\.gg)\/.+/i;
+
+                if (youtubePattern.test(url)) {
+                    switchTab('youtube');
+                    document.getElementById('youtube-url').value = url;
+                    document.getElementById('youtube-btn-clear').classList.remove('hidden');
+                    handleYoutubeDownload();
+                } else if (instagramPattern.test(url)) {
+                    switchTab('instagram');
+                    document.getElementById('instagram-url').value = url;
+                    document.getElementById('instagram-btn-clear').classList.remove('hidden');
+                    handleInstagramDownload();
+                } else if (facebookPattern.test(url)) {
+                    switchTab('facebook');
+                    document.getElementById('facebook-url').value = url;
+                    document.getElementById('facebook-btn-clear').classList.remove('hidden');
+                    handleFacebookDownload();
+                } else {
+                    switchTab('downloader');
+                    document.getElementById('tiktok-url').value = url;
+                    document.getElementById('btn-clear').classList.remove('hidden');
+                    handleDownload();
+                }
             }
 
             // Accordion FAQ Toggler
@@ -1592,6 +3057,30 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             window.reuseHistoryLink = reuseHistoryLink;
             window.showDonation = showDonation;
             window.hideDonation = hideDonation;
+
+            // YouTube bindings
+            window.clearYoutubeInput = clearYoutubeInput;
+            window.pasteYoutubeFromClipboard = pasteYoutubeFromClipboard;
+            window.hideYoutubeAlert = hideYoutubeAlert;
+            window.handleYoutubeDownload = handleYoutubeDownload;
+            window.downloadYoutubeMedia = downloadYoutubeMedia;
+            window.resetYoutubeDownloader = resetYoutubeDownloader;
+
+            // Instagram bindings
+            window.clearInstagramInput = clearInstagramInput;
+            window.pasteInstagramFromClipboard = pasteInstagramFromClipboard;
+            window.hideInstagramAlert = hideInstagramAlert;
+            window.handleInstagramDownload = handleInstagramDownload;
+            window.downloadInstagramMedia = downloadInstagramMedia;
+            window.resetInstagramDownloader = resetInstagramDownloader;
+
+            // Facebook bindings
+            window.clearFacebookInput = clearFacebookInput;
+            window.pasteFacebookFromClipboard = pasteFacebookFromClipboard;
+            window.hideFacebookAlert = hideFacebookAlert;
+            window.handleFacebookDownload = handleFacebookDownload;
+            window.downloadFacebookMedia = downloadFacebookMedia;
+            window.resetFacebookDownloader = resetFacebookDownloader;
         }
     </script>
 </body>
