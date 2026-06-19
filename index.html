@@ -791,20 +791,20 @@
 
             if (isApiMode) {
                 if (isKursApi) {
-                    // API request for Live Kurs Rupiah
-                    fetch("https://open.er-api.com/v6/latest/IDR")
+                    // API request for Live Kurs Rupiah using fresh USD base with nocache parameter
+                    fetch(`https://open.er-api.com/v6/latest/USD?nocache=${Date.now()}`)
                         .then(res => res.json())
                         .then(data => {
                             if (data && data.result === "success") {
                                 const popularCodes = ['USD', 'EUR', 'SGD', 'JPY', 'MYR', 'SAR', 'AUD', 'GBP', 'KRW'];
+                                const usdToIdr = data.rates["IDR"];
                                 const filteredRates = {};
                                 popularCodes.forEach(code => {
-                                    if (data.rates[code]) {
-                                        filteredRates[code] = {
-                                            rate_vs_idr: 1 / data.rates[code],
-                                            trend_24h: generateTrendValue(code).percent
-                                        };
-                                    }
+                                    const rateToIdr = usdToIdr / data.rates[code];
+                                    filteredRates[code] = {
+                                        rate_vs_idr: rateToIdr,
+                                        trend_24h: generateTrendValue(code).percent
+                                    };
                                 });
                                 serveApiResponse({
                                     code: 0,
@@ -1297,7 +1297,8 @@
 
                 try {
                     if (timeEl) timeEl.innerText = "Memperbarui kurs...";
-                    const response = await fetch("https://open.er-api.com/v6/latest/IDR");
+                    // Fetch using direct USD base and append nocache timestamp to completely bypass CDN caching
+                    const response = await fetch(`https://open.er-api.com/v6/latest/USD?nocache=${Date.now()}`);
                     if (!response.ok) throw new Error("Gagal mengambil data");
                     const resJson = await response.json();
                     
@@ -1338,7 +1339,9 @@
                 if (badgeEl) badgeEl.innerText = selectedCurrency;
                 
                 const amount = parseFloat(amountInput.value) || 0;
-                const rateToIdr = 1 / currencyData[selectedCurrency];
+                // Calculate rate from USD base to selectedCurrency, then map directly to IDR value
+                const usdToIdr = currencyData["IDR"];
+                const rateToIdr = usdToIdr / currencyData[selectedCurrency];
                 const result = amount * rateToIdr;
                 
                 const formatter = new Intl.NumberFormat('id-ID', {
@@ -1395,7 +1398,8 @@
                 });
 
                 popularCodes.forEach(code => {
-                    const rateToIdr = 1 / currencyData[code];
+                    const usdToIdr = currencyData["IDR"];
+                    const rateToIdr = usdToIdr / currencyData[code];
                     let amountToDisplay = 1;
                     let finalRate = rateToIdr;
                     let label = `1 ${code}`;
@@ -1479,19 +1483,19 @@
 
                 terminal.innerText = `Sending GET Request...\nLoading data from https://albitiktok.vercel.app/?api=true&type=kurs`;
 
-                fetch("https://open.er-api.com/v6/latest/IDR")
+                fetch(`https://open.er-api.com/v6/latest/USD?nocache=${Date.now()}`)
                     .then(res => res.json())
                     .then(data => {
                         if (data && data.result === "success") {
                             const popularCodes = ['USD', 'EUR', 'SGD', 'JPY', 'MYR', 'SAR', 'AUD', 'GBP', 'KRW'];
+                            const usdToIdr = data.rates["IDR"];
                             const ratesPayload = {};
                             popularCodes.forEach(code => {
-                                if (data.rates[code]) {
-                                    ratesPayload[code] = {
-                                        rate_vs_idr: 1 / data.rates[code],
-                                        trend_24h: generateTrendValue(code).percent
-                                    };
-                                }
+                                const rateToIdr = usdToIdr / data.rates[code];
+                                ratesPayload[code] = {
+                                    rate_vs_idr: rateToIdr,
+                                    trend_24h: generateTrendValue(code).percent
+                                };
                             });
                             const resultPayload = {
                                 "code": 0,
