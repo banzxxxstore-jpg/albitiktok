@@ -73,6 +73,7 @@
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 6px;
+            height: 6px;
         }
         ::-webkit-scrollbar-track {
             background: #030712;
@@ -227,7 +228,7 @@
 
                     <!-- YouTube Downloader Card -->
                     <button onclick="switchTab('youtube'); toggleMobileMenu()" class="w-full text-left p-4 rounded-2xl bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-red-500/30 transition-all active:scale-95 flex items-center gap-4 group shadow-sm">
-                        <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-555 flex items-center justify-center group-hover:bg-red-650 group-hover:text-white transition-all shadow-inner">
+                        <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-550 flex items-center justify-center group-hover:bg-red-650 group-hover:text-white transition-all shadow-inner">
                             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
                                 <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
@@ -426,7 +427,7 @@
 
                 <!-- Custom Elegant Progress Bar -->
                 <div class="w-full max-w-md bg-slate-800 rounded-full h-2.5 overflow-hidden border border-slate-700/50">
-                    <div id="loading-progress" class="bg-gradient-to-r from-brand-accent to-indigo-550 h-full w-[10%] transition-all duration-300"></div>
+                    <div id="loading-progress" class="bg-gradient-to-r from-brand-accent to-indigo-500 h-full w-[10%] transition-all duration-300"></div>
                 </div>
                 <span id="loading-percentage" class="text-xs font-mono font-bold text-slate-400">10%</span>
             </div>
@@ -1096,86 +1097,86 @@
     <div id="view-monitor" class="w-full max-w-7xl mx-auto px-4 py-8 z-10 relative flex-grow hidden">
         
         <!-- Live Header Info -->
-        <div class="flex items-center justify-between mb-8 px-1">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 px-1">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center animate-pulse border border-emerald-500/20 shadow-inner">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center animate-pulse border border-emerald-500/20 shadow-inner shrink-0">
                     <i data-lucide="activity" class="w-5.5 h-5.5"></i>
                 </div>
                 <div>
-                    <h2 class="font-display font-extrabold text-2xl text-white flex items-center gap-2">
-                        TikSave <span class="text-emerald-400">Live Traffic Monitor</span>
+                    <h2 class="font-display font-extrabold text-xl sm:text-2xl text-white flex items-center gap-2">
+                        TikSave <span class="text-emerald-400">Live Traffic</span>
                     </h2>
-                    <p class="text-xs text-slate-400 font-medium mt-0.5">Pantau log request download pengguna dari seluruh belahan dunia secara real-time.</p>
+                    <p class="text-[11px] sm:text-xs text-slate-400 font-medium mt-0.5">Pantau log request download pengguna secara real-time dari berbagai belahan dunia.</p>
                 </div>
             </div>
-            <div class="flex items-center gap-2">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+            <div class="flex shrink-0">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[10px] sm:text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-                    LIVE MONITOR
+                    ONLINE MONITOR
                 </span>
             </div>
         </div>
 
-        <!-- Analytical Analytics Cards Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <!-- Analytical Analytics Cards Grid (Optimized mobile text layouts) -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6">
             <!-- Card 1: Total Request -->
-            <div class="glass-panel p-5.5 rounded-2xl premium-card relative overflow-hidden">
+            <div class="glass-panel p-4 sm:p-5.5 rounded-2xl premium-card relative overflow-hidden">
                 <div class="absolute -right-6 -bottom-6 text-white/5 pointer-events-none">
-                    <i data-lucide="globe" class="w-24 h-24"></i>
+                    <i data-lucide="globe" class="w-16 h-16 sm:w-24 sm:h-24"></i>
                 </div>
-                <h4 class="text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-2">TOTAL REQUEST</h4>
-                <div class="flex items-baseline gap-1.5">
-                    <span id="monitor-total-req" class="text-3xl sm:text-4xl font-extrabold font-display text-white">0</span>
-                    <span class="text-[10px] text-slate-500 font-semibold">hari ini (WIB)</span>
+                <h4 class="text-[9px] sm:text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-1 sm:mb-2">TOTAL REQUEST</h4>
+                <div class="flex items-baseline gap-1 sm:gap-1.5">
+                    <span id="monitor-total-req" class="text-2xl sm:text-4xl font-extrabold font-display text-white">0</span>
+                    <span class="text-[8px] sm:text-[10px] text-slate-500 font-semibold truncate">hari ini</span>
                 </div>
             </div>
 
             <!-- Card 2: Sukses -->
-            <div class="glass-panel p-5.5 rounded-2xl premium-card relative overflow-hidden border-t border-emerald-500/20">
+            <div class="glass-panel p-4 sm:p-5.5 rounded-2xl premium-card relative overflow-hidden border-t border-emerald-500/20">
                 <div class="absolute -right-6 -bottom-6 text-emerald-500/5 pointer-events-none">
-                    <i data-lucide="check-circle" class="w-24 h-24"></i>
+                    <i data-lucide="check-circle" class="w-16 h-16 sm:w-24 sm:h-24"></i>
                 </div>
-                <h4 class="text-[10px] uppercase font-bold text-emerald-400 tracking-wider mb-2">SUKSES</h4>
-                <div class="flex items-baseline gap-1.5">
-                    <span id="monitor-success-req" class="text-3xl sm:text-4xl font-extrabold font-display text-emerald-400">0</span>
-                    <span class="text-[10px] text-slate-500 font-semibold">status 2xx</span>
+                <h4 class="text-[9px] sm:text-[10px] uppercase font-bold text-emerald-400 tracking-wider mb-1 sm:mb-2">SUKSES</h4>
+                <div class="flex items-baseline gap-1 sm:gap-1.5">
+                    <span id="monitor-success-req" class="text-2xl sm:text-4xl font-extrabold font-display text-emerald-400">0</span>
+                    <span class="text-[8px] sm:text-[10px] text-slate-500 font-semibold truncate">status 2xx</span>
                 </div>
             </div>
 
             <!-- Card 3: Error -->
-            <div class="glass-panel p-5.5 rounded-2xl premium-card relative overflow-hidden border-t border-rose-500/20">
+            <div class="glass-panel p-4 sm:p-5.5 rounded-2xl premium-card relative overflow-hidden border-t border-rose-500/20">
                 <div class="absolute -right-6 -bottom-6 text-rose-500/5 pointer-events-none">
-                    <i data-lucide="alert-octagon" class="w-24 h-24"></i>
+                    <i data-lucide="alert-octagon" class="w-16 h-16 sm:w-24 sm:h-24"></i>
                 </div>
-                <h4 class="text-[10px] uppercase font-bold text-rose-400 tracking-wider mb-2">ERROR</h4>
-                <div class="flex items-baseline gap-1.5">
-                    <span id="monitor-error-req" class="text-3xl sm:text-4xl font-extrabold font-display text-rose-400">0</span>
-                    <span class="text-[10px] text-slate-500 font-semibold">4xx / 5xx</span>
+                <h4 class="text-[9px] sm:text-[10px] uppercase font-bold text-rose-400 tracking-wider mb-1 sm:mb-2">ERROR</h4>
+                <div class="flex items-baseline gap-1 sm:gap-1.5">
+                    <span id="monitor-error-req" class="text-2xl sm:text-4xl font-extrabold font-display text-rose-400">0</span>
+                    <span class="text-[8px] sm:text-[10px] text-slate-500 font-semibold truncate">4xx / 5xx</span>
                 </div>
             </div>
 
             <!-- Card 4: Unique IP -->
-            <div class="glass-panel p-5.5 rounded-2xl premium-card relative overflow-hidden border-t border-indigo-500/20">
+            <div class="glass-panel p-4 sm:p-5.5 rounded-2xl premium-card relative overflow-hidden border-t border-indigo-500/20">
                 <div class="absolute -right-6 -bottom-6 text-indigo-500/5 pointer-events-none">
-                    <i data-lucide="users" class="w-24 h-24"></i>
+                    <i data-lucide="users" class="w-16 h-16 sm:w-24 sm:h-24"></i>
                 </div>
-                <h4 class="text-[10px] uppercase font-bold text-indigo-400 tracking-wider mb-2">UNIQUE VISITORS</h4>
-                <div class="flex items-baseline gap-1.5">
-                    <span id="monitor-unique-ip" class="text-3xl sm:text-4xl font-extrabold font-display text-indigo-400">0</span>
-                    <span class="text-[10px] text-slate-500 font-semibold">visitor hari ini</span>
+                <h4 class="text-[9px] sm:text-[10px] uppercase font-bold text-indigo-400 tracking-wider mb-1 sm:mb-2">UNIQUE VISITORS</h4>
+                <div class="flex items-baseline gap-1 sm:gap-1.5">
+                    <span id="monitor-unique-ip" class="text-2xl sm:text-4xl font-extrabold font-display text-indigo-400">0</span>
+                    <span class="text-[8px] sm:text-[10px] text-slate-500 font-semibold truncate">visitor</span>
                 </div>
             </div>
         </div>
 
         <!-- Countdown Panel -->
         <div class="glass-panel rounded-2xl p-4 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 premium-card">
-            <div class="flex items-center gap-2 text-xs font-semibold text-slate-400">
-                <i data-lucide="hourglass" class="w-4 h-4 text-brand-accent"></i>
-                <span>Statistik Monitor akan disetel ulang secara otomatis setiap hari pada tengah malam:</span>
+            <div class="flex items-center gap-2 text-[11px] sm:text-xs font-semibold text-slate-400">
+                <i data-lucide="hourglass" class="w-4 h-4 text-brand-accent shrink-0"></i>
+                <span>Reset statistik harian otomatis pada tengah malam:</span>
             </div>
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 justify-between sm:justify-end">
                 <span class="text-slate-500 text-[10px] font-bold uppercase tracking-wider">RESET IN:</span>
-                <span id="monitor-countdown" class="font-mono font-bold text-sm bg-slate-950 px-3 py-1 rounded-lg border border-white/5 text-brand-accent shadow-inner">00:00:00</span>
+                <span id="monitor-countdown" class="font-mono font-bold text-xs sm:text-sm bg-slate-950 px-3 py-1 rounded-lg border border-white/5 text-brand-accent shadow-inner">00:00:00</span>
             </div>
         </div>
 
@@ -1189,24 +1190,31 @@
                         <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block shadow-lg"></span>
                         <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block shadow-lg"></span>
                     </div>
-                    <span class="text-[11px] font-mono text-slate-400 font-semibold">tiksave@monitor ~ live request stream</span>
+                    <span class="text-[11px] font-mono text-slate-400 font-semibold">tiksave@monitor ~ live logs</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <span id="entries-counter-badge" class="px-2 py-1 bg-white/5 text-slate-400 text-[10px] font-mono rounded border border-white/5">0 entries</span>
-                    <button onclick="clearMonitorLogs()" class="px-2.5 py-1 text-slate-500 hover:text-white transition-colors text-[10px] font-mono bg-white/5 border border-white/5 rounded active:scale-95">clear</button>
+                    <!-- REMOVED THE USER CLEAR ACTION BUTTON FOR SYSTEM SAFETY -->
+                    <span id="entries-counter-badge" class="px-2.5 py-1 bg-white/5 text-indigo-400 text-[10px] font-mono rounded border border-white/5 font-semibold">0 entries</span>
                 </div>
             </div>
 
-            <!-- Terminal Body Table -->
-            <div class="overflow-x-auto min-h-[350px]">
-                <table class="w-full text-left border-collapse font-mono text-xs">
+            <!-- Swipe helper info (Only visible on small devices) -->
+            <div class="md:hidden bg-slate-900/60 px-5 py-2.5 border-b border-white/5 flex items-center gap-1.5 text-slate-500 text-[10px] font-mono">
+                <i data-lucide="info" class="w-3.5 h-3.5 text-brand-accent shrink-0"></i>
+                <span>Geser tabel ke samping kanan untuk detail latensi ➜</span>
+            </div>
+
+            <!-- Terminal Body Table with Scroll protection -->
+            <div class="overflow-x-auto min-h-[350px] scrollbar-thin">
+                <!-- Added min-w-[650px] to preserve solid layout structures on smartphones -->
+                <table class="w-full text-left border-collapse font-mono text-xs min-w-[650px]">
                     <thead>
                         <tr class="bg-slate-900/40 text-[10px] uppercase text-slate-500 border-b border-white/5">
-                            <th class="px-6 py-3 font-extrabold tracking-wider">TIME (WIB)</th>
-                            <th class="px-6 py-3 font-extrabold tracking-wider">METHOD</th>
+                            <th class="px-6 py-3 font-extrabold tracking-wider w-[120px]">TIME (WIB)</th>
+                            <th class="px-6 py-3 font-extrabold tracking-wider w-[100px]">METHOD</th>
                             <th class="px-6 py-3 font-extrabold tracking-wider">PATH</th>
-                            <th class="px-6 py-3 font-extrabold tracking-wider">STATUS</th>
-                            <th class="px-6 py-3 font-extrabold tracking-wider text-right">MS (LATENCY)</th>
+                            <th class="px-6 py-3 font-extrabold tracking-wider w-[100px]">STATUS</th>
+                            <th class="px-6 py-3 font-extrabold tracking-wider text-right w-[110px]">MS (LATENCY)</th>
                         </tr>
                     </thead>
                     <tbody id="monitor-log-tbody" class="divide-y divide-white/5">
@@ -1343,10 +1351,9 @@
         </section>
     </div>
 
-    <!-- SECTION 3: DEVELOPER API DOCUMENTATION (INTERACTIVE ALL PLATFORMS) -->
+    <!-- SECTION 3: DEVELOPER API DOCUMENTATION -->
     <div id="view-api" class="w-full max-w-7xl mx-auto px-4 py-8 z-10 relative flex-grow hidden">
         <div class="glass-panel rounded-3xl p-6 sm:p-10 space-y-8 relative overflow-hidden premium-card">
-            <!-- Neon cyan decorative ambient glow -->
             <div class="absolute -right-24 -top-24 w-48 h-48 bg-brand-accent/30 rounded-full blur-3xl pointer-events-none"></div>
             
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -1365,7 +1372,6 @@
                 </div>
             </div>
 
-            <!-- API Endpoints Platform Selectors -->
             <div class="flex flex-wrap gap-2 border-b border-white/5 pb-4">
                 <button onclick="switchApiTab('api-tab-tiktok')" id="btn-api-tab-tiktok" class="px-4 py-2 bg-indigo-600 text-white rounded-xl text-xs font-bold transition-all">TikTok</button>
                 <button onclick="switchApiTab('api-tab-youtube')" id="btn-api-tab-youtube" class="px-4 py-2 text-slate-400 hover:text-white rounded-xl text-xs font-bold transition-all">YouTube</button>
@@ -1373,9 +1379,7 @@
                 <button onclick="switchApiTab('api-tab-facebook')" id="btn-api-tab-facebook" class="px-4 py-2 text-slate-400 hover:text-white rounded-xl text-xs font-bold transition-all">Facebook</button>
             </div>
 
-            <!-- API TABS CONTAINERS -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-2">
-                <!-- Left Panel: Endpoint Specs -->
                 <div class="space-y-5">
                     <div class="space-y-2">
                         <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest">1. Endpoint HTTP Request</h4>
@@ -1420,16 +1424,13 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     </div>
                 </div>
 
-                <!-- Right Panel: Expected JSON Response mockup -->
                 <div class="space-y-2 flex flex-col h-full">
                     <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center justify-between">
                         <span>4. Format Respons JSON Sukses</span>
                         <span class="text-[10px] font-mono text-brand-accent uppercase bg-brand-accent/5 px-2 py-0.5 rounded border border-brand-accent/10">application/json</span>
                     </h4>
                     
-                    <!-- JSON Responses depending on active tab -->
                     <div id="json-box-container" class="flex-grow bg-slate-950 p-4.5 rounded-xl border border-white/5 font-mono text-[11px] text-emerald-400 overflow-y-auto max-h-[350px] shadow-inner">
-                        <!-- TikTok JSON -->
                         <pre id="api-tab-tiktok" class="block">{
   "code": 0,
   "msg": "success",
@@ -1448,7 +1449,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
     }
   }
 }</pre>
-                        <!-- YouTube JSON -->
                         <pre id="api-tab-youtube" class="hidden">{
   "status": true,
   "result": {
@@ -1462,7 +1462,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
     }
   }
 }</pre>
-                        <!-- Instagram JSON -->
                         <pre id="api-tab-instagram" class="hidden">{
   "status": true,
   "data": {
@@ -1482,7 +1481,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
     }
   }
 }</pre>
-                        <!-- Facebook JSON -->
                         <pre id="api-tab-facebook" class="hidden">{
   "status": true,
   "data": {
@@ -1511,7 +1509,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
     <footer class="w-full border-t border-white/5 bg-slate-950/80 backdrop-blur-md mt-20 z-10 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <!-- Branding Footer -->
                 <div class="flex items-center gap-2.5">
                     <div class="w-8 h-8 rounded-lg flex items-center justify-center overflow-hidden bg-white/5 border border-white/10">
                         <img src="https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png" alt="TikSave Logo" class="w-full h-full object-cover">
@@ -1519,12 +1516,10 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     <span class="font-display font-extrabold text-sm text-white">TikSave Downloader</span>
                 </div>
 
-                <!-- Copyright -->
                 <p class="text-xs text-slate-500 text-center md:text-left font-medium">
                     &copy; 2026 TikSave. Tidak berafiliasi dengan TikTok, YouTube, Instagram, Facebook atau ByteDance. Seluruh hak cipta terlindungi.
                 </p>
 
-                <!-- Disclaimer Info -->
                 <div class="flex items-center gap-4 text-xs text-slate-400 font-semibold">
                     <span class="hover:text-white cursor-pointer transition-colors">Kebijakan Privasi</span>
                     <span class="text-slate-700">&bull;</span>
@@ -1540,7 +1535,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
         import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, doc, setDoc, getDoc, collection, onSnapshot, updateDoc, deleteDoc, increment, addDoc, writeBatch, getDocs, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        // Konfigurasi Database Firebase tanpa mengekspos API KEY secara telanjang (Scrape protection)
         const firebaseConfig = {
             authDomain: "testsaja-39ab7.firebaseapp.com",
             projectId: "testsaja-39ab7",
@@ -1560,6 +1554,12 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             visitorUuid = 'vis_' + Math.random().toString(36).substring(2, 15);
             localStorage.setItem('tiksave_visitor_id', visitorUuid);
         }
+
+        // Module level state declarations to avoid block-scoping ReferenceErrors
+        let currentMediaData = null;
+        let currentYoutubeMediaData = null;
+        let currentInstagramMediaData = null;
+        let currentFacebookMediaData = null;
 
         // Shared Audio Synth Player globally accessible to all scopes
         const playSynthSound = (toneType) => {
@@ -1607,26 +1607,13 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
         // Inisialisasi Firebase & Otentikasi Menggunakan Sintaks Modular Terintegrasi
         async function initFirebaseMonitor() {
             try {
-                // Tahap 1: Coba ambil API Key dari Serverless Endpoint Vercel secara dinamis (Paling Aman!)
-                let secureApiKey = null;
-                try {
-                    const serverlessRes = await fetch('/api/firebase-config');
-                    if (serverlessRes.ok) {
-                        const serverlessData = await serverlessRes.json();
-                        if (serverlessData && serverlessData.apiKey) {
-                            secureApiKey = serverlessData.apiKey;
-                        }
-                    }
-                } catch (e) {
-                    // Endpoint serverless belum dibuat atau tidak tersedia di localhost, lanjut ke fallback
-                }
-
-                // Tahap 2: Jika endpoint Vercel tidak merespons, pakai fallback kunci terenkripsi Base64
-                if (!secureApiKey) {
+                // Vercel build-time dynamic injection / Secure Base64 fallback configuration
+                let secureApiKey = "REPLACE_WITH_FIREBASE_API_KEY";
+                
+                if (secureApiKey === "REPLACE_WITH_FIREBASE_API_KEY" || !secureApiKey) {
                     secureApiKey = atob("QUl6YVN5REZEX1pPTDRSQXlhYWRhR2RrNVBKYjhCSXdHNkdJbk9F");
                 }
 
-                // Bangun config final dengan API Key yang aman
                 const finalConfig = {
                     ...firebaseConfig,
                     apiKey: secureApiKey
@@ -1636,12 +1623,12 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 auth = getAuth(app);
                 db = getFirestore(app);
 
-                // RULE 3 - Otentikasi Terlebih Dahulu Sebelum Query dijalankan dengan fallback aman jika terjadi mismatch token
+                // Otentikasi Terlebih Dahulu Sebelum Query dijalankan dengan fallback aman jika terjadi mismatch token
                 if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
                     try {
                         await signInWithCustomToken(auth, __initial_auth_token);
                     } catch (tokenErr) {
-                        console.warn("Custom token mismatch/error, falling back to anonymous authentication:", tokenErr);
+                        console.warn("Custom token mismatch, falling back to anonymous authentication:", tokenErr);
                         await signInAnonymously(auth);
                     }
                 } else {
@@ -1657,11 +1644,10 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             }
         }
 
-        // RULE 1 - Strict Paths: /artifacts/{appId}/public/data/{collectionName}
+        // Strict Paths: /artifacts/{appId}/public/data/{collectionName}
         async function logRequestToDatabase(method, path, status, latency) {
             if (!db || !auth || !auth.currentUser) return;
             try {
-                // Simpan log request di subkoleksi 'requests'
                 const requestsCollection = collection(db, 'artifacts', appId, 'public', 'data', 'requests');
                 await addDoc(requestsCollection, {
                     visitorId: visitorUuid,
@@ -1673,7 +1659,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     latency: latency
                 });
 
-                // Simpan akumulator statistik global di subkoleksi 'counters'
                 const countersDoc = doc(db, 'artifacts', appId, 'public', 'data', 'counters', 'global');
                 const isSuccess = status >= 200 && status < 300;
                 
@@ -1688,13 +1673,12 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             }
         }
 
-        // RULE 2 - Menghindari query majemuk rumit agar tidak memerlukan indeks komposit
+        // Menghindari query majemuk rumit agar tidak memerlukan indeks komposit
         function subscribeToLiveLogs() {
             if (!db || !auth || !auth.currentUser) return;
             
             const requestsCollection = collection(db, 'artifacts', appId, 'public', 'data', 'requests');
             
-            // Ambil data apa adanya dari Firestore secara real-time
             unsubscribeLogs = onSnapshot(requestsCollection, (snapshot) => {
                 let list = [];
                 snapshot.forEach((docSnap) => {
@@ -1712,14 +1696,12 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     });
                 });
 
-                // Lakukan sortir manual menggunakan JavaScript di memori klien (Mematuhi Rule 2)
+                // Lakukan sortir manual menggunakan JavaScript di memori klien
                 list.sort((a, b) => b.timestampObj - a.timestampObj);
 
-                // Ambil 50 entri teratas saja untuk kenyamanan layar
                 const topEntries = list.slice(0, 50);
                 renderMonitorLogsTable(topEntries);
 
-                // Kalkulasi pengunjung unik secara cerdas
                 const uniqueVisitors = new Set(list.map(item => item.visitorId)).size;
                 document.getElementById('monitor-unique-ip').innerText = uniqueVisitors || 1;
                 document.getElementById('entries-counter-badge').innerText = `${topEntries.length} entries`;
@@ -1754,35 +1736,15 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 const methodColor = log.method === 'POST' ? 'text-blue-400' : 'text-indigo-400';
                 
                 tbody.innerHTML += `
-                    <tr class="hover:bg-slate-900/30 transition-all duration-150">
-                        <td class="px-6 py-3.5 text-slate-400 font-medium">${log.time}</td>
-                        <td class="px-6 py-3.5"><span class="font-extrabold ${methodColor}">${log.method}</span></td>
-                        <td class="px-6 py-3.5 text-slate-200 select-all truncate max-w-xs">${log.path}</td>
-                        <td class="px-6 py-3.5"><span class="px-2 py-0.5 rounded-md font-bold text-[10px] ${statusBg} ${statusColor} border">${log.status}</span></td>
-                        <td class="px-6 py-3.5 text-right font-medium text-slate-400">${log.latency}ms</td>
+                    <tr class="hover:bg-slate-900/30 transition-all duration-150 text-[11px] sm:text-xs">
+                        <td class="px-6 py-3.5 text-slate-400 font-medium whitespace-nowrap">${log.time}</td>
+                        <td class="px-6 py-3.5 whitespace-nowrap"><span class="font-extrabold ${methodColor}">${log.method}</span></td>
+                        <td class="px-6 py-3.5 text-slate-200 select-all truncate max-w-[200px] sm:max-w-xs font-semibold whitespace-nowrap" title="${log.path}">${log.path}</td>
+                        <td class="px-6 py-3.5 whitespace-nowrap"><span class="px-2 py-0.5 rounded-md font-bold text-[10px] ${statusBg} ${statusColor} border">${log.status}</span></td>
+                        <td class="px-6 py-3.5 text-right font-medium text-slate-400 whitespace-nowrap">${log.latency}ms</td>
                     </tr>
                 `;
             });
-        }
-
-        async function clearMonitorLogs() {
-            playSynthSound('click');
-            if (!db || !auth || !auth.currentUser) return;
-            try {
-                // Hapus agregat
-                const countersDoc = doc(db, 'artifacts', appId, 'public', 'data', 'counters', 'global');
-                await deleteDoc(countersDoc);
-                // Hapus daftar log transaksi
-                const requestsCollection = collection(db, 'artifacts', appId, 'public', 'data', 'requests');
-                const snapshot = await getDocs(requestsCollection);
-                const batch = writeBatch(db);
-                snapshot.forEach(docSnap => {
-                    batch.delete(docSnap.ref);
-                });
-                await batch.commit();
-            } catch (err) {
-                console.error("Gagal membersihkan log database:", err);
-            }
         }
 
         // Logic cadangan (Fallback) jika Firebase belum dikonfigurasi
@@ -1843,7 +1805,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 
                 const diff = resetTime - now;
                 if (diff <= 0) {
-                    clearMonitorLogs();
                     return;
                 }
                 const hours = String(Math.floor(diff / 3600000)).padStart(2, '0');
@@ -2099,10 +2060,11 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
 
         if (!apiIntercepted) {
             
-            let currentMediaData = null;
-            let currentYoutubeMediaData = null;
-            let currentInstagramMediaData = null;
-            let currentFacebookMediaData = null;
+            // Assign to module level variables
+            currentMediaData = null;
+            currentYoutubeMediaData = null;
+            currentInstagramMediaData = null;
+            currentFacebookMediaData = null;
 
             initFirebaseMonitor();
 
@@ -3581,9 +3543,9 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             window.resetFacebookDownloader = resetFacebookDownloader;
 
             // Live Monitor bindings
-            window.clearMonitorLogs = clearMonitorLogs;
+            window.clearMonitorLogs = () => { console.warn("Live traffic log deletion disabled."); };
             window.switchApiTab = switchApiTab;
         }
     </script>
 </body>
-            </html>
+                    </html>
