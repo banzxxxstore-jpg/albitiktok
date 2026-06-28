@@ -18,11 +18,6 @@
     <!-- Lucide Icons via CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Firebase SDK Compat (Required for global database monitor) -->
-    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore-compat.js"></script>
-
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -340,7 +335,7 @@
                 <i data-lucide="sparkles" class="w-3.5 h-3.5 text-indigo-400"></i> Downloader TikTok Tercepat & Stabil 2026
             </span>
             <h2 class="text-4xl sm:text-6xl font-extrabold font-display tracking-tight text-white mb-5 leading-tight">
-                Unduh Video TikTok <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-accent via-indigo-300 to-indigo-500">Tanpa Watermark</span>
+                Unduh Video TikTok <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-accent via-indigo-300 to-indigo-550">Tanpa Watermark</span>
             </h2>
             <p class="text-slate-400 max-w-lg mx-auto text-sm sm:text-base leading-relaxed">
                 Simpan video HD dan musik audio MP3 TikTok secara instan. Cukup tempel tautan video dan nikmati unduhan gratis tanpa batas.
@@ -476,7 +471,7 @@
                                 <span class="px-2.5 py-1.5 rounded-xl bg-black/70 backdrop-blur-md text-[10px] font-bold text-white flex items-center gap-1.5 border border-white/5">
                                     <i data-lucide="heart" class="w-3.5 h-3.5 text-red-500 fill-red-500"></i>
                                     <span id="stat-likes">0</span>
-                                end</span>
+                                </span>
                                 <span class="px-2.5 py-1.5 rounded-xl bg-black/70 backdrop-blur-md text-[10px] font-bold text-white flex items-center gap-1.5 border border-white/5">
                                     <i data-lucide="play" class="w-3.5 h-3.5 text-brand-accent fill-brand-accent/20"></i>
                                     <span id="stat-views">0</span>
@@ -668,13 +663,13 @@
                             <!-- Static Cover Thumbnail -->
                             <img id="yt-video-cover" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500" alt="Cover" class="w-full h-full object-cover">
                             
-                            <!-- Playable Video Element (FIX YT PLAYABLE) -->
+                            <!-- Playable Video Element -->
                             <video id="yt-preview-video" class="hidden w-full h-full object-cover" controls playsinline loop></video>
 
                             <!-- Stat Badges overlay -->
                             <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-1 z-10">
                                 <span class="px-2.5 py-1.5 rounded-xl bg-black/70 backdrop-blur-md text-[10px] font-bold text-white flex items-center gap-1.5 border border-white/5">
-                                    <i data-lucide="eye" class="w-3.5 h-3.5 text-red-500 fill-red-500/20"></i>
+                                    <i data-lucide="eye" class="text-red-500 fill-red-500/20"></i>
                                     <span id="yt-stat-views">0</span> Views
                                 </span>
                             </div>
@@ -682,7 +677,7 @@
 
                         <!-- Creator Card -->
                         <div class="flex items-center gap-3.5 bg-slate-900/50 p-4 rounded-2xl border border-white/5 shadow-inner">
-                            <div class="w-11 h-11 rounded-full border border-red-500/30 bg-slate-800 flex items-center justify-center text-red-550 shadow-md shrink-0">
+                            <div class="w-11 h-11 rounded-full border border-red-500/30 bg-slate-800 flex items-center justify-center text-red-500 shadow-md shrink-0">
                                 <i data-lucide="youtube" class="w-6 h-6"></i>
                             </div>
                             <div class="overflow-hidden">
@@ -779,7 +774,7 @@
                                 <button onclick="clearInstagramInput()" id="instagram-btn-clear" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all hidden active:scale-90" title="Hapus teks">
                                     <i data-lucide="x" class="w-4 h-4"></i>
                                 </button>
-                                <button onclick="pasteInstagramFromClipboard()" class="flex items-center gap-1 px-3 py-2 rounded-xl bg-pink-500/10 hover:bg-pink-500/20 text-pink-400 text-xs font-bold border border-pink-550/20 transition-all shrink-0 active:scale-95" title="Tempel dari Clipboard">
+                                <button onclick="pasteInstagramFromClipboard()" class="flex items-center gap-1 px-3 py-2 rounded-xl bg-pink-500/10 hover:bg-pink-500/20 text-pink-400 text-xs font-bold border border-pink-500/20 transition-all shrink-0 active:scale-95" title="Tempel dari Clipboard">
                                     <i data-lucide="clipboard" class="w-3.5 h-3.5"></i>
                                     <span>Tempel</span>
                                 </button>
@@ -834,7 +829,7 @@
 
                 <!-- Custom Elegant Progress Bar -->
                 <div class="w-full max-w-md bg-slate-800 rounded-full h-2.5 overflow-hidden border border-slate-700/50">
-                    <div id="instagram-loading-progress" class="bg-gradient-to-r from-pink-450 to-indigo-550 h-full w-[10%] transition-all duration-300"></div>
+                    <div id="instagram-loading-progress" class="bg-gradient-to-r from-pink-405 to-indigo-550 h-full w-[10%] transition-all duration-300"></div>
                 </div>
                 <span id="instagram-loading-percentage" class="text-xs font-mono font-bold text-slate-400">10%</span>
             </div>
@@ -864,7 +859,7 @@
 
                         <!-- Creator Card -->
                         <div class="flex items-center gap-3.5 bg-slate-900/50 p-4 rounded-2xl border border-white/5 shadow-inner">
-                            <div class="w-11 h-11 rounded-full border border-pink-500/30 bg-slate-800 flex items-center justify-center text-pink-550 shadow-md shrink-0">
+                            <div class="w-11 h-11 rounded-full border border-pink-500/30 bg-slate-800 flex items-center justify-center text-pink-500 shadow-md shrink-0">
                                 <i data-lucide="instagram" class="w-6 h-6 text-pink-500"></i>
                             </div>
                             <div class="overflow-hidden">
@@ -922,10 +917,10 @@
         <!-- Hero Taglines -->
         <div class="text-center mb-10">
             <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-300 border border-blue-500/20 mb-5 shadow-inner">
-                <i data-lucide="facebook" class="w-3.5 h-3.5 text-blue-450"></i> Downloader Facebook Cerdas & Stabil 2026
+                <i data-lucide="facebook" class="w-3.5 h-3.5 text-blue-500"></i> Downloader Facebook Cerdas & Stabil 2026
             </span>
             <h2 class="text-4xl sm:text-6xl font-extrabold font-display tracking-tight text-white mb-5 leading-tight">
-                Unduh Video & Reels <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-450 via-teal-300 to-indigo-550">Facebook HD</span>
+                Unduh Video & Reels <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-teal-300 to-indigo-550">Facebook HD</span>
             </h2>
             <p class="text-slate-400 max-w-lg mx-auto text-sm sm:text-base leading-relaxed">
                 Unduh video, tayangan langsung, atau Reels dari Facebook dengan resolusi tinggi (HD/SD) secara langsung tanpa batasan.
@@ -969,7 +964,7 @@
                         </div>
 
                         <!-- Submit Button -->
-                        <button onclick="handleFacebookDownload()" class="glowing-btn px-8 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-650 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-blue-600/30 transform active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0">
+                        <button onclick="handleFacebookDownload()" class="glowing-btn px-8 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-blue-600/30 transform active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0">
                             <i data-lucide="arrow-right-circle" class="w-5 h-5"></i>
                             <span>Download</span>
                         </button>
@@ -1032,21 +1027,21 @@
                             <!-- Static Cover Thumbnail -->
                             <img id="fb-video-cover" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500" alt="Cover" class="w-full h-full object-cover">
                             
-                            <!-- Playable Video Element (PLAYABLE FB VIDEO) -->
+                            <!-- Playable Video Element -->
                             <video id="fb-preview-video" class="hidden w-full h-full object-cover" controls playsinline loop></video>
 
                             <!-- Stat Badges overlay -->
                             <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-1 z-10">
                                 <span class="px-2.5 py-1.5 rounded-xl bg-black/70 backdrop-blur-md text-[10px] font-bold text-white flex items-center gap-1.5 border border-white/5">
-                                    <i data-lucide="clock" class="text-blue-450 w-3.5 h-3.5"></i> Durasi: <span id="fb-stat-duration">0:00</span>
+                                    <i data-lucide="clock" class="text-blue-550 w-3.5 h-3.5"></i> Durasi: <span id="fb-stat-duration">0:00</span>
                                 </span>
                             </div>
                         </div>
 
                         <!-- Creator Card -->
                         <div class="flex items-center gap-3.5 bg-slate-900/50 p-4 rounded-2xl border border-white/5 shadow-inner">
-                            <div class="w-11 h-11 rounded-full border border-blue-500/30 bg-slate-800 flex items-center justify-center text-blue-550 shadow-md shrink-0">
-                                <i data-lucide="facebook" class="w-6 h-6 text-blue-550"></i>
+                            <div class="w-11 h-11 rounded-full border border-blue-500/30 bg-slate-800 flex items-center justify-center text-blue-500 shadow-md shrink-0">
+                                <i data-lucide="facebook" class="w-6 h-6 text-blue-500"></i>
                             </div>
                             <div class="overflow-hidden">
                                 <h4 id="fb-creator-name" class="font-extrabold text-sm text-white truncate">Facebook User</h4>
@@ -1075,7 +1070,7 @@
 
                         <!-- Special Help Tip Banner -->
                         <div class="bg-blue-950/20 border border-blue-500/15 rounded-2xl p-4.5 flex items-start gap-3.5 shadow-sm">
-                            <i data-lucide="info" class="w-5 h-5 text-blue-455 shrink-0 mt-0.5 animate-pulse"></i>
+                            <i data-lucide="info" class="w-5 h-5 text-blue-500 shrink-0 mt-0.5 animate-pulse"></i>
                             <div class="text-xs text-blue-200/90 leading-relaxed font-medium">
                                 <span class="font-extrabold text-white block mb-0.5">💡 Cara Mengunduh:</span>
                                 Klik tombol biru di atas untuk memulai pengunduhan otomatis. Jika browser Anda langsung memutar media, ketuk tombol titik tiga <span class="font-bold text-white">(⋮)</span> lalu pilih <span class="font-bold text-white">Download</span>.
@@ -1126,7 +1121,7 @@
             <!-- Card 1: Total Request -->
             <div class="glass-panel p-5.5 rounded-2xl premium-card relative overflow-hidden">
                 <div class="absolute -right-6 -bottom-6 text-white/5 pointer-events-none">
-                    <i data-lucide="globe-2" class="w-24 h-24"></i>
+                    <i data-lucide="globe" class="w-24 h-24"></i>
                 </div>
                 <h4 class="text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-2">TOTAL REQUEST</h4>
                 <div class="flex items-baseline gap-1.5">
@@ -1138,7 +1133,7 @@
             <!-- Card 2: Sukses -->
             <div class="glass-panel p-5.5 rounded-2xl premium-card relative overflow-hidden border-t border-emerald-500/20">
                 <div class="absolute -right-6 -bottom-6 text-emerald-500/5 pointer-events-none">
-                    <i data-lucide="check-circle-2" class="w-24 h-24"></i>
+                    <i data-lucide="check-circle" class="w-24 h-24"></i>
                 </div>
                 <h4 class="text-[10px] uppercase font-bold text-emerald-400 tracking-wider mb-2">SUKSES</h4>
                 <div class="flex items-baseline gap-1.5">
@@ -1162,7 +1157,7 @@
             <!-- Card 4: Unique IP -->
             <div class="glass-panel p-5.5 rounded-2xl premium-card relative overflow-hidden border-t border-indigo-500/20">
                 <div class="absolute -right-6 -bottom-6 text-indigo-500/5 pointer-events-none">
-                    <i data-lucide="users-2" class="w-24 h-24"></i>
+                    <i data-lucide="users" class="w-24 h-24"></i>
                 </div>
                 <h4 class="text-[10px] uppercase font-bold text-indigo-400 tracking-wider mb-2">UNIQUE VISITORS</h4>
                 <div class="flex items-baseline gap-1.5">
@@ -1539,40 +1534,48 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
         </div>
     </footer>
 
-    <script>
-        // ----------------- DATABASE MONITORS GLOBAL SETTINGS -----------------
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'tiksave-premium-prod';
+    <!-- Firebase Modular SDK Script -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, getDoc, collection, onSnapshot, updateDoc, deleteDoc, increment, addDoc, writeBatch, getDocs, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDFD_ZOL4RAyaadaGdk5PJb8BIwG6GInOE",
+            authDomain: "testsaja-39ab7.firebaseapp.com",
+            projectId: "testsaja-39ab7",
+            storageBucket: "testsaja-39ab7.firebasestorage.app",
+            messagingSenderId: "503650943182",
+            appId: "1:503650943182:web:eec5678291f3bf2774509f"
+        };
+
+        // ----------------- CONFIG & DATABASE SECURITY SYSTEM -----------------
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'tiksave-downloader-app';
         let db = null;
         let auth = null;
         let unsubscribeLogs = null;
         let visitorUuid = localStorage.getItem('tiksave_visitor_id');
         
         if (!visitorUuid) {
-            visitorUuid = 'vis_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+            visitorUuid = 'vis_' + Math.random().toString(36).substring(2, 15);
             localStorage.setItem('tiksave_visitor_id', visitorUuid);
         }
 
-        // Initialize Firebase & Auth securely from Serverless Vercel API endpoint
+        // Inisialisasi Firebase & Otentikasi Menggunakan Sintaks Modular Terintegrasi
         async function initFirebaseMonitor() {
             try {
-                // Mengambil konfigurasi secara aman dari Vercel Environment Variables melalui API internal
-                const configResponse = await fetch('/api/firebase-config');
-                const firebaseConfig = await configResponse.json();
+                const app = initializeApp(firebaseConfig);
+                auth = getAuth(app);
+                db = getFirestore(app);
 
-                if (!firebaseConfig.apiKey) {
-                    throw new Error("API Key kosong. Pastikan Environment Variables sudah diatur di Vercel Dashboard.");
+                // RULE 3 - Otentikasi Terlebih Dahulu Sebelum Query dijalankan
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
                 }
 
-                if (!firebase.apps.length) {
-                    firebase.initializeApp(firebaseConfig);
-                }
-                auth = firebase.auth();
-                db = firebase.firestore();
-
-                // Rule 3: Auth Before Queries - Sign in Anonymously
-                await auth.signInAnonymously();
-
-                // Start database live snapshots
+                // Jalankan sinkronisasi real-time database
                 subscribeToLiveLogs();
                 startStatsAutoRefresh();
             } catch (err) {
@@ -1581,14 +1584,15 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             }
         }
 
-        // Rule 1: Strict Paths - /artifacts/{appId}/public/data/requests
+        // RULE 1 - Strict Paths: /artifacts/{appId}/public/data/{collectionName}
         async function logRequestToDatabase(method, path, status, latency) {
-            if (!db || !auth.currentUser) return;
+            if (!db || !auth || !auth.currentUser) return;
             try {
-                const logsCollection = db.collection('artifacts', appId, 'public', 'data', 'requests');
-                await logsCollection.add({
+                // Simpan log request di subkoleksi 'requests'
+                const requestsCollection = collection(db, 'artifacts', appId, 'public', 'data', 'requests');
+                await addDoc(requestsCollection, {
                     visitorId: visitorUuid,
-                    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                    timestamp: serverTimestamp(),
                     timeString: new Date().toLocaleTimeString('id-ID'),
                     method: method,
                     path: path,
@@ -1596,14 +1600,14 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     latency: latency
                 });
 
-                // Rule 1: Increment global aggregates document: /artifacts/{appId}/public/data/counters/global
-                const countersDoc = db.doc(`artifacts/${appId}/public/data/counters/global`);
+                // Simpan akumulator statistik global di subkoleksi 'counters'
+                const countersDoc = doc(db, 'artifacts', appId, 'public', 'data', 'counters', 'global');
                 const isSuccess = status >= 200 && status < 300;
                 
-                await countersDoc.set({
-                    total: firebase.firestore.FieldValue.increment(1),
-                    success: firebase.firestore.FieldValue.increment(isSuccess ? 1 : 0),
-                    error: firebase.firestore.FieldValue.increment(isSuccess ? 0 : 1)
+                await setDoc(countersDoc, {
+                    total: increment(1),
+                    success: increment(isSuccess ? 1 : 0),
+                    error: increment(isSuccess ? 0 : 1)
                 }, { merge: true });
                 
             } catch (e) {
@@ -1611,20 +1615,20 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             }
         }
 
-        // Rule 2: No Complex Queries. Fetch simple snapshot listeners, then sort / slice in memory.
+        // RULE 2 - Menghindari query majemuk rumit agar tidak memerlukan indeks komposit
         function subscribeToLiveLogs() {
-            if (!db || !auth.currentUser) return;
-            const requestsCollection = db.collection('artifacts', appId, 'public', 'data', 'requests');
+            if (!db || !auth || !auth.currentUser) return;
             
-            // Fetch everything, handle sorting in client memory to avoid composite index requirements
-            unsubscribeLogs = requestsCollection.onSnapshot((snapshot) => {
+            const requestsCollection = collection(db, 'artifacts', appId, 'public', 'data', 'requests');
+            
+            // Ambil data apa adanya dari Firestore secara real-time
+            unsubscribeLogs = onSnapshot(requestsCollection, (snapshot) => {
                 let list = [];
-                snapshot.forEach((doc) => {
-                    const data = doc.data();
-                    // Resolve serverTimestamp fallback if null
-                    const ts = data.timestamp ? data.timestamp.toDate() : new Date();
+                snapshot.forEach((docSnap) => {
+                    const data = docSnap.data();
+                    const ts = data.timestamp ? (data.timestamp.toDate ? data.timestamp.toDate() : new Date(data.timestamp)) : new Date();
                     list.push({
-                        id: doc.id,
+                        id: docSnap.id,
                         time: ts.toLocaleTimeString('id-ID'),
                         timestampObj: ts,
                         method: data.method || 'GET',
@@ -1635,14 +1639,14 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     });
                 });
 
-                // Sort descending in JavaScript memory (Rule 2 compliant)
+                // Lakukan sortir manual menggunakan JavaScript di memori klien (Mematuhi Rule 2)
                 list.sort((a, b) => b.timestampObj - a.timestampObj);
 
-                // Slice first 50 entries
+                // Ambil 50 entri teratas saja untuk kenyamanan layar
                 const topEntries = list.slice(0, 50);
                 renderMonitorLogsTable(topEntries);
 
-                // Compute unique visitors in memory
+                // Kalkulasi pengunjung unik secara cerdas
                 const uniqueVisitors = new Set(list.map(item => item.visitorId)).size;
                 document.getElementById('monitor-unique-ip').innerText = uniqueVisitors || 1;
                 document.getElementById('entries-counter-badge').innerText = `${topEntries.length} entries`;
@@ -1650,14 +1654,17 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 console.error("Live Logs snapshot failed:", error);
             });
 
-            // Subscribe to Counter aggregates
-            db.doc(`artifacts/${appId}/public/data/counters/global`).onSnapshot((doc) => {
-                if (doc.exists) {
-                    const d = doc.data();
+            // Lacak perkembangan Counter global agregat secara dinamis
+            const countersDoc = doc(db, 'artifacts', appId, 'public', 'data', 'counters', 'global');
+            onSnapshot(countersDoc, (docSnap) => {
+                if (docSnap.exists()) {
+                    const d = docSnap.data();
                     document.getElementById('monitor-total-req').innerText = d.total || 0;
                     document.getElementById('monitor-success-req').innerText = d.success || 0;
                     document.getElementById('monitor-error-req').innerText = d.error || 0;
                 }
+            }, (error) => {
+                console.error("Counter monitoring failed:", error);
             });
         }
 
@@ -1687,15 +1694,17 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
 
         async function clearMonitorLogs() {
             playSynthSound('click');
-            if (!db || !auth.currentUser) return;
+            if (!db || !auth || !auth.currentUser) return;
             try {
-                // Delete aggregates
-                await db.doc(`artifacts/${appId}/public/data/counters/global`).delete();
-                // Fetch and delete requests logs sequentially
-                const snapshot = await db.collection('artifacts', appId, 'public', 'data', 'requests').get();
-                const batch = db.batch();
-                snapshot.forEach(doc => {
-                    batch.delete(doc.ref);
+                // Hapus agregat
+                const countersDoc = doc(db, 'artifacts', appId, 'public', 'data', 'counters', 'global');
+                await deleteDoc(countersDoc);
+                // Hapus daftar log transaksi
+                const requestsCollection = collection(db, 'artifacts', appId, 'public', 'data', 'requests');
+                const snapshot = await getDocs(requestsCollection);
+                const batch = writeBatch(db);
+                snapshot.forEach(docSnap => {
+                    batch.delete(docSnap.ref);
                 });
                 await batch.commit();
             } catch (err) {
@@ -1703,7 +1712,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             }
         }
 
-        // Local Fallback logic if Firebase is not connected (Local Demo Mode)
+        // Logic cadangan (Fallback) jika Firebase belum dikonfigurasi
         let mockLogs = [];
         let localTotal = 0;
         let localSuccess = 0;
@@ -1721,7 +1730,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
         }
 
         function updateMockDisplay() {
-            if (db) return; // Ignore if firebase is alive
+            if (db) return; // Abaikan jika Firebase aktif
             document.getElementById('monitor-total-req').innerText = localTotal;
             document.getElementById('monitor-success-req').innerText = localSuccess;
             document.getElementById('monitor-error-req').innerText = localError;
@@ -1752,12 +1761,12 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             updateMockDisplay();
         }
 
-        // Countdown Timer until 00:00 WIB Reset
+        // Penghitungan waktu menuju reset harian tengah malam
         function startStatsAutoRefresh() {
             setInterval(() => {
                 const now = new Date();
                 const resetTime = new Date();
-                resetTime.setHours(24, 0, 0, 0); // Next 00:00 WIB
+                resetTime.setHours(24, 0, 0, 0); // Ke arah 00:00 besok
                 
                 const diff = resetTime - now;
                 if (diff <= 0) {
@@ -1772,7 +1781,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             }, 1000);
         }
 
-        // Switch Tabs inside Docs API View
+        // Kontrol tab penjelasan API
         function switchApiTab(tabId) {
             playSynthSound('click');
             const tabs = ['api-tab-tiktok', 'api-tab-youtube', 'api-tab-instagram', 'api-tab-facebook'];
@@ -1790,7 +1799,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }
             });
 
-            // Update sample code
+            // Ganti potongan kode berdasarkan platform aktif
             const apiCodeBlock = document.getElementById('api-docs-js-code');
             let sampleUrl = "";
             if (tabId === 'api-tab-tiktok') {
@@ -1805,14 +1814,13 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             apiCodeBlock.innerText = `fetch('https://albitiktok.vercel.app/?api=true&url=${sampleUrl}')\n  .then(res => res.json())\n  .then(data => {\n    console.log("Response:", data);\n  })\n  .catch(err => console.error(err));`;
         }
 
-        // ------------------ ORIGINAL UI & ENGINE CONFIGS ------------------
+        // ------------------ CORE UI ENGINE CONFIGS ------------------
 
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         }
 
-        // Menu Toggle Logic
         function showDonation() {
             document.getElementById('donation-modal').classList.remove('hidden');
         }
@@ -1821,7 +1829,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             document.getElementById('donation-modal').classList.add('hidden');
         }
 
-        // Helper untuk format counter angka
         function formatCounter(num) {
             if (!num || isNaN(num)) return "0";
             if (num >= 1000000) {
@@ -1833,7 +1840,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             return num.toString();
         }
 
-        // Fungsi Reset untuk TikTok
         function resetDownloader() {
             playSynthSound('click');
             document.getElementById('tiktok-url').value = "";
@@ -1844,7 +1850,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             currentMediaData = null;
         }
 
-        // Fungsi Reset untuk YouTube
         function resetYoutubeDownloader() {
             playSynthSound('click');
             document.getElementById('youtube-url').value = "";
@@ -1855,7 +1860,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             currentYoutubeMediaData = null;
         }
 
-        // Fungsi Reset untuk Instagram
         function resetInstagramDownloader() {
             playSynthSound('click');
             document.getElementById('instagram-url').value = "";
@@ -1866,7 +1870,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             currentInstagramMediaData = null;
         }
 
-        // Fungsi Reset untuk Facebook
         function resetFacebookDownloader() {
             playSynthSound('click');
             document.getElementById('facebook-url').value = "";
@@ -1877,14 +1880,12 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             currentFacebookMediaData = null;
         }
 
-        // Check if there's an API incoming request before initializing UI
         function checkApiEndpoint() {
             const urlParams = new URLSearchParams(window.location.search);
             const isApiMode = urlParams.get('api') === 'true';
             const requestUrl = urlParams.get('url');
 
             if (isApiMode) {
-                // Return API payload as plain JSON text
                 document.body.style.backgroundColor = "#030712";
                 document.body.style.color = "#a5b4fc";
                 document.body.innerHTML = `
@@ -1900,18 +1901,15 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     return true;
                 }
 
-                // Initialize Firebase first to ensure DB logging works
                 initFirebaseMonitor().then(async () => {
                     const startTime = Date.now();
                     const lowerUrl = requestUrl.toLowerCase();
                     
-                    // Route detection via Regex
                     const ytPattern = /youtube\.com|youtu\.be/i;
                     const igPattern = /instagram\.com/i;
                     const fbPattern = /facebook\.com|fb\.watch|fb\.gg/i;
 
                     if (ytPattern.test(lowerUrl)) {
-                        // YouTube API Route
                         try {
                             const data = await fetchYoutubeDirectApi(requestUrl);
                             const latency = Date.now() - startTime;
@@ -1923,7 +1921,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                             serveApiResponse({ code: -2, msg: "Gagal mengambil video YouTube.", error: err.message });
                         }
                     } else if (igPattern.test(lowerUrl)) {
-                        // Instagram API Route
                         try {
                             const data = await fetchInstagramDirectApi(requestUrl);
                             const latency = Date.now() - startTime;
@@ -1935,7 +1932,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                             serveApiResponse({ code: -2, msg: "Gagal mengambil media Instagram.", error: err.message });
                         }
                     } else if (fbPattern.test(lowerUrl)) {
-                        // Facebook API Route
                         try {
                             const data = await fetchFacebookDirectApi(requestUrl);
                             const latency = Date.now() - startTime;
@@ -1947,7 +1943,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                             serveApiResponse({ code: -2, msg: "Gagal mengambil video Facebook.", error: err.message });
                         }
                     } else {
-                        // Default fallback TikTok Route
                         try {
                             const data = await fetchDirectApi(requestUrl);
                             const latency = Date.now() - startTime;
@@ -1972,7 +1967,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
         }
 
         function serveApiResponse(jsonObj) {
-            // Apply JSON format inside browser body directly
             document.body.style.display = "block";
             document.body.style.height = "auto";
             document.body.style.margin = "0";
@@ -1982,7 +1976,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             document.body.innerHTML = `<pre style="white-space: pre-wrap; word-wrap: break-word; font-family: monospace; font-size: 13px; line-height: 1.5;">${JSON.stringify(jsonObj, null, 2)}</pre>`;
         }
 
-        // Reusable direct API fetcher (Using User's Original API - TikWM)
         async function fetchDirectApi(tiktokUrl) {
             const targetApi = `https://www.tikwm.com/api/?url=${encodeURIComponent(tiktokUrl)}`;
             try {
@@ -1992,11 +1985,11 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     return resJson.data;
                 }
             } catch (err) {
-                // CORS Fallback proxy
                 try {
                     const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(targetApi)}`;
                     const response = await fetch(proxyUrl);
-                    const resJson = await response.json();
+                    const wrapper = await response.json();
+                    const resJson = JSON.parse(wrapper.contents);
                     if (resJson && resJson.code === 0) {
                         return resJson.data;
                     }
@@ -2007,14 +2000,12 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             return null;
         }
 
-        // YouTube fetcher endpoint helper
         async function fetchYoutubeDirectApi(youtubeUrl) {
             const targetApi = `https://api.synoxcloud.xyz/download/youtube?url=${encodeURIComponent(youtubeUrl)}`;
             const response = await fetch(targetApi);
             return await response.json();
         }
 
-        // Instagram fetcher endpoint helper
         async function fetchInstagramDirectApi(instagramUrl) {
             const targetApi = "https://api.siputzx.my.id/api/d/igram";
             const response = await fetch(targetApi, {
@@ -2025,29 +2016,23 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             return await response.json();
         }
 
-        // Facebook fetcher endpoint helper
         async function fetchFacebookDirectApi(facebookUrl) {
             const targetApi = `https://api.siputzx.my.id/api/d/facebook?url=${encodeURIComponent(facebookUrl)}`;
             const response = await fetch(targetApi);
             return await response.json();
         }
 
-        // Check API status
         const apiIntercepted = checkApiEndpoint();
 
-        // Continue UI execution only if it is NOT an API request
         if (!apiIntercepted) {
             
-            // Global media data memory to prevent HTML string interpolation crashes
             let currentMediaData = null;
-            let currentYoutubeMediaData = null; // Memory for Youtube downloader API response
-            let currentInstagramMediaData = null; // Memory for Instagram downloader API response
-            let currentFacebookMediaData = null; // Memory for Facebook downloader API response
+            let currentYoutubeMediaData = null;
+            let currentInstagramMediaData = null;
+            let currentFacebookMediaData = null;
 
-            // Initialize Firebase real-time systems
             initFirebaseMonitor();
 
-            // SPA Tab Switcher
             function switchTab(tabId) {
                 playSynthSound('click');
                 const viewDownloader = document.getElementById('view-downloader');
@@ -2056,7 +2041,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 const viewFacebook = document.getElementById('view-facebook');
                 const viewMonitor = document.getElementById('view-monitor');
                 const viewApi = document.getElementById('view-api');
-                const infoContainer = document.getElementById('info-sections-container'); // MENDAPATKAN DOM INFO/FAQ
+                const infoContainer = document.getElementById('info-sections-container');
                 
                 const navDownloader = document.getElementById('nav-downloader');
                 const navYoutube = document.getElementById('nav-youtube');
@@ -2065,7 +2050,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 const navMonitor = document.getElementById('nav-monitor');
                 const navApi = document.getElementById('nav-api');
 
-                // Hide all sections
                 viewDownloader.classList.add('hidden');
                 viewYoutube.classList.add('hidden');
                 viewInstagram.classList.add('hidden');
@@ -2073,12 +2057,10 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 viewMonitor.classList.add('hidden');
                 viewApi.classList.add('hidden');
                 
-                // SEMBUNYIKAN INFO/FAQ SECARA DEFAULT
                 if (infoContainer) {
                     infoContainer.classList.add('hidden');
                 }
 
-                // Setup non-active styling
                 navDownloader.className = "px-4 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5";
                 navYoutube.className = "px-4 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5";
                 navInstagram.className = "px-4 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5";
@@ -2088,19 +2070,19 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
 
                 if (tabId === 'downloader') {
                     viewDownloader.classList.remove('hidden');
-                    if (infoContainer) infoContainer.classList.remove('hidden'); // TAMPILKAN DI TIKTOK DOWNLOADER
+                    if (infoContainer) infoContainer.classList.remove('hidden');
                     navDownloader.className = "px-4 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5 hover:bg-indigo-500";
                 } else if (tabId === 'youtube') {
                     viewYoutube.classList.remove('hidden');
-                    if (infoContainer) infoContainer.classList.remove('hidden'); // TAMPILKAN DI YOUTUBE DOWNLOADER
+                    if (infoContainer) infoContainer.classList.remove('hidden');
                     navYoutube.className = "px-4 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5 hover:bg-indigo-500";
                 } else if (tabId === 'instagram') {
                     viewInstagram.classList.remove('hidden');
-                    if (infoContainer) infoContainer.classList.remove('hidden'); // TAMPILKAN DI INSTAGRAM DOWNLOADER
+                    if (infoContainer) infoContainer.classList.remove('hidden');
                     navInstagram.className = "px-4 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5 hover:bg-indigo-500";
                 } else if (tabId === 'facebook') {
                     viewFacebook.classList.remove('hidden');
-                    if (infoContainer) infoContainer.classList.remove('hidden'); // TAMPILKAN DI FACEBOOK DOWNLOADER
+                    if (infoContainer) infoContainer.classList.remove('hidden');
                     navFacebook.className = "px-4 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5 hover:bg-indigo-500";
                 } else if (tabId === 'monitor') {
                     viewMonitor.classList.remove('hidden');
@@ -2113,11 +2095,9 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 lucide.createIcons();
             }
 
-            // High compatibility downloader function that creates local browser download triggers
             async function forceDownload(url, filename, buttonElement) {
                 playSynthSound('click');
                 
-                // Show a sleek mini spinner on the button clicked
                 let originalContent = "";
                 if (buttonElement) {
                     originalContent = buttonElement.innerHTML;
@@ -2134,33 +2114,30 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }
 
                 try {
-                    // Try to fetch file as Blob directly
                     const response = await fetch(url);
                     if (!response.ok) throw new Error("CORS limit hit, fallback to proxy");
                     const blob = await response.blob();
                     triggerBrowserSave(blob, filename);
                 } catch (e) {
-                    // Fallback to CORS proxy
                     try {
                         const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
                         const response = await fetch(proxyUrl);
                         if (!response.ok) throw new Error("Proxy error");
-                        const blob = await response.blob();
+                        const wrapper = await response.json();
+                        const blobResponse = await fetch(wrapper.contents);
+                        const blob = await blobResponse.blob();
                         triggerBrowserSave(blob, filename);
                     } catch (err) {
-                        // Ultimate fallback: open in a new tab for native saving
                         window.open(url, '_blank');
                     }
                 }
 
-                // Restore button state
                 if (buttonElement) {
                     buttonElement.disabled = false;
                     buttonElement.innerHTML = originalContent;
                 }
             }
 
-            // Safe memory-driven download delegation methods
             function downloadImageByIndex(index, btn) {
                 if (!currentMediaData || !currentMediaData.images || !currentMediaData.images[index]) return;
                 let url = currentMediaData.images[index];
@@ -2171,7 +2148,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 forceDownload(url, `${cleanTitle}_slide_${index + 1}.jpg`, btn);
             }
 
-            // MP3 Download Action Mapping
             function downloadMusic(btn) {
                 if (!currentMediaData || !currentMediaData.music) return;
                 let url = currentMediaData.music;
@@ -2182,7 +2158,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 forceDownload(url, `${cleanTitle}_audio.mp3`, btn);
             }
 
-            // Video Download Action Mapping
             function downloadVideo(type, btn) {
                 if (!currentMediaData) return;
                 const cleanTitle = (currentMediaData.title || 'tiktok_media').replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30);
@@ -2195,7 +2170,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 forceDownload(url, `${cleanTitle}_${type}.mp4`, btn);
             }
 
-            // YouTube Video and MP3 Download Action Mapping
             function downloadYoutubeMedia(type, btn) {
                 if (!currentYoutubeMediaData || !currentYoutubeMediaData.result) return;
                 const meta = currentYoutubeMediaData.result.metadata;
@@ -2207,7 +2181,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 forceDownload(url, `${cleanTitle}.${ext}`, btn);
             }
 
-            // Instagram Download Action Mapping
             function downloadInstagramMedia(url, ext, name, btn) {
                 if (!currentInstagramMediaData || !currentInstagramMediaData.data) return;
                 const meta = currentInstagramMediaData.data.meta;
@@ -2215,7 +2188,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 forceDownload(url, `${cleanTitle}_${name}.${ext}`, btn);
             }
 
-            // Facebook Download Action Mapping
             function downloadFacebookMedia(url, quality, btn) {
                 if (!currentFacebookMediaData || !currentFacebookMediaData.data) return;
                 const meta = currentFacebookMediaData.data;
@@ -2224,14 +2196,12 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 forceDownload(url, `${cleanTitle}_${cleanQuality}.mp4`, btn);
             }
 
-            // Helper to format bytes to legible string
             function formatBytes(bytes) {
                 if (!bytes || isNaN(bytes) || bytes <= 0) return "";
                 const mb = bytes / (1024 * 1024);
                 return `[~${mb.toFixed(1)} MB]`;
             }
 
-            // Async exact file size fetcher as a smart fallback/override
             async function fetchExactSize(url, elementId) {
                 if (!url) return;
                 if (url.startsWith('/')) {
@@ -2246,11 +2216,10 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                         if (el) el.innerText = `[${mb.toFixed(1)} MB]`;
                     }
                 } catch (e) {
-                    // Quietly ignore CORS issues
+                    // CORS Bypass head size fetcher
                 }
             }
 
-            // Create invisible click event to prompt direct browser save dialogue
             function triggerBrowserSave(blob, filename) {
                 const blobUrl = URL.createObjectURL(blob);
                 const tempAnchor = document.createElement('a');
@@ -2262,17 +2231,14 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 URL.revokeObjectURL(blobUrl);
             }
 
-            // Download History Storage
             let downloadHistory = JSON.parse(localStorage.getItem('tiksave_history') || '[]');
 
-            // Slideshow variables
             let currentSlideIndex = 0;
             let totalSlides = 0;
             let activeSlides = [];
             let touchStartX = 0;
             let touchEndX = 0;
 
-            // Initialize Lucide Icons & History UI on load
             window.addEventListener('load', () => {
                 const currentHost = window.location.origin + window.location.pathname;
                 const endpointEl = document.getElementById('api-endpoint-url');
@@ -2322,7 +2288,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 setupSwipeGestures();
             });
 
-            // Premium Audio synthesis feedback
             const playSynthSound = (toneType) => {
                 try {
                     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -2365,7 +2330,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }
             };
 
-            // Touch Swipe Handlers for Slideshows
             function setupSwipeGestures() {
                 const container = document.getElementById('preview-slideshow');
                 if (!container) return;
@@ -2419,7 +2383,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 document.getElementById('slide-index-counter').innerText = `${currentSlideIndex + 1}/${totalSlides}`;
             }
 
-            // Clipboard Paste Helpers
             async function pasteFromClipboard() {
                 playSynthSound('click');
                 const input = document.getElementById('tiktok-url');
@@ -2439,7 +2402,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }
             }
 
-            // YouTube Clipboard Paste
             async function pasteYoutubeFromClipboard() {
                 playSynthSound('click');
                 const input = document.getElementById('youtube-url');
@@ -2459,7 +2421,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }
             }
 
-            // Instagram Clipboard Paste
             async function pasteInstagramFromClipboard() {
                 playSynthSound('click');
                 const input = document.getElementById('instagram-url');
@@ -2479,7 +2440,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }
             }
 
-            // Facebook Clipboard Paste
             async function pasteFacebookFromClipboard() {
                 playSynthSound('click');
                 const input = document.getElementById('facebook-url');
@@ -2507,7 +2467,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 input.focus();
             }
 
-            // Clear YouTube Input
             function clearYoutubeInput() {
                 playSynthSound('click');
                 const input = document.getElementById('youtube-url');
@@ -2534,7 +2493,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 input.focus();
             }
 
-            // Custom Notification Manager
             function showAlert(type, title, desc) {
                 const box = document.getElementById('alert-box');
                 const container = document.getElementById('alert-icon-container');
@@ -2561,7 +2519,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 lucide.createIcons();
             }
 
-            // Custom YouTube Notification Manager
             function showYoutubeAlert(type, title, desc) {
                 const box = document.getElementById('youtube-alert-box');
                 const container = document.getElementById('youtube-alert-icon-container');
@@ -2588,7 +2545,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 lucide.createIcons();
             }
 
-            // Custom Instagram Notification Manager
             function showInstagramAlert(type, title, desc) {
                 const box = document.getElementById('instagram-alert-box');
                 const container = document.getElementById('instagram-alert-icon-container');
@@ -2615,7 +2571,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 lucide.createIcons();
             }
 
-            // Custom Facebook Notification Manager
             function showFacebookAlert(type, title, desc) {
                 const box = document.getElementById('facebook-alert-box');
                 const container = document.getElementById('facebook-alert-icon-container');
@@ -2630,7 +2585,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     playSynthSound('error');
                 } else if (type === 'success') {
                     box.classList.add('bg-emerald-950/40', 'border-emerald-900/40', 'text-emerald-300');
-                    container.innerHTML = `<i data-lucide="check-circle" class="w-5 h-5 text-blue-450"></i>`;
+                    container.innerHTML = `<i data-lucide="check-circle" class="w-5 h-5 text-blue-500"></i>`;
                 } else {
                     box.classList.add('bg-slate-800/50', 'border-slate-700/50', 'text-slate-300');
                     container.innerHTML = `<i data-lucide="info" class="w-5 h-5 text-blue-400"></i>`;
@@ -2642,27 +2597,22 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 lucide.createIcons();
             }
 
-            // Hide Alert Panel
             function hideAlert() {
                 document.getElementById('alert-box').classList.add('hidden');
             }
 
-            // Hide YouTube Alert Panel
             function hideYoutubeAlert() {
                 document.getElementById('youtube-alert-box').classList.add('hidden');
             }
 
-            // Hide Instagram Alert Panel
             function hideInstagramAlert() {
                 document.getElementById('instagram-alert-box').classList.add('hidden');
             }
 
-            // Hide Facebook Alert Panel
             function hideFacebookAlert() {
                 document.getElementById('facebook-alert-box').classList.add('hidden');
             }
 
-            // Download Trigger
             async function handleDownload() {
                 playSynthSound('click');
                 const urlInput = document.getElementById('tiktok-url').value.trim();
@@ -2686,7 +2636,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 animateProgressAndFetch(urlInput);
             }
 
-            // YouTube Download Trigger
             async function handleYoutubeDownload() {
                 playSynthSound('click');
                 const urlInput = document.getElementById('youtube-url').value.trim();
@@ -2710,7 +2659,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 animateYoutubeProgressAndFetch(urlInput);
             }
 
-            // Instagram Download Trigger
             async function handleInstagramDownload() {
                 playSynthSound('click');
                 const urlInput = document.getElementById('instagram-url').value.trim();
@@ -2734,7 +2682,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 animateInstagramProgressAndFetch(urlInput);
             }
 
-            // Facebook Download Trigger
             async function handleFacebookDownload() {
                 playSynthSound('click');
                 const urlInput = document.getElementById('facebook-url').value.trim();
@@ -2760,43 +2707,39 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
 
             async function expandTiktokShortlink(url) {
                 if (!url.includes("vt.tiktok.com") && !url.includes("vm.tiktok.com")) {
-                    return url; // Sudah merupakan tautan standar
+                    return url;
                 }
                 
                 const proxies = [
-                    u => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
                     u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`
                 ];
 
                 for (let i = 0; i < proxies.length; i++) {
                     try {
                         const proxiedUrl = proxies[i](url);
-                        console.log(`Mengekspansi tautan via Proxy ${i+1}:`, proxiedUrl);
                         const response = await fetch(proxiedUrl);
                         if (response.ok) {
-                            const html = await response.text();
+                            const wrapper = await response.json();
+                            const html = wrapper.contents;
                             const extracted = extractUrlFromHtml(html);
                             if (extracted) {
                                 return extracted;
                             }
                         }
                     } catch (e) {
-                        console.warn(`Proxy ${i+1} gagal mengekspansi tautan pendek:`, e);
+                        console.warn(`Proxy gagal mengekspansi tautan pendek:`, e);
                     }
                 }
-                return url; // Cadangan terakhir: kembalikan tautan asli
+                return url;
             }
 
             function extractUrlFromHtml(html) {
-                // Cari canonical link terlebih dahulu
                 let match = html.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i);
                 if (match && match[1]) return match[1];
                 
-                // Cari og:url
                 match = html.match(/<meta\s+property=["']og:url["']\s+content=["']([^"']+)["']/i);
                 if (match && match[1]) return match[1];
 
-                // Cari struktur TikTok absolut standar
                 match = html.match(/(https:\/\/www\.tiktok\.com\/@[^\/]+\/(video|photo)\/\d+)/i);
                 if (match && match[1]) return match[1];
 
@@ -2826,18 +2769,15 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }, 100);
 
                 try {
-                    // Tahap 1: Ekspansi tautan pendek ke tautan absolut
                     titleLabel.innerText = "Menerjemahkan Tautan Pendek...";
                     const expandedUrl = await expandTiktokShortlink(tiktokUrl);
-                    console.log("Menggunakan tautan hasil ekspansi:", expandedUrl);
 
-                    // Tahap 2: Panggil API dengan tautan absolut yang sudah bersih
                     titleLabel.innerText = "Menghubungkan Server API...";
                     const data = await fetchDirectApi(expandedUrl);
                     clearInterval(progressInterval);
 
                     if (data) {
-                        currentMediaData = data; // Simpan ke variabel memori global secara aman
+                        currentMediaData = data;
                         fillSuccessView(data, expandedUrl);
                         
                         const latency = Date.now() - startTime;
@@ -2859,7 +2799,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }
             }
 
-            // YouTube API fetcher and animator
             async function animateYoutubeProgressAndFetch(youtubeUrl) {
                 const startTime = Date.now();
                 const progress = document.getElementById('youtube-loading-progress');
@@ -2895,10 +2834,10 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                             data = resJson;
                         }
                     } catch (err) {
-                        // AllOrigins proxy fallback
                         const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(targetApi)}`;
                         const response = await fetch(proxyUrl);
-                        const resJson = await response.json();
+                        const wrapper = await response.json();
+                        const resJson = JSON.parse(wrapper.contents);
                         if (resJson && resJson.status === true) {
                             data = resJson;
                         }
@@ -2929,7 +2868,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }
             }
 
-            // Instagram API fetcher and animator
             async function animateInstagramProgressAndFetch(instagramUrl) {
                 const startTime = Date.now();
                 const progress = document.getElementById('instagram-loading-progress');
@@ -2980,7 +2918,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }
             }
 
-            // Facebook API fetcher and animator
             async function animateFacebookProgressAndFetch(facebookUrl) {
                 const startTime = Date.now();
                 const progress = document.getElementById('facebook-loading-progress');
@@ -3031,7 +2968,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }
             }
 
-            // Populate TikTok Success Data
             function fillSuccessView(data, originalUrl) {
                 const coverEl = document.getElementById('video-cover');
                 const videoEl = document.getElementById('preview-video');
@@ -3048,7 +2984,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 albumSection.classList.add('hidden');
                 actionGrid.innerHTML = "";
 
-                // Stats
                 document.getElementById('stat-likes').innerText = formatCounter(data.digg_count);
                 document.getElementById('stat-views').innerText = formatCounter(data.play_count);
                 document.getElementById('creator-avatar').src = data.author.avatar || 'https://placehold.co/100x100/1e293b/fff?text=User';
@@ -3078,9 +3013,8 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     
                     updateSlideshowDisplay();
 
-                    const audioSizeStr = data.duration ? formatBytes(data.duration * 16000) : ""; // Estimate music size
+                    const audioSizeStr = data.duration ? formatBytes(data.duration * 16000) : "";
 
-                    // Action buttons for slides
                     actionGrid.innerHTML = `
                         <button onclick="downloadMusic(this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-650 hover:to-rose-650 text-white font-extrabold text-sm shadow-lg shadow-pink-500/10 hover:shadow-pink-500/25 transition-all transform active:scale-[0.98]">
                             <span class="flex items-center gap-2.5">
@@ -3101,7 +3035,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                         </button>
                     `;
 
-                    // Details list for all photos
                     albumSection.classList.remove('hidden');
                     document.getElementById('photo-count-lbl').innerText = `${totalSlides} Foto Tersedia`;
                     const linksList = document.getElementById('photo-links-list');
@@ -3122,7 +3055,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                         linksList.appendChild(row);
                     });
 
-                    // Fetch Exact Size for audio
                     fetchExactSize(data.music, 'size-music');
 
                 } else {
@@ -3133,11 +3065,9 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     videoEl.load();
                     videoEl.play().catch(e => console.log("Muted play blocked", e));
 
-                    // Format Metadata file sizes
                     const noWmSizeStr = formatBytes(data.size);
                     const musicSizeStr = data.duration ? formatBytes(data.duration * 16000) : "";
 
-                    // Action buttons with direct download mapping
                     actionGrid.innerHTML = `
                         <button onclick="downloadVideo('no_wm', this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-extrabold text-sm shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/25 transition-all transform active:scale-[0.98]">
                             <span class="flex items-center gap-2.5">
@@ -3161,12 +3091,10 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                         </button>
                     `;
 
-                    // Fetch exact file sizes from headers asynchronously
                     fetchExactSize(data.play, 'size-no-wm');
                     fetchExactSize(data.music, 'size-music');
                 }
 
-                // Save to history
                 saveToHistory({
                     id: data.id || Math.random().toString(),
                     title: data.title || 'Video/Foto TikTok',
@@ -3193,7 +3121,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }, 300);
             }
 
-            // Populate YouTube Success Data (PLAYABLE VIDEO ENHANCED)
             function fillYoutubeSuccessView(data, originalUrl) {
                 const coverEl = document.getElementById('yt-video-cover');
                 const ytVideoEl = document.getElementById('yt-preview-video');
@@ -3205,7 +3132,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
 
                 const meta = data.result.metadata;
 
-                // Make Video Playable inside browser
                 coverEl.classList.add('hidden');
                 ytVideoEl.classList.remove('hidden');
                 ytVideoEl.pause();
@@ -3218,7 +3144,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 creatorName.innerText = meta.author || 'YouTube Channel';
                 creatorUsername.innerText = 'TikSave YT';
 
-                // Action buttons for YouTube
                 actionGrid.innerHTML = `
                     <button onclick="downloadYoutubeMedia('video', this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-extrabold text-sm shadow-lg shadow-red-500/10 hover:shadow-red-500/25 transition-all transform active:scale-[0.98]">
                         <span class="flex items-center gap-2.5">
@@ -3242,11 +3167,9 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     </button>
                 `;
 
-                // Fetch exact sizes
                 fetchExactSize(data.result.video, 'yt-size-video');
                 fetchExactSize(data.result.audio, 'yt-size-audio');
 
-                // Save to history
                 saveToHistory({
                     id: Math.random().toString(),
                     title: meta.title || 'Video YouTube',
@@ -3273,7 +3196,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }, 300);
             }
 
-            // Populate Instagram Success Data
             function fillInstagramSuccessView(response, originalUrl) {
                 const coverEl = document.getElementById('ig-video-cover');
                 const videoEl = document.getElementById('ig-preview-video');
@@ -3371,7 +3293,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }, 300);
             }
 
-            // Populate Facebook Success Data (PLAYABLE VIDEO ENHANCED)
             function fillFacebookSuccessView(response, originalUrl) {
                 const coverEl = document.getElementById('fb-video-cover');
                 const videoEl = document.getElementById('fb-preview-video');
@@ -3383,13 +3304,11 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
 
                 const fbData = response.data;
 
-                // Make Video Playable inside browser
                 coverEl.classList.add('hidden');
                 videoEl.classList.remove('hidden');
                 videoEl.pause();
                 videoEl.src = "";
 
-                // Use first download URL to populate video preview element
                 const mainMedia = fbData.downloads && fbData.downloads[0];
                 if (mainMedia && mainMedia.url) {
                     videoEl.src = mainMedia.url;
@@ -3401,13 +3320,11 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     coverEl.src = fbData.thumbnail || 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500';
                 }
 
-                // Metadata Details
                 titleEl.innerText = fbData.title || 'Facebook Video';
                 durationEl.innerText = fbData.duration || 'N/A';
                 creatorName.innerText = 'Facebook User';
                 creatorUsername.innerText = '@fb_video';
 
-                // Build download buttons grid dynamically
                 actionGrid.innerHTML = "";
                 if (fbData.downloads && fbData.downloads.length > 0) {
                     fbData.downloads.forEach((item, idx) => {
@@ -3432,7 +3349,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     `;
                 }
 
-                // Save to History database
                 saveToHistory({
                     id: Math.random().toString(),
                     title: fbData.title || 'Facebook Video',
@@ -3459,7 +3375,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }, 300);
             }
 
-            // History Persistent manager
             function saveToHistory(item) {
                 downloadHistory = downloadHistory.filter(h => h.original_url !== item.original_url);
                 downloadHistory.unshift(item);
@@ -3470,7 +3385,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 renderHistoryGrid();
             }
 
-            // Clear all histories
             function clearHistory() {
                 playSynthSound('click');
                 downloadHistory = [];
@@ -3478,7 +3392,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 renderHistoryGrid();
             }
 
-            // Render Riwayat Grid
             function renderHistoryGrid() {
                 const grid = document.getElementById('history-grid');
                 const section = document.getElementById('download-history-section');
@@ -3569,7 +3482,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }
             }
 
-            // Accordion FAQ Toggler
             function toggleFaq(btn) {
                 playSynthSound('click');
                 const wrapper = btn.parentElement;
@@ -3595,7 +3507,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }
             }
 
-            // EXPLICITLY BIND ALL INTERACTIVE FUNCTIONS TO WINDOW TO RESOLVE BLOCK-SCOPING ERROR
+            // EXPLICIT BINDINGS UNTUK MENCEGAH BLOCK-SCOPING ERROR
             window.toggleMobileMenu = toggleMobileMenu;
             window.switchTab = switchTab;
             window.forceDownload = forceDownload;
