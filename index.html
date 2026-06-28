@@ -297,7 +297,7 @@
                 </div>
             </div>
 
-            <!-- Drawer Footer containing Donation option -->
+            <!-- Drawer Drawer Footer containing Donation option -->
             <div class="space-y-4 mt-6">
                 <button onclick="showDonation(); toggleMobileMenu()" class="w-full p-4 bg-gradient-to-r from-indigo-600 via-indigo-500 to-violet-600 hover:from-indigo-500 hover:to-violet-500 rounded-2xl text-white font-extrabold flex items-center justify-center gap-2.5 shadow-lg shadow-indigo-600/35 active:scale-95 transition-all">
                     <i data-lucide="heart" class="w-5 h-5 fill-white/10"></i> 
@@ -965,7 +965,7 @@
                         </div>
 
                         <!-- Submit Button -->
-                        <button onclick="handleFacebookDownload()" class="glowing-btn px-8 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-blue-600/30 transform active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0">
+                        <button onclick="handleFacebookDownload()" class="glowing-btn px-8 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-650 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-blue-600/30 transform active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0">
                             <i data-lucide="arrow-right-circle" class="w-5 h-5"></i>
                             <span>Download</span>
                         </button>
@@ -1117,14 +1117,14 @@
             </div>
         </div>
 
-        <!-- Analytical Analytics Cards Grid (Optimized mobile text layouts) -->
+        <!-- Analytical Analytics Cards Grid -->
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6">
             <!-- Card 1: Total Request -->
             <div class="glass-panel p-4 sm:p-5.5 rounded-2xl premium-card relative overflow-hidden">
                 <div class="absolute -right-6 -bottom-6 text-white/5 pointer-events-none">
                     <i data-lucide="globe" class="w-16 h-16 sm:w-24 sm:h-24"></i>
                 </div>
-                <h4 class="text-[9px] sm:text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-1 sm:mb-2">TOTAL REQUEST</h4>
+                <h4 class="text-[9px] sm:text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-1 sm:mb-2">REQUEST HARI INI (WIB)</h4>
                 <div class="flex items-baseline gap-1 sm:gap-1.5">
                     <span id="monitor-total-req" class="text-2xl sm:text-4xl font-extrabold font-display text-white">0</span>
                     <span class="text-[8px] sm:text-[10px] text-slate-500 font-semibold truncate">hari ini</span>
@@ -1139,7 +1139,7 @@
                 <h4 class="text-[9px] sm:text-[10px] uppercase font-bold text-emerald-400 tracking-wider mb-1 sm:mb-2">SUKSES</h4>
                 <div class="flex items-baseline gap-1 sm:gap-1.5">
                     <span id="monitor-success-req" class="text-2xl sm:text-4xl font-extrabold font-display text-emerald-400">0</span>
-                    <span class="text-[8px] sm:text-[10px] text-slate-500 font-semibold truncate">status 2xx</span>
+                    <span class="text-[8px] sm:text-[10px] text-slate-500 font-semibold truncate">Berhasil</span>
                 </div>
             </div>
 
@@ -1151,7 +1151,7 @@
                 <h4 class="text-[9px] sm:text-[10px] uppercase font-bold text-rose-400 tracking-wider mb-1 sm:mb-2">ERROR</h4>
                 <div class="flex items-baseline gap-1 sm:gap-1.5">
                     <span id="monitor-error-req" class="text-2xl sm:text-4xl font-extrabold font-display text-rose-400">0</span>
-                    <span class="text-[8px] sm:text-[10px] text-slate-500 font-semibold truncate">4xx / 5xx</span>
+                    <span class="text-[8px] sm:text-[10px] text-slate-500 font-semibold truncate">Gagal</span>
                 </div>
             </div>
 
@@ -1172,10 +1172,10 @@
         <div class="glass-panel rounded-2xl p-4 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 premium-card">
             <div class="flex items-center gap-2 text-[11px] sm:text-xs font-semibold text-slate-400">
                 <i data-lucide="hourglass" class="w-4 h-4 text-brand-accent shrink-0"></i>
-                <span>Reset statistik harian otomatis pada tengah malam:</span>
+                <span>Reset statistik harian otomatis pada tengah malam (12:00 AM WIB):</span>
             </div>
             <div class="flex items-center gap-2 justify-between sm:justify-end">
-                <span class="text-slate-500 text-[10px] font-bold uppercase tracking-wider">RESET IN:</span>
+                <span class="text-slate-500 text-[10px] font-bold uppercase tracking-wider">RESET DALAM:</span>
                 <span id="monitor-countdown" class="font-mono font-bold text-xs sm:text-sm bg-slate-950 px-3 py-1 rounded-lg border border-white/5 text-brand-accent shadow-inner">00:00:00</span>
             </div>
         </div>
@@ -1193,7 +1193,6 @@
                     <span class="text-[11px] font-mono text-slate-400 font-semibold">tiksave@monitor ~ live logs</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <!-- REMOVED THE USER CLEAR ACTION BUTTON FOR SYSTEM SAFETY -->
                     <span id="entries-counter-badge" class="px-2.5 py-1 bg-white/5 text-indigo-400 text-[10px] font-mono rounded border border-white/5 font-semibold">0 entries</span>
                 </div>
             </div>
@@ -1206,14 +1205,13 @@
 
             <!-- Terminal Body Table with Scroll protection -->
             <div class="overflow-x-auto min-h-[350px] scrollbar-thin">
-                <!-- Added min-w-[650px] to preserve solid layout structures on smartphones -->
-                <table class="w-full text-left border-collapse font-mono text-xs min-w-[650px]">
+                <table class="w-full text-left border-collapse font-mono text-xs min-w-[720px]">
                     <thead>
                         <tr class="bg-slate-900/40 text-[10px] uppercase text-slate-500 border-b border-white/5">
                             <th class="px-6 py-3 font-extrabold tracking-wider w-[120px]">TIME (WIB)</th>
                             <th class="px-6 py-3 font-extrabold tracking-wider w-[100px]">METHOD</th>
                             <th class="px-6 py-3 font-extrabold tracking-wider">PATH</th>
-                            <th class="px-6 py-3 font-extrabold tracking-wider w-[100px]">STATUS</th>
+                            <th class="px-6 py-3 font-extrabold tracking-wider w-[160px]">STATUS</th>
                             <th class="px-6 py-3 font-extrabold tracking-wider text-right w-[110px]">MS (LATENCY)</th>
                         </tr>
                     </thead>
@@ -1551,6 +1549,8 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
         let db = null;
         let auth = null;
         let unsubscribeLogs = null;
+        let currentCounterUnsubscribe = null;
+        let activeDateStr = "";
         let visitorUuid = localStorage.getItem('tiksave_visitor_id');
         
         if (!visitorUuid) {
@@ -1607,6 +1607,22 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             }
         };
 
+        // Fungsi pembantu untuk mendapatkan tanggal & waktu saat ini dalam format WIB (Waktu Indonesia Barat: UTC+7)
+        function getWibTime() {
+            const now = new Date();
+            const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+            return new Date(utc + (3600000 * 7)); // Konversi ke UTC+7
+        }
+
+        // Mendapatkan string tanggal WIB untuk format penamaan dokumen harian: YYYY-MM-DD
+        function getWibDateString() {
+            const wibTime = getWibTime();
+            const year = wibTime.getFullYear();
+            const month = String(wibTime.getMonth() + 1).padStart(2, '0');
+            const day = String(wibTime.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        }
+
         // Fungsi rahasia untuk mengirim log request ke Discord Webhook
         async function sendDiscordWebhook(method, path, status, latency, targetUrl, extraInfo = "") {
             try {
@@ -1621,7 +1637,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                         title: `${statusSymbol} - API Request Logged`,
                         color: embedColor,
                         fields: [
-                            { name: "Time (WIB)", value: new Date().toLocaleTimeString('id-ID'), inline: true },
+                            { name: "Time (WIB)", value: getWibTime().toLocaleTimeString('id-ID'), inline: true },
                             { name: "Method", value: `\`${method}\``, inline: true },
                             { name: "Status", value: `\`${status}\``, inline: true },
                             { name: "Latency", value: `\`${latency}ms\``, inline: true },
@@ -1649,7 +1665,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
         // Inisialisasi Firebase & Otentikasi Menggunakan Sintaks Modular Terintegrasi
         async function initFirebaseMonitor() {
             try {
-                // Vercel build-time dynamic injection / Secure Base64 fallback configuration
                 let secureApiKey = "REPLACE_WITH_FIREBASE_API_KEY";
                 
                 if (secureApiKey === "REPLACE_WITH_FIREBASE_API_KEY" || !secureApiKey) {
@@ -1665,7 +1680,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 auth = getAuth(app);
                 db = getFirestore(app);
 
-                // Otentikasi Terlebih Dahulu Sebelum Query dijalankan dengan fallback aman jika terjadi mismatch token
+                // Otentikasi Terlebih Dahulu Sebelum Query dijalankan
                 if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
                     try {
                         await signInWithCustomToken(auth, __initial_auth_token);
@@ -1679,6 +1694,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
 
                 // Jalankan sinkronisasi real-time database
                 subscribeToLiveLogs();
+                subscribeToDailyCounter(); // Berlangganan counter harian dinamis
                 startStatsAutoRefresh();
             } catch (err) {
                 console.error("Firebase monitor initialization failed:", err);
@@ -1697,14 +1713,16 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 await addDoc(requestsCollection, {
                     visitorId: visitorUuid,
                     timestamp: serverTimestamp(),
-                    timeString: new Date().toLocaleTimeString('id-ID'),
+                    timeString: getWibTime().toLocaleTimeString('id-ID'),
                     method: method,
                     path: path,
                     status: status,
                     latency: latency
                 });
 
-                const countersDoc = doc(db, 'artifacts', appId, 'public', 'data', 'counters', 'global');
+                // Menyimpan counter harian berbasis tanggal WIB untuk auto-reset otomatis setiap hari
+                const dateStr = getWibDateString();
+                const countersDoc = doc(db, 'artifacts', appId, 'public', 'data', 'counters', dateStr);
                 const isSuccess = status >= 200 && status < 300;
                 
                 await setDoc(countersDoc, {
@@ -1716,6 +1734,37 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             } catch (e) {
                 console.error("Fail writing requests to monitor DB:", e);
             }
+        }
+
+        // Berlangganan dokumen counter secara dinamis berdasarkan tanggal WIB aktif
+        function subscribeToDailyCounter() {
+            if (!db || !auth || !auth.currentUser) return;
+            
+            const dateStr = getWibDateString();
+            if (dateStr === activeDateStr) return; // Mencegah redundansi jika sudah berlangganan hari ini
+            
+            if (currentCounterUnsubscribe) {
+                currentCounterUnsubscribe(); // Hentikan langganan hari kemarin jika ada
+            }
+            
+            activeDateStr = dateStr;
+            const countersDoc = doc(db, 'artifacts', appId, 'public', 'data', 'counters', dateStr);
+            
+            currentCounterUnsubscribe = onSnapshot(countersDoc, (docSnap) => {
+                if (docSnap.exists()) {
+                    const d = docSnap.data();
+                    document.getElementById('monitor-total-req').innerText = d.total || 0;
+                    document.getElementById('monitor-success-req').innerText = d.success || 0;
+                    document.getElementById('monitor-error-req').innerText = d.error || 0;
+                } else {
+                    // Jika hari baru dimulai dan belum ada logs request masuk
+                    document.getElementById('monitor-total-req').innerText = 0;
+                    document.getElementById('monitor-success-req').innerText = 0;
+                    document.getElementById('monitor-error-req').innerText = 0;
+                }
+            }, (error) => {
+                console.error("Daily Counter monitoring failed:", error);
+            });
         }
 
         // Menghindari query majemuk rumit agar tidak memerlukan indeks komposit
@@ -1753,19 +1802,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             }, (error) => {
                 console.error("Live Logs snapshot failed:", error);
             });
-
-            // Lacak perkembangan Counter global agregat secara dinamis
-            const countersDoc = doc(db, 'artifacts', appId, 'public', 'data', 'counters', 'global');
-            onSnapshot(countersDoc, (docSnap) => {
-                if (docSnap.exists()) {
-                    const d = docSnap.data();
-                    document.getElementById('monitor-total-req').innerText = d.total || 0;
-                    document.getElementById('monitor-success-req').innerText = d.success || 0;
-                    document.getElementById('monitor-error-req').innerText = d.error || 0;
-                }
-            }, (error) => {
-                console.error("Counter monitoring failed:", error);
-            });
         }
 
         function renderMonitorLogsTable(logsList) {
@@ -1776,16 +1812,20 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             }
             tbody.innerHTML = "";
             logsList.forEach(log => {
-                const statusColor = log.status >= 200 && log.status < 300 ? 'text-emerald-400' : 'text-rose-400';
-                const statusBg = log.status >= 200 && log.status < 300 ? 'bg-emerald-500/10 border-emerald-500/20' : 'bg-rose-500/10 border-rose-500/20';
+                const isSuccess = log.status >= 200 && log.status < 300;
+                const statusColor = isSuccess ? 'text-emerald-400' : 'text-rose-400';
+                const statusBg = isSuccess ? 'bg-emerald-500/10 border-emerald-500/20' : 'bg-rose-500/10 border-rose-500/20';
                 const methodColor = log.method === 'POST' ? 'text-blue-400' : 'text-indigo-400';
+                
+                // Kustomisasi teks status: 200 (Berhasil) / 500 (Gagal)
+                const statusTextFormatted = isSuccess ? `${log.status} (Berhasil)` : `${log.status} (Gagal)`;
                 
                 tbody.innerHTML += `
                     <tr class="hover:bg-slate-900/30 transition-all duration-150 text-[11px] sm:text-xs">
                         <td class="px-6 py-3.5 text-slate-400 font-medium whitespace-nowrap">${log.time}</td>
                         <td class="px-6 py-3.5 whitespace-nowrap"><span class="font-extrabold ${methodColor}">${log.method}</span></td>
                         <td class="px-6 py-3.5 text-slate-200 select-all truncate max-w-[200px] sm:max-w-xs font-semibold whitespace-nowrap" title="${log.path}">${log.path}</td>
-                        <td class="px-6 py-3.5 whitespace-nowrap"><span class="px-2 py-0.5 rounded-md font-bold text-[10px] ${statusBg} ${statusColor} border">${log.status}</span></td>
+                        <td class="px-6 py-3.5 whitespace-nowrap"><span class="px-2.5 py-1 rounded-md font-bold text-[10px] ${statusBg} ${statusColor} border inline-block min-w-[95px] text-center">${statusTextFormatted}</span></td>
                         <td class="px-6 py-3.5 text-right font-medium text-slate-400 whitespace-nowrap">${log.latency}ms</td>
                     </tr>
                 `;
@@ -1821,7 +1861,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
 
         function logLocalRequestFallback(method, path, status, latency, targetUrl = "") {
             if (db) return;
-            const now = new Date();
+            const now = getWibTime();
             const timeStr = now.toLocaleTimeString('id-ID');
             mockLogs.unshift({
                 id: Math.random(),
@@ -1841,14 +1881,14 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             updateMockDisplay();
         }
 
-        // Penghitungan waktu menuju reset harian tengah malam
+        // Penghitungan waktu menuju reset harian tengah malam (00:00:00 WIB)
         function startStatsAutoRefresh() {
             setInterval(() => {
-                const now = new Date();
-                const resetTime = new Date();
-                resetTime.setHours(24, 0, 0, 0); // Ke arah 00:00 besok
+                const wibTimeNow = getWibTime();
+                const resetTime = new Date(wibTimeNow);
+                resetTime.setHours(24, 0, 0, 0); // Atur target jam 00:00 hari berikutnya
                 
-                const diff = resetTime - now;
+                const diff = resetTime - wibTimeNow;
                 if (diff <= 0) {
                     return;
                 }
@@ -1857,6 +1897,11 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 const seconds = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
                 
                 document.getElementById('monitor-countdown').innerText = `${hours}:${minutes}:${seconds}`;
+
+                // Jika melewati jam 12 malam (00:00:00 WIB), jalankan kembali pemindahan berlangganan counter harian
+                if (hours === "00" && minutes === "00" && seconds === "00") {
+                    subscribeToDailyCounter();
+                }
             }, 1000);
         }
 
@@ -2238,6 +2283,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 forceDownload(url, `${cleanTitle}_audio.mp3`, btn);
             }
 
+            // Download Video
             function downloadVideo(type, btn) {
                 if (!currentMediaData) return;
                 const cleanTitle = (currentMediaData.title || 'tiktok_media').replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30);
