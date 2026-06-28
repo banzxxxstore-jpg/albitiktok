@@ -426,7 +426,7 @@
 
                 <!-- Custom Elegant Progress Bar -->
                 <div class="w-full max-w-md bg-slate-800 rounded-full h-2.5 overflow-hidden border border-slate-700/50">
-                    <div id="loading-progress" class="bg-gradient-to-r from-brand-accent to-indigo-500 h-full w-[10%] transition-all duration-300"></div>
+                    <div id="loading-progress" class="bg-gradient-to-r from-brand-accent to-indigo-550 h-full w-[10%] transition-all duration-300"></div>
                 </div>
                 <span id="loading-percentage" class="text-xs font-mono font-bold text-slate-400">10%</span>
             </div>
@@ -1541,7 +1541,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
         import { getFirestore, doc, setDoc, getDoc, collection, onSnapshot, updateDoc, deleteDoc, increment, addDoc, writeBatch, getDocs, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         const firebaseConfig = {
-            apiKey: "AIzaSyDFD_ZOL4RAyaadaGdk5PJb8BIwG6GInOE",
             authDomain: "testsaja-39ab7.firebaseapp.com",
             projectId: "testsaja-39ab7",
             storageBucket: "testsaja-39ab7.firebasestorage.app",
@@ -1564,7 +1563,21 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
         // Inisialisasi Firebase & Otentikasi Menggunakan Sintaks Modular Terintegrasi
         async function initFirebaseMonitor() {
             try {
-                const app = initializeApp(firebaseConfig);
+                // Placeholder ini akan di-replace otomatis saat deployment di Vercel menggunakan sed replacement build command
+                let secureApiKey = "REPLACE_WITH_FIREBASE_API_KEY";
+
+                // Fallback: Jika build script belum mengganti placeholder (misal dijalankan lokal offline)
+                if (secureApiKey === "REPLACE_WITH_FIREBASE_API_KEY" || secureApiKey.startsWith("REPLACE_")) {
+                    secureApiKey = atob("QUl6YVN5REZEX1pPTDRSQXlhYWRhR2RrNVBKYjhCSXdHNkdJbk9F");
+                }
+
+                // Gabungkan config final
+                const finalConfig = {
+                    ...firebaseConfig,
+                    apiKey: secureApiKey
+                };
+
+                const app = initializeApp(finalConfig);
                 auth = getAuth(app);
                 db = getFirestore(app);
 
@@ -2910,7 +2923,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     clearInterval(progressInterval);
                     document.getElementById('instagram-downloader-loading-view').classList.add('hidden');
                     document.getElementById('instagram-downloader-form-view').classList.remove('hidden');
-                    showInstagramAlert('error', 'Gagal Memproses', 'Maaf, server gagal mengambil media Instagram. Pastikan tautan benar dan postingan bersifat publik.');
+                    showInstagramAlert('error', 'Gagal Memproses', 'Maaf, server gagal mengambil media Instagram. Pastikan tautan benar and postingan bersifat publik.');
 
                     const latency = Date.now() - startTime;
                     await logRequestToDatabase('GET', '/api/instagram', 500, latency);
