@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TikSave - Downloader Video TikTok, YouTube, Instagram & Facebook Tanpa Watermark</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png">
+    <link class="rounded-xl" rel="icon" type="image/png" href="https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png">
     
     <!-- Tailwind CSS untuk penataan kilat modern -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,10 +13,15 @@
     <!-- Google Fonts: Inter & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons via CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Firebase SDK Compat (Required for global database monitor) -->
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore-compat.js"></script>
 
     <script>
         tailwind.config = {
@@ -173,6 +178,9 @@
                 <button id="nav-facebook" onclick="switchTab('facebook')" class="px-4 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5">
                     <i data-lucide="facebook" class="w-3.5 h-3.5 text-blue-500"></i> Facebook
                 </button>
+                <button id="nav-monitor" onclick="switchTab('monitor')" class="px-4 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5">
+                    <i data-lucide="activity" class="w-3.5 h-3.5 text-emerald-400"></i> Live Monitor
+                </button>
                 <button id="nav-api" onclick="switchTab('api')" class="px-4 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5">
                     <i data-lucide="terminal" class="w-3.5 h-3.5"></i> Docs API
                 </button>
@@ -206,7 +214,6 @@
                 </div>
 
                 <!-- Navigation List -->
-                <!-- MEMPERBAIKI DAN MENYEMPURNAKAN LOGO IKON PADA NAVIGASI MOBILE (INLINE SVG PREMIUM) -->
                 <div class="space-y-4">
                     <!-- Downloader TikTok Card -->
                     <button onclick="switchTab('downloader'); toggleMobileMenu()" class="w-full text-left p-4 rounded-2xl bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-indigo-500/30 transition-all active:scale-95 flex items-center gap-4 group shadow-sm">
@@ -225,7 +232,7 @@
 
                     <!-- YouTube Downloader Card -->
                     <button onclick="switchTab('youtube'); toggleMobileMenu()" class="w-full text-left p-4 rounded-2xl bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-red-500/30 transition-all active:scale-95 flex items-center gap-4 group shadow-sm">
-                        <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center group-hover:bg-red-650 group-hover:text-white transition-all shadow-inner">
+                        <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-550 flex items-center justify-center group-hover:bg-red-650 group-hover:text-white transition-all shadow-inner">
                             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
                                 <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
@@ -262,6 +269,19 @@
                         <div>
                             <h4 class="font-extrabold text-sm text-white">Facebook Downloader</h4>
                             <p class="text-[10px] text-slate-500 font-medium mt-0.5">Simpan Video & Reels FB</p>
+                        </div>
+                    </button>
+
+                    <!-- Monitor Card -->
+                    <button onclick="switchTab('monitor'); toggleMobileMenu()" class="w-full text-left p-4 rounded-2xl bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-emerald-500/30 transition-all active:scale-95 flex items-center gap-4 group shadow-sm">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-all shadow-inner">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-sm text-white">Live Monitor</h4>
+                            <p class="text-[10px] text-slate-500 font-medium mt-0.5">Log & Traffic Server</p>
                         </div>
                     </button>
 
@@ -456,7 +476,7 @@
                                 <span class="px-2.5 py-1.5 rounded-xl bg-black/70 backdrop-blur-md text-[10px] font-bold text-white flex items-center gap-1.5 border border-white/5">
                                     <i data-lucide="heart" class="w-3.5 h-3.5 text-red-500 fill-red-500"></i>
                                     <span id="stat-likes">0</span>
-                                </span>
+                                end</span>
                                 <span class="px-2.5 py-1.5 rounded-xl bg-black/70 backdrop-blur-md text-[10px] font-bold text-white flex items-center gap-1.5 border border-white/5">
                                     <i data-lucide="play" class="w-3.5 h-3.5 text-brand-accent fill-brand-accent/20"></i>
                                     <span id="stat-views">0</span>
@@ -662,7 +682,7 @@
 
                         <!-- Creator Card -->
                         <div class="flex items-center gap-3.5 bg-slate-900/50 p-4 rounded-2xl border border-white/5 shadow-inner">
-                            <div class="w-11 h-11 rounded-full border border-red-500/30 bg-slate-800 flex items-center justify-center text-red-500 shadow-md shrink-0">
+                            <div class="w-11 h-11 rounded-full border border-red-500/30 bg-slate-800 flex items-center justify-center text-red-550 shadow-md shrink-0">
                                 <i data-lucide="youtube" class="w-6 h-6"></i>
                             </div>
                             <div class="overflow-hidden">
@@ -723,7 +743,7 @@
                 <i data-lucide="instagram" class="w-3.5 h-3.5 text-pink-400"></i> Downloader Instagram Tercepat & HD 2026
             </span>
             <h2 class="text-4xl sm:text-6xl font-extrabold font-display tracking-tight text-white mb-5 leading-tight">
-                Unduh Reels & Foto <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-300 to-indigo-500">Instagram Gratis</span>
+                Unduh Reels & Foto <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-300 to-indigo-550">Instagram Gratis</span>
             </h2>
             <p class="text-slate-400 max-w-lg mx-auto text-sm sm:text-base leading-relaxed">
                 Salin tautan Reels, Postingan, atau IGTV dan simpan konten media dengan kualitas aslinya secara instan dan tanpa watermark iklan.
@@ -759,7 +779,7 @@
                                 <button onclick="clearInstagramInput()" id="instagram-btn-clear" class="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all hidden active:scale-90" title="Hapus teks">
                                     <i data-lucide="x" class="w-4 h-4"></i>
                                 </button>
-                                <button onclick="pasteInstagramFromClipboard()" class="flex items-center gap-1 px-3 py-2 rounded-xl bg-pink-500/10 hover:bg-pink-500/20 text-pink-400 text-xs font-bold border border-pink-500/20 transition-all shrink-0 active:scale-95" title="Tempel dari Clipboard">
+                                <button onclick="pasteInstagramFromClipboard()" class="flex items-center gap-1 px-3 py-2 rounded-xl bg-pink-500/10 hover:bg-pink-500/20 text-pink-400 text-xs font-bold border border-pink-550/20 transition-all shrink-0 active:scale-95" title="Tempel dari Clipboard">
                                     <i data-lucide="clipboard" class="w-3.5 h-3.5"></i>
                                     <span>Tempel</span>
                                 </button>
@@ -814,7 +834,7 @@
 
                 <!-- Custom Elegant Progress Bar -->
                 <div class="w-full max-w-md bg-slate-800 rounded-full h-2.5 overflow-hidden border border-slate-700/50">
-                    <div id="instagram-loading-progress" class="bg-gradient-to-r from-pink-450 to-indigo-500 h-full w-[10%] transition-all duration-300"></div>
+                    <div id="instagram-loading-progress" class="bg-gradient-to-r from-pink-450 to-indigo-550 h-full w-[10%] transition-all duration-300"></div>
                 </div>
                 <span id="instagram-loading-percentage" class="text-xs font-mono font-bold text-slate-400">10%</span>
             </div>
@@ -836,7 +856,7 @@
                             <!-- Stat Badges overlay -->
                             <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-1 z-10">
                                 <span class="px-2.5 py-1.5 rounded-xl bg-black/70 backdrop-blur-md text-[10px] font-bold text-white flex items-center gap-1.5 border border-white/5">
-                                    <i data-lucide="heart" class="w-3.5 h-3.5 text-pink-500 fill-pink-500"></i>
+                                    <i data-lucide="heart" class="text-pink-500 fill-pink-500 w-3.5 h-3.5"></i>
                                     <span id="ig-stat-likes">0</span> Likes
                                 </span>
                             </div>
@@ -905,7 +925,7 @@
                 <i data-lucide="facebook" class="w-3.5 h-3.5 text-blue-450"></i> Downloader Facebook Cerdas & Stabil 2026
             </span>
             <h2 class="text-4xl sm:text-6xl font-extrabold font-display tracking-tight text-white mb-5 leading-tight">
-                Unduh Video & Reels <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-450 via-teal-300 to-indigo-500">Facebook HD</span>
+                Unduh Video & Reels <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-450 via-teal-300 to-indigo-550">Facebook HD</span>
             </h2>
             <p class="text-slate-400 max-w-lg mx-auto text-sm sm:text-base leading-relaxed">
                 Unduh video, tayangan langsung, atau Reels dari Facebook dengan resolusi tinggi (HD/SD) secara langsung tanpa batasan.
@@ -996,7 +1016,7 @@
 
                 <!-- Custom Elegant Progress Bar -->
                 <div class="w-full max-w-md bg-slate-800 rounded-full h-2.5 overflow-hidden border border-slate-700/50">
-                    <div id="facebook-loading-progress" class="bg-gradient-to-r from-blue-450 to-indigo-500 h-full w-[10%] transition-all duration-300"></div>
+                    <div id="facebook-loading-progress" class="bg-gradient-to-r from-blue-450 to-indigo-550 h-full w-[10%] transition-all duration-300"></div>
                 </div>
                 <span id="facebook-loading-percentage" class="text-xs font-mono font-bold text-slate-400">10%</span>
             </div>
@@ -1018,15 +1038,15 @@
                             <!-- Stat Badges overlay -->
                             <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-1 z-10">
                                 <span class="px-2.5 py-1.5 rounded-xl bg-black/70 backdrop-blur-md text-[10px] font-bold text-white flex items-center gap-1.5 border border-white/5">
-                                    <i data-lucide="clock" class="w-3.5 h-3.5 text-blue-450"></i> Durasi: <span id="fb-stat-duration">0:00</span>
+                                    <i data-lucide="clock" class="text-blue-450 w-3.5 h-3.5"></i> Durasi: <span id="fb-stat-duration">0:00</span>
                                 </span>
                             </div>
                         </div>
 
                         <!-- Creator Card -->
                         <div class="flex items-center gap-3.5 bg-slate-900/50 p-4 rounded-2xl border border-white/5 shadow-inner">
-                            <div class="w-11 h-11 rounded-full border border-blue-500/30 bg-slate-800 flex items-center justify-center text-blue-500 shadow-md shrink-0">
-                                <i data-lucide="facebook" class="w-6 h-6 text-blue-500"></i>
+                            <div class="w-11 h-11 rounded-full border border-blue-500/30 bg-slate-800 flex items-center justify-center text-blue-550 shadow-md shrink-0">
+                                <i data-lucide="facebook" class="w-6 h-6 text-blue-550"></i>
                             </div>
                             <div class="overflow-hidden">
                                 <h4 id="fb-creator-name" class="font-extrabold text-sm text-white truncate">Facebook User</h4>
@@ -1055,7 +1075,7 @@
 
                         <!-- Special Help Tip Banner -->
                         <div class="bg-blue-950/20 border border-blue-500/15 rounded-2xl p-4.5 flex items-start gap-3.5 shadow-sm">
-                            <i data-lucide="info" class="w-5 h-5 text-blue-450 shrink-0 mt-0.5 animate-pulse"></i>
+                            <i data-lucide="info" class="w-5 h-5 text-blue-455 shrink-0 mt-0.5 animate-pulse"></i>
                             <div class="text-xs text-blue-200/90 leading-relaxed font-medium">
                                 <span class="font-extrabold text-white block mb-0.5">💡 Cara Mengunduh:</span>
                                 Klik tombol biru di atas untuk memulai pengunduhan otomatis. Jika browser Anda langsung memutar media, ketuk tombol titik tiga <span class="font-bold text-white">(⋮)</span> lalu pilih <span class="font-bold text-white">Download</span>.
@@ -1074,6 +1094,137 @@
                 </div>
             </div>
 
+        </div>
+    </div>
+
+    <!-- SECTION 2: LIVE MONITOR VIEW (MIRRORS SCREENSHOT ACCURATELY) -->
+    <div id="view-monitor" class="w-full max-w-7xl mx-auto px-4 py-8 z-10 relative flex-grow hidden">
+        
+        <!-- Live Header Info -->
+        <div class="flex items-center justify-between mb-8 px-1">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center animate-pulse border border-emerald-500/20 shadow-inner">
+                    <i data-lucide="activity" class="w-5.5 h-5.5"></i>
+                </div>
+                <div>
+                    <h2 class="font-display font-extrabold text-2xl text-white flex items-center gap-2">
+                        TikSave <span class="text-emerald-400">Live Traffic Monitor</span>
+                    </h2>
+                    <p class="text-xs text-slate-400 font-medium mt-0.5">Pantau log request download pengguna dari seluruh belahan dunia secara real-time.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                    LIVE MONITOR
+                </span>
+            </div>
+        </div>
+
+        <!-- Analytical Analytics Cards Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <!-- Card 1: Total Request -->
+            <div class="glass-panel p-5.5 rounded-2xl premium-card relative overflow-hidden">
+                <div class="absolute -right-6 -bottom-6 text-white/5 pointer-events-none">
+                    <i data-lucide="globe-2" class="w-24 h-24"></i>
+                </div>
+                <h4 class="text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-2">TOTAL REQUEST</h4>
+                <div class="flex items-baseline gap-1.5">
+                    <span id="monitor-total-req" class="text-3xl sm:text-4xl font-extrabold font-display text-white">0</span>
+                    <span class="text-[10px] text-slate-500 font-semibold">hari ini (WIB)</span>
+                </div>
+            </div>
+
+            <!-- Card 2: Sukses -->
+            <div class="glass-panel p-5.5 rounded-2xl premium-card relative overflow-hidden border-t border-emerald-500/20">
+                <div class="absolute -right-6 -bottom-6 text-emerald-500/5 pointer-events-none">
+                    <i data-lucide="check-circle-2" class="w-24 h-24"></i>
+                </div>
+                <h4 class="text-[10px] uppercase font-bold text-emerald-400 tracking-wider mb-2">SUKSES</h4>
+                <div class="flex items-baseline gap-1.5">
+                    <span id="monitor-success-req" class="text-3xl sm:text-4xl font-extrabold font-display text-emerald-400">0</span>
+                    <span class="text-[10px] text-slate-500 font-semibold">status 2xx</span>
+                </div>
+            </div>
+
+            <!-- Card 3: Error -->
+            <div class="glass-panel p-5.5 rounded-2xl premium-card relative overflow-hidden border-t border-rose-500/20">
+                <div class="absolute -right-6 -bottom-6 text-rose-500/5 pointer-events-none">
+                    <i data-lucide="alert-octagon" class="w-24 h-24"></i>
+                </div>
+                <h4 class="text-[10px] uppercase font-bold text-rose-400 tracking-wider mb-2">ERROR</h4>
+                <div class="flex items-baseline gap-1.5">
+                    <span id="monitor-error-req" class="text-3xl sm:text-4xl font-extrabold font-display text-rose-400">0</span>
+                    <span class="text-[10px] text-slate-500 font-semibold">4xx / 5xx</span>
+                </div>
+            </div>
+
+            <!-- Card 4: Unique IP -->
+            <div class="glass-panel p-5.5 rounded-2xl premium-card relative overflow-hidden border-t border-indigo-500/20">
+                <div class="absolute -right-6 -bottom-6 text-indigo-500/5 pointer-events-none">
+                    <i data-lucide="users-2" class="w-24 h-24"></i>
+                </div>
+                <h4 class="text-[10px] uppercase font-bold text-indigo-400 tracking-wider mb-2">UNIQUE VISITORS</h4>
+                <div class="flex items-baseline gap-1.5">
+                    <span id="monitor-unique-ip" class="text-3xl sm:text-4xl font-extrabold font-display text-indigo-400">0</span>
+                    <span class="text-[10px] text-slate-500 font-semibold">visitor hari ini</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Countdown Panel -->
+        <div class="glass-panel rounded-2xl p-4 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 premium-card">
+            <div class="flex items-center gap-2 text-xs font-semibold text-slate-400">
+                <i data-lucide="hourglass" class="w-4 h-4 text-brand-accent"></i>
+                <span>Statistik Monitor akan disetel ulang secara otomatis setiap hari pada tengah malam:</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-slate-500 text-[10px] font-bold uppercase tracking-wider">RESET IN:</span>
+                <span id="monitor-countdown" class="font-mono font-bold text-sm bg-slate-950 px-3 py-1 rounded-lg border border-white/5 text-brand-accent shadow-inner">00:00:00</span>
+            </div>
+        </div>
+
+        <!-- Terminal Live request stream table -->
+        <div class="glass-panel rounded-2xl border border-white/5 overflow-hidden shadow-2xl premium-card flex flex-col">
+            <!-- Terminal Header -->
+            <div class="bg-slate-950 px-5 py-4 border-b border-white/5 flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                    <div class="flex gap-1.5">
+                        <span class="w-3 h-3 rounded-full bg-rose-500 inline-block shadow-lg"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block shadow-lg"></span>
+                        <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block shadow-lg"></span>
+                    </div>
+                    <span class="text-[11px] font-mono text-slate-400 font-semibold">tiksave@monitor ~ live request stream</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span id="entries-counter-badge" class="px-2 py-1 bg-white/5 text-slate-400 text-[10px] font-mono rounded border border-white/5">0 entries</span>
+                    <button onclick="clearMonitorLogs()" class="px-2.5 py-1 text-slate-500 hover:text-white transition-colors text-[10px] font-mono bg-white/5 border border-white/5 rounded active:scale-95">clear</button>
+                </div>
+            </div>
+
+            <!-- Terminal Body Table -->
+            <div class="overflow-x-auto min-h-[350px]">
+                <table class="w-full text-left border-collapse font-mono text-xs">
+                    <thead>
+                        <tr class="bg-slate-900/40 text-[10px] uppercase text-slate-500 border-b border-white/5">
+                            <th class="px-6 py-3 font-extrabold tracking-wider">TIME (WIB)</th>
+                            <th class="px-6 py-3 font-extrabold tracking-wider">METHOD</th>
+                            <th class="px-6 py-3 font-extrabold tracking-wider">PATH</th>
+                            <th class="px-6 py-3 font-extrabold tracking-wider">STATUS</th>
+                            <th class="px-6 py-3 font-extrabold tracking-wider text-right">MS (LATENCY)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="monitor-log-tbody" class="divide-y divide-white/5">
+                        <!-- Logs akan dimuat secara real-time dari Firestore -->
+                        <tr>
+                            <td colspan="5" class="px-6 py-16 text-center text-slate-600 font-mono text-xs font-semibold">
+                                <i data-lucide="loader-2" class="w-5 h-5 mx-auto animate-spin mb-2"></i>
+                                Menghubungkan database real-time...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -1096,7 +1247,6 @@
     </section>
 
     <!-- Informational Sections (FAQ & How to use) -->
-    <!-- MENAMBAHKAN ID "info-sections-container" AGAR BISA DISEMBUNYIKAN SECARA DINAMIS -->
     <div id="info-sections-container" class="w-full max-w-4xl mx-auto px-4 z-10 relative">
         <section id="how-to" class="mt-24 space-y-20">
             
@@ -1198,7 +1348,7 @@
         </section>
     </div>
 
-    <!-- SECTION 2: DEVELOPER API DOCUMENTATION -->
+    <!-- SECTION 3: DEVELOPER API DOCUMENTATION (INTERACTIVE ALL PLATFORMS) -->
     <div id="view-api" class="w-full max-w-7xl mx-auto px-4 py-8 z-10 relative flex-grow hidden">
         <div class="glass-panel rounded-3xl p-6 sm:p-10 space-y-8 relative overflow-hidden premium-card">
             <!-- Neon cyan decorative ambient glow -->
@@ -1207,10 +1357,10 @@
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div class="space-y-2.5">
                     <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-brand-accent/10 text-brand-accent border border-brand-accent/20">
-                        <i data-lucide="terminal" class="w-3.5 h-3.5"></i> Layanan Integrasi Terbuka (Public API)
+                        <i data-lucide="terminal" class="w-3.5 h-3.5"></i> Layanan Integrasi Terbuka (Public Multi-API)
                     </span>
                     <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white">Dokumentasi API TikSave</h3>
-                    <p class="text-xs sm:text-sm text-slate-400 font-medium">Gunakan REST API gratis kami untuk membuat bot Telegram, aplikasi mobile, atau situs web downloader Anda sendiri.</p>
+                    <p class="text-xs sm:text-sm text-slate-400 font-medium">Gunakan REST API multi-platform gratis kami untuk membuat bot Telegram, aplikasi mobile, atau situs web downloader Anda sendiri.</p>
                 </div>
                 <div class="shrink-0">
                     <span class="px-3.5 py-2 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold flex items-center gap-2 shadow-inner">
@@ -1220,15 +1370,23 @@
                 </div>
             </div>
 
-            <!-- API Endpoint Details -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-4">
+            <!-- API Endpoints Platform Selectors -->
+            <div class="flex flex-wrap gap-2 border-b border-white/5 pb-4">
+                <button onclick="switchApiTab('api-tab-tiktok')" id="btn-api-tab-tiktok" class="px-4 py-2 bg-indigo-600 text-white rounded-xl text-xs font-bold transition-all">TikTok</button>
+                <button onclick="switchApiTab('api-tab-youtube')" id="btn-api-tab-youtube" class="px-4 py-2 text-slate-400 hover:text-white rounded-xl text-xs font-bold transition-all">YouTube</button>
+                <button onclick="switchApiTab('api-tab-instagram')" id="btn-api-tab-instagram" class="px-4 py-2 text-slate-400 hover:text-white rounded-xl text-xs font-bold transition-all">Instagram</button>
+                <button onclick="switchApiTab('api-tab-facebook')" id="btn-api-tab-facebook" class="px-4 py-2 text-slate-400 hover:text-white rounded-xl text-xs font-bold transition-all">Facebook</button>
+            </div>
+
+            <!-- API TABS CONTAINERS -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-2">
                 <!-- Left Panel: Endpoint Specs -->
                 <div class="space-y-5">
                     <div class="space-y-2">
                         <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest">1. Endpoint HTTP Request</h4>
                         <div class="flex items-center gap-2 p-3.5 bg-slate-950 rounded-xl border border-white/5 font-mono text-xs overflow-x-auto text-indigo-200 shadow-inner">
                             <span class="px-2 py-1 rounded bg-brand-accent/10 text-brand-accent font-extrabold text-[10px]">GET</span>
-                            <span id="api-endpoint-url" class="select-all">https://website-anda.com/?api=true&url={LINK_TIKTOK}</span>
+                            <span id="api-endpoint-url" class="select-all">https://albitiktok.vercel.app/?api=true&url={MEDIA_URL}</span>
                         </div>
                     </div>
 
@@ -1248,21 +1406,19 @@
                             <div class="grid grid-cols-3 gap-2 p-3.5 text-slate-400 font-medium">
                                 <span class="font-bold text-slate-300 font-mono">url</span>
                                 <span class="text-brand-accent font-mono">string</span>
-                                <span>URL video/foto TikTok valid yang ingin diunduh.</span>
+                                <span>URL valid (TikTok, YT, IG, FB) yang ingin dianalisis.</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="space-y-2">
-                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest">3. Contoh Kode Integrasi (JavaScript Fetch)</h4>
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest">3. Contoh Kode Integrasi (Vanilla JS)</h4>
                         <div class="relative shadow-xl rounded-xl overflow-hidden border border-white/5">
-                            <pre class="bg-slate-950 p-4.5 text-[11px] font-mono text-indigo-300 overflow-x-auto">
+                            <pre id="api-docs-js-code" class="bg-slate-950 p-4.5 text-[11px] font-mono text-indigo-300 overflow-x-auto">
 fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3Bvm/')
   .then(res => res.json())
   .then(data => {
-    console.log("Judul Video:", data.data.title);
-    console.log("Video No Watermark:", data.data.play);
-    console.log("Audio MP3:", data.data.music);
+    console.log("Response:", data);
   })
   .catch(err => console.error(err));</pre>
                         </div>
@@ -1275,8 +1431,11 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                         <span>4. Format Respons JSON Sukses</span>
                         <span class="text-[10px] font-mono text-brand-accent uppercase bg-brand-accent/5 px-2 py-0.5 rounded border border-brand-accent/10">application/json</span>
                     </h4>
-                    <div class="flex-grow bg-slate-950 p-4.5 rounded-xl border border-white/5 font-mono text-[11px] text-emerald-400 overflow-y-auto max-h-[350px] shadow-inner">
-<pre>{
+                    
+                    <!-- JSON Responses depending on active tab -->
+                    <div id="json-box-container" class="flex-grow bg-slate-950 p-4.5 rounded-xl border border-white/5 font-mono text-[11px] text-emerald-400 overflow-y-auto max-h-[350px] shadow-inner">
+                        <!-- TikTok JSON -->
+                        <pre id="api-tab-tiktok" class="block">{
   "code": 0,
   "msg": "success",
   "processed_time": 0.45,
@@ -1285,18 +1444,66 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
     "title": "Aesthetic Travel Video #fyp #viral",
     "cover": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500",
     "play": "https://example-cdn.com/no-watermark.mp4",
-    "wmplay": "https://example-cdn.com/with-watermark.mp4",
     "music": "https://example-cdn.com/soundtrack.mp3",
     "play_count": 3200500,
     "digg_count": 852400,
-    "comment_count": 4120,
-    "share_count": 92100,
-    "images": [],
     "author": {
       "unique_id": "nature_travel",
-      "nickname": "Nature & Travel",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100"
+      "nickname": "Nature & Travel"
     }
+  }
+}</pre>
+                        <!-- YouTube JSON -->
+                        <pre id="api-tab-youtube" class="hidden">{
+  "status": true,
+  "result": {
+    "video": "https://example-youtube-cdn.com/stream-video.mp4",
+    "audio": "https://example-youtube-cdn.com/stream-audio.mp3",
+    "metadata": {
+      "title": "Aesthetic Travel Video YouTube",
+      "views": 450123,
+      "thumbnail": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500",
+      "author": "TraveLover Channel"
+    }
+  }
+}</pre>
+                        <!-- Instagram JSON -->
+                        <pre id="api-tab-instagram" class="hidden">{
+  "status": true,
+  "data": {
+    "thumb": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500",
+    "url": [
+      {
+        "url": "https://example-instagram-cdn.com/media-file.mp4",
+        "ext": "mp4",
+        "name": "VIDEO",
+        "quality": "720"
+      }
+    ],
+    "meta": {
+      "title": "Beautiful Sunset Reels #view",
+      "like_count": 12400,
+      "username": "nature_insta"
+    }
+  }
+}</pre>
+                        <!-- Facebook JSON -->
+                        <pre id="api-tab-facebook" class="hidden">{
+  "status": true,
+  "data": {
+    "title": "Aesthetic Facebook Reels Video",
+    "thumbnail": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500",
+    "duration": "1:30",
+    "downloads": [
+      {
+        "url": "https://example-facebook-cdn.com/file-hd.mp4",
+        "quality": "HD"
+      },
+      {
+        "url": "https://example-facebook-cdn.com/file-sd.mp4",
+        "quality": "SD"
+      }
+    ]
   }
 }</pre>
                     </div>
@@ -1333,6 +1540,273 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
     </footer>
 
     <script>
+        // ----------------- DATABASE MONITORS GLOBAL SETTINGS -----------------
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'tiksave-premium-prod';
+        let db = null;
+        let auth = null;
+        let unsubscribeLogs = null;
+        let visitorUuid = localStorage.getItem('tiksave_visitor_id');
+        
+        if (!visitorUuid) {
+            visitorUuid = 'vis_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+            localStorage.setItem('tiksave_visitor_id', visitorUuid);
+        }
+
+        // Initialize Firebase & Auth securely from Serverless Vercel API endpoint
+        async function initFirebaseMonitor() {
+            try {
+                // Mengambil konfigurasi secara aman dari Vercel Environment Variables melalui API internal
+                const configResponse = await fetch('/api/firebase-config');
+                const firebaseConfig = await configResponse.json();
+
+                if (!firebaseConfig.apiKey) {
+                    throw new Error("API Key kosong. Pastikan Environment Variables sudah diatur di Vercel Dashboard.");
+                }
+
+                if (!firebase.apps.length) {
+                    firebase.initializeApp(firebaseConfig);
+                }
+                auth = firebase.auth();
+                db = firebase.firestore();
+
+                // Rule 3: Auth Before Queries - Sign in Anonymously
+                await auth.signInAnonymously();
+
+                // Start database live snapshots
+                subscribeToLiveLogs();
+                startStatsAutoRefresh();
+            } catch (err) {
+                console.error("Firebase monitor initialization failed:", err);
+                setupMockLiveLogs();
+            }
+        }
+
+        // Rule 1: Strict Paths - /artifacts/{appId}/public/data/requests
+        async function logRequestToDatabase(method, path, status, latency) {
+            if (!db || !auth.currentUser) return;
+            try {
+                const logsCollection = db.collection('artifacts', appId, 'public', 'data', 'requests');
+                await logsCollection.add({
+                    visitorId: visitorUuid,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                    timeString: new Date().toLocaleTimeString('id-ID'),
+                    method: method,
+                    path: path,
+                    status: status,
+                    latency: latency
+                });
+
+                // Rule 1: Increment global aggregates document: /artifacts/{appId}/public/data/counters/global
+                const countersDoc = db.doc(`artifacts/${appId}/public/data/counters/global`);
+                const isSuccess = status >= 200 && status < 300;
+                
+                await countersDoc.set({
+                    total: firebase.firestore.FieldValue.increment(1),
+                    success: firebase.firestore.FieldValue.increment(isSuccess ? 1 : 0),
+                    error: firebase.firestore.FieldValue.increment(isSuccess ? 0 : 1)
+                }, { merge: true });
+                
+            } catch (e) {
+                console.error("Fail writing requests to monitor DB:", e);
+            }
+        }
+
+        // Rule 2: No Complex Queries. Fetch simple snapshot listeners, then sort / slice in memory.
+        function subscribeToLiveLogs() {
+            if (!db || !auth.currentUser) return;
+            const requestsCollection = db.collection('artifacts', appId, 'public', 'data', 'requests');
+            
+            // Fetch everything, handle sorting in client memory to avoid composite index requirements
+            unsubscribeLogs = requestsCollection.onSnapshot((snapshot) => {
+                let list = [];
+                snapshot.forEach((doc) => {
+                    const data = doc.data();
+                    // Resolve serverTimestamp fallback if null
+                    const ts = data.timestamp ? data.timestamp.toDate() : new Date();
+                    list.push({
+                        id: doc.id,
+                        time: ts.toLocaleTimeString('id-ID'),
+                        timestampObj: ts,
+                        method: data.method || 'GET',
+                        path: data.path || '/',
+                        status: data.status || 200,
+                        latency: data.latency || 0,
+                        visitorId: data.visitorId
+                    });
+                });
+
+                // Sort descending in JavaScript memory (Rule 2 compliant)
+                list.sort((a, b) => b.timestampObj - a.timestampObj);
+
+                // Slice first 50 entries
+                const topEntries = list.slice(0, 50);
+                renderMonitorLogsTable(topEntries);
+
+                // Compute unique visitors in memory
+                const uniqueVisitors = new Set(list.map(item => item.visitorId)).size;
+                document.getElementById('monitor-unique-ip').innerText = uniqueVisitors || 1;
+                document.getElementById('entries-counter-badge').innerText = `${topEntries.length} entries`;
+            }, (error) => {
+                console.error("Live Logs snapshot failed:", error);
+            });
+
+            // Subscribe to Counter aggregates
+            db.doc(`artifacts/${appId}/public/data/counters/global`).onSnapshot((doc) => {
+                if (doc.exists) {
+                    const d = doc.data();
+                    document.getElementById('monitor-total-req').innerText = d.total || 0;
+                    document.getElementById('monitor-success-req').innerText = d.success || 0;
+                    document.getElementById('monitor-error-req').innerText = d.error || 0;
+                }
+            });
+        }
+
+        function renderMonitorLogsTable(logsList) {
+            const tbody = document.getElementById('monitor-log-tbody');
+            if (logsList.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="5" class="px-6 py-12 text-center text-slate-500 font-mono">Belum ada request yang masuk...</td></tr>`;
+                return;
+            }
+            tbody.innerHTML = "";
+            logsList.forEach(log => {
+                const statusColor = log.status >= 200 && log.status < 300 ? 'text-emerald-400' : 'text-rose-400';
+                const statusBg = log.status >= 200 && log.status < 300 ? 'bg-emerald-500/10 border-emerald-500/20' : 'bg-rose-500/10 border-rose-500/20';
+                const methodColor = log.method === 'POST' ? 'text-blue-400' : 'text-indigo-400';
+                
+                tbody.innerHTML += `
+                    <tr class="hover:bg-slate-900/30 transition-all duration-150">
+                        <td class="px-6 py-3.5 text-slate-400 font-medium">${log.time}</td>
+                        <td class="px-6 py-3.5"><span class="font-extrabold ${methodColor}">${log.method}</span></td>
+                        <td class="px-6 py-3.5 text-slate-200 select-all truncate max-w-xs">${log.path}</td>
+                        <td class="px-6 py-3.5"><span class="px-2 py-0.5 rounded-md font-bold text-[10px] ${statusBg} ${statusColor} border">${log.status}</span></td>
+                        <td class="px-6 py-3.5 text-right font-medium text-slate-400">${log.latency}ms</td>
+                    </tr>
+                `;
+            });
+        }
+
+        async function clearMonitorLogs() {
+            playSynthSound('click');
+            if (!db || !auth.currentUser) return;
+            try {
+                // Delete aggregates
+                await db.doc(`artifacts/${appId}/public/data/counters/global`).delete();
+                // Fetch and delete requests logs sequentially
+                const snapshot = await db.collection('artifacts', appId, 'public', 'data', 'requests').get();
+                const batch = db.batch();
+                snapshot.forEach(doc => {
+                    batch.delete(doc.ref);
+                });
+                await batch.commit();
+            } catch (err) {
+                console.error("Gagal membersihkan log database:", err);
+            }
+        }
+
+        // Local Fallback logic if Firebase is not connected (Local Demo Mode)
+        let mockLogs = [];
+        let localTotal = 0;
+        let localSuccess = 0;
+        let localError = 0;
+        function setupMockLiveLogs() {
+            mockLogs = [
+                { id: 1, time: '17:02:01', method: 'GET', path: '/api/tiktok', status: 200, latency: 450, visitorId: 'vis_test_1' },
+                { id: 2, time: '17:03:15', method: 'GET', path: '/api/youtube', status: 200, latency: 1245, visitorId: 'vis_test_2' },
+                { id: 3, time: '17:05:44', method: 'GET', path: '/api/instagram', status: 400, latency: 320, visitorId: 'vis_test_3' }
+            ];
+            localTotal = 3;
+            localSuccess = 2;
+            localError = 1;
+            updateMockDisplay();
+        }
+
+        function updateMockDisplay() {
+            if (db) return; // Ignore if firebase is alive
+            document.getElementById('monitor-total-req').innerText = localTotal;
+            document.getElementById('monitor-success-req').innerText = localSuccess;
+            document.getElementById('monitor-error-req').innerText = localError;
+            document.getElementById('monitor-unique-ip').innerText = 3;
+            document.getElementById('entries-counter-badge').innerText = `${mockLogs.length} entries`;
+            renderMonitorLogsTable(mockLogs);
+        }
+
+        function logLocalRequestFallback(method, path, status, latency) {
+            if (db) return;
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString('id-ID');
+            mockLogs.unshift({
+                id: Math.random(),
+                time: timeStr,
+                method: method,
+                path: path,
+                status: status,
+                latency: latency,
+                visitorId: visitorUuid
+            });
+            localTotal++;
+            if (status >= 200 && status < 300) {
+                localSuccess++;
+            } else {
+                localError++;
+            }
+            updateMockDisplay();
+        }
+
+        // Countdown Timer until 00:00 WIB Reset
+        function startStatsAutoRefresh() {
+            setInterval(() => {
+                const now = new Date();
+                const resetTime = new Date();
+                resetTime.setHours(24, 0, 0, 0); // Next 00:00 WIB
+                
+                const diff = resetTime - now;
+                if (diff <= 0) {
+                    clearMonitorLogs();
+                    return;
+                }
+                const hours = String(Math.floor(diff / 3600000)).padStart(2, '0');
+                const minutes = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+                const seconds = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+                
+                document.getElementById('monitor-countdown').innerText = `${hours}:${minutes}:${seconds}`;
+            }, 1000);
+        }
+
+        // Switch Tabs inside Docs API View
+        function switchApiTab(tabId) {
+            playSynthSound('click');
+            const tabs = ['api-tab-tiktok', 'api-tab-youtube', 'api-tab-instagram', 'api-tab-facebook'];
+            tabs.forEach(t => {
+                const pre = document.getElementById(t);
+                const btn = document.getElementById('btn-' + t);
+                if (t === tabId) {
+                    pre.classList.remove('hidden');
+                    pre.classList.add('block');
+                    btn.className = "px-4 py-2 bg-indigo-600 text-white rounded-xl text-xs font-bold transition-all";
+                } else {
+                    pre.classList.add('hidden');
+                    pre.classList.remove('block');
+                    btn.className = "px-4 py-2 text-slate-400 hover:text-white rounded-xl text-xs font-bold transition-all";
+                }
+            });
+
+            // Update sample code
+            const apiCodeBlock = document.getElementById('api-docs-js-code');
+            let sampleUrl = "";
+            if (tabId === 'api-tab-tiktok') {
+                sampleUrl = "https://vt.tiktok.com/ZS9PW3Bvm/";
+            } else if (tabId === 'api-tab-youtube') {
+                sampleUrl = "https://youtu.be/dQw4w9WgXcQ";
+            } else if (tabId === 'api-tab-instagram') {
+                sampleUrl = "https://www.instagram.com/reel/C8r2Xm9P/";
+            } else if (tabId === 'api-tab-facebook') {
+                sampleUrl = "https://www.facebook.com/share/v/8s2Xm9P/";
+            }
+            apiCodeBlock.innerText = `fetch('https://albitiktok.vercel.app/?api=true&url=${sampleUrl}')\n  .then(res => res.json())\n  .then(data => {\n    console.log("Response:", data);\n  })\n  .catch(err => console.error(err));`;
+        }
+
+        // ------------------ ORIGINAL UI & ENGINE CONFIGS ------------------
+
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
@@ -1407,7 +1881,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
         function checkApiEndpoint() {
             const urlParams = new URLSearchParams(window.location.search);
             const isApiMode = urlParams.get('api') === 'true';
-            const tiktokUrl = urlParams.get('url');
+            const requestUrl = urlParams.get('url');
 
             if (isApiMode) {
                 // Return API payload as plain JSON text
@@ -1416,25 +1890,80 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 document.body.innerHTML = `
                     <div style="display:flex; justify-content:center; align-items:center; height:100vh; font-family:monospace; font-size:14px; text-align:center;">
                         <div style="padding:20px; border:1px solid rgba(255,255,255,0.05); border-radius:15px; background:rgba(10,15,30,0.8); backdrop-filter: blur(20px);">
-                            ⏳ Memproses Permintaan API TikSave untuk Tautan TikTok...
+                            ⏳ Memproses Permintaan API TikSave untuk Media URL...
                         </div>
                     </div>
                 `;
 
-                if (!tiktokUrl) {
+                if (!requestUrl) {
                     serveApiResponse({ code: -1, msg: "Tautan tidak valid. Parameter 'url' wajib disertakan!" });
                     return true;
                 }
 
-                // Fetch data dynamically and return directly to client
-                fetchDirectApi(tiktokUrl).then(data => {
-                    if (data) {
-                        serveApiResponse({ code: 0, msg: "success", data: data });
+                // Initialize Firebase first to ensure DB logging works
+                initFirebaseMonitor().then(async () => {
+                    const startTime = Date.now();
+                    const lowerUrl = requestUrl.toLowerCase();
+                    
+                    // Route detection via Regex
+                    const ytPattern = /youtube\.com|youtu\.be/i;
+                    const igPattern = /instagram\.com/i;
+                    const fbPattern = /facebook\.com|fb\.watch|fb\.gg/i;
+
+                    if (ytPattern.test(lowerUrl)) {
+                        // YouTube API Route
+                        try {
+                            const data = await fetchYoutubeDirectApi(requestUrl);
+                            const latency = Date.now() - startTime;
+                            await logRequestToDatabase('GET', '/api/youtube', 200, latency);
+                            serveApiResponse(data);
+                        } catch (err) {
+                            const latency = Date.now() - startTime;
+                            await logRequestToDatabase('GET', '/api/youtube', 500, latency);
+                            serveApiResponse({ code: -2, msg: "Gagal mengambil video YouTube.", error: err.message });
+                        }
+                    } else if (igPattern.test(lowerUrl)) {
+                        // Instagram API Route
+                        try {
+                            const data = await fetchInstagramDirectApi(requestUrl);
+                            const latency = Date.now() - startTime;
+                            await logRequestToDatabase('GET', '/api/instagram', 200, latency);
+                            serveApiResponse(data);
+                        } catch (err) {
+                            const latency = Date.now() - startTime;
+                            await logRequestToDatabase('GET', '/api/instagram', 500, latency);
+                            serveApiResponse({ code: -2, msg: "Gagal mengambil media Instagram.", error: err.message });
+                        }
+                    } else if (fbPattern.test(lowerUrl)) {
+                        // Facebook API Route
+                        try {
+                            const data = await fetchFacebookDirectApi(requestUrl);
+                            const latency = Date.now() - startTime;
+                            await logRequestToDatabase('GET', '/api/facebook', 200, latency);
+                            serveApiResponse(data);
+                        } catch (err) {
+                            const latency = Date.now() - startTime;
+                            await logRequestToDatabase('GET', '/api/facebook', 500, latency);
+                            serveApiResponse({ code: -2, msg: "Gagal mengambil video Facebook.", error: err.message });
+                        }
                     } else {
-                        serveApiResponse({ code: -2, msg: "Gagal memproses video. Tautan salah atau server sedang sibuk." });
+                        // Default fallback TikTok Route
+                        try {
+                            const data = await fetchDirectApi(requestUrl);
+                            const latency = Date.now() - startTime;
+                            if (data) {
+                                await logRequestToDatabase('GET', '/api/tiktok', 200, latency);
+                                serveApiResponse({ code: 0, msg: "success", data: data });
+                            } else {
+                                await logRequestToDatabase('GET', '/api/tiktok', 400, latency);
+                                serveApiResponse({ code: -2, msg: "Gagal memproses video TikTok. Tautan salah atau server sedang sibuk." });
+                            }
+                        } catch (err) {
+                            const latency = Date.now() - startTime;
+                            await logRequestToDatabase('GET', '/api/tiktok', 500, latency);
+                            serveApiResponse({ code: -3, msg: "Kesalahan internal API server TikTok.", error: err.message });
+                        }
                     }
-                }).catch(err => {
-                    serveApiResponse({ code: -3, msg: "Kesalahan internal API server.", error: err.message });
                 });
 
                 return true;
@@ -1478,6 +2007,31 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             return null;
         }
 
+        // YouTube fetcher endpoint helper
+        async function fetchYoutubeDirectApi(youtubeUrl) {
+            const targetApi = `https://api.synoxcloud.xyz/download/youtube?url=${encodeURIComponent(youtubeUrl)}`;
+            const response = await fetch(targetApi);
+            return await response.json();
+        }
+
+        // Instagram fetcher endpoint helper
+        async function fetchInstagramDirectApi(instagramUrl) {
+            const targetApi = "https://api.siputzx.my.id/api/d/igram";
+            const response = await fetch(targetApi, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ url: instagramUrl })
+            });
+            return await response.json();
+        }
+
+        // Facebook fetcher endpoint helper
+        async function fetchFacebookDirectApi(facebookUrl) {
+            const targetApi = `https://api.siputzx.my.id/api/d/facebook?url=${encodeURIComponent(facebookUrl)}`;
+            const response = await fetch(targetApi);
+            return await response.json();
+        }
+
         // Check API status
         const apiIntercepted = checkApiEndpoint();
 
@@ -1490,6 +2044,9 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             let currentInstagramMediaData = null; // Memory for Instagram downloader API response
             let currentFacebookMediaData = null; // Memory for Facebook downloader API response
 
+            // Initialize Firebase real-time systems
+            initFirebaseMonitor();
+
             // SPA Tab Switcher
             function switchTab(tabId) {
                 playSynthSound('click');
@@ -1497,6 +2054,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 const viewYoutube = document.getElementById('view-youtube');
                 const viewInstagram = document.getElementById('view-instagram');
                 const viewFacebook = document.getElementById('view-facebook');
+                const viewMonitor = document.getElementById('view-monitor');
                 const viewApi = document.getElementById('view-api');
                 const infoContainer = document.getElementById('info-sections-container'); // MENDAPATKAN DOM INFO/FAQ
                 
@@ -1504,6 +2062,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 const navYoutube = document.getElementById('nav-youtube');
                 const navInstagram = document.getElementById('nav-instagram');
                 const navFacebook = document.getElementById('nav-facebook');
+                const navMonitor = document.getElementById('nav-monitor');
                 const navApi = document.getElementById('nav-api');
 
                 // Hide all sections
@@ -1511,6 +2070,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 viewYoutube.classList.add('hidden');
                 viewInstagram.classList.add('hidden');
                 viewFacebook.classList.add('hidden');
+                viewMonitor.classList.add('hidden');
                 viewApi.classList.add('hidden');
                 
                 // SEMBUNYIKAN INFO/FAQ SECARA DEFAULT
@@ -1523,6 +2083,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 navYoutube.className = "px-4 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5";
                 navInstagram.className = "px-4 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5";
                 navFacebook.className = "px-4 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5";
+                navMonitor.className = "px-4 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5";
                 navApi.className = "px-4 py-2.5 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5";
 
                 if (tabId === 'downloader') {
@@ -1541,9 +2102,11 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     viewFacebook.classList.remove('hidden');
                     if (infoContainer) infoContainer.classList.remove('hidden'); // TAMPILKAN DI FACEBOOK DOWNLOADER
                     navFacebook.className = "px-4 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5 hover:bg-indigo-500";
+                } else if (tabId === 'monitor') {
+                    viewMonitor.classList.remove('hidden');
+                    navMonitor.className = "px-4 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5 hover:bg-indigo-500";
                 } else if (tabId === 'api') {
                     viewApi.classList.remove('hidden');
-                    // TETAP TERSEMBUNYI (TIDAK DIPANGGIL) UNTUK DOCS API
                     navApi.className = "px-4 py-2.5 rounded-xl text-xs font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 transition-all duration-150 transform active:scale-95 flex items-center gap-1.5 hover:bg-indigo-500";
                 }
                 
@@ -1714,7 +2277,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 const currentHost = window.location.origin + window.location.pathname;
                 const endpointEl = document.getElementById('api-endpoint-url');
                 if (endpointEl) {
-                    endpointEl.innerText = `${currentHost}?api=true&url={LINK_TIKTOK}`;
+                    endpointEl.innerText = `${currentHost}?api=true&url={MEDIA_URL}`;
                 }
 
                 lucide.createIcons();
@@ -1944,6 +2507,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 input.focus();
             }
 
+            // Clear YouTube Input
             function clearYoutubeInput() {
                 playSynthSound('click');
                 const input = document.getElementById('youtube-url');
@@ -1952,6 +2516,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 input.focus();
             }
 
+            // Clear Instagram Input
             function clearInstagramInput() {
                 playSynthSound('click');
                 const input = document.getElementById('instagram-url');
@@ -1960,6 +2525,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 input.focus();
             }
 
+            // Clear Facebook Input
             function clearFacebookInput() {
                 playSynthSound('click');
                 const input = document.getElementById('facebook-url');
@@ -2064,7 +2630,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     playSynthSound('error');
                 } else if (type === 'success') {
                     box.classList.add('bg-emerald-950/40', 'border-emerald-900/40', 'text-emerald-300');
-                    container.innerHTML = `<i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>`;
+                    container.innerHTML = `<i data-lucide="check-circle" class="w-5 h-5 text-blue-450"></i>`;
                 } else {
                     box.classList.add('bg-slate-800/50', 'border-slate-700/50', 'text-slate-300');
                     container.innerHTML = `<i data-lucide="info" class="w-5 h-5 text-blue-400"></i>`;
@@ -2081,14 +2647,17 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 document.getElementById('alert-box').classList.add('hidden');
             }
 
+            // Hide YouTube Alert Panel
             function hideYoutubeAlert() {
                 document.getElementById('youtube-alert-box').classList.add('hidden');
             }
 
+            // Hide Instagram Alert Panel
             function hideInstagramAlert() {
                 document.getElementById('instagram-alert-box').classList.add('hidden');
             }
 
+            // Hide Facebook Alert Panel
             function hideFacebookAlert() {
                 document.getElementById('facebook-alert-box').classList.add('hidden');
             }
@@ -2235,6 +2804,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             }
 
             async function animateProgressAndFetch(tiktokUrl) {
+                const startTime = Date.now();
                 const progress = document.getElementById('loading-progress');
                 const percentLabel = document.getElementById('loading-percentage');
                 const titleLabel = document.getElementById('loading-title');
@@ -2269,6 +2839,10 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     if (data) {
                         currentMediaData = data; // Simpan ke variabel memori global secara aman
                         fillSuccessView(data, expandedUrl);
+                        
+                        const latency = Date.now() - startTime;
+                        await logRequestToDatabase('GET', '/api/tiktok', 200, latency);
+                        logLocalRequestFallback('GET', '/api/tiktok', 200, latency);
                     } else {
                         throw new Error("Respon data dari API kosong");
                     }
@@ -2278,11 +2852,16 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     document.getElementById('downloader-loading-view').classList.add('hidden');
                     document.getElementById('downloader-form-view').classList.remove('hidden');
                     showAlert('error', 'Gagal Memproses', 'Maaf, server gagal mengambil media. Pastikan tautan benar dan video tidak privat.');
+                    
+                    const latency = Date.now() - startTime;
+                    await logRequestToDatabase('GET', '/api/tiktok', 500, latency);
+                    logLocalRequestFallback('GET', '/api/tiktok', 500, latency);
                 }
             }
 
             // YouTube API fetcher and animator
             async function animateYoutubeProgressAndFetch(youtubeUrl) {
+                const startTime = Date.now();
                 const progress = document.getElementById('youtube-loading-progress');
                 const percentLabel = document.getElementById('youtube-loading-percentage');
                 const titleLabel = document.getElementById('youtube-loading-title');
@@ -2330,6 +2909,10 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     if (data) {
                         currentYoutubeMediaData = data;
                         fillYoutubeSuccessView(data, youtubeUrl);
+
+                        const latency = Date.now() - startTime;
+                        await logRequestToDatabase('GET', '/api/youtube', 200, latency);
+                        logLocalRequestFallback('GET', '/api/youtube', 200, latency);
                     } else {
                         throw new Error("Respon data YouTube API kosong");
                     }
@@ -2339,11 +2922,16 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     document.getElementById('youtube-downloader-loading-view').classList.add('hidden');
                     document.getElementById('youtube-downloader-form-view').classList.remove('hidden');
                     showYoutubeAlert('error', 'Gagal Memproses', 'Maaf, server gagal mengambil media YouTube. Pastikan tautan benar dan video tidak dibatasi.');
+
+                    const latency = Date.now() - startTime;
+                    await logRequestToDatabase('GET', '/api/youtube', 500, latency);
+                    logLocalRequestFallback('GET', '/api/youtube', 500, latency);
                 }
             }
 
             // Instagram API fetcher and animator
             async function animateInstagramProgressAndFetch(instagramUrl) {
+                const startTime = Date.now();
                 const progress = document.getElementById('instagram-loading-progress');
                 const percentLabel = document.getElementById('instagram-loading-percentage');
                 const titleLabel = document.getElementById('instagram-loading-title');
@@ -2366,43 +2954,16 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
 
                 try {
                     titleLabel.innerText = "Sebentar Lagi...";
-                    
-                    const targetApi = "https://api.siputzx.my.id/api/d/igram";
-                    let data = null;
-
-                    try {
-                        const response = await fetch(targetApi, {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json"
-                            },
-                            body: JSON.stringify({ url: instagramUrl })
-                        });
-                        const resJson = await response.json();
-                        if (resJson && resJson.status === true) {
-                            data = resJson;
-                        }
-                    } catch (err) {
-                        // AllOrigins proxy fallback for POST request
-                        const proxyUrl = "https://api.allorigins.win/raw?url=" + encodeURIComponent(targetApi);
-                        const response = await fetch(proxyUrl, {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json"
-                            },
-                            body: JSON.stringify({ url: instagramUrl })
-                        });
-                        const resJson = await response.json();
-                        if (resJson && resJson.status === true) {
-                            data = resJson;
-                        }
-                    }
-
+                    const data = await fetchInstagramDirectApi(instagramUrl);
                     clearInterval(progressInterval);
 
-                    if (data) {
+                    if (data && data.status === true) {
                         currentInstagramMediaData = data;
                         fillInstagramSuccessView(data, instagramUrl);
+
+                        const latency = Date.now() - startTime;
+                        await logRequestToDatabase('GET', '/api/instagram', 200, latency);
+                        logLocalRequestFallback('GET', '/api/instagram', 200, latency);
                     } else {
                         throw new Error("Respon data Instagram API kosong atau status false");
                     }
@@ -2412,11 +2973,16 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     document.getElementById('instagram-downloader-loading-view').classList.add('hidden');
                     document.getElementById('instagram-downloader-form-view').classList.remove('hidden');
                     showInstagramAlert('error', 'Gagal Memproses', 'Maaf, server gagal mengambil media Instagram. Pastikan tautan benar dan postingan bersifat publik.');
+
+                    const latency = Date.now() - startTime;
+                    await logRequestToDatabase('GET', '/api/instagram', 500, latency);
+                    logLocalRequestFallback('GET', '/api/instagram', 500, latency);
                 }
             }
 
             // Facebook API fetcher and animator
             async function animateFacebookProgressAndFetch(facebookUrl) {
+                const startTime = Date.now();
                 const progress = document.getElementById('facebook-loading-progress');
                 const percentLabel = document.getElementById('facebook-loading-percentage');
                 const titleLabel = document.getElementById('facebook-loading-title');
@@ -2439,31 +3005,16 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
 
                 try {
                     titleLabel.innerText = "Sebentar Lagi..";
-                    
-                    const targetApi = `https://api.siputzx.my.id/api/d/facebook?url=${encodeURIComponent(facebookUrl)}`;
-                    let data = null;
-
-                    try {
-                        const response = await fetch(targetApi);
-                        const resJson = await response.json();
-                        if (resJson && resJson.status === true) {
-                            data = resJson;
-                        }
-                    } catch (err) {
-                        // AllOrigins proxy fallback
-                        const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(targetApi)}`;
-                        const response = await fetch(proxyUrl);
-                        const resJson = await response.json();
-                        if (resJson && resJson.status === true) {
-                            data = resJson;
-                        }
-                    }
-
+                    const data = await fetchFacebookDirectApi(facebookUrl);
                     clearInterval(progressInterval);
 
-                    if (data) {
+                    if (data && data.status === true) {
                         currentFacebookMediaData = data;
                         fillFacebookSuccessView(data, facebookUrl);
+
+                        const latency = Date.now() - startTime;
+                        await logRequestToDatabase('GET', '/api/facebook', 200, latency);
+                        logLocalRequestFallback('GET', '/api/facebook', 200, latency);
                     } else {
                         throw new Error("Respon data Facebook API kosong atau status false");
                     }
@@ -2473,6 +3024,10 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     document.getElementById('facebook-downloader-loading-view').classList.add('hidden');
                     document.getElementById('facebook-downloader-form-view').classList.remove('hidden');
                     showFacebookAlert('error', 'Gagal Memproses', 'Maaf, server gagal mengambil video Facebook. Pastikan tautan benar dan video bersifat publik.');
+
+                    const latency = Date.now() - startTime;
+                    await logRequestToDatabase('GET', '/api/facebook', 500, latency);
+                    logLocalRequestFallback('GET', '/api/facebook', 500, latency);
                 }
             }
 
@@ -2505,7 +3060,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
 
                 if (isImages) {
                     typeBadge.innerText = "Slide Foto Berhasil Ditemukan";
-                    typeBadge.className = "text-[11px] font-extrabold uppercase tracking-widest text-pink-400";
+                    typeBadge.className = "text-[11px] font-extrabold uppercase tracking-wider text-pink-400";
                     slideshowEl.classList.remove('hidden');
                     
                     activeSlides = data.images;
@@ -2527,7 +3082,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
 
                     // Action buttons for slides
                     actionGrid.innerHTML = `
-                        <button onclick="downloadMusic(this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-extrabold text-sm shadow-lg shadow-pink-500/10 hover:shadow-pink-500/25 transition-all transform active:scale-[0.98]">
+                        <button onclick="downloadMusic(this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-650 hover:to-rose-650 text-white font-extrabold text-sm shadow-lg shadow-pink-500/10 hover:shadow-pink-500/25 transition-all transform active:scale-[0.98]">
                             <span class="flex items-center gap-2.5">
                                 <i data-lucide="music-4" class="w-5 h-5 text-yellow-300"></i>
                                 <span class="text-left">
@@ -2572,7 +3127,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
 
                 } else {
                     typeBadge.innerText = "Video Berhasil Ditemukan";
-                    typeBadge.className = "text-[11px] font-extrabold uppercase tracking-widest text-brand-accent";
+                    typeBadge.className = "text-[11px] font-extrabold uppercase tracking-wider text-brand-accent";
                     videoEl.classList.remove('hidden');
                     videoEl.src = data.play;
                     videoEl.load();
@@ -2780,7 +3335,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     });
                 } else {
                     actionGrid.innerHTML = `
-                        <button onclick="forceDownload('${mediaData.thumb}', 'instagram_image.jpg', this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-pink-600 hover:bg-pink-500 text-white font-extrabold text-sm shadow-md transition-all transform active:scale-95">
+                        <button onclick="forceDownload('${mediaData.thumb}', 'instagram_image.jpg', this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-pink-600 hover:bg-pink-550 text-white font-extrabold text-sm shadow-md transition-all transform active:scale-95">
                             <span class="flex items-center gap-2.5">
                                 <i data-lucide="image" class="w-5 h-5"></i>
                                 <span>Unduh Foto (Fallback)</span>
@@ -3081,7 +3636,11 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             window.handleFacebookDownload = handleFacebookDownload;
             window.downloadFacebookMedia = downloadFacebookMedia;
             window.resetFacebookDownloader = resetFacebookDownloader;
+
+            // Live Monitor bindings
+            window.clearMonitorLogs = clearMonitorLogs;
+            window.switchApiTab = switchApiTab;
         }
     </script>
 </body>
-    </html>
+                                </html>
