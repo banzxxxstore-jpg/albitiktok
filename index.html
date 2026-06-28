@@ -228,7 +228,7 @@
 
                     <!-- YouTube Downloader Card -->
                     <button onclick="switchTab('youtube'); toggleMobileMenu()" class="w-full text-left p-4 rounded-2xl bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-red-500/30 transition-all active:scale-95 flex items-center gap-4 group shadow-sm">
-                        <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-550 flex items-center justify-center group-hover:bg-red-650 group-hover:text-white transition-all shadow-inner">
+                        <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-555 flex items-center justify-center group-hover:bg-red-650 group-hover:text-white transition-all shadow-inner">
                             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
                                 <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
@@ -346,7 +346,7 @@
         <!-- Central Interactive App Card -->
         <div class="glass-panel rounded-3xl p-6 sm:p-9 shadow-2xl relative overflow-hidden premium-card">
             <!-- Decorative line accent -->
-            <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-brand-accent via-indigo-500 to-violet-500"></div>
+            <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-brand-accent via-indigo-550 to-violet-550"></div>
 
             <!-- INPUT STATE CONTAINER -->
             <div id="downloader-form-view">
@@ -427,7 +427,7 @@
 
                 <!-- Custom Elegant Progress Bar -->
                 <div class="w-full max-w-md bg-slate-800 rounded-full h-2.5 overflow-hidden border border-slate-700/50">
-                    <div id="loading-progress" class="bg-gradient-to-r from-brand-accent to-indigo-500 h-full w-[10%] transition-all duration-300"></div>
+                    <div id="loading-progress" class="bg-gradient-to-r from-brand-accent to-indigo-550 h-full w-[10%] transition-all duration-300"></div>
                 </div>
                 <span id="loading-percentage" class="text-xs font-mono font-bold text-slate-400">10%</span>
             </div>
@@ -643,7 +643,7 @@
                 
                 <div class="space-y-2">
                     <h3 id="youtube-loading-title" class="text-xl font-bold font-display text-white">Menghubungkan Server...</h3>
-                    <p id="youtube-loading-sub" class="text-xs text-slate-400 max-w-sm mx-auto leading-relaxed">Harap bersabar, kami sedang menganalisis tautan YouTube dan menyiapkan file unduhan Anda.</p>
+                    <p id="youtube-loading-sub" class="text-xs text-slate-400 max-w-sm mx-auto leading-relaxed">Harap bersabar, kami sedang menganalisis tautan YouTube menggunakan Custom Scraper Anda.</p>
                 </div>
 
                 <!-- Custom Elegant Progress Bar -->
@@ -666,14 +666,6 @@
                             
                             <!-- Playable Video Element -->
                             <video id="yt-preview-video" class="hidden w-full h-full object-cover" controls playsinline loop></video>
-
-                            <!-- Stat Badges overlay -->
-                            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-1 z-10">
-                                <span class="px-2.5 py-1.5 rounded-xl bg-black/70 backdrop-blur-md text-[10px] font-bold text-white flex items-center gap-1.5 border border-white/5">
-                                    <i data-lucide="eye" class="text-red-500 fill-red-500/20"></i>
-                                    <span id="yt-stat-views">0</span> Views
-                                </span>
-                            </div>
                         </div>
 
                         <!-- Creator Card -->
@@ -783,7 +775,7 @@
                         </div>
 
                         <!-- Submit Button -->
-                        <button onclick="handleInstagramDownload()" class="glowing-btn px-8 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-pink-600 to-indigo-600 hover:from-pink-500 hover:to-indigo-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-pink-600/30 transform active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0">
+                        <button onclick="handleInstagramDownload()" class="glowing-btn px-8 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-pink-600 to-indigo-600 hover:from-pink-500 hover:to-indigo-550 text-white font-bold text-sm tracking-wide shadow-lg shadow-pink-600/30 transform active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0">
                             <i data-lucide="arrow-right-circle" class="w-5 h-5"></i>
                             <span>Download</span>
                         </button>
@@ -986,7 +978,7 @@
                     <!-- Quick Help Hint -->
                     <div class="flex items-center justify-between text-xs text-slate-500 pt-1 px-1 font-medium">
                         <span class="flex items-center gap-1.5">
-                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-blue-500"></i>
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-blue-550"></i>
                             Gratis tanpa login akun Facebook Anda
                         </span>
                         <span>Mendukung Video & Reels FB</span>
@@ -1071,7 +1063,7 @@
 
                         <!-- Special Help Tip Banner -->
                         <div class="bg-blue-950/20 border border-blue-500/15 rounded-2xl p-4.5 flex items-start gap-3.5 shadow-sm">
-                            <i data-lucide="info" class="w-5 h-5 text-blue-500 shrink-0 mt-0.5 animate-pulse"></i>
+                            <i data-lucide="info" class="w-5 h-5 text-blue-550 shrink-0 mt-0.5 animate-pulse"></i>
                             <div class="text-xs text-blue-200/90 leading-relaxed font-medium">
                                 <span class="font-extrabold text-white block mb-0.5">💡 Cara Mengunduh:</span>
                                 Klik tombol biru di atas untuk memulai pengunduhan otomatis. Jika browser Anda langsung memutar media, ketuk tombol titik tiga <span class="font-bold text-white">(⋮)</span> lalu pilih <span class="font-bold text-white">Download</span>.
@@ -1452,14 +1444,24 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                         <pre id="api-tab-youtube" class="hidden">{
   "status": true,
   "result": {
-    "video": "https://example-youtube-cdn.com/stream-video.mp4",
-    "audio": "https://example-youtube-cdn.com/stream-audio.mp3",
-    "metadata": {
-      "title": "Aesthetic Travel Video YouTube",
-      "views": 450123,
-      "thumbnail": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500",
-      "author": "TraveLover Channel"
-    }
+    "title": "Aesthetic Travel Video YouTube",
+    "thumbnail": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500",
+    "resources": [
+      {
+        "download_url": "https://stream-video-source.com/file.mp4",
+        "type": "video",
+        "format": "MP4",
+        "size": 52428800,
+        "quality": "720P"
+      },
+      {
+        "download_url": "https://stream-audio-source.com/file.mp3",
+        "type": "audio",
+        "format": "MP3",
+        "size": 5242880,
+        "quality": "128kbps"
+      }
+    ]
   }
 }</pre>
                         <pre id="api-tab-instagram" class="hidden">{
@@ -1800,7 +1802,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
         function setupMockLiveLogs() {
             mockLogs = [
                 { id: 1, time: '17:02:01', method: 'GET', path: '/api/tiktok', status: 200, latency: 450, visitorId: 'vis_test_1' },
-                { id: 2, time: '17:03:15', method: 'GET', path: '/api/youtube', status: 200, latency: 1245, visitorId: 'vis_test_2' },
+                { id: 2, time: '17:03:15', method: 'POST', path: '/api/youtube', status: 200, latency: 1245, visitorId: 'vis_test_2' },
                 { id: 3, time: '17:05:44', method: 'GET', path: '/api/instagram', status: 400, latency: 320, visitorId: 'vis_test_3' }
             ];
             localTotal = 3;
@@ -1992,12 +1994,12 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                         try {
                             const data = await fetchYoutubeDirectApi(requestUrl);
                             const latency = Date.now() - startTime;
-                            await logRequestToDatabase('GET', '/api/youtube', 200, latency, requestUrl);
-                            serveApiResponse(data);
+                            await logRequestToDatabase('POST', '/api/youtube', 200, latency, requestUrl);
+                            serveApiResponse({ status: true, result: data });
                         } catch (err) {
                             const latency = Date.now() - startTime;
-                            await logRequestToDatabase('GET', '/api/youtube', 500, latency, requestUrl);
-                            serveApiResponse({ code: -2, msg: "Gagal mengambil video YouTube.", error: err.message });
+                            await logRequestToDatabase('POST', '/api/youtube', 500, latency, requestUrl);
+                            serveApiResponse({ status: false, error: "Gagal mengambil video YouTube.", message: err.message });
                         }
                     } else if (igPattern.test(lowerUrl)) {
                         try {
@@ -2079,10 +2081,48 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             return null;
         }
 
+        // INTEGRASI DENGAN CUSTOM SCRAPER YOUTUBE SISI KLIEN (KORS BYPASS TERINTEGRASI)
         async function fetchYoutubeDirectApi(youtubeUrl) {
-            const targetApi = `https://api.synoxcloud.xyz/download/youtube?url=${encodeURIComponent(youtubeUrl)}`;
-            const response = await fetch(targetApi);
-            return await response.json();
+            const endpoint = 'https://api.vidssave.com/api/contentsite_api/media/parse';
+            const bodyData = new URLSearchParams({
+                auth: '20250901majwlqo',
+                domain: 'api-ak.vidssave.com',
+                origin: 'source',
+                link: youtubeUrl
+            });
+
+            // Guna mengamankan CORS di peramban, gunakan proxy terpercaya secara otomatis jika direct call diblokir
+            try {
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: bodyData.toString()
+                });
+                const json = await response.json();
+                if (json.status === 1 && json.data) {
+                    return json.data; // This returns json.data directly!
+                } else {
+                    throw new Error(json.message || "Gagal mendapatkan detail video.");
+                }
+            } catch (err) {
+                console.warn("Direct fetch CORS block. Trying CorsProxy fallback...");
+                const proxyUrl = "https://corsproxy.io/?" + encodeURIComponent(endpoint);
+                const response = await fetch(proxyUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: bodyData.toString()
+                });
+                const json = await response.json();
+                if (json.status === 1 && json.data) {
+                    return json.data;
+                } else {
+                    throw new Error(json.message || "Gagal mendapatkan video via proxy.");
+                }
+            }
         }
 
         async function fetchInstagramDirectApi(instagramUrl) {
@@ -2250,15 +2290,11 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 forceDownload(url, `${cleanTitle}_${type}.mp4`, btn);
             }
 
-            function downloadYoutubeMedia(type, btn) {
-                if (!currentYoutubeMediaData || !currentYoutubeMediaData.result) return;
-                const meta = currentYoutubeMediaData.result.metadata;
-                const cleanTitle = (meta.title || 'youtube_media').replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30);
-                
-                let url = type === 'video' ? currentYoutubeMediaData.result.video : currentYoutubeMediaData.result.audio;
-                const ext = type === 'video' ? 'mp4' : 'mp3';
-                
-                forceDownload(url, `${cleanTitle}.${ext}`, btn);
+            // Memperbarui pengunduhan media YT menggunakan download_url dari custom scraper Anda
+            function downloadYoutubeMedia(url, type, filename, btn) {
+                playSynthSound('click');
+                const extension = type === 'audio' ? 'mp3' : 'mp4';
+                forceDownload(url, `${filename}.${extension}`, btn);
             }
 
             function downloadInstagramMedia(url, ext, name, btn) {
@@ -2838,6 +2874,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }
             }
 
+            // Memanggil Custom Scraper YouTube baru untuk mengambil data
             async function animateYoutubeProgressAndFetch(youtubeUrl) {
                 const startTime = Date.now();
                 const progress = document.getElementById('youtube-loading-progress');
@@ -2853,35 +2890,16 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                         percentLabel.innerText = currentPercent + "%";
                         
                         if (currentPercent > 35 && currentPercent < 65) {
-                            titleLabel.innerText = "Mengekstrak Audio & Video...";
+                            titleLabel.innerText = "Mengurai Kualitas Video...";
                         } else if (currentPercent >= 65) {
-                            titleLabel.innerText = "Menyusun Format Pengunduhan...";
+                            titleLabel.innerText = "Menyusun Daftar Resolusi...";
                         }
                     }
                 }, 100);
 
                 try {
-                    titleLabel.innerText = "Sebentar Lagi...";
-                    
-                    const targetApi = `https://api.synoxcloud.xyz/download/youtube?url=${encodeURIComponent(youtubeUrl)}`;
-                    let data = null;
-
-                    try {
-                        const response = await fetch(targetApi);
-                        const resJson = await response.json();
-                        if (resJson && resJson.status === true) {
-                            data = resJson;
-                        }
-                    } catch (err) {
-                        const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(targetApi)}`;
-                        const response = await fetch(proxyUrl);
-                        const wrapper = await response.json();
-                        const resJson = JSON.parse(wrapper.contents);
-                        if (resJson && resJson.status === true) {
-                            data = resJson;
-                        }
-                    }
-
+                    titleLabel.innerText = "Mengambil data via Scraper...";
+                    const data = await fetchYoutubeDirectApi(youtubeUrl);
                     clearInterval(progressInterval);
 
                     if (data) {
@@ -2889,8 +2907,8 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                         fillYoutubeSuccessView(data, youtubeUrl);
 
                         const latency = Date.now() - startTime;
-                        await logRequestToDatabase('GET', '/api/youtube', 200, latency, youtubeUrl);
-                        logLocalRequestFallback('GET', '/api/youtube', 200, latency, youtubeUrl);
+                        await logRequestToDatabase('POST', '/api/youtube', 200, latency, youtubeUrl);
+                        logLocalRequestFallback('POST', '/api/youtube', 200, latency, youtubeUrl);
                     } else {
                         throw new Error("Respon data YouTube API kosong");
                     }
@@ -2899,11 +2917,11 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     clearInterval(progressInterval);
                     document.getElementById('youtube-downloader-loading-view').classList.add('hidden');
                     document.getElementById('youtube-downloader-form-view').classList.remove('hidden');
-                    showYoutubeAlert('error', 'Gagal Memproses', 'Maaf, server gagal mengambil media YouTube. Pastikan tautan benar dan video tidak dibatasi.');
+                    showYoutubeAlert('error', 'Gagal Memproses', 'Maaf, server scraper gagal mengambil media YouTube. Pastikan tautan benar.');
 
                     const latency = Date.now() - startTime;
-                    await logRequestToDatabase('GET', '/api/youtube', 500, latency, youtubeUrl);
-                    logLocalRequestFallback('GET', '/api/youtube', 500, latency, youtubeUrl);
+                    await logRequestToDatabase('POST', '/api/youtube', 500, latency, youtubeUrl);
+                    logLocalRequestFallback('POST', '/api/youtube', 500, latency, youtubeUrl);
                 }
             }
 
@@ -3118,7 +3136,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                             </span>
                             <i data-lucide="arrow-down-to-line" class="w-4 h-4"></i>
                         </button>
-                        <button onclick="downloadMusic(this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-slate-950 border border-white/5 hover:bg-slate-900 text-slate-300 font-extrabold text-sm transition-all transform active:scale-[0.98] shadow-inner">
+                        <button onclick="downloadMusic(this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-slate-950 border border-white/5 hover:bg-slate-800 text-slate-300 font-extrabold text-sm transition-all transform active:scale-[0.98] shadow-inner">
                             <span class="flex items-center gap-2.5">
                                 <i data-lucide="music-4" class="w-5 h-5 text-pink-400"></i>
                                 <span class="text-left">
@@ -3160,63 +3178,97 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 }, 300);
             }
 
+            // Memperbarui UI parser YouTube untuk membaca daftar model resource dari scraper Anda secara dinamis
             function fillYoutubeSuccessView(data, originalUrl) {
                 const coverEl = document.getElementById('yt-video-cover');
                 const ytVideoEl = document.getElementById('yt-preview-video');
                 const actionGrid = document.getElementById('yt-download-actions-grid');
                 const titleEl = document.getElementById('yt-video-title');
-                const viewsEl = document.getElementById('yt-stat-views');
                 const creatorName = document.getElementById('yt-creator-name');
                 const creatorUsername = document.getElementById('yt-creator-username');
 
-                const meta = data.result.metadata;
+                const title = data.title || 'Video YouTube';
+                const thumbnail = data.thumbnail || 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500';
 
-                coverEl.classList.add('hidden');
-                ytVideoEl.classList.remove('hidden');
+                coverEl.classList.remove('hidden');
+                coverEl.src = thumbnail;
+                ytVideoEl.classList.add('hidden');
                 ytVideoEl.pause();
-                ytVideoEl.src = data.result.video;
-                ytVideoEl.load();
-                ytVideoEl.play().catch(e => console.log("Muted YT preview play blocked", e));
+                ytVideoEl.src = "";
 
-                titleEl.innerText = meta.title || 'Video YouTube';
-                viewsEl.innerText = formatCounter(meta.views);
-                creatorName.innerText = meta.author || 'YouTube Channel';
-                creatorUsername.innerText = 'TikSave YT';
+                titleEl.innerText = title;
+                creatorName.innerText = 'Vidssave API';
+                creatorUsername.innerText = '@albitiktok';
 
-                actionGrid.innerHTML = `
-                    <button onclick="downloadYoutubeMedia('video', this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-extrabold text-sm shadow-lg shadow-red-500/10 hover:shadow-red-500/25 transition-all transform active:scale-[0.98]">
-                        <span class="flex items-center gap-2.5">
-                            <i data-lucide="video" class="w-5 h-5 text-white"></i>
-                            <span class="text-left">
-                                <span class="block">Unduh Video [MP4]</span>
-                                <span class="block text-[10px] opacity-75 font-normal" id="yt-size-video">Kualitas HD</span>
-                            </span>
-                        </span>
-                        <i data-lucide="arrow-down-to-line" class="w-4 h-4"></i>
-                    </button>
-                    <button onclick="downloadYoutubeMedia('audio', this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-slate-950 border border-white/5 hover:bg-slate-900 text-slate-300 font-extrabold text-sm transition-all transform active:scale-[0.98] shadow-inner">
-                        <span class="flex items-center gap-2.5">
-                            <i data-lucide="music" class="w-5 h-5 text-red-500 animate-pulse"></i>
-                            <span class="text-left">
-                                <span class="block">Unduh Audio [MP3]</span>
-                                <span class="block text-[10px] opacity-75 font-normal" id="yt-size-audio">Audio Jernih</span>
-                            </span>
-                        </span>
-                        <i data-lucide="disc" class="w-4 h-4"></i>
-                    </button>
-                `;
+                // Menghapus isi sebelumnya dan membuat tombol download dinamis berdasarkan resources scraper Anda
+                actionGrid.innerHTML = "";
+                
+                let previewVideoUrl = "";
+                let previewAudioUrl = "";
 
-                fetchExactSize(data.result.video, 'yt-size-video');
-                fetchExactSize(data.result.audio, 'yt-size-audio');
+                if (data.resources && data.resources.length > 0) {
+                    data.resources.forEach((resource, idx) => {
+                        const url = resource.download_url;
+                        if (!url) return;
+
+                        const format = resource.format || '';
+                        const sizeMB = resource.size ? (resource.size / 1024 / 1024).toFixed(1) + ' MB' : 'Ready';
+                        const quality = resource.quality || '';
+                        const type = resource.type || 'video';
+
+                        const safeFilename = title.replace(/[^a-zA-Z0-9]/g, '_').substring(0, 30);
+
+                        if (type === 'audio') {
+                            if (!previewAudioUrl) previewAudioUrl = url;
+                            actionGrid.innerHTML += `
+                                <button onclick="downloadYoutubeMedia('${url}', 'audio', '${safeFilename}', this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-slate-950 border border-white/5 hover:bg-slate-900 text-slate-300 font-extrabold text-sm transition-all transform active:scale-[0.98] shadow-inner">
+                                    <span class="flex items-center gap-2.5">
+                                        <i data-lucide="music" class="w-5 h-5 text-red-500 animate-pulse"></i>
+                                        <span class="text-left">
+                                            <span class="block">Unduh Audio [${format}]</span>
+                                            <span class="block text-[10px] opacity-75 font-normal">[~${sizeMB}]</span>
+                                        </span>
+                                    </span>
+                                    <i data-lucide="disc" class="w-4 h-4"></i>
+                                </button>
+                            `;
+                        } else {
+                            if (!previewVideoUrl) previewVideoUrl = url;
+                            actionGrid.innerHTML += `
+                                <button onclick="downloadYoutubeMedia('${url}', 'video', '${safeFilename}', this)" class="flex items-center justify-between px-6 py-4 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-extrabold text-sm shadow-lg shadow-red-500/10 hover:shadow-red-500/25 transition-all transform active:scale-[0.98]">
+                                    <span class="flex items-center gap-2.5">
+                                        <i data-lucide="video" class="w-5 h-5 text-white"></i>
+                                        <span class="text-left">
+                                            <span class="block">Unduh Video [${quality || format}]</span>
+                                            <span class="block text-[10px] opacity-75 font-normal">[~${sizeMB}]</span>
+                                        </span>
+                                    </span>
+                                    <i data-lucide="arrow-down-to-line" class="w-4 h-4"></i>
+                                </button>
+                            `;
+                        }
+                    });
+                } else {
+                    actionGrid.innerHTML = `<p class="text-xs text-slate-400 py-3 col-span-2 text-center">Gagal menemukan link unduhan media.</p>`;
+                }
+
+                // Jika ada video, tampilkan ke preview video secara opsional
+                if (previewVideoUrl) {
+                    coverEl.classList.add('hidden');
+                    ytVideoEl.classList.remove('hidden');
+                    ytVideoEl.src = previewVideoUrl;
+                    ytVideoEl.load();
+                    ytVideoEl.play().catch(e => console.log("YT Preview blocked autoplay", e));
+                }
 
                 saveToHistory({
                     id: Math.random().toString(),
-                    title: meta.title || 'Video YouTube',
-                    cover: meta.thumbnail || 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=500',
-                    author: meta.author || 'YouTube',
+                    title: title,
+                    cover: thumbnail,
+                    author: 'Albitiktok Scraper',
                     likes: 0,
-                    views: meta.views || 0,
-                    dl_link: data.result.video,
+                    views: 0,
+                    dl_link: previewVideoUrl || previewAudioUrl || '#',
                     original_url: originalUrl,
                     is_images: false,
                     is_youtube: true,
@@ -3403,8 +3455,8 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     is_facebook: true
                 });
 
-                document.getElementById('facebook-loading-progress').style.width = "100%";
-                document.getElementById('facebook-loading-percentage').innerText = "100%";
+                document.getElementById('facebook-downloader-loading-view').style.width = "100%";
+                document.getElementById('facebook-downloader-loading-percentage').innerText = "100%";
 
                 setTimeout(() => {
                     playSynthSound('success');
@@ -3594,4 +3646,4 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
         }
     </script>
 </body>
-    </html>
+</html>
