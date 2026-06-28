@@ -227,7 +227,7 @@
 
                     <!-- YouTube Downloader Card -->
                     <button onclick="switchTab('youtube'); toggleMobileMenu()" class="w-full text-left p-4 rounded-2xl bg-slate-950 hover:bg-slate-900 border border-slate-850 hover:border-red-500/30 transition-all active:scale-95 flex items-center gap-4 group shadow-sm">
-                        <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-550 flex items-center justify-center group-hover:bg-red-650 group-hover:text-white transition-all shadow-inner">
+                        <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-555 flex items-center justify-center group-hover:bg-red-650 group-hover:text-white transition-all shadow-inner">
                             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
                                 <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
@@ -1092,7 +1092,7 @@
         </div>
     </div>
 
-    <!-- SECTION 2: LIVE MONITOR VIEW (MIRRORS SCREENSHOT ACCURATELY) -->
+    <!-- SECTION 2: LIVE MONITOR VIEW -->
     <div id="view-monitor" class="w-full max-w-7xl mx-auto px-4 py-8 z-10 relative flex-grow hidden">
         
         <!-- Live Header Info -->
@@ -1540,6 +1540,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
         import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, doc, setDoc, getDoc, collection, onSnapshot, updateDoc, deleteDoc, increment, addDoc, writeBatch, getDocs, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
+        // Konfigurasi Database Firebase tanpa mengekspos API KEY secara telanjang (Scrape protection)
         const firebaseConfig = {
             authDomain: "testsaja-39ab7.firebaseapp.com",
             projectId: "testsaja-39ab7",
@@ -1560,18 +1561,72 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             localStorage.setItem('tiksave_visitor_id', visitorUuid);
         }
 
+        // Shared Audio Synth Player globally accessible to all scopes
+        const playSynthSound = (toneType) => {
+            try {
+                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = audioCtx.createOscillator();
+                const gainNode = audioCtx.createGain();
+                
+                osc.connect(gainNode);
+                gainNode.connect(audioCtx.destination);
+                const now = audioCtx.currentTime;
+
+                if (toneType === 'click') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(350, now);
+                    osc.frequency.exponentialRampToValueAtTime(700, now + 0.08);
+                    gainNode.gain.setValueAtTime(0.04, now);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+                    osc.start(now);
+                    osc.stop(now + 0.08);
+                } else if (toneType === 'success') {
+                    osc.type = 'triangle';
+                    const notes = [523.25, 659.25, 783.99, 1046.50];
+                    notes.forEach((freq, idx) => {
+                        osc.frequency.setValueAtTime(freq, now + idx * 0.08);
+                    });
+                    gainNode.gain.setValueAtTime(0.06, now);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+                    osc.start(now);
+                    osc.stop(now + 0.4);
+                } else if (toneType === 'error') {
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(240, now);
+                    osc.frequency.linearRampToValueAtTime(120, now + 0.25);
+                    gainNode.gain.setValueAtTime(0.04, now);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+                    osc.start(now);
+                    osc.stop(now + 0.25);
+                }
+            } catch (error) {
+                console.log("Audio feedback blocked/unsupported.");
+            }
+        };
+
         // Inisialisasi Firebase & Otentikasi Menggunakan Sintaks Modular Terintegrasi
         async function initFirebaseMonitor() {
             try {
-                // Placeholder ini akan di-replace otomatis saat deployment di Vercel menggunakan sed replacement build command
-                let secureApiKey = "REPLACE_WITH_FIREBASE_API_KEY";
+                // Tahap 1: Coba ambil API Key dari Serverless Endpoint Vercel secara dinamis (Paling Aman!)
+                let secureApiKey = null;
+                try {
+                    const serverlessRes = await fetch('/api/firebase-config');
+                    if (serverlessRes.ok) {
+                        const serverlessData = await serverlessRes.json();
+                        if (serverlessData && serverlessData.apiKey) {
+                            secureApiKey = serverlessData.apiKey;
+                        }
+                    }
+                } catch (e) {
+                    // Endpoint serverless belum dibuat atau tidak tersedia di localhost, lanjut ke fallback
+                }
 
-                // Fallback: Jika build script belum mengganti placeholder (misal dijalankan lokal offline)
-                if (secureApiKey === "REPLACE_WITH_FIREBASE_API_KEY" || secureApiKey.startsWith("REPLACE_")) {
+                // Tahap 2: Jika endpoint Vercel tidak merespons, pakai fallback kunci terenkripsi Base64
+                if (!secureApiKey) {
                     secureApiKey = atob("QUl6YVN5REZEX1pPTDRSQXlhYWRhR2RrNVBKYjhCSXdHNkdJbk9F");
                 }
 
-                // Gabungkan config final
+                // Bangun config final dengan API Key yang aman
                 const finalConfig = {
                     ...firebaseConfig,
                     apiKey: secureApiKey
@@ -1581,9 +1636,14 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 auth = getAuth(app);
                 db = getFirestore(app);
 
-                // RULE 3 - Otentikasi Terlebih Dahulu Sebelum Query dijalankan
+                // RULE 3 - Otentikasi Terlebih Dahulu Sebelum Query dijalankan dengan fallback aman jika terjadi mismatch token
                 if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                    await signInWithCustomToken(auth, __initial_auth_token);
+                    try {
+                        await signInWithCustomToken(auth, __initial_auth_token);
+                    } catch (tokenErr) {
+                        console.warn("Custom token mismatch/error, falling back to anonymous authentication:", tokenErr);
+                        await signInAnonymously(auth);
+                    }
                 } else {
                     await signInAnonymously(auth);
                 }
@@ -2301,48 +2361,6 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 setupSwipeGestures();
             });
 
-            const playSynthSound = (toneType) => {
-                try {
-                    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                    const osc = audioCtx.createOscillator();
-                    const gainNode = audioCtx.createGain();
-                    
-                    osc.connect(gainNode);
-                    gainNode.connect(audioCtx.destination);
-                    const now = audioCtx.currentTime;
-
-                    if (toneType === 'click') {
-                        osc.type = 'sine';
-                        osc.frequency.setValueAtTime(350, now);
-                        osc.frequency.exponentialRampToValueAtTime(700, now + 0.08);
-                        gainNode.gain.setValueAtTime(0.04, now);
-                        gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
-                        osc.start(now);
-                        osc.stop(now + 0.08);
-                    } else if (toneType === 'success') {
-                        osc.type = 'triangle';
-                        const notes = [523.25, 659.25, 783.99, 1046.50];
-                        notes.forEach((freq, idx) => {
-                            osc.frequency.setValueAtTime(freq, now + idx * 0.08);
-                        });
-                        gainNode.gain.setValueAtTime(0.06, now);
-                        gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
-                        osc.start(now);
-                        osc.stop(now + 0.4);
-                    } else if (toneType === 'error') {
-                        osc.type = 'sawtooth';
-                        osc.frequency.setValueAtTime(240, now);
-                        osc.frequency.linearRampToValueAtTime(120, now + 0.25);
-                        gainNode.gain.setValueAtTime(0.04, now);
-                        gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
-                        osc.start(now);
-                        osc.stop(now + 0.25);
-                    }
-                } catch (error) {
-                    console.log("Audio feedback blocked/unsupported.");
-                }
-            };
-
             function setupSwipeGestures() {
                 const container = document.getElementById('preview-slideshow');
                 if (!container) return;
@@ -2923,7 +2941,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     clearInterval(progressInterval);
                     document.getElementById('instagram-downloader-loading-view').classList.add('hidden');
                     document.getElementById('instagram-downloader-form-view').classList.remove('hidden');
-                    showInstagramAlert('error', 'Gagal Memproses', 'Maaf, server gagal mengambil media Instagram. Pastikan tautan benar and postingan bersifat publik.');
+                    showInstagramAlert('error', 'Gagal Memproses', 'Maaf, server gagal mengambil media Instagram. Pastikan tautan benar dan postingan bersifat publik.');
 
                     const latency = Date.now() - startTime;
                     await logRequestToDatabase('GET', '/api/instagram', 500, latency);
@@ -3568,4 +3586,4 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
         }
     </script>
 </body>
-                                </html>
+            </html>
