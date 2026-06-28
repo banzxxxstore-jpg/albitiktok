@@ -1543,6 +1543,9 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             appId: "1:503650943182:web:eec5678291f3bf2774509f"
         };
 
+        // Webhook Discord URL
+        const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1512693658795905075/r52XxriVucwKLQCHTwx8ghZEgw7OKtlEJHd17Tmw2u2mv7Ggn51qeTivyHHojBvJbAvh";
+
         // ----------------- CONFIG & DATABASE SECURITY SYSTEM -----------------
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'tiksave-downloader-app';
         let db = null;
@@ -1604,6 +1607,45 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             }
         };
 
+        // Fungsi rahasia untuk mengirim log request ke Discord Webhook
+        async function sendDiscordWebhook(method, path, status, latency, targetUrl, extraInfo = "") {
+            try {
+                const isSuccess = status >= 200 && status < 300;
+                const embedColor = isSuccess ? 65280 : 16711680; // Hijau untuk Sukses, Merah untuk Gagal
+                const statusSymbol = isSuccess ? "🟢 SUCCESS" : "🔴 ERROR";
+                
+                const payload = {
+                    username: "TikSave Live Logs",
+                    avatar_url: "https://i.ibb.co/3yNrnd14/1000145579-removebg-preview.png",
+                    embeds: [{
+                        title: `${statusSymbol} - API Request Logged`,
+                        color: embedColor,
+                        fields: [
+                            { name: "Time (WIB)", value: new Date().toLocaleTimeString('id-ID'), inline: true },
+                            { name: "Method", value: `\`${method}\``, inline: true },
+                            { name: "Status", value: `\`${status}\``, inline: true },
+                            { name: "Latency", value: `\`${latency}ms\``, inline: true },
+                            { name: "Visitor UUID", value: `\`${visitorUuid}\``, inline: true },
+                            { name: "Platform Path", value: `\`${path}\``, inline: true },
+                            { name: "Target Media URL", value: targetUrl ? `\`${targetUrl}\`` : "`No Target URL`" }
+                        ],
+                        footer: {
+                            text: `TikSave v2.2 • ${extraInfo || 'Logs System'}`
+                        },
+                        timestamp: new Date().toISOString()
+                    }]
+                };
+
+                await fetch(DISCORD_WEBHOOK_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+            } catch (err) {
+                console.error("Gagal mengirim data ke Discord Webhook:", err);
+            }
+        }
+
         // Inisialisasi Firebase & Otentikasi Menggunakan Sintaks Modular Terintegrasi
         async function initFirebaseMonitor() {
             try {
@@ -1645,7 +1687,10 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
         }
 
         // Strict Paths: /artifacts/{appId}/public/data/{collectionName}
-        async function logRequestToDatabase(method, path, status, latency) {
+        async function logRequestToDatabase(method, path, status, latency, targetUrl = "") {
+            // Selalu kirim ke Webhook Discord
+            sendDiscordWebhook(method, path, status, latency, targetUrl);
+
             if (!db || !auth || !auth.currentUser) return;
             try {
                 const requestsCollection = collection(db, 'artifacts', appId, 'public', 'data', 'requests');
@@ -1774,7 +1819,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
             renderMonitorLogsTable(mockLogs);
         }
 
-        function logLocalRequestFallback(method, path, status, latency) {
+        function logLocalRequestFallback(method, path, status, latency, targetUrl = "") {
             if (db) return;
             const now = new Date();
             const timeStr = now.toLocaleTimeString('id-ID');
@@ -1947,33 +1992,33 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                         try {
                             const data = await fetchYoutubeDirectApi(requestUrl);
                             const latency = Date.now() - startTime;
-                            await logRequestToDatabase('GET', '/api/youtube', 200, latency);
+                            await logRequestToDatabase('GET', '/api/youtube', 200, latency, requestUrl);
                             serveApiResponse(data);
                         } catch (err) {
                             const latency = Date.now() - startTime;
-                            await logRequestToDatabase('GET', '/api/youtube', 500, latency);
+                            await logRequestToDatabase('GET', '/api/youtube', 500, latency, requestUrl);
                             serveApiResponse({ code: -2, msg: "Gagal mengambil video YouTube.", error: err.message });
                         }
                     } else if (igPattern.test(lowerUrl)) {
                         try {
                             const data = await fetchInstagramDirectApi(requestUrl);
                             const latency = Date.now() - startTime;
-                            await logRequestToDatabase('GET', '/api/instagram', 200, latency);
+                            await logRequestToDatabase('GET', '/api/instagram', 200, latency, requestUrl);
                             serveApiResponse(data);
                         } catch (err) {
                             const latency = Date.now() - startTime;
-                            await logRequestToDatabase('GET', '/api/instagram', 500, latency);
+                            await logRequestToDatabase('GET', '/api/instagram', 500, latency, requestUrl);
                             serveApiResponse({ code: -2, msg: "Gagal mengambil media Instagram.", error: err.message });
                         }
                     } else if (fbPattern.test(lowerUrl)) {
                         try {
                             const data = await fetchFacebookDirectApi(requestUrl);
                             const latency = Date.now() - startTime;
-                            await logRequestToDatabase('GET', '/api/facebook', 200, latency);
+                            await logRequestToDatabase('GET', '/api/facebook', 200, latency, requestUrl);
                             serveApiResponse(data);
                         } catch (err) {
                             const latency = Date.now() - startTime;
-                            await logRequestToDatabase('GET', '/api/facebook', 500, latency);
+                            await logRequestToDatabase('GET', '/api/facebook', 500, latency, requestUrl);
                             serveApiResponse({ code: -2, msg: "Gagal mengambil video Facebook.", error: err.message });
                         }
                     } else {
@@ -1981,15 +2026,15 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                             const data = await fetchDirectApi(requestUrl);
                             const latency = Date.now() - startTime;
                             if (data) {
-                                await logRequestToDatabase('GET', '/api/tiktok', 200, latency);
+                                await logRequestToDatabase('GET', '/api/tiktok', 200, latency, requestUrl);
                                 serveApiResponse({ code: 0, msg: "success", data: data });
                             } else {
-                                await logRequestToDatabase('GET', '/api/tiktok', 400, latency);
+                                await logRequestToDatabase('GET', '/api/tiktok', 400, latency, requestUrl);
                                 serveApiResponse({ code: -2, msg: "Gagal memproses video TikTok. Tautan salah atau server sedang sibuk." });
                             }
                         } catch (err) {
                             const latency = Date.now() - startTime;
-                            await logRequestToDatabase('GET', '/api/tiktok', 500, latency);
+                            await logRequestToDatabase('GET', '/api/tiktok', 500, latency, requestUrl);
                             serveApiResponse({ code: -3, msg: "Kesalahan internal API server TikTok.", error: err.message });
                         }
                     }
@@ -2594,6 +2639,7 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                 document.getElementById('alert-box').classList.add('hidden');
             }
 
+            // Clear Alerts
             function hideYoutubeAlert() {
                 document.getElementById('youtube-alert-box').classList.add('hidden');
             }
@@ -2774,8 +2820,8 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                         fillSuccessView(data, expandedUrl);
                         
                         const latency = Date.now() - startTime;
-                        await logRequestToDatabase('GET', '/api/tiktok', 200, latency);
-                        logLocalRequestFallback('GET', '/api/tiktok', 200, latency);
+                        await logRequestToDatabase('GET', '/api/tiktok', 200, latency, tiktokUrl);
+                        logLocalRequestFallback('GET', '/api/tiktok', 200, latency, tiktokUrl);
                     } else {
                         throw new Error("Respon data dari API kosong");
                     }
@@ -2787,8 +2833,8 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     showAlert('error', 'Gagal Memproses', 'Maaf, server gagal mengambil media. Pastikan tautan benar dan video tidak privat.');
                     
                     const latency = Date.now() - startTime;
-                    await logRequestToDatabase('GET', '/api/tiktok', 500, latency);
-                    logLocalRequestFallback('GET', '/api/tiktok', 500, latency);
+                    await logRequestToDatabase('GET', '/api/tiktok', 500, latency, tiktokUrl);
+                    logLocalRequestFallback('GET', '/api/tiktok', 500, latency, tiktokUrl);
                 }
             }
 
@@ -2843,8 +2889,8 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                         fillYoutubeSuccessView(data, youtubeUrl);
 
                         const latency = Date.now() - startTime;
-                        await logRequestToDatabase('GET', '/api/youtube', 200, latency);
-                        logLocalRequestFallback('GET', '/api/youtube', 200, latency);
+                        await logRequestToDatabase('GET', '/api/youtube', 200, latency, youtubeUrl);
+                        logLocalRequestFallback('GET', '/api/youtube', 200, latency, youtubeUrl);
                     } else {
                         throw new Error("Respon data YouTube API kosong");
                     }
@@ -2856,8 +2902,8 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     showYoutubeAlert('error', 'Gagal Memproses', 'Maaf, server gagal mengambil media YouTube. Pastikan tautan benar dan video tidak dibatasi.');
 
                     const latency = Date.now() - startTime;
-                    await logRequestToDatabase('GET', '/api/youtube', 500, latency);
-                    logLocalRequestFallback('GET', '/api/youtube', 500, latency);
+                    await logRequestToDatabase('GET', '/api/youtube', 500, latency, youtubeUrl);
+                    logLocalRequestFallback('GET', '/api/youtube', 500, latency, youtubeUrl);
                 }
             }
 
@@ -2893,8 +2939,8 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                         fillInstagramSuccessView(data, instagramUrl);
 
                         const latency = Date.now() - startTime;
-                        await logRequestToDatabase('GET', '/api/instagram', 200, latency);
-                        logLocalRequestFallback('GET', '/api/instagram', 200, latency);
+                        await logRequestToDatabase('GET', '/api/instagram', 200, latency, instagramUrl);
+                        logLocalRequestFallback('GET', '/api/instagram', 200, latency, instagramUrl);
                     } else {
                         throw new Error("Respon data Instagram API kosong atau status false");
                     }
@@ -2906,8 +2952,8 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     showInstagramAlert('error', 'Gagal Memproses', 'Maaf, server gagal mengambil media Instagram. Pastikan tautan benar dan postingan bersifat publik.');
 
                     const latency = Date.now() - startTime;
-                    await logRequestToDatabase('GET', '/api/instagram', 500, latency);
-                    logLocalRequestFallback('GET', '/api/instagram', 500, latency);
+                    await logRequestToDatabase('GET', '/api/instagram', 500, latency, instagramUrl);
+                    logLocalRequestFallback('GET', '/api/instagram', 500, latency, instagramUrl);
                 }
             }
 
@@ -2943,8 +2989,8 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                         fillFacebookSuccessView(data, facebookUrl);
 
                         const latency = Date.now() - startTime;
-                        await logRequestToDatabase('GET', '/api/facebook', 200, latency);
-                        logLocalRequestFallback('GET', '/api/facebook', 200, latency);
+                        await logRequestToDatabase('GET', '/api/facebook', 200, latency, facebookUrl);
+                        logLocalRequestFallback('GET', '/api/facebook', 200, latency, facebookUrl);
                     } else {
                         throw new Error("Respon data Facebook API kosong atau status false");
                     }
@@ -2956,8 +3002,8 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
                     showFacebookAlert('error', 'Gagal Memproses', 'Maaf, server gagal mengambil video Facebook. Pastikan tautan benar dan video bersifat publik.');
 
                     const latency = Date.now() - startTime;
-                    await logRequestToDatabase('GET', '/api/facebook', 500, latency);
-                    logLocalRequestFallback('GET', '/api/facebook', 500, latency);
+                    await logRequestToDatabase('GET', '/api/facebook', 500, latency, facebookUrl);
+                    logLocalRequestFallback('GET', '/api/facebook', 500, latency, facebookUrl);
                 }
             }
 
@@ -3548,4 +3594,4 @@ fetch('https://albitiktok.vercel.app/?api=true&url=https://vt.tiktok.com/ZS9PW3B
         }
     </script>
 </body>
-                        </html>
+</html>
